@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Object Reference Guide</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+<details id="t4" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #0984e3;">
+  🎯 Object Reference Guide <span class="badge badge-object">REFERENCE</span>
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+  <p style="color:var(--text2);margin-bottom:8px;">At a glance: which roles belong to which objects.</p>
+  <table class="data-table">
+    <tr><th>Object Type</th><th>Columns / Rows</th><th>Lattice Cols / Rows</th></tr>
+    <tr><td>📋 Crosstab</td><td style="color:var(--accent1);">✅ Yes</td><td style="color:var(--danger);">❌ No</td></tr>
+    <tr><td>📈 Time Series Plot</td><td style="color:var(--danger);">❌ No</td><td style="color:var(--accent1);">✅ Yes</td></tr>
+    <tr><td>🔵 Bubble Plot</td><td style="color:var(--danger);">❌ No</td><td style="color:var(--accent1);">✅ Yes</td></tr>
+    <tr><td>📊 Bar Chart</td><td style="color:var(--danger);">❌ No</td><td style="color:var(--accent1);">✅ Yes</td></tr>
+    <tr><td>🔴 Scatter Plot</td><td style="color:var(--danger);">❌ No</td><td style="color:var(--accent1);">✅ Yes</td></tr>
+    <tr><td>📄 List Table</td><td style="color:var(--danger);">❌ No (display setting only)</td><td style="color:var(--danger);">❌ No</td></tr>
+  </table>
+  <div class="tip blue">
+    <strong>💡 Quick Rule:</strong> If it <strong>summarizes</strong> data with two header dimensions → <strong>Crosstab</strong> (uses Columns/Roles roles).<br>
+    If it <strong>plots</strong> data on axes → <strong>Chart</strong> (uses Lattice Columns/Rows to create panels).
+  </div>
+</div>
+</details>
+</div>
+
+<script src="../js/common.js"></script>
+</body>
+</html>

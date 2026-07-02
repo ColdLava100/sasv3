@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Rank vs Filter</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+<details id="t1" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #fdcb6e;">
+  🏆 Rank vs Filter <span class="badge badge-rank">CORE CONCEPT</span>
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+  <p style="color:var(--text2);margin-bottom:12px;">
+    Both reduce the data you see — but they work <strong>completely differently</strong>.
+  </p>
+
+  <h3 style="color:#fff;margin-bottom:8px;font-size:0.9rem;">Same data, different result:</h3>
+  <table class="data-table">
+    <tr><th>#</th><th style="text-align:left;">Name</th><th>Country</th><th>Score</th></tr>
+    <tr><td>1</td><td style="text-align:left;">Ali</td><td>Malaysia</td><td>95</td></tr>
+    <tr><td>2</td><td style="text-align:left;">Siti</td><td>Malaysia</td><td>92</td></tr>
+    <tr><td>3</td><td style="text-align:left;">Bob</td><td>USA</td><td>88</td></tr>
+    <tr><td>4</td><td style="text-align:left;">Mei</td><td>China</td><td>85</td></tr>
+    <tr><td>5</td><td style="text-align:left;">Raj</td><td>India</td><td>82</td></tr>
+    <tr><td>6</td><td style="text-align:left;">John</td><td>USA</td><td>78</td></tr>
+    <tr><td>7</td><td style="text-align:left;">Ling</td><td>China</td><td>75</td></tr>
+    <tr><td>8</td><td style="text-align:left;">Tom</td><td>USA</td><td>71</td></tr>
+    <tr><td>9</td><td style="text-align:left;">Aisha</td><td>India</td><td>68</td></tr>
+    <tr><td>10</td><td style="text-align:left;">Hannah</td><td>USA</td><td>65</td></tr>
+  </table>
+
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #00b894;">
+      <h3 style="color:var(--accent1);">🟢 FILTER</h3>
+      <p style="color:var(--text3);font-size:0.8rem;">Condition: Country = "USA"</p>
+      <table class="data-table">
+        <tr><th style="text-align:left;">Name</th><th>Country</th><th>Score</th></tr>
+        <tr><td style="text-align:left;">Bob</td><td>USA</td><td>88</td></tr>
+        <tr><td style="text-align:left;">John</td><td>USA</td><td>78</td></tr>
+        <tr><td style="text-align:left;">Tom</td><td>USA</td><td>71</td></tr>
+        <tr><td style="text-align:left;">Hannah</td><td>USA</td><td>65</td></tr>
+      </table>
+      <p style="font-size:0.75rem;color:var(--text3);">⚠️ Ali (95) removed — not from USA</p>
+    </div>
+    <div class="card" style="border-top:3px solid #fdcb6e;">
+      <h3 style="color:var(--accent2);">🟡 RANK</h3>
+      <p style="color:var(--text3);font-size:0.8rem;">Top 4 by Score</p>
+      <table class="data-table">
+        <tr><th style="text-align:left;">Name</th><th>Country</th><th>Score</th></tr>
+        <tr><td style="text-align:left;">Ali</td><td>Malaysia</td><td>95</td></tr>
+        <tr><td style="text-align:left;">Siti</td><td>Malaysia</td><td>92</td></tr>
+        <tr><td style="text-align:left;">Bob</td><td>USA</td><td>88</td></tr>
+        <tr><td style="text-align:left;">Mei</td><td>China</td><td>85</td></tr>
+      </table>
+      <p style="font-size:0.75rem;color:var(--text3);">⚠️ Hannah (65) removed — not in top 4</p>
+    </div>
+  </div>
+
+  <div class="tip">
+    <strong>🔑 The One-Sentence Difference:</strong><br>
+    <span style="color:var(--accent1);">🟢 Filter</span> asks: <em>"Does each row match my condition?"</em> (Yes→keep, No→remove)<br>
+    <span style="color:var(--accent2);">🟡 Rank</span> asks: <em>"Which rows are the Top/Bottom N by this measure?"</em>
+  </div>
+
+  <div class="mnemonic-box">
+    <h3>🧠 Memory Trick</h3>
+    <p style="color:var(--text2);font-size:0.85rem;">
+      <strong>S</strong>ort = <strong>S</strong>huffle everything in order<br>
+      <strong>F</strong>ilter = <strong>F</strong>orget what doesn't match a condition<br>
+      <strong>R</strong>ank = <strong>R</strong>educe to the best/worst by a measure<br><br>
+      <em>"In a race, you <strong style="color:var(--accent2);">RANK</strong> the top 3 finishers — you don't filter them."</em>
+    </p>
+  </div>
+
+  <div class="quiz-card">
+    <h3>📝 Quiz — Rank vs Filter</h3>
+    <div class="quiz-q"><p><strong>Q1:</strong> Show products where Sales &gt; $10,000. Use <strong>Filter</strong> or <strong>Rank</strong>?</p>
+      <div><button class="quiz-btn" data-answer="t1a1">Filter</button><button class="quiz-btn" data-answer="t1a1">Rank</button></div>
+      <div id="t1a1" class="quiz-answer">✅ <strong>Filter</strong> — Condition: Sales &gt; $10,000. Rows not matching are removed.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> Show <strong>Top 10</strong> best-selling products. Use <strong>Filter</strong> or <strong>Rank</strong>?</p>
+      <div><button class="quiz-btn" data-answer="t1a2">Filter</button><button class="quiz-btn" data-answer="t1a2">Rank</button></div>
+      <div id="t1a2" class="quiz-answer">✅ <strong>Rank</strong> — Top N by a measure = Rank.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3:</strong> Top 5 products by Profit, only for "Sports" category. What do you need?</p>
+      <div><button class="quiz-btn" data-answer="t1a3">Filter only</button><button class="quiz-btn" data-answer="t1a3">Rank only</button><button class="quiz-btn" data-answer="t1a3">Both</button></div>
+      <div id="t1a3" class="quiz-answer">✅ <strong>Both!</strong> Filter non-Sports first, then Rank Top 5 by Profit.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4:</strong> Rank's "Count" can be controlled by what?</p>
+      <div><button class="quiz-btn" data-answer="t1a4">Calculated Item</button><button class="quiz-btn" data-answer="t1a4">Parameter</button><button class="quiz-btn" data-answer="t1a4">Data Source Filter</button><button class="quiz-btn" data-answer="t1a4">Display Rule</button></div>
+      <div id="t1a4" class="quiz-answer">✅ <strong>Parameter</strong> — Slider + parameter controls rank count dynamically.</div>
+    </div>
+  </div>
+</div>
+</details>
+</div>
+
+<script src="../js/common.js"></script>
+</body>
+</html>

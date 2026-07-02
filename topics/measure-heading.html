@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Measure Heading Placement</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+<details id="t6" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #ff7675;">
+  📋 Measure Heading Placement <span class="badge badge-measure">OPTIONS</span>
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+  <div class="info-box">
+    <p style="text-align:center;font-size:0.9rem;">
+      <strong>Question:</strong> WHERE should the word <strong style="color:var(--accent1);">"Frequency"</strong> sit? 
+      <strong style="color:var(--accent1);">⬆ Above</strong> the columns or <strong style="color:#ff7675;">⬅ On the left</strong>?
+    </p>
+  </div>
+
+  <div class="card-grid" style="margin-bottom:8px;">
+    <div class="card" style="border:2px solid var(--accent1);">
+      <h3 style="color:var(--accent1);font-size:0.8rem;">⬆ ABOVE (default)</h3>
+      <table class="data-table" style="font-size:0.7rem;">
+        <tr><td style="background:#1a3a2a;color:var(--accent1);font-weight:700;" colspan="4">📝 Frequency ← label here</td></tr>
+        <tr><th>Make</th><th>Asia</th><th>Europe</th><th>USA</th></tr>
+        <tr><td>Acura</td><td>7</td><td>19</td><td>20</td></tr>
+        <tr><td>Audi</td><td>9</td><td>8</td><td>27</td></tr>
+      </table>
+      <p style="font-size:0.7rem;color:var(--text3);">"Frequency" is a <strong>column header</strong></p>
+    </div>
+    <div class="card" style="border:2px solid #ff7675;">
+      <h3 style="color:#ff7675;font-size:0.8rem;">⬅ LEFT (changed)</h3>
+      <table class="data-table" style="font-size:0.7rem;">
+        <tr><th></th><th>Asia</th><th>Europe</th><th>USA</th></tr>
+        <tr><td style="color:#ff7675;font-weight:700;">📝 Frequency</td><td></td><td></td><td></td></tr>
+        <tr><td>Acura</td><td>7</td><td>19</td><td>20</td></tr>
+        <tr><td>Audi</td><td>9</td><td>8</td><td>27</td></tr>
+      </table>
+      <p style="font-size:0.7rem;color:var(--text3);">"Frequency" is now a <strong>row label</strong></p>
+    </div>
+  </div>
+
+  <div class="card-grid" style="margin-bottom:8px;">
+    <div class="tip green" style="margin:0;">
+      <strong>✅ Correct:</strong> "Frequency is moved to the rows"<br>
+      <span style="font-size:0.75rem;">The word "Frequency" just changes position.</span>
+    </div>
+    <div class="tip red" style="margin:0;">
+      <strong>❌ Wrong:</strong> "Rows and columns are transposed"<br>
+      <span style="font-size:0.75rem;">Transposing swaps Make↔Origin entirely! Only the label moves.</span>
+    </div>
+  </div>
+
+  <div class="tip blue" style="margin:0;">
+    <strong>🧠 Core Rule:</strong> Only the measure <em>label</em> moves. 
+    <strong style="color:var(--accent1);">Make</strong> stays as rows. <strong style="color:var(--accent1);">Origin</strong> stays as columns. Nothing else changes.
+  </div>
+</div>
+</details>
+</div>
+
+<script src="../js/common.js"></script>
+</body>
+</html>

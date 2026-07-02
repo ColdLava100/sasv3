@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Path Analysis</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  .path-card { background:var(--bg3);border-radius:8px;padding:10px;margin-bottom:8px;border-left:3px solid; }
+  .path-card h4 { font-size:0.82rem;margin-bottom:4px; }
+  .path-card p { font-size:0.72rem;color:var(--text2); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+
+<details id="t1" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #e17055;">
+  🔀 Path Analysis — Link Color Options
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <!-- INTRO -->
+  <div style="background:var(--bg3);border-radius:8px;padding:14px;margin-bottom:10px;">
+    <p style="color:var(--text2);font-size:0.85rem;">
+      <strong style="color:#fff;">Path Analysis</strong> (also called a <strong>Sankey diagram</strong>) displays flows of data from one event to another. From course: <em>"The path analysis object displays flows of data."</em>
+    </p>
+  </div>
+
+  <!-- ANATOMY -->
+  <div class="info-box">
+    <p class="label">🔍 Path Analysis Anatomy</p>
+    <p style="font-size:0.78rem;color:var(--text2);">
+      <strong>Nodes</strong> — Events/stages (vertical bars)<br>
+      <strong>Links</strong> — Paths/connections between events (curved bands)<br>
+      <strong>Link width</strong> — How many people/items take that path<br>
+      <strong>Link color</strong> — How paths are grouped and colored
+    </p>
+  </div>
+
+  <!-- INTERACTIVE CHARTS -->
+  <div class="info-box">
+    <p class="label">📊 All 4 Link Color Options — Same Data, Different Coloring</p>
+    <p style="font-size:0.78rem;color:var(--text2);"><em>This is the exact same path data shown 4 ways. Hover to see the difference!</em></p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;">
+    <div>
+      <div id="sankey-path" style="height:220px;background:#0d1117;border-radius:6px;"></div>
+      <div style="font-size:0.65rem;text-align:center;color:#55efc4;margin-top:2px;background:#1a3a2a;padding:3px;border-radius:4px;">✅ <strong>PATH</strong> — Each path gets its OWN color</div>
+    </div>
+    <div>
+      <div id="sankey-dropoff" style="height:220px;background:#0d1117;border-radius:6px;"></div>
+      <div style="font-size:0.65rem;text-align:center;color:#ff7675;margin-top:2px;background:#3d1a2a;padding:3px;border-radius:4px;">❌ DROP OFF — Continuing vs dropping only</div>
+    </div>
+    <div>
+      <div id="sankey-event" style="height:220px;background:#0d1117;border-radius:6px;"></div>
+      <div style="font-size:0.65rem;text-align:center;color:#ffd93d;margin-top:2px;background:#3d3d1a;padding:3px;border-radius:4px;">❌ EVENT — Colors by stage/node type</div>
+    </div>
+    <div>
+      <div id="sankey-sequence" style="height:220px;background:#0d1117;border-radius:6px;"></div>
+      <div style="font-size:0.65rem;text-align:center;color:#74b9ff;margin-top:2px;background:#1a2a3a;padding:3px;border-radius:4px;">❌ SEQUENCE — Colors by position order</div>
+    </div>
+  </div>
+
+  <!-- WHAT EACH OPTION LOOKS LIKE -->
+  <div class="info-box">
+    <p class="label">🎯 Visual: How Each Option Colors the SAME 4 Paths</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;">
+    <div class="path-card" style="border-color:#55efc4;">
+      <h4 style="color:#55efc4;">✅ Path — Each path = its own color</h4>
+      <p>
+        Path 1 •═══════════•═══════════•═══════════•  <span style="color:#55efc4;">ALL BLUE</span><br>
+        Path 2 •═══════════•═══•  <span style="color:#e17055;">ALL ORANGE</span> (drops off early)<br>
+        Path 3 •═══════════•═══════════•  <span style="color:#ffd93d;">ALL YELLOW</span> (drops off mid)<br>
+        Path 4 •═══════════•═══════════•═══════════•═══════════•  <span style="color:#a29bfe;">ALL PURPLE</span><br>
+        <em>Every path has one consistent color from start to end.</em>
+      </p>
+    </div>
+    <div class="path-card" style="border-color:#ff7675;">
+      <h4 style="color:#ff7675;">❌ Drop Off — Continuing vs dropping</h4>
+      <p>
+        Path 1 •═══════════•═══════════•═══════════•  <span style="color:#55efc4;">ALL GREEN</span> (continuing)<br>
+        Path 2 •═══════════•═══•  <span style="color:#ff7675;">LAST LINK RED</span> (drop-off)<br>
+        Path 3 •═══════════•═══════════•  <span style="color:#ff7675;">LAST LINK RED</span> (drop-off)<br>
+        Path 4 •═══════════•═══════════•═══════════•═══════════•  <span style="color:#55efc4;">ALL GREEN</span> (continuing)<br>
+        <em>Only 2 colors: drop-off links = red, continuing = green.</em>
+      </p>
+    </div>
+    <div class="path-card" style="border-color:#ffd93d;">
+      <h4 style="color:#ffd93d;">❌ Event — Color by stage/node</h4>
+      <p>
+        Path 1 <span style="color:#55efc4;">•</span>═════<span style="color:#e17055;">•</span>═════<span style="color:#ffd93d;">•</span>═════<span style="color:#74b9ff;">•</span><br>
+        Path 2 <span style="color:#55efc4;">•</span>═════<span style="color:#e17055;">•</span>═════<span style="color:#ffd93d;">•</span><br>
+        Path 3 <span style="color:#55efc4;">•</span>═════<span style="color:#e17055;">•</span>═════<span style="color:#ffd93d;">•</span><br>
+        Path 4 <span style="color:#55efc4;">•</span>═════<span style="color:#e17055;">•</span>═════<span style="color:#ffd93d;">•</span>═════<span style="color:#74b9ff;">•</span><br>
+        <em>ALL paths share same color at each stage. Stage 1 = green, Stage 2 = orange, etc.</em>
+      </p>
+    </div>
+    <div class="path-card" style="border-color:#74b9ff;">
+      <h4 style="color:#74b9ff;">❌ Sequence — Color by position</h4>
+      <p>
+        Path 1 <span style="color:#fd79a8;">①</span>════<span style="color:#ffd93d;">②</span>════<span style="color:#55efc4;">③</span>═══<span style="color:#74b9ff;">④</span><br>
+        Path 2 <span style="color:#fd79a8;">①</span>══════<span style="color:#ffd93d;">②</span><br>
+        Path 3 <span style="color:#fd79a8;">①</span>══════<span style="color:#ffd93d;">②</span>════<span style="color:#55efc4;">③</span><br>
+        Path 4 <span style="color:#fd79a8;">①</span>════<span style="color:#ffd93d;">②</span>════<span style="color:#55efc4;">③</span>══════<span style="color:#74b9ff;">④</span>═════<span style="color:#a29bfe;">⑤</span><br>
+        <em>Color depends on step number. All 1st steps = pink, all 2nd steps = yellow, etc.</em>
+      </p>
+    </div>
+  </div>
+
+  <!-- EXAM QUESTION -->
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #e17055;">
+      <p class="label" style="color:#e17055;">🎯 Your Exam Question</p>
+      <p style="font-size:0.82rem;color:var(--text2);">
+        <strong>Question:</strong> <em>"Which Link color option has been set on the path analysis object?"</em>
+      </p>
+      <div class="option-wrong">❌ Your answer: Drop off</div>
+      <div class="option-correct">✅ Correct: <strong>Path</strong></div>
+      <div class="tip green" style="margin:4px 0 0;font-size:0.72rem;">
+        <strong>Why?</strong> Each <strong>path has its own distinct color</strong> from start to end. Path 1 = blue, Path 2 = green, Path 3 = yellow, Path 4 = purple. This is exactly what "Path" link coloring does — <em>"Displays each path as a separate group with a distinct color."</em><br><br>
+        <strong>Why not Drop off?</strong> Drop off would only have 2 colors (continuing vs drop-off). But in the diagram, EVERY path has its own unique color.
+      </div>
+    </div>
+    <div class="card" style="border-top:3px solid #00b894;">
+      <p class="label" style="color:#00b894;">🧠 Memory Trick</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <strong>P</strong>ath = <strong>P</strong>ersonal color per journey 🎨<br>
+        <strong>D</strong>rop off = <strong>D</strong>ead end vs alive 🔴🟢<br>
+        <strong>E</strong>vent = <strong>E</strong>very stage same color per type 🏷️<br>
+        <strong>S</strong>equence = <strong>S</strong>tep number color 🔢<br><br>
+        <em>"Each Path gets its own Paint job."</em>
+      </p>
+    </div>
+  </div>
+
+  <!-- DATA ROLES REFERENCE -->
+  <div class="info-box">
+    <p class="label">📋 Path Analysis: Required Data Roles</p>
+    <table class="data-table" style="font-size:0.72rem;">
+      <tr><th>Role</th><th>Data type</th><th>Purpose</th></tr>
+      <tr><td><strong>Event</strong></td><td>Category</td><td>Nodes in the diagram (web pages, courses, stages)</td></tr>
+      <tr><td><strong>Sequence order</strong></td><td>Measure or Date/Datetime</td><td>Orders the events (time, step number)</td></tr>
+      <tr><td><strong>Transaction identifier</strong></td><td>Category or Measure</td><td>Uniquely labels each object to analyze (customer ID, token)</td></tr>
+      <tr><td><strong>Weight</strong></td><td>Measure (optional)</td><td>Link width — frequency or measure value</td></tr>
+    </table>
+  </div>
+
+  <!-- KEY BOUNDARY OPTIONS -->
+  <div class="tip blue">
+    <strong>⚙️ Key Options:</strong> <em>"Using the Options pane, you can customize link color, link width, min &amp; max path length, path ranking direction, path ranking count, and compress."</em>
+  </div>
+
+</div>
+</details>
+
+</div>
+
+<a href="#" class="back-top" title="Back to top">⬆</a>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+  // ── SAME DATA for all 4 Sankey charts ──
+  var nodes = ['Page A','Page B','Page C','Page D','Page E','Cart','Checkout','Confirm','Exit'];
+  
+  var linkSource = [0,0,0, 1,1,1, 2,2, 3, 4, 5,5, 6,6, 7];
+  var linkTarget = [1,2,4, 2,3,5, 3,5, 5, 5, 6,7, 7,8, 8];
+  var linkValue  = [8,5,3, 6,4,4, 3,3, 6, 3, 5,3, 5,3, 6];
+
+  // Path colors (each path gets its own color)
+  var pathColors = ['#55efc4','#e17055','#ffd93d','#a29bfe'];
+  // Assign each link to a path
+  var pathIndex = [0,1,2, 0,1,2, 0,1, 0, 2, 0,3, 0,3, 3];
+  
+  function sankeyLayout(title, color) {
+    return {title:{text:title,font:{color:'#8b949e',size:8}},paper_bgcolor:'#0d1117',font:{color:'#8b949e',size:7},
+      margin:{l:20,r:20,t:20,b:10},height:220};
+  }
+  var gOpts = {displayModeBar:false, responsive:true};
+
+  // 1. PATH — each path its own color
+  Plotly.newPlot('sankey-path', [{
+    type:'sankey', orientation:'h',
+    node:{label:nodes,color:'#2d3039',pad:8,thickness:12,line:{color:'#3d4049',width:1}},
+    link:{source:linkSource,target:linkTarget,value:linkValue,
+      color:pathIndex.map(i=>pathColors[i].replace(')','')+',0.6)'),
+      hoverlabel:{bgcolor:'#1a1d23'}}
+  }], sankeyLayout('🔀 PATH — Each path gets its own color','#55efc4'), gOpts);
+
+  // 2. DROP OFF — continuing vs dropping (link goes to 'Exit' = drop)
+  var dropColors = linkTarget.map(t => t === 8 ? '#ff7675' : '#55efc4');
+  Plotly.newPlot('sankey-dropoff', [{
+    type:'sankey', orientation:'h',
+    node:{label:nodes,color:'#2d3039',pad:8,thickness:12,line:{color:'#3d4049',width:1}},
+    link:{source:linkSource,target:linkTarget,value:linkValue,
+      color:dropColors.map(c=>c+'99')}
+  }], sankeyLayout('🔀 DROP OFF — Continuing vs dropping','#ff7675'), gOpts);
+
+  // 3. EVENT — color by event/node type
+  var eventColors = ['#55efc4','#e17055','#ffd93d','#74b9ff','#a29bfe','#fd79a8','#00b894','#fdcb6e','#ff6b6b'];
+  var eventLinkColors = linkTarget.map(t => eventColors[t]);
+  Plotly.newPlot('sankey-event', [{
+    type:'sankey', orientation:'h',
+    node:{label:nodes,color:eventColors,pad:8,thickness:12,line:{color:'#3d4049',width:1}},
+    link:{source:linkSource,target:linkTarget,value:linkValue,
+      color:eventLinkColors.map(c=>c+'99')}
+  }], sankeyLayout('🔀 EVENT — Color by stage/node type','#ffd93d'), gOpts);
+
+  // 4. SEQUENCE — color by depth/position
+  // Calculate depth of each link (source depth)
+  function calcDepth(node, memo) {
+    if(memo[node] !== undefined) return memo[node];
+    if(node === 0) { memo[0] = 0; return 0; }
+    var parents = [];
+    for(var i=0;i<linkTarget.length;i++) if(linkTarget[i]===node) parents.push(linkSource[i]);
+    if(parents.length===0) { memo[node]=0; return 0; }
+    var d = Math.max(...parents.map(p=>calcDepth(p,memo))) + 1;
+    memo[node] = d;
+    return d;
+  }
+  var depthMemo = {};
+  var seqColors = ['#fd79a8','#ffd93d','#55efc4','#74b9ff','#a29bfe'];
+  var seqLinkColors = linkTarget.map(t => seqColors[Math.min(calcDepth(t,depthMemo),4)]);
+  Plotly.newPlot('sankey-sequence', [{
+    type:'sankey', orientation:'h',
+    node:{label:nodes,color:'#2d3039',pad:8,thickness:12,line:{color:'#3d4049',width:1}},
+    link:{source:linkSource,target:linkTarget,value:linkValue,
+      color:seqLinkColors.map(c=>c+'99')}
+  }], sankeyLayout('🔀 SEQUENCE — Color by position order','#74b9ff'), gOpts);
+
+});
+</script>
+
+</body>
+</html>

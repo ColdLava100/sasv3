@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Treemap</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+<details id="t9" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #00cec9;">
+  🟦 Treemap — Roles Explained <span class="badge badge-tree">CHARTS</span>
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+  <p style="color:var(--text2);margin-bottom:8px;font-size:0.85rem;">
+    A treemap shows <strong>part-to-whole</strong> relationships using nested rectangles (tiles). Each tile = a category, sized by a measure, colored by another measure.
+  </p>
+
+  <div id="treemap-chart" style="height:420px; background:#0d1117; border-radius:8px; margin-bottom:10px;"></div>
+
+  <div class="card-grid" style="margin-bottom:8px;">
+    <div class="card" style="border-top:3px solid #00cec9;">
+      <p class="label" style="color:#00cec9;">📋 How Treemap Roles Work</p>
+      <table class="data-table" style="font-size:0.75rem;">
+        <tr><th>Visual Element</th><th>What it shows</th><th>Role in SAS</th></tr>
+        <tr><td>🏷️ <strong>Tiles</strong> (rectangles)</td><td>Which categories exist</td><td><strong>Category</strong> (Product Line)</td></tr>
+        <tr><td>📏 <strong>Tile Size</strong></td><td>How big each tile is</td><td><strong>Size measure</strong> (Revenue) or Frequency</td></tr>
+        <tr><td>🎨 <strong>Tile Color</strong></td><td>Color gradient across tiles</td><td><strong>Color measure</strong> (Profit)</td></tr>
+      </table>
+    </div>
+    <div class="card" style="border-top:3px solid #00cec9;">
+      <p class="label" style="color:#00cec9;">🎯 Exam Question</p>
+      <p style="font-size:0.82rem;color:var(--text2);"><strong>Question:</strong> <em>"Profit is currently assigned to Color. If Profit were removed from this role, what would happen?"</em></p>
+      <div class="option-wrong">❌ Your answer: Tiles colored by frequency of Product Line</div>
+      <div class="option-correct">✅ Correct: The tiles would all be the same color.</div>
+      <div class="tip green" style="margin:4px 0 0;font-size:0.72rem;">
+        <strong>Why?</strong> No Color role assigned = no data driving colors = all tiles default color. Color and Size are <strong>independent roles</strong> — removing Color doesn't affect Size.
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <p class="label" style="color:#00cec9;">⚙️ Key Takeaways</p>
+    <div class="card-grid three" style="margin-top:4px;">
+      <div style="background:var(--bg4);border-radius:6px;padding:8px;font-size:0.75rem;">
+        <strong style="color:var(--accent1);">Category</strong><br>Defines the tiles/groups.<br>Always needed.
+      </div>
+      <div style="background:var(--bg4);border-radius:6px;padding:8px;font-size:0.75rem;">
+        <strong style="color:var(--accent2);">Size</strong><br>Controls tile area.<br>Defaults to Frequency if empty.
+      </div>
+      <div style="background:var(--bg4);border-radius:6px;padding:8px;font-size:0.75rem;">
+        <strong style="color:#00cec9;">Color 🎨</strong><br>Controls tile color gradient.<br>If empty → <strong>all same color</strong>.
+      </div>
+    </div>
+  </div>
+
+  <div class="tip purple">
+    <strong>🧠 Memory Trick:</strong><br>
+    <strong>Category</strong> = which tiles exist<br>
+    <strong>Size</strong> = how big each tile is<br>
+    <strong>Color</strong> = what color each tile is<br><br>
+    <em>"If you remove Color, you lose the rainbow — not the sizes. Size and Color are independent."</em>
+  </div>
+</div>
+</details>
+</div>
+
+<script src="../js/common.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var treemapDiv = document.getElementById('treemap-chart');
+  if (treemapDiv) {
+    var treeData = [{
+      type: 'treemap',
+      labels: ["All Products","Plush","Figurine","Game","Bead","Promo","Gift","Store","Kiosk"],
+      parents: ["","All Products","All Products","All Products","All Products","All Products","All Products","All Products","All Products"],
+      values: [100, 28, 22, 18, 10, 8, 6, 5, 3],
+      marker: {
+        colors: ["#2d3436","#00b894","#00cec9","#55efc4","#fd79a8","#e84393","#d63031","#e17055","#fdcb6e"],
+        showscale: true,
+        colorscale: [0, '#00b894', 0.5, '#55efc4', 1, '#fd79a8']
+      },
+      textinfo: 'label+value+percent root',
+      hovertemplate: '<b>%{label}</b><br>Revenue: %{value}M<br>Profit: varies<br><extra></extra>'
+    }];
+    Plotly.newPlot('treemap-chart', treeData, {
+      title:{text:'Revenue by Product Line (colored by Profit)',font:{color:'#e8eaed',size:13}},
+      paper_bgcolor:'#0d1117', plot_bgcolor:'#0d1117', margin:{l:10,r:10,t:40,b:10},
+      font:{color:'#e8eaed',size:11},
+      uniformtext:{minsize:10,mode:'show'}
+    }, {responsive:true, displayModeBar:false});
+  }
+});
+</script>
+</body>
+</html>

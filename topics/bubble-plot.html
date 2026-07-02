@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Bubble Plot</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+<details id="t8" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #e17055;">
+  🫧 Bubble Plot — Roles Explained <span class="badge badge-bubble">CHARTS</span>
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+  <p style="color:var(--text2);margin-bottom:8px;font-size:0.85rem;">
+    A bubble plot is like a scatter plot with <strong>3 dimensions</strong>: X position, Y position, and <strong>bubble size</strong> as the third measure. Colors group by category.
+  </p>
+
+  <div id="bubble-chart" style="height:400px; background:#0d1117; border-radius:8px; margin-bottom:10px;"></div>
+
+  <div class="card-grid" style="margin-bottom:8px;">
+    <div class="card" style="border-top:3px solid #e17055;">
+      <p class="label" style="color:#e17055;">📋 Chart Data Items</p>
+      <table class="data-table" style="font-size:0.75rem;">
+        <tr><th>Data Item</th><th>Chart Element</th><th>Role in SAS</th></tr>
+        <tr><td>Product Material Cost</td><td>X-axis ←→</td><td>Measures (X axis)</td></tr>
+        <tr><td>Revenue</td><td>Y-axis ↑↓</td><td>Measures (Y axis)</td></tr>
+        <tr><td>Profit</td><td>Bubble Size ⭕</td><td>Measures (Size)</td></tr>
+        <tr style="background:#1a3a2a;"><td><strong style="color:var(--accent1);">Product Line</strong></td><td><strong style="color:var(--accent1);">Bubble Color 🎨</strong></td><td><strong style="color:var(--accent1);">Group ✅</strong></td></tr>
+      </table>
+    </div>
+    <div class="card" style="border-top:3px solid #e17055;">
+      <p class="label" style="color:#e17055;">🎯 Answer Options</p>
+      <div class="option-wrong">❌ a. Revenue → Lattice rows<br><span style="font-size:0.7rem;">Revenue = Y-axis = Measures</span></div>
+      <div class="option-wrong">❌ b. Profit → Animation<br><span style="font-size:0.7rem;">Profit = Size = Measures</span></div>
+      <div class="option-correct">✅ c. Product Line → Group<br><span style="font-size:0.7rem;">Product Line = colors = Group role ✅</span></div>
+      <div class="option-wrong">❌ d. Product Material Cost → Measures<br><span style="font-size:0.7rem;">It IS a measure, but Group is the specific correct role here</span></div>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <p class="label" style="color:#e17055;">⚙️ Bubble Plot Roles (from course)</p>
+    <p style="font-size:0.78rem;color:var(--text2);margin-bottom:4px;"><em>"Bubble plots require three measures: X axis, Y axis, and Size. Additionally, bubble plots can contain groups, accept the Color role, use lattice columns and rows, specify data tip values, display animation, and support the hidden data role."</em></p>
+    <div class="card-grid three">
+      <div style="background:var(--bg4);border-radius:6px;padding:8px;">
+        <strong style="color:var(--accent1);">Required:</strong><br>
+        <span style="font-size:0.72rem;">• X axis measure<br>• Y axis measure<br>• Size measure</span>
+      </div>
+      <div style="background:var(--bg4);border-radius:6px;padding:8px;">
+        <strong style="color:var(--accent2);">Optional:</strong><br>
+        <span style="font-size:0.72rem;">• <strong style="color:var(--accent1);">Group</strong> (color 🎨)<br>• Color • Lattice cols/rows</span>
+      </div>
+      <div style="background:var(--bg4);border-radius:6px;padding:8px;">
+        <strong style="color:var(--accent4);">Also available:</strong><br>
+        <span style="font-size:0.72rem;">• Animation ⏱️<br>• Data tip values • Hidden</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip green">
+    <strong>🧠 Memory Trick:</strong><br>
+    • <strong>X</strong> → Product Material Cost ← <strong>M</strong>easure<br>
+    • <strong>Y</strong> → Revenue ← <strong>M</strong>easure<br>
+    • <strong>Size</strong> → Profit ← <strong>M</strong>easure<br>
+    • <strong>Color</strong> → Product Line ← <strong>G</strong>roup 🎨<br><br>
+    <em>"3 Measures make the bubble. The Group gives it color."</em>
+  </div>
+</div>
+</details>
+</div>
+
+<script src="../js/common.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var bubbleDiv = document.getElementById('bubble-chart');
+  if (bubbleDiv) {
+    var products = ["Bead","Figurine","Game","Plush","Kiosk","Promo","Store"];
+    var colors = {"Bead":"#3498db","Figurine":"#e67e22","Game":"#2ecc71","Plush":"#9b59b6","Kiosk":"#f1c40f","Promo":"#e74c3c","Store":"#8B4513"};
+    var traces = [];
+    products.forEach(function(p) {
+      var n = 5+Math.floor(Math.random()*8), x=[], y=[], s=[];
+      for (var i=0;i<n;i++) { x.push(0.1+Math.random()*0.8); y.push(0.1+Math.random()*0.8); s.push(5+Math.random()*25); }
+      traces.push({x:x,y:y,mode:'markers',type:'scatter',name:p,marker:{size:s,color:colors[p],line:{color:'#fff',width:1},sizeref:0.8,sizemode:'diameter'},text:s.map(function(v){return 'Profit: $'+v.toFixed(1)+'M'}),hoverinfo:'x+y+text+name'});
+    });
+    Plotly.newPlot('bubble-chart', traces, {
+      title:{text:'Revenue by Product Material Cost sized by Profit',font:{color:'#e8eaed',size:13}},
+      xaxis:{title:'Product Material Cost (millions)',range:[0,1],gridcolor:'#21262d',color:'#8b949e',tickformat:'.2f'},
+      yaxis:{title:'Revenue (millions)',range:[0,1],gridcolor:'#21262d',color:'#8b949e',tickformat:'.2f'},
+      paper_bgcolor:'#0d1117', plot_bgcolor:'#0d1117', margin:{l:50,r:20,t:40,b:40},
+      font:{color:'#8b949e'}, legend:{font:{color:'#8b949e',size:9},orientation:'h',y:-0.2},
+      hovermode:'closest', showlegend:true
+    }, {responsive:true, displayModeBar:false});
+  }
+});
+</script>
+</body>
+</html>

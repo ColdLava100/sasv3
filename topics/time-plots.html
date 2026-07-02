@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Time Plots</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+<details id="t13" class="topic" open>
+<summary class="topic-header" style="background:#0d3b3b;"><span class="badge badge-time">📈</span> Time Plots — Line Chart vs Time Series vs Comparative</summary>
+<div class="topic-body">
+
+  <!-- INTRO -->
+  <div class="info-box">
+    <p class="label">📈 Time Plots — 3 Types for Trends Over Time</p>
+    <p>From course: <em>"Time plots are located in the Graphs group in the Objects pane and include comparative time series plots, line charts, and time series plots."</em> Time plots are useful for viewing trends over time.</p>
+  </div>
+
+  <!-- COMPARISON TABLE -->
+  <div class="card-grid" style="margin-bottom:6px;">
+    <div class="card" style="border-top:3px solid #55efc4;">
+      <p class="label" style="color:#55efc4;">📈 Line Chart</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Line charts require a category and a measure."</em><br><br>
+        <strong>X-axis:</strong> Any category (age, product, region)<br>
+        <strong>Measures:</strong> 1 or more<br>
+        <strong>Y-axes:</strong> 1 (single)<br>
+        <strong>Group role:</strong> ✅ Yes<br>
+        <strong>Lattice:</strong> ✅ Yes<br><br>
+        <strong>Best for:</strong> Univariate or multivariate analysis across any category
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #ff7675;">
+      <p class="label" style="color:#ff7675;">⏱️ Time Series Plot</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Time series plots require a date or datetime data item for the Time axis and one measure."</em><br><br>
+        <strong>X-axis:</strong> Date/Datetime ✅ (required)<br>
+        <strong>Measures:</strong> Exactly 1<br>
+        <strong>Y-axes:</strong> 1 (single)<br>
+        <strong>Group role:</strong> ✅ Yes<br>
+        <strong>Lattice:</strong> ❌ No<br><br>
+        <strong>Best for:</strong> Seasonal patterns, peaks, troughs
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #74b9ff;">
+      <p class="label" style="color:#74b9ff;">📊 Comparative Time Series</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Comparative time series plots require a date or datetime data item for the Time axis and two measures."</em><br><br>
+        <strong>X-axis:</strong> Date/Datetime ✅ (required)<br>
+        <strong>Measures:</strong> Exactly 2<br>
+        <strong>Y-axes:</strong> 2 (left + right, separate)<br>
+        <strong>Group role:</strong> ❌ No<br>
+        <strong>Lattice:</strong> ❌ No<br><br>
+        <strong>Best for:</strong> Identifying anomalies between two series
+      </p>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE PLOTLY CHARTS -->
+  <div class="info-box">
+    <p class="label">📊 Interactive: All 3 Time Plots Compared</p>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:6px;">
+    <div><div id="chart-linechart" style="height:200px;background:#0d1117;border-radius:6px;"></div><div style="font-size:0.65rem;text-align:center;color:#55efc4;margin-top:2px;">📈 Line Chart — any category</div></div>
+    <div><div id="chart-timeseries" style="height:200px;background:#0d1117;border-radius:6px;"></div><div style="font-size:0.65rem;text-align:center;color:#ff7675;margin-top:2px;">⏱️ Time Series Plot — date axis, 1 measure</div></div>
+    <div><div id="chart-compare" style="height:200px;background:#0d1117;border-radius:6px;"></div><div style="font-size:0.65rem;text-align:center;color:#74b9ff;margin-top:2px;">📊 Comparative — 2 measures, 2 Y-axes</div></div>
+  </div>
+
+  <!-- KEY EXAM POINTS -->
+  <div class="tip red">
+    <strong>⚠️ Exam Tip:</strong> Line Chart can use ANY category (not just time). Time Series Plot specifically needs a DATE/DATETIME — it has a "Time axis" role, not a "Category" role. Comparative Time Series needs EXACTLY 2 measures — one for the left axis, one for the right.
+  </div>
+
+  <!-- MNEMONIC -->
+  <div class="tip green">
+    <strong>🧠 Mnemonic:</strong> "Line = L lots of categories. Time = Takes dates, 1 measure. Comparative = Compares 2 on 2 axes."
+  </div>
+
+  <!-- KEY DIFFERENCES -->
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #e17055;">
+      <p class="label" style="color:#e17055;">🎯 Choose the Right One</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <strong>Q:</strong> "Am I comparing two or more things over time?"<br>
+        From course: <em>"For comparisons over time, use a line chart or a time series plot."</em><br><br>
+        <strong>🔹 No date? Use Line Chart</strong> — X-axis can be age groups, product lines, regions<br>
+        <strong>🔹 Date + 1 measure? Use Time Series Plot</strong> — Perfect for seasonal trends<br>
+        <strong>🔹 Date + 2 measures? Use Comparative Time Series</strong> — Different scales, two Y-axes
+      </p>
+    </div>
+  </div>
+
+</div>
+</details>
+</div>
+
+<script src="../js/common.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  function lineLayout(title, color) {
+    return {title:{text:title,font:{color:'#8b949e',size:9}},paper_bgcolor:'#0d1117',plot_bgcolor:'#0d1117',
+      margin:{l:30,r:10,t:24,b:30},font:{color:'#8b949e',size:8},showlegend:false,
+      xaxis:{gridcolor:'#21262d',color:'#8b949e'},yaxis:{gridcolor:'#21262d',color:'#8b949e'}};
+  }
+  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'];
+  var rev = [30,42,38,55,48,62,58,70];
+  var profit = [8,12,10,15,13,18,16,22];
+  var cats = ['Electronics','Clothing','Food','Books','Toys','Sports','Home','Garden'];
+  var catVals = [45,62,38,55,48,72,58,80];
+  var gOpts3 = {displayModeBar:false, responsive:true};
+
+  // 1. Line Chart
+  Plotly.newPlot('chart-linechart', [{type:'scatter',x:cats,y:catVals,mode:'lines+markers',
+    line:{color:'#55efc4',width:2},marker:{color:'#55efc4',size:5},
+    fill:'tozeroy',fillcolor:'rgba(85,239,196,0.1)'}],
+    Object.assign(lineLayout('📈 Line Chart — by Category','#55efc4'),{yaxis:{range:[0,100],gridcolor:'#21262d',color:'#8b949e'},
+    xaxis:{gridcolor:'#21262d',color:'#8b949e'}}), gOpts3);
+
+  // 2. Time Series Plot
+  Plotly.newPlot('chart-timeseries', [{type:'scatter',x:months,y:rev,mode:'lines+markers',
+    line:{color:'#ff7675',width:2},marker:{color:'#ff7675',size:5},
+    fill:'tozeroy',fillcolor:'rgba(255,118,117,0.1)'}],
+    Object.assign(lineLayout('⏱️ Time Series — Revenue by Month','#ff7675'),{yaxis:{gridcolor:'#21262d',color:'#8b949e'},
+    xaxis:{gridcolor:'#21262d',color:'#8b949e'}}), gOpts3);
+
+  // 3. Comparative Time Series (2 Y-axes)
+  Plotly.newPlot('chart-compare', [
+    {type:'scatter',x:months,y:rev,mode:'lines+markers',name:'Revenue',
+     line:{color:'#74b9ff',width:2},marker:{color:'#74b9ff',size:4},yaxis:'y'},
+    {type:'scatter',x:months,y:profit,mode:'lines+markers',name:'Profit %',
+     line:{color:'#feca57',width:2, dash:'dot'},marker:{color:'#feca57',size:4},yaxis:'y2'}
+  ], {
+    title:{text:'📊 Comparative — Revenue (left) vs Profit % (right)',font:{color:'#8b949e',size:9}},
+    paper_bgcolor:'#0d1117', plot_bgcolor:'#0d1117',
+    margin:{l:30,r:30,t:24,b:30}, font:{color:'#8b949e',size:8}, showlegend:false,
+    xaxis:{gridcolor:'#21262d',color:'#8b949e'},
+    yaxis:{title:'Revenue',range:[20,80],gridcolor:'#21262d',color:'#8b949e',titlefont:{size:8,color:'#74b9ff'}},
+    yaxis2:{title:'Profit %',range:[0,30],overlaying:'y',side:'right',gridcolor:'#21262d',color:'#8b949e',titlefont:{size:8,color:'#feca57'}}
+  }, gOpts3);
+});
+</script>
+</body>
+</html>

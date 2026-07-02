@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Geo Maps</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+<details id="t11" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #e17055;">
+  🗺️ Geo Maps — Types &amp; Differences <span class="badge badge-geo">MAPS</span>
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+  <p style="color:var(--text2);margin-bottom:8px;font-size:0.85rem;">
+    Geo maps overlay data on geographic maps. The type depends on <strong>geometry</strong>: points, polylines, or polygons.
+  </p>
+
+  <!-- 3 GEO MAP TYPES OVERVIEW -->
+  <div class="card-grid three" style="margin-bottom:10px;">
+    <div class="card" style="border-top:3px solid #00b894;text-align:center;">
+      <h3 style="color:#00b894;">📍 POINTS</h3>
+      <p style="font-size:0.75rem;color:var(--text2);">Pinpoint locations<br>● Geo Bubble<br>● Geo Coordinate<br>● Geo Pie</p>
+      <div style="font-size:0.6rem;color:var(--text3);">Need: Lat/Lon OR Lookup</div>
+    </div>
+    <div class="card" style="border-top:3px solid #e17055;text-align:center;">
+      <h3 style="color:#e17055;">📏 POLYLINES</h3>
+      <p style="font-size:0.75rem;color:var(--text2);">Display paths/routes<br>═══ Geo Line<br>═══ Geo Line-Coord<br>🔗 Geo Network</p>
+      <div style="font-size:0.6rem;color:var(--text3);">Need: Lookup OR Provider</div>
+    </div>
+    <div class="card" style="border-top:3px solid #6c5ce7;text-align:center;">
+      <h3 style="color:#6c5ce7;">🟦 POLYGONS</h3>
+      <p style="font-size:0.75rem;color:var(--text2);">Compare regions<br>█ Geo Region<br>█ Geo Region-Coord<br>🗺️ Geo Cluster/Contour</p>
+      <div style="font-size:0.6rem;color:var(--text3);">Need: Lookup OR Provider</div>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE GEO CHARTS - ALL 10 SUB-TYPES -->
+  <div class="info-box">
+    <p class="label" style="color:#e17055;">📊 All 10 Geo Map Sub-Types — Visual Comparison</p>
+    <p style="font-size:0.78rem;color:var(--text2);"><em>The same US city data displayed with each geo map type. Hover to see values.</em></p>
+  </div>
+
+  <!-- POINT CATEGORY -->
+  <div style="background:#1a3a2a;border-radius:6px;padding:6px 10px;margin:6px 0;font-size:0.78rem;font-weight:700;color:#00b894;">📍 POINT MAPS — Pinpoint locations</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:8px;">
+    <div><div id="geo-bubble" style="height:200px;background:#0d1117;border-radius:6px;"></div><div style="font-size:0.65rem;text-align:center;color:#00b894;margin-top:2px;">🫧 Geo Bubble — sized bubbles</div></div>
+    <div><div id="geo-coord" style="height:200px;background:#0d1117;border-radius:6px;"></div><div style="font-size:0.65rem;text-align:center;color:#00b894;margin-top:2px;">📍 Geo Coordinate — uniform dots</div></div>
+    <div><div id="geo-pie" style="height:200px;background:#0d1117;border-radius:6px;"></div><div style="font-size:0.65rem;text-align:center;color:#00b894;margin-top:2px;">🥧 Geo Pie — mini pie charts</div></div>
+  </div>
+
+  <!-- POLYLINE CATEGORY -->
+  <div style="background:#3d2a1a;border-radius:6px;padding:6px 10px;margin:6px 0;font-size:0.78rem;font-weight:700;color:#e17055;">📏 POLYLINE MAPS — Display paths/routes</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:8px;">
+    <div><div id="geo-line" style="height:200px;background:#0d1117;border-radius:6px;"></div><div style="font-size:0.65rem;text-align:center;color:#e17055;margin-top:2px;">📏 Geo Line — paths only</div></div>
+    <div><div id="geo-linecoord" style="height:200px;background:#0d1117;border-radius:6px;"></div><div style="font-size:0.65rem;text-align:center;color:#e17055;margin-top:2px;">📌 Geo Line-Coordinate — paths + stops</div></div>
+    <div><div id="geo-network" style="height:200px;background:#0d1117;border-radius:6px;"></div><div style="font-size:0.65rem;text-align:center;color:#e17055;margin-top:2px;">🔗 Geo Network — connected nodes</div></div>
+  </div>
+
+  <!-- POLYGON CATEGORY -->
+  <div style="background:#2a1a3a;border-radius:6px;padding:6px 10px;margin:6px 0;font-size:0.78rem;font-weight:700;color:#6c5ce7;">🟦 POLYGON MAPS — Compare regions</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:6px;margin-bottom:8px;">
+    <div><div id="geo-region" style="height:180px;background:#0d1117;border-radius:6px;"></div><div style="font-size:0.65rem;text-align:center;color:#6c5ce7;margin-top:2px;">🟦 Geo Region — filled regions</div></div>
+    <div><div id="geo-regioncoord" style="height:180px;background:#0d1117;border-radius:6px;"></div><div style="font-size:0.65rem;text-align:center;color:#6c5ce7;margin-top:2px;">📌 Geo Region-Coord — regions + dots</div></div>
+    <div><div id="geo-cluster" style="height:180px;background:#0d1117;border-radius:6px;"></div><div style="font-size:0.65rem;text-align:center;color:#6c5ce7;margin-top:2px;">🗺️ Geo Cluster — grouped regions</div></div>
+    <div><div id="geo-contour" style="height:180px;background:#0d1117;border-radius:6px;"></div><div style="font-size:0.65rem;text-align:center;color:#6c5ce7;margin-top:2px;">〰️ Geo Contour — contour lines</div></div>
+  </div>
+
+  <!-- 3 WAYS TO CREATE GEOGRAPHY DATA -->
+  <div class="info-box">
+    <p class="label" style="color:#e17055;">📋 3 Ways to Create a Geography Data Item</p>
+    <table class="data-table" style="font-size:0.75rem;">
+      <tr><th>Method</th><th>What it does</th><th>Best for</th><th>Works with</th></tr>
+      <tr><td><strong>1. Geographic name/code lookup</strong></td><td>Built-in mapping of names, codes, zip codes</td><td>Countries, states, standard regions</td><td>All geo maps ✅</td></tr>
+      <tr><td><strong>2. Latitude &amp; Longitude</strong></td><td>Uses coordinate columns from your data</td><td>Store locations, parks, custom points</td><td>Point maps only ❌ No polylines/regions</td></tr>
+      <tr><td><strong>3. Geographic data provider</strong></td><td>External data source (ESRI/CAS) with custom shapes</td><td>Custom routes, districts, boundaries</td><td>Polylines &amp; Polygons ✅</td></tr>
+    </table>
+    <div class="tip red" style="margin:6px 0 0;font-size:0.72rem;">
+      <strong>⚠️ Rule:</strong> <em>"Geography data items created using latitude and longitude in data cannot be used in geo region maps."</em>
+    </div>
+  </div>
+
+  <!-- YOUR EXAM QUESTION -->
+  <div class="card-grid" style="margin-bottom:8px;">
+    <div class="card" style="border-top:3px solid #e17055;">
+      <p class="label" style="color:#e17055;">🎯 Your Exam Question</p>
+      <p style="font-size:0.82rem;color:var(--text2);"><strong>Question:</strong> <em>"Which is required to create a geo line map?"</em></p>
+      <div class="option-wrong">❌ Your answer: Latitude and longitude values in the data</div>
+      <div class="option-correct">✅ Correct: Geographic data provider + Geographic name/code lookup</div>
+      <div class="tip green" style="margin:4px 0 0;font-size:0.72rem;">
+        <strong>Why?</strong> Geo Line maps need <strong>polylines</strong> (routes/paths). Lat/Lon gives <strong>points</strong> only, not lines. You need a geographic data provider (custom routes) or name/code lookup (standard routes).
+      </div>
+    </div>
+    <div class="card" style="border-top:3px solid #00b894;">
+      <p class="label" style="color:#00b894;">🧠 Memory Trick</p>
+      <p style="font-size:0.82rem;color:var(--text2);">
+        <strong>Points</strong> = Lat/Lon ✅<br>
+        <strong>Lines</strong> = Lookup or Provider ✅<br>
+        <strong>Regions</strong> = Lookup or Provider ✅<br><br>
+        <em>"Lat/Lon can only give you dots. For lines and areas, you need lookup or provider."</em>
+      </p>
+    </div>
+  </div>
+
+  <!-- FULL TYPE REFERENCE -->
+  <div class="info-box">
+    <p class="label" style="color:#e17055;">📋 All Geo Map Types in SAS VA</p>
+    <table class="data-table" style="font-size:0.72rem;">
+      <tr><th>Category</th><th>Geo Map Type</th><th>Geometry</th><th>Best for</th><th>Geography source</th></tr>
+      <tr><td rowspan="3" style="background:#1a3a2a;"><strong style="color:#00b894;">POINT</strong></td><td>Geo Bubble</td><td>● Bubbles</td><td>Unevenly distributed data</td><td>Lat/Lon or Lookup</td></tr>
+      <tr><td>Geo Coordinate</td><td>● Dots</td><td>Spatial patterns, even data</td><td>Lat/Lon or Lookup</td></tr>
+      <tr><td>Geo Pie</td><td>● Pie charts</td><td>Few groups by location</td><td>Lat/Lon or Lookup</td></tr>
+      <tr><td rowspan="3" style="background:#3d2a1a;"><strong style="color:#e17055;">POLYLINE</strong></td><td>Geo Line</td><td>═══ Lines</td><td>Paths and routes</td><td>Lookup or Provider</td></tr>
+      <tr><td>Geo Line-Coordinate</td><td>═══ + ●</td><td>Routes with stops</td><td>Lookup or Provider</td></tr>
+      <tr><td>Geo Network</td><td>🔗 Network</td><td>Connected networks</td><td>Lookup or Provider</td></tr>
+      <tr><td rowspan="4" style="background:#2a1a3a;"><strong style="color:#6c5ce7;">POLYGON</strong></td><td>Geo Region</td><td>█ Filled</td><td>Comparing regions</td><td>Lookup or Provider</td></tr>
+      <tr><td>Geo Region-Coordinate</td><td>█ + ●</td><td>Regions with points</td><td>Lookup or Provider</td></tr>
+      <tr><td>Geo Cluster</td><td>🗺️ Grouped</td><td>Grouped regions</td><td>Lookup or Provider</td></tr>
+      <tr><td>Geo Contour</td><td>〰️ Lines</td><td>Contour over map</td><td>Lookup or Provider</td></tr>
+    </table>
+  </div>
+</div>
+</details>
+</div>
+
+<script src="../js/common.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  function geoLayout(title, h) {
+    return {title:{text:title,font:{color:'#8b949e',size:9}},geo:{scope:'usa',showland:true,landcolor:'#1a2a3a',
+      coastlinecolor:'#3d4049',showlakes:true,lakecolor:'#0d1117',bgcolor:'#0d1117',projection:{type:'albers usa'}},
+      paper_bgcolor:'#0d1117',margin:{l:5,r:5,t:20,b:5},font:{color:'#8b949e',size:8},showlegend:false};
+  }
+  var geoCities = [
+    {c:'New York',lon:-73.94,lat:40.66},{c:'Los Angeles',lon:-118.24,lat:34.05},
+    {c:'Chicago',lon:-87.62,lat:41.88},{c:'Miami',lon:-80.19,lat:25.76},
+    {c:'San Francisco',lon:-122.42,lat:37.77},{c:'Houston',lon:-95.36,lat:29.76},
+    {c:'Seattle',lon:-122.33,lat:47.61},{c:'Denver',lon:-104.99,lat:39.74},
+    {c:'Phoenix',lon:-112.07,lat:33.45},{c:'Atlanta',lon:-84.39,lat:33.75}
+  ];
+  var lonAll = geoCities.map(c=>c.lon), latAll = geoCities.map(c=>c.lat);
+  var names = geoCities.map(c=>c.c);
+  var gOpts2 = {displayModeBar:false, responsive:true};
+
+  // 1. Geo Bubble
+  Plotly.newPlot('geo-bubble', [{type:'scattergeo',lon:lonAll,lat:latAll,mode:'markers',
+    text:names.map((c,i)=>c+': $'+(5+Math.random()*20).toFixed(1)+'M'),marker:{size:[8,6,12,10,7,9,5,4,6,7].map(s=>s*2.5),color:'#00b894',
+    sizeref:0.2,sizemode:'diameter',line:{color:'#fff',width:0.5}}}], geoLayout('🫧 Geo Bubble',200), gOpts2);
+  // 2. Geo Coordinate
+  Plotly.newPlot('geo-coord', [{type:'scattergeo',lon:lonAll,lat:latAll,mode:'markers',
+    text:names,marker:{size:5,color:'#00b894',line:{color:'#fff',width:0.5}}}], geoLayout('📍 Geo Coordinate',200), gOpts2);
+  // 3. Geo Pie
+  var pieColors = ['#ff6b6b','#feca57','#48dbfb','#ff9ff3','#54a0ff','#5f27cd','#01a3a4','#f368e0','#ff9f43','#00d2d3'];
+  Plotly.newPlot('geo-pie', pieColors.map((c,i)=>[1,2,3].map(j=>({type:'scattergeo',lon:[lonAll[i]+0.02*(j-1)],lat:[latAll[i]+0.02*(j-1)],
+    mode:'markers',marker:{size:2.5,color:c},showlegend:false,hoverinfo:'none',name:''}))).flat(),
+    Object.assign(geoLayout('🥧 Geo Pie',200),{title:{text:'🥧 Geo Pie',font:{color:'#8b949e',size:9}}}), gOpts2);
+
+  // 4. Geo Line
+  var edges = [[0,1],[0,2],[2,3],[1,4],[4,5],[6,1],[7,2],[8,4],[9,0]];
+  var lons=[],lats=[];
+  edges.forEach(e=>{lons.push(lonAll[e[0]],lonAll[e[1]],null);lats.push(latAll[e[0]],latAll[e[1]],null);});
+  Plotly.newPlot('geo-line', [{type:'scattergeo',lon:lons,lat:lats,mode:'lines',line:{color:'#e17055',width:2},hoverinfo:'none'},
+    {type:'scattergeo',lon:lonAll,lat:latAll,mode:'markers',marker:{size:3,color:'#ffd93d'},hoverinfo:'none'}],
+    geoLayout('📏 Geo Line',200), gOpts2);
+  // 5. Geo Line-Coordinate
+  Plotly.newPlot('geo-linecoord', [{type:'scattergeo',lon:lons,lat:lats,mode:'lines',line:{color:'#e17055',width:2},hoverinfo:'none'},
+    {type:'scattergeo',lon:lonAll,lat:latAll,mode:'markers',marker:{size:6,color:'#ffd93d',line:{color:'#fff',width:0.5}},text:names}],
+    geoLayout('📌 Geo Line-Coordinate',200), gOpts2);
+  // 6. Geo Network
+  var netEdges = [];
+  for(var i=0;i<geoCities.length;i++) for(var j=i+1;j<geoCities.length;j+=2) netEdges.push([i,j]);
+  var nlons=[],nlats=[];
+  netEdges.forEach(e=>{nlons.push(lonAll[e[0]],lonAll[e[1]],null);nlats.push(latAll[e[0]],latAll[e[1]],null);});
+  Plotly.newPlot('geo-network', [{type:'scattergeo',lon:nlons,lat:nlats,mode:'lines',line:{color:'#e17055',width:1},hoverinfo:'none'},
+    {type:'scattergeo',lon:lonAll,lat:latAll,mode:'markers',marker:{size:4,color:'#ffd93d'},text:names}],
+    geoLayout('🔗 Geo Network',200), gOpts2);
+
+  // 7. Geo Region
+  Plotly.newPlot('geo-region', [{type:'choropleth',locationmode:'USA-states',locations:['CA','TX','NY','FL','IL','PA','OH','GA','NC','MI'],
+    z:[8.5,6.2,4.5,3.8,3.2,2.8,2.5,2.2,1.8,1.5],text:['CA','TX','NY','FL','IL','PA','OH','GA','NC','MI'],
+    colorscale:[[0,'#2a1a3a'],[0.5,'#6c5ce7'],[1,'#a29bfe']],colorbar:{thickness:8,len:0.5,tickfont:{size:7,color:'#8b949e'}}}],
+    geoLayout('🟦 Geo Region',180), gOpts2);
+  // 8. Geo Region-Coordinate
+  Plotly.newPlot('geo-regioncoord', [{type:'choropleth',locationmode:'USA-states',locations:['CA','TX','NY','FL','IL','PA','OH','GA','NC','MI'],
+    z:[8.5,6.2,4.5,3.8,3.2,2.8,2.5,2.2,1.8,1.5],colorscale:[[0,'#2a1a3a'],[0.5,'#6c5ce7'],[1,'#a29bfe']],colorbar:{thickness:8,len:0.5,tickfont:{size:7,color:'#8b949e'}},showlegend:false},
+    {type:'scattergeo',lon:lonAll,lat:latAll,mode:'markers',
+    marker:{size:4,color:'#ffd93d',line:{color:'#fff',width:0.5}},text:names}],
+    geoLayout('📌 Geo Region-Coordinate',180), gOpts2);
+
+  // 9. Geo Cluster
+  var clustered = [[0,1,6],[2,7],[3,9],[4,8],[5]];
+  var clons=[],clats=[],cnames=[],csize=[];
+  clustered.forEach(function(g,i){
+    var cx=g.reduce((s,j)=>s+lonAll[j],0)/g.length;
+    var cy=g.reduce((s,j)=>s+latAll[j],0)/g.length;
+    clons.push(cx);clats.push(cy);cnames.push('Cluster '+(i+1)+': '+g.length+' cities');csize.push(8+g.length*3);
+  });
+  Plotly.newPlot('geo-cluster', [{type:'scattergeo',lon:clons,lat:clats,mode:'markers',
+    marker:{size:csize,color:'#6c5ce7',line:{color:'#fff',width:1}},text:cnames}],
+    geoLayout('🗺️ Geo Cluster',180), gOpts2);
+
+  // 10. Geo Contour
+  var gridX=[],gridY=[],gridZ=[];
+  for(var x=-130;x<-65;x+=3){
+    for(var y=25;y<50;y+=2){
+      var d=0;
+      geoCities.forEach(function(c){var dx=c.lon-x,dy=c.lat-y;d+=Math.exp(-(dx*dx+dy*dy)/200);});
+      gridX.push(x);gridY.push(y);gridZ.push(d);
+    }
+  }
+  Plotly.newPlot('geo-contour', [{type:'contour',x:[...new Set(gridX)],y:[...new Set(gridY)].reverse(),
+    z:Array.from({length:13},(_,iy)=>Array.from({length:22},(_,ix)=>{
+      var d=0;geoCities.forEach(function(c){
+        var dx=c.lon-(-130+ix*3),dy=c.lat-(25+iy*2);d+=Math.exp(-(dx*dx+dy*dy)/200);});return d;})),
+    colorscale:[[0,'#0d1117'],[0.3,'#2a1a3a'],[0.6,'#6c5ce7'],[1,'#a29bfe']],
+    contours:{coloring:'fill'},showscale:false}],
+    Object.assign(geoLayout('〰️ Geo Contour',180),{geo:{scope:'usa',showland:true,landcolor:'#1a2a3a',
+      coastlinecolor:'#3d4049',bgcolor:'#0d1117',projection:{type:'albers usa'}}}), gOpts2);
+});
+</script>
+</body>
+</html>

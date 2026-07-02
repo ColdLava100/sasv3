@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Calculated Data Items</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+<details id="t14" class="topic" open>
+<summary class="topic-header" style="background:#3d1a2a;"><span class="badge badge-calc">🧮</span> Calculated Data Items & Aggregated Measures</summary>
+<div class="topic-body">
+
+  <div class="info-box">
+    <p class="label">🧮 Calculated Data Item vs Aggregated Measure — The Core Difference</p>
+    <p>Both are created from the <strong>New data item</strong> menu. But <strong>WHEN</strong> they calculate is different.</p>
+  </div>
+
+  <!-- CORE DIFFERENCE -->
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #55efc4;">
+      <p class="label" style="color:#55efc4;">🧮 Calculated Data Item</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <strong>Evaluated on:</strong> Detail data (row by row)<br>
+        <strong>Aggregation function?</strong> ❌ Not required<br>
+        <strong>Preview results?</strong> ✅ Yes<br>
+        <strong>Result type:</strong> Measure, Category, or Date/Time<br>
+        <strong>Scoped expression?</strong> ❌ No<br><br>
+        <em>"For a calculated data item, the expression is evaluated on detail data."</em><br><br>
+        <strong>Example: Revenue − Cost</strong><br>
+        → Each row: $100 − $60 = <strong>$40</strong>. Then SAS aggregates the results.<br>
+        → Good for: Adding surcharges, creating profit margins, concatenating names
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #ff7675;">
+      <p class="label" style="color:#ff7675;">📊 Aggregated Measure</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <strong>Evaluated on:</strong> Aggregated data (after grouping)<br>
+        <strong>Aggregation function?</strong> ✅ REQUIRED (SUM, AVG, COUNT, etc.)<br>
+        <strong>Preview results?</strong> ❌ No<br>
+        <strong>Result type:</strong> Always Aggregated Measure<br>
+        <strong>Scoped expression?</strong> ✅ Yes (different formulas per category)<br><br>
+        <em>"For an aggregated measure, the expression is evaluated on aggregated data."</em><br><br>
+        <strong>Example: Profit % of Total</strong><br>
+        → First group and SUM: Sports=$300, Toys=$200. THEN divide: 300÷500 = <strong>60%</strong><br>
+        → Good for: Percent of total, period differences, running totals
+      </p>
+    </div>
+  </div>
+
+  <!-- VISUAL EXAMPLE -->
+  <div class="info-box">
+    <p class="label" style="color:#e17055;">🎯 Same Data, Different Results</p>
+  </div>
+  <table class="data-table" style="font-size:0.72rem;">
+    <tr><th>Data</th><th>Product</th><th>Region</th><th>Sales</th></tr>
+    <tr><td>Row 1</td><td>Sports</td><td>North</td><td>$100</td></tr>
+    <tr><td>Row 2</td><td>Sports</td><td>South</td><td>$200</td></tr>
+    <tr><td>Row 3</td><td>Toys</td><td>North</td><td>$80</td></tr>
+    <tr><td>Row 4</td><td>Toys</td><td>South</td><td>$120</td></tr>
+  </table>
+
+  <div class="card-grid" style="margin-top:6px;">
+    <div class="card" style="border-top:3px solid #55efc4;">
+      <p class="label" style="color:#55efc4;">🧮 Calculated: Sales + $10 Surcharge</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        Row by row: $100→$110, $200→$210, $80→$90, $120→$130<br>
+        Then crosstab shows:<br>
+        &nbsp;&nbsp;&nbsp;North&nbsp;&nbsp;South<br>
+        Sports $110 &nbsp;&nbsp;$210<br>
+        Toys&nbsp;&nbsp;&nbsp;$90 &nbsp;&nbsp;$130<br>
+        <em>"Calculate first, then aggregate."</em>
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #ff7675;">
+      <p class="label" style="color:#ff7675;">📊 Aggregated: % of Total Sales</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        First sum by group: Sports/North=$100, Sports/South=$200...<br>
+        THEN divide by total ($500):<br>
+        &nbsp;&nbsp;&nbsp;North&nbsp;&nbsp;South<br>
+        Sports 20%&nbsp;&nbsp;40%<br>
+        Toys&nbsp;&nbsp;&nbsp;16%&nbsp;&nbsp;24%<br>
+        <em>"Aggregate first, then calculate."</em>
+      </p>
+    </div>
+  </div>
+
+  <!-- QUICK REFERENCE -->
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #00b894;">
+      <p class="label" style="color:#00b894;">🧠 Quick Decision Guide</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <strong>Use Calculated Item when:</strong><br>
+        → Adding a surcharge to each sale<br>
+        → Creating "Full Name = First + Last"<br>
+        → Revenue − Cost per product<br><br>
+        <strong>Use Aggregated Measure when:</strong><br>
+        → Each product's % of total sales<br>
+        → Difference from previous period<br>
+        → Running totals or cumulative sums<br><br>
+        <em>"Calculate first, then aggregate = Calculated Item. Aggregate first, then calculate = Aggregated Measure."</em>
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #6c5ce7;">
+      <p class="label" style="color:#6c5ce7;">⚙️ Aggregated Measure Contexts</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        Two contexts when defining a formula:<br><br>
+        <strong>By Group</strong> — Calculates per subset of data<br>
+        <em>SUM(ByGroup, Profit)</em> → sums profit for each product<br><br>
+        <strong>For All</strong> — Calculates for entire data (after filtering)<br>
+        <em>SUM(ForAll, Profit)</em> → total profit across everything<br><br>
+        Combined: <em>SUM(ByGroup, Profit) / SUM(ForAll, Profit)</em> = % of total
+      </p>
+    </div>
+  </div>
+
+  <!-- EXAM TIP -->
+  <div class="tip red">
+    <strong>⚠️ Exam Tip:</strong> In the expression editor, aggregated functions do NOT accept aggregated measures as inputs (no nested aggregations). Also, "Min and Max aggregated measures return a date/datetime formatted aggregated measure — it cannot be used directly in filters."
+  </div>
+
+</div>
+</details>
+</div>
+
+<script src="../js/common.js"></script>
+</body>
+</html>

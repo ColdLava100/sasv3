@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Crosstab Rows Role</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+<details id="t5" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #a29bfe;">
+  📋 Crosstab Rows Role — What Can Go There? <span class="badge badge-rows">RULES</span>
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+  <p style="color:var(--text2);margin-bottom:8px;font-size:0.85rem;">
+    <em>"Both the Columns and Rows roles accept either a <strong style="color:var(--accent1);">single hierarchy</strong> or <strong style="color:var(--accent1);">any number of categories</strong>."</em>
+  </p>
+  <table class="data-table">
+    <tr><th style="text-align:left;">Data Item Type</th><th>Can go in Rows?</th><th>Why?</th></tr>
+    <tr><td style="text-align:left;font-weight:600;">📂 Category</td><td style="color:var(--accent1);">✅ Yes</td><td style="text-align:left;font-size:0.78rem;">Any number of categories (Product, Region, etc.)</td></tr>
+    <tr><td style="text-align:left;font-weight:600;">📁 Single Hierarchy</td><td style="color:var(--accent1);">✅ Yes</td><td style="text-align:left;font-size:0.78rem;">One drill-down path (Year &gt; Quarter &gt; Month)</td></tr>
+    <tr><td style="text-align:left;font-weight:600;">📁📁 Multiple Hierarchies</td><td style="color:var(--danger);">❌ No</td><td style="text-align:left;font-size:0.78rem;">Only ONE hierarchy allowed at a time</td></tr>
+    <tr><td style="text-align:left;font-weight:600;">📊 Measure</td><td style="color:var(--danger);">❌ No</td><td style="text-align:left;font-size:0.78rem;">Measures go in the Measures role (cells)</td></tr>
+  </table>
+
+  <div class="card-grid" style="margin-top:8px;">
+    <div class="card" style="border-left:4px solid var(--accent1);">
+      <h3 style="color:var(--accent1);font-size:0.85rem;">🧠 What is a Single Hierarchy?</h3>
+      <p style="font-size:0.8rem;color:var(--text2);">A drill-down path: <span style="color:var(--accent4);">Year → Quarter → Month</span></p>
+    </div>
+    <div class="card" style="border-left:4px solid var(--danger);">
+      <h3 style="color:var(--danger);font-size:0.85rem;">❌ Why not Multiple Hierarchies?</h3>
+      <p style="font-size:0.8rem;color:var(--text2);">Rows accepts only <strong style="color:var(--accent1);">one hierarchy</strong> at a time.</p>
+    </div>
+  </div>
+
+  <div class="tip green">
+    <strong>💡 Memory Trick:</strong><br>
+    Categories → ✅ Any number<br>
+    Hierarchies → ✅ One only (Single)<br>
+    Multiple hierarchies → ❌ No<br>
+    Measures → ❌ No (go in cells)
+  </div>
+</div>
+</details>
+</div>
+
+<script src="../js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Columns, Rows &amp; Lattice</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+<details id="t3" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #6c5ce7;">
+  📐 Columns, Rows &amp; Lattice <span class="badge badge-lattice">ROLES</span>
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+  <p style="color:var(--text2);margin-bottom:12px;">
+    <strong>Columns/Rows</strong> = for Crosstab only. <strong>Lattice Columns/Rows</strong> = for Charts only. They are <em>not interchangeable</em>.
+  </p>
+
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #6c5ce7;">
+      <h3 style="color:var(--accent4);">📋 Crosstab</h3>
+      <div style="font-size:0.82rem;color:var(--text2);margin-bottom:8px;">
+        <strong style="color:var(--accent4);">Columns</strong> → Category spreads across top (Q1, Q2, Q3...)<br>
+        <strong style="color:var(--accent4);">Rows</strong> → Category goes down the side (Sports, Toys...)
+      </div>
+      <table class="data-table">
+        <tr><td></td><th>Q1</th><th>Q2</th><th>Q3</th></tr>
+        <tr><td style="font-weight:600;">Sports</td><td>$250</td><td>$150</td><td>$200</td></tr>
+        <tr><td style="font-weight:600;">Toys</td><td>$80</td><td>$120</td><td>$90</td></tr>
+      </table>
+    </div>
+    <div class="card" style="border-top:3px solid #6c5ce7;">
+      <h3 style="color:var(--accent4);">📈 Charts</h3>
+      <div style="font-size:0.82rem;color:var(--text2);">
+        <strong style="color:var(--accent2);">Lattice Columns</strong> → Split chart into <strong>side-by-side</strong> mini-charts 📐📐<br>
+        <strong style="color:var(--accent2);">Lattice Rows</strong> → Split chart into <strong>stacked rows</strong> of mini-charts 📐
+      </div>
+      <div style="text-align:center;margin-top:10px;padding:8px;background:var(--bg4);border-radius:6px;">
+        <div style="display:inline-block;font-size:0.7rem;color:var(--text2);">
+          <div style="display:flex;gap:4px;margin-bottom:4px;">
+            <div style="padding:6px 10px;background:#3a3d48;border-radius:4px;">Sports</div>
+            <div style="padding:6px 10px;background:#3a3d48;border-radius:4px;">Toys</div>
+          </div>
+          <div style="color:var(--text3);">LATTICE COLUMNS → side by side</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REAL EXAM EXAMPLE: Scatter Plot Lattice -->
+  <div class="info-box" style="margin-top:12px;">
+    <p class="label" style="color:#ff7675;">📝 Real Exam Example — Scatter Plot with Lattice</p>
+    <p>A scatter plot shows Diastolic vs Cholesterol, colored by Cause of Death. Split into <strong>two panels stacked vertically</strong>:</p>
+  </div>
+  <div id="scatter-lattice" style="height:450px; background:#0d1117; border-radius:8px; margin-bottom:10px;"></div>
+
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #ff7675;">
+      <p style="font-size:0.82rem;color:var(--text2);"><strong style="color:#ff7675;">Question:</strong> To which role is <strong>"Smoking Status"</strong> assigned?</p>
+      <div class="option-wrong">✗ a. Lattice columns</div>
+      <div class="option-correct">✅ c. Lattice rows — Correct!</div>
+    </div>
+    <div class="card" style="border-top:3px solid #74b9ff;">
+      <p style="font-size:0.82rem;color:var(--text2);">
+        <strong>🧠 Why?</strong> Panels are <strong style="color:var(--accent1);">stacked vertically</strong> (Heavy on top, Moderate on bottom).<br><br>
+        <strong>Stacked = Rows 📐</strong><br>
+        <strong>Side-by-side = Columns 📐📐</strong>
+      </p>
+    </div>
+  </div>
+
+  <div class="tip purple">
+    <strong>🧠 Ultimate Memory Trick:</strong><br>
+    <strong>Crosstab</strong>: Columns = headers across top, Rows = labels down the side<br>
+    <strong>Charts</strong>: Lattice Columns = side-by-side panels, Lattice Rows = stacked panels<br>
+    <em>"Rows go down 📐, Columns go across 📐📐"</em>
+  </div>
+</div>
+</details>
+</div>
+
+<script src="../js/common.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var scatterDiv = document.getElementById('scatter-lattice');
+  if (scatterDiv) {
+    function genSmokingData(status, count) {
+      var causes = ["Cancer","Cerebral Vascular Disease","Coronary Heart Disease","Other","Unknown"];
+      var data = [];
+      for (var i = 0; i < count; i++) {
+        data.push({
+          chol: 150 + Math.random() * 350,
+          dias: 60 + Math.random() * 80 + (status === "Heavy (16-25)" ? Math.random()*10 : 0),
+          cause: causes[Math.floor(Math.random()*causes.length)],
+          smoking: status
+        });
+      }
+      return data;
+    }
+    var heavy = genSmokingData("Heavy (16-25)", 40);
+    var moderate = genSmokingData("Moderate (6-15)", 40);
+    var allData = heavy.concat(moderate);
+    var cColors = {"Cancer":"#3498db","Cerebral Vascular Disease":"#e67e22","Coronary Heart Disease":"#9b59b6","Other":"#d35400","Unknown":"#1abc9c"};
+    var smokes = ["Heavy (16-25)","Moderate (6-15)"];
+    var causes = ["Cancer","Cerebral Vascular Disease","Coronary Heart Disease","Other","Unknown"];
+    var traces = [];
+    smokes.forEach(function(s) {
+      causes.forEach(function(c) {
+        var pts = allData.filter(function(d) { return d.smoking === s && d.cause === c; });
+        if (pts.length) traces.push({
+          x: pts.map(function(d){return d.chol;}), y: pts.map(function(d){return d.dias;}),
+          mode:'markers', type:'scatter', name: c + ' (' + s + ')',
+          marker: {color:cColors[c], size:7, symbol: c === 'Other' ? 'x' : 'circle'},
+          legendgroup: c, showlegend: smokes.indexOf(s) === 0
+        });
+      });
+    });
+    for (var i = 0; i < traces.length; i++) {
+      var isHeavy = traces[i].name.includes('Heavy');
+      traces[i].xaxis = isHeavy ? 'x' : 'x2';
+      traces[i].yaxis = isHeavy ? 'y' : 'y2';
+    }
+    Plotly.newPlot('scatter-lattice', traces, {
+      title:{text:'Scatter Plot of Selected Measures', font:{color:'#e8eaed',size:14}},
+      grid:{rows:2,columns:1,pattern:'independent'},
+      xaxis:{title:'Cholesterol',range:[50,550],gridcolor:'#21262d',color:'#8b949e'},
+      yaxis:{title:'Diastolic',range:[40,160],gridcolor:'#21262d',color:'#8b949e'},
+      xaxis2:{title:'Cholesterol',range:[50,550],gridcolor:'#21262d',color:'#8b949e'},
+      yaxis2:{title:'Diastolic',range:[40,160],gridcolor:'#21262d',color:'#8b949e'},
+      paper_bgcolor:'#0d1117', plot_bgcolor:'#0d1117', margin:{l:50,r:20,t:40,b:40},
+      font:{color:'#8b949e'}, legend:{font:{color:'#8b949e',size:9}},
+      annotations:[
+        {text:'Heavy (16-25)', x:0.5, y:1.0, xref:'paper', yref:'paper', showarrow:false, font:{color:'#58a6ff',size:12}},
+        {text:'Moderate (6-15)', x:0.5, y:0.48, xref:'paper', yref:'paper', showarrow:false, font:{color:'#58a6ff',size:12}}
+      ]
+    }, {responsive:true, displayModeBar:false});
+  }
+});
+</script>
+</body>
+</html>

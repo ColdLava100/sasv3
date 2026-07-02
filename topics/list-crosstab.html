@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — List Table vs Crosstab</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+<details id="t2" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #00b894;">
+  📄 List Table vs Crosstab <span class="badge badge-table">OBJECTS</span>
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+  <p style="color:var(--text2);margin-bottom:12px;">
+    Both display data in a grid — but one is <strong>flat</strong>, the other <strong>summarizes</strong>.
+  </p>
+
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #0984e3;">
+      <h3 style="color:var(--accent3);">📄 List Table</h3>
+      <p style="color:var(--text2);font-size:0.82rem;">Like an Excel sheet. <strong>Every row = one record.</strong> No summarizing.</p>
+      <table class="data-table">
+        <tr><th>Product</th><th>Sales</th><th>Quarter</th></tr>
+        <tr><td>Sports</td><td>$100</td><td>Q1</td></tr>
+        <tr><td>Sports</td><td>$150</td><td>Q2</td></tr>
+        <tr><td>Toys</td><td>$80</td><td>Q1</td></tr>
+      </table>
+      <div style="font-size:0.78rem;color:var(--text3);">"Columns" = display setting. <span style="color:var(--accent3);">NOT a data role.</span></div>
+    </div>
+    <div class="card" style="border-top:3px solid #6c5ce7;">
+      <h3 style="color:var(--accent4);">📋 Crosstab</h3>
+      <p style="color:var(--text2);font-size:0.82rem;">Like a Pivot Table. <strong>Groups + summarizes.</strong> Two header dimensions.</p>
+      <table class="data-table">
+        <tr><td style="border-color:var(--border);"></td><th>Q1</th><th>Q2</th></tr>
+        <tr><td style="font-weight:600;">Sports</td><td>$250</td><td>$150</td></tr>
+        <tr><td style="font-weight:600;">Toys</td><td>$80</td><td>$120</td></tr>
+      </table>
+      <div style="font-size:0.78rem;color:var(--text3);">"Columns" = a <strong style="color:var(--accent4);">DATA ROLE</strong> that creates headers.</div>
+    </div>
+  </div>
+
+  <div class="tip">
+    <strong>💡 The "Columns" Trap:</strong> Both have "columns" but different meanings!<br>
+    <strong>List Table</strong>: "Columns" = display setting (which fields to show)<br>
+    <strong>Crosstab</strong>: "Columns" = a <strong>Data Role</strong> (category → column headers)
+  </div>
+</div>
+</details>
+</div>
+
+<script src="../js/common.js"></script>
+</body>
+</html>

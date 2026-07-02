@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Box Plot</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+<details id="t7" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #74b9ff;">
+  📦 Box Plot — Mean vs Median &amp; Outlier Settings <span class="badge badge-box">CHARTS</span>
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+  <div class="info-box">
+    <p><strong>🤔 What is MSRP?</strong> <strong>M</strong>anufacturer's <strong>S</strong>uggested <strong>R</strong>etail <strong>P</strong>rice — the sticker price of a car.</p>
+  </div>
+
+  <div class="info-box">
+    <p class="label" style="color:var(--accent3);">🧱 The 5 Parts of a Box Plot</p>
+    <table class="data-table" style="font-size:0.78rem;">
+      <tr><th>Part</th><th>What it is</th><th>Meaning</th></tr>
+      <tr><td><strong style="color:var(--accent1);">Bottom of BOX</strong></td><td>Q1</td><td>25th percentile</td></tr>
+      <tr><td><strong style="color:var(--accent1);">Top of BOX</strong></td><td>Q3</td><td>75th percentile</td></tr>
+      <tr style="background:#1a3a2a;"><td><strong style="color:var(--accent2);">LINE ──</strong></td><td><strong style="color:var(--accent2);">MEDIAN</strong></td><td>Middle value (half above, half below)</td></tr>
+      <tr style="background:#2a1a30;"><td><strong style="color:var(--accent4);">SQUARE ■</strong></td><td><strong style="color:var(--accent4);">MEAN</strong></td><td>Average (only if Averages option ON)</td></tr>
+      <tr><td><strong style="color:var(--accent3);">WHISKERS</strong></td><td>"Acceptable range" lines</td><td>Extend from box to furthest non-outlier 🐱</td></tr>
+      <tr><td><strong style="color:var(--danger);">DOTS ●</strong></td><td><strong style="color:var(--danger);">OUTLIERS</strong></td><td>Extreme values beyond whiskers</td></tr>
+    </table>
+  </div>
+
+  <!-- INTERACTIVE BOX PLOTS -->
+  <div class="info-box">
+    <p class="label" style="color:var(--accent3);">📊 Interactive: Same Data, 3 Different Settings</p>
+    <p style="font-size:0.78rem;"><em>Hover over each chart to see exact values!</em></p>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+    <div id="chart-show" style="height:300px;background:#0d1117;border-radius:8px;"></div>
+    <div id="chart-hide" style="height:300px;background:#0d1117;border-radius:8px;"></div>
+    <div id="chart-ignore" style="height:300px;background:#0d1117;border-radius:8px;"></div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:4px;font-size:0.7rem;text-align:center;">
+    <div style="background:#1a3a2a;padding:4px;border-radius:4px;border:1px solid var(--accent1);"><strong style="color:var(--accent1);">SHOW</strong><br>Dots visible</div>
+    <div style="background:#2a1a1a;padding:4px;border-radius:4px;border:1px solid var(--accent2);"><strong style="color:var(--accent2);">HIDE ✅</strong><br>Whiskers extend</div>
+    <div style="background:#2a1a2a;padding:4px;border-radius:4px;border:1px solid var(--accent4);"><strong style="color:var(--accent4);">IGNORE</strong><br>Outliers excluded</div>
+  </div>
+
+  <div class="info-box" style="margin-top:8px;">
+    <p class="label" style="color:var(--accent3);">📋 The Data (same for all 3 charts)</p>
+    <table class="data-table" style="font-size:0.75rem;">
+      <tr><td style="font-family:monospace;">Profit: $0, $0, $0, $0, $2, $3, $5, $7, $9, $11, $500, $1,200</td></tr>
+    </table>
+    <div class="card-grid" style="margin-top:4px;">
+      <div style="font-size:0.78rem;color:var(--text2);">
+        <strong>Box plot parts:</strong><br>
+        • Q1 = <strong style="color:var(--accent1);">$0</strong> (25% below)<br>
+        • Median = <strong style="color:var(--accent2);">$4</strong> (middle)<br>
+        • Q3 = <strong style="color:var(--accent1);">$9</strong> (75% below)<br>
+        • IQR = <strong>$9</strong>
+      </div>
+      <div style="font-size:0.78rem;color:var(--text2);">
+        <strong>Understanding outliers:</strong><br>
+        • Normal range = 1.5×IQR = <strong>$13.50</strong> from box<br>
+        • $500 and $1,200 are <strong style="color:var(--danger);">OUTLIERS</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <p class="label">⚙️ The 3 Outlier Settings (from SAS course)</p>
+    <p style="font-size:0.78rem;color:var(--text2);margin-bottom:6px;"><em>"Outliers can be ignored (excluded from the plot), shown (separate from whiskers), or hidden (included within the whiskers)."</em></p>
+    <div class="card-grid three">
+      <div style="background:#1a3a2a;border-radius:6px;padding:8px;">
+        <strong style="color:var(--accent1);">🟢 SHOW</strong>
+        <p style="font-size:0.72rem;color:var(--text2);">Whiskers stop at 1.5×IQR. Extreme values appear as <strong style="color:var(--danger);">● dots</strong> or gray outlier bins.</p>
+      </div>
+      <div style="background:#2a1a1a;border-radius:6px;padding:8px;">
+        <strong style="color:var(--accent2);">🟡 HIDE (default)</strong>
+        <p style="font-size:0.72rem;color:var(--text2);">Whiskers extend to include outliers. No dots shown — outliers absorbed into whiskers.</p>
+      </div>
+      <div style="background:#2a1a2a;border-radius:6px;padding:8px;">
+        <strong style="color:var(--accent4);">🟣 IGNORE</strong>
+        <p style="font-size:0.72rem;color:var(--text2);">Outliers removed entirely. Box and whiskers recalculated without them.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXAM ANSWER -->
+  <div class="info-box">
+    <p class="label" style="color:#ff7675;">📝 Your Exam Question Solved</p>
+    <p style="font-size:0.82rem;color:var(--text2);"><strong>Question:</strong> <em>"Which box plot uses the Hide Outliers option? All three use the same data source."</em></p>
+    <div class="card-grid three" style="margin-top:6px;">
+      <div style="background:#1a3a2a;border-radius:6px;padding:8px;font-size:0.75rem;">
+        <strong style="color:var(--accent1);">Box Plot 1 = SHOW</strong><br>Had gray outlier bins showing extreme values.
+      </div>
+      <div style="background:#2a1a1a;border-radius:6px;padding:8px;font-size:0.75rem;border:1px solid var(--accent2);">
+        <strong style="color:var(--accent2);">Box Plot 2 = HIDE ✅</strong><br>Clean box + whiskers. Default = Hide.
+      </div>
+      <div style="background:#2a1a2a;border-radius:6px;padding:8px;font-size:0.75rem;">
+        <strong style="color:var(--accent4);">Box Plot 3 = IGNORE</strong><br>No box (IQR ≈ $0). Outliers excluded.
+      </div>
+    </div>
+    <div class="tip green" style="margin:8px 0 0;">
+      <strong>✅ Answer: Box Plot 2 (option C).</strong> Since <strong>Hide Outliers is the default</strong>, the normal-looking box plot IS hiding outliers!<br>
+      <span style="color:var(--danger);">❌ "None" was wrong because Box Plot 2 uses the default Hide setting.</span>
+    </div>
+  </div>
+
+  <div class="tip blue">
+    <strong>🐱 Whiskers = cat's whiskers!</strong> They extend from the face (box) to sense how far data reaches before hitting something unusual (an outlier).<br>
+    <strong>🧠 LiMe 🍋:</strong> LINE = MEDIAN | <strong>SqMean 🟦:</strong> SQUARE = MEAN
+  </div>
+</div>
+</details>
+</div>
+
+<script src="../js/common.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var profitData = [0,0,0,0,2,3,5,7,9,11,500,1200];
+  var chartShow = document.getElementById('chart-show');
+  var chartHide = document.getElementById('chart-hide');
+  var chartIgnore = document.getElementById('chart-ignore');
+  var boxLayout = {yaxis:{title:'Profit ($)',range:[-100,1350],gridcolor:'#3d4049',color:'#8b949e'},paper_bgcolor:'#0d1117',plot_bgcolor:'#0d1117',margin:{l:40,r:10,t:30,b:20},font:{color:'#8b949e'},showlegend:false};
+  if (chartShow) Plotly.newPlot('chart-show', [{y:profitData,type:'box',name:'Profit',boxpoints:'suspectedoutliers',pointpos:0,jitter:0.3,marker:{color:'#55efc4',outliercolor:'#ff6b6b',size:6},line:{color:'#55efc4'},fillcolor:'#1a3a2a'}], Object.assign({}, boxLayout, {title:{text:'SHOW',font:{color:'#55efc4',size:12}}}), {responsive:true});
+  if (chartHide) Plotly.newPlot('chart-hide', [{y:profitData,type:'box',name:'Profit',boxpoints:false,marker:{color:'#ffd93d'},line:{color:'#ffd93d'},fillcolor:'#2a1a1a'}], Object.assign({}, boxLayout, {title:{text:'HIDE',font:{color:'#ffd93d',size:12}}}), {responsive:true});
+  if (chartIgnore) Plotly.newPlot('chart-ignore', [{y:[0,0,0,0,2,3,5,7,9,11],type:'box',name:'Profit',boxpoints:false,marker:{color:'#a29bfe'},line:{color:'#a29bfe'},fillcolor:'#2a1a2a'}], Object.assign({}, {yaxis:{title:'Profit ($)',range:[-3,20],gridcolor:'#3d4049',color:'#8b949e'},paper_bgcolor:'#0d1117',plot_bgcolor:'#0d1117',margin:{l:40,r:10,t:30,b:20},font:{color:'#8b949e'},showlegend:false}, {title:{text:'IGNORE',font:{color:'#a29bfe',size:12}}}), {responsive:true});
+});
+</script>
+</body>
+</html>
