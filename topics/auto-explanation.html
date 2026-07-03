@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Automated Explanation & Prediction</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+
+<details id="t1" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #6c5ce7;">
+  🤖 Automated Explanation &amp; Automated Prediction
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <div style="background:var(--bg3);border-radius:8px;padding:14px;margin-bottom:10px;">
+    <p style="color:var(--text2);font-size:0.85rem;">
+      Two powerful analytic objects that automatically build models to explain or predict a response variable.
+    </p>
+  </div>
+
+  <!-- COMPARISON TABLE -->
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #55efc4;">
+      <p class="label" style="color:#55efc4;">🔍 Automated Explanation</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Determines the most important underlying factors that explain a particular variable."</em><br><br>
+        ✅ Shows <strong>characteristics</strong> of the response variable<br>
+        ✅ Displays <strong>relative importance</strong> bar chart of factors<br>
+        ✅ Click a factor → view <strong>relationship plot</strong><br>
+        ✅ Right-click a factor → <strong>remove</strong> it<br>
+        ✅ Natural language explanation<br><br>
+        <strong>Roles:</strong> Response, Time (optional), Underlying factors
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #ff7675;">
+      <p class="label" style="color:#ff7675;">🎯 Automated Prediction</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Allows you to predict values of a selected response variable by specifying values for the underlying factors."</em><br><br>
+        ✅ <strong>Predicts</strong> future/unknown values<br>
+        ✅ Shows <strong>values input form</strong> for factors<br>
+        ✅ Runs multiple models, chooses <strong>champion</strong><br>
+        ✅ Category response: Logistic regression, Gradient boosting, Decision tree<br>
+        ✅ Measure response: Linear regression, Gradient boosting, Decision tree<br><br>
+        <strong>Roles:</strong> Response, Underlying factors
+      </p>
+    </div>
+  </div>
+
+  <!-- AUTO EXPLANATION DETAIL -->
+  <div class="info-box">
+    <p class="label">🔍 Automated Explanation — 3 Components</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:8px;">
+    <div style="background:var(--bg3);border-radius:8px;padding:10px;border-left:3px solid #55efc4;">
+      <h4 style="color:#55efc4;font-size:0.75rem;">📝 1. Natural Language Summary</h4>
+      <p style="font-size:0.68rem;color:var(--text2);">
+        <em>"Current is more common at 80.05%... The three most related factors are Debt to Income Ratio, Number of Delinquent Credit Lines..."</em>
+      </p>
+    </div>
+    <div style="background:var(--bg3);border-radius:8px;padding:10px;border-left:3px solid #ffd93d;">
+      <h4 style="color:#ffd93d;font-size:0.75rem;">📊 2. Relative Importance Chart</h4>
+      <p style="font-size:0.68rem;color:var(--text2);">
+        Horizontal bar chart showing factors in <strong>descending order of importance</strong>.<br>
+        ✅ Click a factor → view relationship plot<br>
+        ❌ Right-click → remove factor
+      </p>
+    </div>
+    <div style="background:var(--bg3);border-radius:8px;padding:10px;border-left:3px solid #74b9ff;">
+      <h4 style="color:#74b9ff;font-size:0.75rem;">📈 3. Relationship Plot</h4>
+      <p style="font-size:0.68rem;color:var(--text2);">
+        Type depends on variable types:<br>
+        📊 Measure + Measure = Scatter/heat map<br>
+        📊 Category + Measure = Histogram<br>
+        📊 Category + Category = Stacked bar<br>
+        🗺️ Geography + Any = Geo map
+      </p>
+    </div>
+  </div>
+
+  <!-- AUTO PREDICTION DETAIL -->
+  <div class="info-box">
+    <p class="label">🎯 Automated Prediction — How It Works</p>
+  </div>
+
+  <div style="background:var(--bg3);border-radius:8px;padding:10px;margin-bottom:8px;">
+    <p style="font-size:0.78rem;color:var(--text2);">
+      <strong>1. Select Response</strong> — Choose the variable to predict<br>
+      <strong>2. Auto Assign Factors</strong> — Remaining data items become underlying factors<br>
+      <strong>3. Run Models</strong> — SAS tests multiple models:<br>
+      &nbsp;&nbsp;&nbsp;• Category response: Logistic regression, Gradient boosting, Decision tree<br>
+      &nbsp;&nbsp;&nbsp;• Measure response: Linear regression, Gradient boosting, Decision tree<br>
+      <strong>4. Pick Champion</strong> — Best model is selected automatically:<br>
+      &nbsp;&nbsp;&nbsp;• Category: Highest accuracy (lowest misclassification rate)<br>
+      &nbsp;&nbsp;&nbsp;• Measure: Lowest Average Squared Error (ASE)<br>
+      <strong>5. Input Values</strong> — Viewer can enter values for underlying factors to see predictions
+    </p>
+  </div>
+
+  <!-- UNDERLYING FACTORS -->
+  <div class="info-box">
+    <p class="label">📋 Underlying Factors — What's Included vs Excluded</p>
+  </div>
+  <table class="data-table" style="font-size:0.72rem;">
+    <tr><th>✅ Included as Underlying Factor</th><th>❌ NOT Included</th></tr>
+    <tr><td>Categories</td><td>Aggregated measures</td></tr>
+    <tr><td>Measures</td><td>Date and time values</td></tr>
+    <tr><td>Geographies</td><td>Calculated items</td></tr>
+    <tr><td>—</td><td>Custom categories</td></tr>
+    <tr><td>—</td><td>Derived items</td></tr>
+    <tr><td>—</td><td>Automatically computed values (Frequency, etc.)</td></tr>
+    <tr><td>—</td><td>Hierarchies, filters, interaction effects</td></tr>
+  </table>
+
+  <!-- LIMITATIONS -->
+  <div class="tip red">
+    <strong>⚠️ Limitations:</strong><br>
+    • Not added as source/target for actions ❌<br>
+    • Excluded from report/page prompts ❌<br>
+    • No manual model selection — SAS chooses champion ❌<br>
+    • Use SAS Visual Statistics for more control ❌
+  </div>
+
+  <!-- EXAM QUESTION -->
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #e17055;">
+      <p class="label" style="color:#e17055;">🎯 Exam Question</p>
+      <img src="../images/exam-auto-explanation.png" style="max-width:100%;border-radius:6px;margin:4px 0 8px;border:1px solid var(--border);" alt="Automated Explanation exam question">
+      <p style="font-size:0.82rem;color:var(--text2);">
+        <strong>Question:</strong> <em>"What would clicking on Job Category accomplish?"</em>
+      </p>
+      <div class="option-correct">✅ <strong>B) Display the relationship between Job Category and Loan Status</strong></div>
+      <div class="option-wrong">❌ A) Remove as underlying factor — Right-click removes, left-click shows relationship</div>
+      <div class="option-wrong">❌ C) Display characteristics of Job Category — Shows relationship WITH Loan Status, not alone</div>
+      <div class="option-wrong">❌ D) Create new prediction object — Clicking doesn't create objects</div>
+    </div>
+  </div>
+
+  <div class="tip green">
+    <strong>🧠 Memory Trick:</strong><br>
+    <strong>Explanation</strong> = <strong>E</strong>xplains why (past/current data) 🔍<br>
+    <strong>Prediction</strong> = <strong>P</strong>redicts what's next (future data) 🎯<br>
+    <strong>Click</strong> a factor → see <strong>relationship</strong> plot<br>
+    <strong>Right-click</strong> a factor → <strong>remove</strong> it
+  </div>
+
+</div>
+</details>
+
+</div>
+
+<a href="#" class="back-top" title="Back to top">⬆</a>
+
+</body>
+</html>

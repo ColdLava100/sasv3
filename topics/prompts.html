@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Prompts</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+
+<details id="t1" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #0984e3;">
+  🎛️ Prompts — Dynamic Filters for Report Viewers
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <div style="background:var(--bg3);border-radius:8px;padding:14px;margin-bottom:10px;">
+    <p style="color:var(--text2);font-size:0.85rem;">
+      From course: <em>"Prompts can make your reports more versatile by enabling viewers to access the information that's important to them by filtering."</em> Prompts are <strong>dynamic filters</strong> (vs static filters).
+    </p>
+  </div>
+
+  <!-- STATIC VS DYNAMIC -->
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #55efc4;">
+      <p class="label" style="color:#55efc4;">🔒 Static Filters</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <strong>Set by designer</strong> at design time<br>
+        Cannot be changed by viewer<br>
+        Data Source, Basic, Advanced, Post-Agg, Common<br><br>
+        <em>"Static filters must be defined and applied by the report designer."</em>
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #ffd93d;">
+      <p class="label" style="color:#ffd93d;">🎛️ Dynamic Filters (Prompts)</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <strong>Used by viewer</strong> in view mode<br>
+        Changeable — different values each time<br>
+        Uses control objects (dropdown, slider, etc.)<br><br>
+        <em>"Prompts are control objects placed in a special area on the canvas."</em>
+      </p>
+    </div>
+  </div>
+
+  <!-- EXAM SCREENSHOT -->
+  <div class="info-box">
+    <p class="label">📋 From the Course</p>
+  </div>
+  <img src="../images/exam-prompts.png" style="max-width:100%;border-radius:6px;margin:4px 0 8px;border:1px solid var(--border);" alt="Prompts from course">
+
+  <!-- 4 FEATURES -->
+  <div class="info-box">
+    <p class="label">🔑 The 4 Key Features of Prompts</p>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;">
+    <div style="background:var(--bg3);border-radius:8px;padding:10px;border-left:3px solid #55efc4;">
+      <h4 style="color:#55efc4;font-size:0.75rem;">🔍 Filter data</h4>
+      <p style="font-size:0.68rem;color:var(--text2);">Prompts subset/filter what data objects display based on viewer selection.</p>
+    </div>
+    <div style="background:var(--bg3);border-radius:8px;padding:10px;border-left:3px solid #ffd93d;">
+      <h4 style="color:#ffd93d;font-size:0.75rem;">🎮 Uses control objects</h4>
+      <p style="font-size:0.68rem;color:var(--text2);">Dropdowns, sliders, button bars, date pickers, list controls, text inputs.</p>
+    </div>
+    <div style="background:var(--bg3);border-radius:8px;padding:10px;border-left:3px solid #ff7675;">
+      <h4 style="color:#ff7675;font-size:0.75rem;">⚡ Automatic filter</h4>
+      <p style="font-size:0.68rem;color:var(--text2);">If control uses same data source as objects, the filter applies automatically.</p>
+    </div>
+    <div style="background:var(--bg3);border-radius:8px;padding:10px;border-left:3px solid #74b9ff;">
+      <h4 style="color:#74b9ff;font-size:0.75rem;">🔗 Data source mapping</h4>
+      <p style="font-size:0.68rem;color:var(--text2);">If different data sources, you may need to map them when adding actions.</p>
+    </div>
+  </div>
+
+  <!-- REPORT VS PAGE -->
+  <div class="info-box">
+    <p class="label">📊 Report Prompt vs 📄 Page Prompt</p>
+  </div>
+  <table class="data-table" style="font-size:0.72rem;">
+    <tr><th>Feature</th><th style="color:#55efc4;">📊 Report Prompt</th><th style="color:#ffd93d;">📄 Page Prompt</th></tr>
+    <tr><td><strong>Scope</strong></td><td>Filters <strong>ALL objects</strong> in entire report</td><td>Filters objects on <strong>one page</strong> only</td></tr>
+    <tr><td><strong>Includes?</strong></td><td>Affects <strong>even page prompts</strong></td><td>Only affects objects on that page</td></tr>
+    <tr><td><strong>Location</strong></td><td>Top of canvas (default)</td><td>Top of page (default)</td></tr>
+    <tr><td><strong>Default state</strong></td><td>Hidden — click chevron › to expand</td><td>Hidden — click chevron to expand</td></tr>
+    <tr><td><strong>Placement options</strong></td><td>Top, or left/right of canvas</td><td>Top of page, or left/right</td></tr>
+  </table>
+
+  <!-- CONTROL OBJECTS -->
+  <div class="info-box">
+    <p class="label">🎮 Control Objects Used by Prompts</p>
+  </div>
+  <table class="data-table" style="font-size:0.72rem;">
+    <tr><th>Control</th><th>Best Use</th><th>Data Type</th><th>Notes</th></tr>
+    <tr><td><strong>Dropdown list</strong></td><td>Select one value from many</td><td>Category</td><td>Common, simple choice</td></tr>
+    <tr><td><strong>List control</strong></td><td>Select multiple values, search</td><td>Category, Hierarchy</td><td>Only in prompt areas (left/right or inside prompt container)</td></tr>
+    <tr><td><strong>Slider</strong></td><td>Select value or range</td><td>Measure, Date</td><td>Dynamic min/max possible</td></tr>
+    <tr><td><strong>Button bar</strong></td><td>Toggle between few options</td><td>Category (low cardinality)</td><td>Space-saving for side panels</td></tr>
+    <tr><td><strong>Text input</strong></td><td>Free-text search</td><td>Category</td><td>Good for high-cardinality</td></tr>
+    <tr><td><strong>Date picker</strong></td><td>Select date range</td><td>Date/Datetime</td><td>Calendar interface</td></tr>
+  </table>
+
+  <!-- KEY RULES -->
+  <div class="tip red">
+    <strong>🎯 Key Exam Points:</strong><br>
+    • <strong>Report prompt</strong> = filters ALL objects in report, including page prompts ⚠️<br>
+    • <strong>Page prompt</strong> = filters objects on ONE page only ✅<br>
+    • Multiple controls → filters combined with <strong>AND operator</strong> ⚠️<br>
+    • <strong>Prompt container</strong> = groups controls, delays action until <strong>Apply</strong> clicked ✅<br>
+    • <strong>Cascading controls</strong> = selecting in one control filters options in the next ✅<br>
+    • <strong>Auto control</strong> = drag data item → SAS picks best control based on type + cardinality ⚠️<br>
+    • Hierarchy in prompt area = auto control per level + cascading filters ✅<br>
+    • List control only in prompt areas (left/right or inside prompt container) ⚠️<br>
+    • Prompt areas are <strong>hidden by default</strong> — expand via chevron ‹ ⚠️<br>
+    • <strong>Required prompts</strong> + 2-way automatic filter = can get stuck ❌
+  </div>
+
+  <div class="tip green">
+    <strong>🧠 Memory Trick:</strong><br>
+    <strong>S</strong>tatic = <strong>S</strong>et by designer<br>
+    <strong>P</strong>rompts = <strong>P</strong>icked by viewer<br>
+    <strong>R</strong>eport = <strong>R</strong>eally big scope (all pages)<br>
+    <strong>P</strong>age = <strong>P</strong>age-only scope (one page)<br><br>
+    <em>"Static = Designer sets it. Prompt = Viewer picks it."</em>
+  </div>
+
+</div>
+</details>
+
+</div>
+
+<a href="#" class="back-top" title="Back to top">⬆</a>
+
+</body>
+</html>

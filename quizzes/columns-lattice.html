@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Columns, Rows & Lattice Quiz</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Practice Quiz — Columns, Rows and Lattice</p>
+</div>
+
+<div class="nav-bar">
+  <select onchange="if(this.value)window.location.href=this.value;" class="nav-select">
+    <option value="">Jump to quiz →</option>
+    <option value="index.html">📋 Quiz Index</option>
+    <option value="rank-filter.html">🏆 Rank/Filter</option>
+    <option value="columns-lattice.html">📐 Columns/Lattice</option>
+    <option value="crosstab-rows.html">📋 Crosstab Rows</option>
+    <option value="measure-heading.html">📋 Measure Heading</option>
+    <option value="box-plot.html">📦 Box Plot</option>
+    <option value="bubble-plot.html">🫧 Bubble</option>
+    <option value="treemap.html">🟦 Treemap</option>
+    <option value="geo-maps.html">🗺️ Geo Maps</option>
+    <option value="path-analysis.html">🔀 Path</option>
+    <option value="parameters-expressions.html">🎯 Param/Expr</option>
+    <option value="sharing-reports.html">📤 Sharing</option>
+  </select>
+  <a href="index.html" class="nav-btn">📋 Quiz Index</a>
+  <a href="../topics/columns-lattice.html" class="nav-btn">← Back to Topic</a>
+</div>
+
+<div class="content">
+<details class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #6c5ce7;">
+  📐 Columns, Rows & Lattice — Practice Quiz <span class="badge badge-lattice">QUIZ</span>
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <div class="quiz-card" id="quiz-columns-lattice-basic">
+    <h3>📐 Topic 3: Columns, Rows &amp; Lattice — Basic</h3>
+    <div class="quiz-q"><p><strong>Q1:</strong> A crosstab has Region in Columns, Year in Rows. Where does "Asia" appear?</p>
+      <div><button class="quiz-btn" data-correct="true" data-answer="qb1">Across top as column header</button><button class="quiz-btn" data-answer="qb1">Down side as row label</button><button class="quiz-btn" data-answer="qb1">Inside a cell as a value</button></div>
+      <div id="qb1" class="quiz-answer">✅ <strong>Across top as column header</strong> — Region is in the Columns role, so values like "Asia" spread across the top.<br>
+        ❌ Down side: That's the Rows role. Year would be there instead.<br>
+        ❌ Inside a cell: That's where Measures (values) appear, not categories.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> Which objects use <strong>Lattice Columns/Rows</strong>?</p>
+      <div><button class="quiz-btn" data-answer="qb2">Crosstabs only</button><button class="quiz-btn" data-correct="true" data-answer="qb2">Charts only (Bar, Scatter, etc.)</button><button class="quiz-btn" data-answer="qb2">Both crosstabs and charts</button><button class="quiz-btn" data-answer="qb2">None — it's a display setting</button></div>
+      <div id="qb2" class="quiz-answer">✅ <strong>Charts only</strong> — Lattice Columns/Rows are for chart panels. Crosstabs use their own Columns/Rows data roles, which are different!<br>
+        ❌ Crosstabs: They use regular Columns/Rows roles, not Lattice.<br>
+        ❌ Both: No object uses both sets — they're mutually exclusive by object type.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3:</strong> A bar chart has three panels side by side (North, South, East). What role is "Region"?</p>
+      <div><button class="quiz-btn" data-correct="true" data-answer="qb3">Lattice Columns</button><button class="quiz-btn" data-answer="qb3">Lattice Rows</button><button class="quiz-btn" data-answer="qb3">Group</button></div>
+      <div id="qb3" class="quiz-answer">✅ <strong>Lattice Columns</strong> — Side-by-side panels = Lattice Columns.<br>
+        ❌ Lattice Rows: That's for stacked (vertical) panels.<br>
+        ❌ Group: Group controls color, not panel arrangement.</div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/columns-lattice.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+  <div class="quiz-card" id="quiz-columns-lattice-advanced">
+    <h3>📐 Topic 3: Columns, Rows &amp; Lattice — Advanced</h3>
+    <div class="quiz-q"><p><strong>Q4 🔥:</strong> Scatter plot with two panels: Heavy (top), Moderate (bottom). Smoking Status role?</p>
+      <img src="../images/exam-scatter-lattice.png" style="max-width:100%;border-radius:6px;margin:4px 0 8px;border:1px solid var(--border);" alt="Exam screenshot">
+      <div><button class="quiz-btn" data-answer="qb4">Lattice columns</button><button class="quiz-btn" data-correct="true" data-answer="qb4">Lattice rows</button><button class="quiz-btn" data-answer="qb4">Color</button><button class="quiz-btn" data-answer="qb4">Filter</button></div>
+      <div id="qb4" class="quiz-answer">✅ <strong>Lattice rows</strong> — Stacked vertically = Lattice Rows.<br>
+        ❌ Lattice columns: Would be side-by-side, not stacked.<br>
+        ❌ Color: Color would assign different colors per value, not create separate panels.<br>
+        ❌ Filter: Filter would remove data, not split into panels.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q5 🔥:</strong> Why can't a Crosstab use Lattice Columns?</p>
+      <div><button class="quiz-btn" data-answer="qb5">It can, users just don't use it</button><button class="quiz-btn" data-correct="true" data-answer="qb5">Lattice is for charts — Crosstab has its own Columns/Roles roles</button><button class="quiz-btn" data-answer="qb5">It's a software limitation that SAS plans to fix</button></div>
+      <div id="qb5" class="quiz-answer">✅ <strong>Lattice is for charts</strong> — They're fundamentally different! Crosstab Columns/Rows = data categories that create grid headers. Lattice Columns/Rows = chart panels that split visual space.<br>
+        ❌ "It can": No, the roles are designed for different object types and can't be swapped.<br>
+        ❌ "Planned fix": Not a bug — it's by design.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q6 🧠:</strong> If you had a crosstab and wanted to split it into side-by-side mini-tables by Region, what would you use?</p>
+      <div><button class="quiz-btn" data-correct="true" data-answer="qb6">Lattice Columns (but crosstabs can't use Lattice)</button><button class="quiz-btn" data-answer="qb6">Put Region in both Columns AND Rows</button><button class="quiz-btn" data-answer="qb6">Use a page prompt with Region</button><button class="quiz-btn" data-answer="qb6">Cannot be done in SAS VA</button></div>
+      <div id="qb6" class="quiz-answer">✅ <strong>Lattice Columns (but crosstabs can't use Lattice)</strong> — This reveals the key difference! Crosstabs can't create panel layouts. You'd need to use separate report pages or a page prompt to simulate the effect.<br>
+        ❌ Both Columns and Rows: Would create a grid, not side-by-side panels.<br>
+        ❌ Page prompt: Can filter but doesn't create side-by-side views.</div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/columns-lattice.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+</div>
+</details>
+</div>
+
+<script src="../js/tracker.js"></script>
+<script src="../js/common.js"></script>
+</body>
+</html>

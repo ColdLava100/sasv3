@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Calc Items Quiz</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Practice Quiz — Calculated Data Items &amp; Aggregated Measures</p>
+</div>
+
+<div class="nav-bar">
+  <select onchange="if(this.value)window.location.href=this.value;" class="nav-select">    <option value="index.html">📋 Quiz Index</option>
+    <option value="rank-filter.html">🏆 Rank/Filter</option>
+    <option value="columns-lattice.html">📐 Columns/Lattice</option>
+    <option value="crosstab-rows.html">📋 Crosstab Rows</option>
+    <option value="measure-heading.html">📋 Measure Heading</option>
+    <option value="box-plot.html">📦 Box Plot</option>
+    <option value="bubble-plot.html">🫧 Bubble</option>
+    <option value="treemap.html">🟦 Treemap</option>
+    <option value="geo-maps.html">🗺️ Geo Maps</option>
+    <option value="path-analysis.html">🔀 Path</option>
+    <option value="parameters-expressions.html">🎯 Param/Expr</option>
+    <option value="sharing-reports.html">📤 Sharing</option>
+    <option value="decision-tree.html">🌳 Decision Tree</option>
+    <option value="calculated-items.html">🧮 Calc Items</option>
+    <option value="common-filters.html">🔄 Common Filters</option>
+    <option value="auto-explanation.html">🤖 Auto Explain</option>
+    <option value="content-objects.html">📦 Content Objects</option>
+  </select>
+</div>
+
+<div class="content">
+<details class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #ff7675;">
+  🧮 Calculated Data Items &amp; Aggregated Measures Quiz
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <div class="quiz-card">
+    <h3 id="qz-calculated-items">🧮 Calculated Data Items</h3>
+        <div class="quiz-q"><p><strong>Q1:</strong> What is the key difference between a Calculated Data Item and an Aggregated Measure?</p>
+      <div><button class="quiz-btn" data-answer="zci1">Calculated = aggregated; Aggregated = detail</button><button class="quiz-btn" data-correct="true" data-answer="zci1">Calculated = detail; Aggregated = aggregated</button><button class="quiz-btn" data-answer="zci1">They are the same</button></div>
+      <div id="zci1" class="quiz-answer">✅ <strong>Calculated = detail (row-by-row); Aggregated = aggregated (after grouping)</strong><br>❌ Opposite: That's backwards.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> Which requires an aggregation function (SUM, AVG, COUNT)?</p>
+      <div><button class="quiz-btn" data-answer="zci2">Calculated Data Item</button><button class="quiz-btn" data-correct="true" data-answer="zci2">Aggregated Measure</button><button class="quiz-btn" data-answer="zci2">Both</button></div>
+      <div id="zci2" class="quiz-answer">✅ <strong>Aggregated Measure</strong> — Must have an aggregation function. Calculated items do NOT require aggregation.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3:</strong> What are the two contexts for an Aggregated Measure expression?</p>
+      <div><button class="quiz-btn" data-correct="true" data-answer="zci3">By Group and For All</button><button class="quiz-btn" data-answer="zci3">Rows and Columns</button><button class="quiz-btn" data-answer="zci3">Sum and Average</button></div>
+      <div id="zci3" class="quiz-answer">✅ <strong>By Group and For All</strong> — By Group = per subset. For All = entire data (after filtering).</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4 🔥:</strong> An aggregated measure "% diff from previous period" was created using <strong>Year</strong>. In a crosstab with City in Rows, it shows dashes. What's needed in Columns?</p>
+      <img src="../images/exam-period-year-columns.png" style="max-width:100%;border-radius:6px;margin:4px 0 8px;border:1px solid #333;display:block;" alt="Period/Year exam">
+      <div><button class="quiz-btn" data-answer="zci4">Quarter</button><button class="quiz-btn" data-answer="zci4">Month</button><button class="quiz-btn" data-correct="true" data-answer="zci4">Year</button><button class="quiz-btn" data-answer="zci4">Date</button></div>
+      <div id="zci4" class="quiz-answer">✅ <strong>Year</strong> — The period dimension must be in the table structure for the periodic function to work.<br>❌ Quarter/Month/Date: Wrong period type or too granular.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q5 🔥:</strong> Which periodic function calculates "same month, last year"?</p>
+      <div><button class="quiz-btn" data-answer="zci5">CumulativePeriod</button><button class="quiz-btn" data-correct="true" data-answer="zci5">ParallelPeriod</button><button class="quiz-btn" data-answer="zci5">RelativePeriod</button></div>
+      <div id="zci5" class="quiz-answer">✅ <strong>ParallelPeriod</strong> — "Returns the aggregated value for a period parallel to the current period."</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q6:</strong> Can an Aggregated Measure be used inside another Aggregated Measure?</p>
+      <div><button class="quiz-btn" data-answer="zci6">Yes, always</button><button class="quiz-btn" data-correct="true" data-answer="zci6">No — no nested aggregations</button><button class="quiz-btn" data-answer="zci6">Only with permission</button></div>
+      <div id="zci6" class="quiz-answer">✅ <strong>No</strong> — "Aggregated functions do NOT accept aggregated measures as inputs (no nested aggregations)."</div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/calculated-items.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+</div>
+</details>
+</div>
+
+<script src="../js/tracker.js"></script>
+<script src="../js/common.js"></script>
+</body>
+</html>

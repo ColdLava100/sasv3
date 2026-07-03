@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Parameters & Expressions</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  .param-card { background:var(--bg3);border-radius:8px;padding:10px;margin-bottom:6px;border-left:3px solid; }
+  .param-card h4 { font-size:0.82rem;margin-bottom:4px; }
+  .param-card p { font-size:0.72rem;color:var(--text2); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+
+<details id="t1" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #6c5ce7;">
+  🎯 Parameters &amp; Expressions — The Difference
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <!-- INTRO -->
+  <div style="background:var(--bg3);border-radius:8px;padding:14px;margin-bottom:10px;">
+    <p style="color:var(--text2);font-size:0.85rem;">
+      <strong style="color:#fff;">Parameters</strong> and <strong style="color:#fff;">Expressions</strong> are both created from the <strong>New data item</strong> menu, but they serve completely different purposes.
+    </p>
+  </div>
+
+  <!-- THE CORE DIFFERENCE -->
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #55efc4;">
+      <p class="label" style="color:#55efc4;">🎛️ Parameter</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <strong>A VARIABLE</strong> whose value can be changed.<br><br>
+        <em>"A parameter is a variable whose value can be changed by report viewers."</em><br><br>
+        <strong>Types:</strong> Numeric, Character, Date, Expression-based<br>
+        <strong>User changes?</strong> ✅ Yes (via slider, dropdown, text input)<br>
+        <strong>Think of it as:</strong> A <strong>knob/dial</strong> the user turns 🎛️<br><br>
+        <strong>Examples:</strong><br>
+        🎛️ <strong>TopN</strong> = 10 (user slides to 25 → value = 25)<br>
+        🎛️ <strong>SelectedRegion</strong> = "North" (user picks from dropdown)<br>
+        🎛️ <strong>StartDate</strong> = 01JAN2025 (user picks a date)
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #ff7675;">
+      <p class="label" style="color:#ff7675;">📝 Expression</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <strong>A FORMULA</strong> that calculates a result.<br><br>
+        <em>"The Expression Editor allows you to define values using operators, functions, and data items."</em><br><br>
+        <strong>Types:</strong> Calculated Measure, Calculated Category, Calculated Date/Time<br>
+        <strong>User changes?</strong> ❌ No (runs automatically on data)<br>
+        <strong>Think of it as:</strong> An <strong>equation</strong> that computes 📝<br><br>
+        <strong>Examples:</strong><br>
+        📝 <strong>Profit Margin</strong> = Revenue − Cost<br>
+        📝 <strong>Full Name</strong> = First Name ‖ " " ‖ Last Name<br>
+        📝 <strong>Age Group</strong> = IF Age &lt; 18 THEN "Child" ELSE "Adult"
+      </p>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE VISUAL -->
+  <div class="info-box">
+    <p class="label">📊 How Parameters Flow Through a Report</p>
+  </div>
+  <div id="flow-chart" style="height:240px;background:#0d1117;border-radius:8px;margin-bottom:8px;"></div>
+
+  <!-- THE 4 PARAMETER TYPES -->
+  <div class="info-box">
+    <p class="label">🎛️ The 4 Parameter Types</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;">
+    <div class="param-card" style="border-color:#55efc4;">
+      <h4 style="color:#55efc4;">🔢 Numeric Parameter</h4>
+      <p>Viewer enters a <strong>number</strong><br>
+        <em>"Top N count, rolling quarters, threshold values"</em><br>
+        Controls: Slider, Text input, Drop-down, Button bar<br>
+        Used in: Ranks, Display Rules, Filters, Calculated Items</p>
+    </div>
+    <div class="param-card" style="border-color:#ffd93d;">
+      <h4 style="color:#ffd93d;">🔤 Character Parameter</h4>
+      <p>Viewer chooses a <strong>category/text</strong><br>
+        <em>"Select a region, choose a product category"</em><br>
+        Controls: Text input, List, Drop-down, Button bar<br>
+        Used in: Calculated Items, Filters, URLs</p>
+    </div>
+    <div class="param-card" style="border-color:#74b9ff;">
+      <h4 style="color:#74b9ff;">📅 Date Parameter</h4>
+      <p>Viewer selects a <strong>date</strong><br>
+        <em>"Choose start date, view 30 days from selected date"</em><br>
+        Controls: Slider, Text input, Drop-down, Button bar<br>
+        Used in: Filters, Calculated Items, Time series plots</p>
+    </div>
+    <div class="param-card" style="border-color:#a29bfe;">
+      <h4 style="color:#a29bfe;">🧮 Expression-Based Parameter</h4>
+      <p>Value set by a <strong>formula</strong>, not user input<br>
+        <em>"Average profit across ALL data (unaffected by filters)"</em><br>
+        No control needed — formula determines value<br>
+        Used in: Benchmarking, % of Total, Initial values</p>
+    </div>
+  </div>
+
+  <!-- KEY DIFFERENCES TABLE -->
+  <div class="info-box">
+    <p class="label">📋 Parameter vs Expression — Detailed Comparison</p>
+  </div>
+  <table class="data-table" style="font-size:0.72rem;">
+    <tr><th>Aspect</th><th>🎛️ Parameter</th><th>📝 Expression</th><th>🧮 Expression-Based Parameter</th></tr>
+    <tr><td><strong>What is it?</strong></td><td>A variable</td><td>A formula</td><td>A param whose value is a formula result</td></tr>
+    <tr><td><strong>User changes?</strong></td><td>✅ Yes (control objects)</td><td>❌ No</td><td>❌ No (determined by data)</td></tr>
+    <tr><td><strong>Created via</strong></td><td>New data item → Parameter</td><td>New data item → Calculated item</td><td>New data item → Parameter (expression)</td></tr>
+    <tr><td><strong>Affected by filters?</strong></td><td>⚠️ Depends where used</td><td>✅ Yes (operates on filtered data)</td><td>❌ No (based on entire data source)</td></tr>
+    <tr><td><strong>Updated when...</strong></td><td>User changes control</td><td>Data changes</td><td>Data changes</td></tr>
+    <tr><td><strong>Can preview result?</strong></td><td>✅ See current value</td><td>✅ Preview in editor</td><td>❌ No preview (depends on data)</td></tr>
+    <tr><td><strong>Example</strong></td><td>TopN = 10</td><td>Revenue − Cost</td><td>AvgProfit = SUM(Profit)/SUM(Orders)</td></tr>
+  </table>
+
+  <!-- WHERE PARAMETERS CAN BE USED -->
+  <div class="info-box">
+    <p class="label">🎯 Where Can Parameters Be Used?</p>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:8px;">
+    <div class="card" style="border-top:3px solid #55efc4;">
+      <p class="label" style="color:#55efc4;font-size:0.7rem;">📐 Calculated Items</p>
+      <p style="font-size:0.68rem;color:var(--text2);">Insert parameter as a variable in formulas</p>
+    </div>
+    <div class="card" style="border-top:3px solid #ff7675;">
+      <p class="label" style="color:#ff7675;font-size:0.7rem;">🔍 Filters</p>
+      <p style="font-size:0.68rem;color:var(--text2);">Detail, aggregate, data source filters</p>
+    </div>
+    <div class="card" style="border-top:3px solid #ffd93d;">
+      <p class="label" style="color:#ffd93d;font-size:0.7rem;">🏆 Ranks</p>
+      <p style="font-size:0.68rem;color:var(--text2);">N or count value for Top/Bottom N</p>
+    </div>
+    <div class="card" style="border-top:3px solid #74b9ff;">
+      <p class="label" style="color:#74b9ff;font-size:0.7rem;">🎨 Display Rules</p>
+      <p style="font-size:0.68rem;color:var(--text2);">Threshold values for conditional coloring</p>
+    </div>
+    <div class="card" style="border-top:3px solid #a29bfe;">
+      <p class="label" style="color:#a29bfe;font-size:0.7rem;">🔗 URL Links</p>
+      <p style="font-size:0.68rem;color:var(--text2);">Pass parameter value in external URL</p>
+    </div>
+    <div class="card" style="border-top:3px solid #fd79a8;">
+      <p class="label" style="color:#fd79a8;font-size:0.7rem;">📝 Text Objects</p>
+      <p style="font-size:0.68rem;color:var(--text2);">Display dynamic text with parameter value</p>
+    </div>
+  </div>
+
+  <!-- SCENARIO EXAMPLE -->
+  <div class="info-box">
+    <p class="label">🎯 Real Scenario: Combining Parameters + Expressions</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #55efc4;">
+      <p class="label" style="color:#55efc4;">Step 1: Create Parameter</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <strong>Numeric Parameter</strong> called <code>TargetProfit</code><br>
+        Initial value: $50,000<br>
+        Add a <strong>Slider</strong> control → user can slide from $0 to $100,000
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #ffd93d;">
+      <p class="label" style="color:#ffd93d;">Step 2: Create Expression</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <strong>Calculated Item</strong>: <code>Profit vs Target</code><br>
+        Formula: <code>Profit - TargetProfit</code><br>
+        This uses the parameter <code>TargetProfit</code> in the expression!
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #74b9ff;">
+      <p class="label" style="color:#74b9ff;">Step 3: See It In Action</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        Bar chart shows "Profit vs Target" per region<br><br>
+        User slides target to $80,000 → all bars recalculate<br>
+        User slides target to $30,000 → bars change again<br><br>
+        <em>Parameter controls the input. Expression calculates the result.</em>
+      </p>
+    </div>
+  </div>
+
+  <!-- EXPRESSION-BASED PARAMETER SPOTLIGHT -->
+  <div class="tip blue">
+    <strong>🧠 Expression-Based Parameters — The Tricky One:</strong><br>
+    <em>"Expression-based parameters can be used anywhere a regular parameter can be used. They are NOT affected by filters or actions — based on the entire data source, value remains constant."</em><br><br>
+    <strong>Use for:</strong> Benchmarking (average across all data), Percent of total, Setting initial slider values to "past 180 days" automatically.<br>
+    <strong>Example:</strong> Create <code>AvgOrderProfit</code> = SUM(Profit) / SUM(Orders). Even if you filter to "North" region, this parameter still shows the average across ALL regions — perfect for comparison!
+  </div>
+
+  <!-- MEMORY TRICK -->
+  <div class="tip green">
+    <strong>🧠 Mnemonic:</strong><br>
+    <strong>P</strong>arameter = <strong>P</strong>ut in a value (user controls it) 🎛️<br>
+    <strong>E</strong>xpression = <strong>E</strong>valuate a formula (SAS calculates it) 📝<br>
+    <strong>Expression-based P</strong>arameter = <strong>Formula becomes the P</strong>ut-in value 🤝<br><br>
+    <em>"Parameters are the INPUT. Expressions are the CALCULATION. They work TOGETHER."</em>
+  </div>
+  <div style="margin-top:12px;text-align:center;"><a href="../quizzes/parameters-expressions.html" class="nav-btn" style="text-decoration:none;">📝 Practice Quiz →</a></div>
+  <!-- QUIZ LINK -->
+  <div style="text-align:center;margin-top:12px;padding:10px;background:var(--bg2);border-radius:8px;border:1px solid var(--border);">
+    <a href="../quizzes/parameters-expressions.html" style="color:var(--accent2);text-decoration:none;font-size:0.85rem;font-weight:600;">
+      📝 Practice: Take the Quiz for this Topic →</a>
+  </div>
+</div>
+</details>
+
+</div>
+
+<a href="#" class="back-top" title="Back to top">⬆</a>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Flow chart showing how parameters move through a report
+  var stages = ['User<br>Slider', 'Parameter<br>TopN = 10', 'Rank<br>Object', 'Report<br>Updates'];
+  var sl = [0,0,1,2];
+  var tl = [1,2,3,3];
+  
+  Plotly.newPlot('flow-chart', [{
+    type:'sankey', orientation:'h',
+    node:{label:stages, color:['#55efc4','#ffd93d','#74b9ff','#a29bfe'], pad:15, thickness:20,
+      line:{color:'#3d4049',width:1}},
+    link:{source:sl,target:tl,value:[10,10,10,10],
+      color:['rgba(85,239,196,0.4)','rgba(255,217,61,0.4)','rgba(116,185,255,0.4)','rgba(162,155,254,0.4)'],
+      label:['User slides to 15','Stores value 15','Uses 15 for Top N','Shows Top 15!']}
+  }], {
+    title:{text:'🎛️ User → Parameter → Object → Update',font:{color:'#8b949e',size:10}},
+    paper_bgcolor:'#0d1117',font:{color:'#8b949e',size:9},
+    margin:{l:10,r:10,t:30,b:10},height:240
+  }, {displayModeBar:false, responsive:true});
+});
+</script>
+
+</body>
+</html>

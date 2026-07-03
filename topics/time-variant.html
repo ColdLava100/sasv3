@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Time Variant Charts</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+
+<details id="t1" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #0984e3;">
+  📈 Time Variant Charts — Show Changes Over Time
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <div style="background:var(--bg3);border-radius:8px;padding:14px;margin-bottom:10px;">
+    <p style="color:var(--text2);font-size:0.85rem;">
+      From course: <em>"Time variant charts are useful for showing changes over time. Located in the Graphs group in the Objects pane."</em>
+    </p>
+  </div>
+
+  <!-- 5 CHARTS VISUAL -->
+  <div class="info-box">
+    <p class="label">📊 Interactive: All 5 Time Variant Charts</p>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;">
+    <div id="ch-step" style="height:190px;background:#0d1117;border-radius:8px;"></div>
+    <div id="ch-vector" style="height:190px;background:#0d1117;border-radius:8px;"></div>
+    <div id="ch-bubble" style="height:190px;background:#0d1117;border-radius:8px;"></div>
+    <div id="ch-waterfall" style="height:190px;background:#0d1117;border-radius:8px;"></div>
+  </div>
+  <div id="ch-schedule" style="height:130px;background:#0d1117;border-radius:8px;margin-bottom:8px;"></div>
+
+  <!-- EXAM SCREENSHOT -->
+  <div class="info-box">
+    <p class="label">📋 From the Course</p>
+  </div>
+  <img src="../images/exam-time-variant.png" style="max-width:100%;border-radius:6px;margin:4px 0 8px;border:1px solid var(--border);" alt="Time variant charts from course">
+
+  <!-- COMPARISON TABLE -->
+  <div class="info-box">
+    <p class="label">📋 Complete Comparison</p>
+  </div>
+  <table class="data-table" style="font-size:0.72rem;">
+    <tr><th>Feature</th><th style="color:#55efc4;">1️⃣ Step</th><th style="color:#ffd93d;">2️⃣ Vector</th><th style="color:#ff7675;">3️⃣ Bubble Change</th><th style="color:#74b9ff;">4️⃣ Waterfall</th><th style="color:#a29bfe;">5️⃣ Schedule</th></tr>
+    <tr><td><strong>What it shows</strong></td><td>Irregular/discrete changes</td><td>Direction + magnitude</td><td>Direction + magnitude + size</td><td>Incremental → final total</td><td>Task timeline / plan</td></tr>
+    <tr><td><strong># of Measures</strong></td><td>1</td><td><strong>4</strong></td><td><strong>6</strong></td><td>1</td><td>0 (Task + Start + Finish)</td></tr>
+    <tr><td><strong>Visual</strong></td><td>Staircase steps ⬆⬇</td><td>Arrows 🏹</td><td>Arrows + bubbles 🫧</td><td>Floating bars 🧱</td><td>Gantt bars 📋</td></tr>
+    <tr><td><strong>Also known as</strong></td><td>—</td><td>—</td><td>—</td><td>Progressive bar, Mario, Bridge</td><td>Gantt chart</td></tr>
+    <tr><td><strong>Requires</strong></td><td>Measure + X (time)</td><td>X Origin, X, Y Origin, Y</td><td>X start, X end, Y start, Y end, Size start, Size end</td><td>Category + Measure</td><td>Task + Start + Finish</td></tr>
+    <tr><td><strong>Extra features</strong></td><td>Group, Label per segment</td><td>Arrowheads, Color</td><td>Bubble size range</td><td>Initial/Final bar, Trend line</td><td>Group, Label per bar</td></tr>
+  </table>
+
+  <!-- DETAIL CARDS -->
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #55efc4;">
+      <p class="label" style="color:#55efc4;">1️⃣ Step Plot</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Useful for showing changes that occur at irregular, discrete intervals."</em><br><br>
+        📏 Horizontal + vertical line segments = steps<br>
+        🔍 Quickly spot exact X-axis point when Y changes<br>
+        📊 Example: Interest rates over time<br>
+        ⚠️ Sorted <strong>ascending by X axis</strong> by default<br>
+        ✅ Can use: Group, Label, Lattice, Hidden
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #ffd93d;">
+      <p class="label" style="color:#ffd93d;">2️⃣ Vector Plot</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Useful for showing relative performance between two sets of measures from one point in time to another."</em><br><br>
+        🏹 Shows <strong>direction + magnitude</strong> as arrows<br>
+        📊 Example: Product quality start vs end of year<br>
+        ⚠️ <strong>4 measures required:</strong> X Origin, X, Y Origin, Y<br>
+        ⚠️ <strong>Hide axis labels</strong> — use title to describe axes<br>
+        ✅ Can use: Color, Arrowheads, Group, Lattice
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #ff7675;">
+      <p class="label" style="color:#ff7675;">3️⃣ Bubble Change Plot</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Useful for showing relative performance between THREE sets of measures from one point in time to another."</em><br><br>
+        🫧 Arrows + <strong>bubble sizes change</strong><br>
+        📊 Example: Market share + revenue over time<br>
+        ⚠️ <strong>6 measures required!</strong><br>
+        ⚠️ X/Y start/end + Size start/end<br>
+        ✅ Can use: Group, Bubble size range, Arrowheads
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #74b9ff;">
+      <p class="label" style="color:#74b9ff;">4️⃣ Waterfall Chart</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Useful for showing how incremental changes lead to a final value. Sometimes called a progressive bar chart."</em><br><br>
+        🧱 Floating bars show cumulative effect<br>
+        📊 Example: Revenue breakdown by quarter<br>
+        🔵 Green = increase, 🔴 Red = decrease<br>
+        🏁 Initial bar + Final (cumulative) bar<br>
+        ✅ Can use: Trend line, Color by direction, Lattice
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #a29bfe;">
+      <p class="label" style="color:#a29bfe;">5️⃣ Schedule Chart (Gantt)</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Useful for project management — provides a detailed overview of required tasks, duration, and order."</em><br><br>
+        📋 Horizontal bars show start → finish<br>
+        📊 Examples: Project tracking, holidays, work schedules<br>
+        ⚠️ <strong>No measure needed!</strong> Just Task + Start + Finish<br>
+        ✅ Can use: Group, Label per bar, Lattice
+      </p>
+    </div>
+  </div>
+
+  <!-- EXAM TIPS -->
+  <div class="tip red">
+    <strong>🎯 Key Exam Points:</strong><br>
+    • All 5 are in the <strong>Graphs group</strong> ✅<br>
+    • <strong>Step Plot</strong> → sorted ascending by X axis ⚠️<br>
+    • <strong>Vector Plot</strong> → 4 measures (X Origin+X, Y Origin+Y) ⚠️<br>
+    • <strong>Bubble Change</strong> → 6 measures (the most!) ⚠️<br>
+    • <strong>Waterfall</strong> → Initial bar + Final cumulative bar + Color by direction ✅<br>
+    • <strong>Schedule</strong> → Task + Start + Finish (no measures!) ⚠️<br>
+    • Waterfall is also called: Progressive bar, Flying bricks, Mario, Bridge 🧱
+  </div>
+
+  <div class="tip green">
+    <strong>🧠 Memory Trick:</strong><br>
+    <strong>S</strong>tep = <strong>S</strong>taircase (irregular intervals)<br>
+    <strong>V</strong>ector = <strong>V</strong>elocity arrows (4 measures)<br>
+    <strong>B</strong>ubble = <strong>B</strong>oth size + direction (6 measures)<br>
+    <strong>W</strong>aterfall = <strong>W</strong>ater flows down incrementally<br>
+    <strong>S</strong>chedule = <strong>S</strong>tart + Finish (Gantt chart)
+  </div>
+
+</div>
+</details>
+
+</div>
+
+<a href="#" class="back-top" title="Back to top">⬆</a>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var o = {displayModeBar:false, responsive:true};
+
+  // 1. Step Plot
+  var s1 = document.getElementById('ch-step');
+  if (s1) Plotly.newPlot(s1, [
+    {x:[0,2,2,5,5,8,8,12], y:[3,3,5,5,4,4,6,6], type:'scatter', mode:'lines',
+     line:{shape:'hv', color:'#55efc4', width:3}, name:'Interest Rate',
+     fill:'tozeroy', fillcolor:'rgba(85,239,196,0.1)'}
+  ], {margin:{l:30,r:10,t:25,b:20},paper_bgcolor:'#0d1117',plot_bgcolor:'#0d1117',
+      font:{color:'#8b949e',size:8},title:{text:'1️⃣ Step Plot (Irregular)',font:{size:9,color:'#8b949e'}},
+      xaxis:{showgrid:false,color:'#3d4049'},yaxis:{showgrid:false,color:'#3d4049',range:[0,8]}}, o);
+
+  // 2. Vector Plot (arrows)
+  var s2 = document.getElementById('ch-vector');
+  if (s2) Plotly.newPlot(s2, [
+    {x:[20,45], y:[30,55], type:'scatter', mode:'lines+markers',
+     line:{color:'#ffd93d',width:2}, marker:{size:6,color:'#ffd93d'},
+     name:'Product A', showlegend:false},
+    {x:[40,35], y:[20,40], type:'scatter', mode:'lines+markers',
+     line:{color:'#ff7675',width:2}, marker:{size:6,color:'#ff7675'},
+     name:'Product B', showlegend:false},
+    {x:[25,30], y:[50,50], type:'scatter', mode:'lines+markers',
+     line:{color:'#74b9ff',width:2}, marker:{size:6,color:'#74b9ff'},
+     name:'Product C', showlegend:false}
+  ], {margin:{l:30,r:10,t:25,b:20},paper_bgcolor:'#0d1117',plot_bgcolor:'#0d1117',
+      font:{color:'#8b949e',size:8},title:{text:'2️⃣ Vector Plot (Arrows)',font:{size:9,color:'#8b949e'}},
+      xaxis:{showgrid:false,color:'#3d4049',range:[0,80]},
+      yaxis:{showgrid:false,color:'#3d4049',range:[0,80]}}, o);
+
+  // 3. Bubble Change
+  var s3 = document.getElementById('ch-bubble');
+  if (s3) Plotly.newPlot(s3, [
+    {x:[30,50], y:[40,60], type:'scatter', mode:'lines+markers',
+     line:{color:'#ff7675',width:2}, marker:{size:[30,50],color:'#ff7675'},
+     name:'Start→End', showlegend:false}
+  ], {margin:{l:30,r:10,t:25,b:20},paper_bgcolor:'#0d1117',plot_bgcolor:'#0d1117',
+      font:{color:'#8b949e',size:8},title:{text:'3️⃣ Bubble Change (+Size)',font:{size:9,color:'#8b949e'}},
+      xaxis:{showgrid:false,color:'#3d4049',range:[0,80]},
+      yaxis:{showgrid:false,color:'#3d4049',range:[0,80]}}, o);
+
+  // 4. Waterfall
+  var s4 = document.getElementById('ch-waterfall');
+  if (s4) {
+    var wLabels = ['Start','Jan','Feb','Mar','Apr','Final'];
+    var wBase = [0,100,130,110,140,0];
+    var wVal = [100,30,-20,30,-10,160];
+    var wColor = wVal.map(function(v,i){return i===0?'#74b9ff':i===wVal.length-1?'#a29bfe':v>=0?'#55efc4':'#ff7675';});
+    Plotly.newPlot(s4, [{
+      x:wLabels, y:wVal, base:wBase, type:'waterfall',
+      measure:['relative','relative','relative','relative','relative','total'],
+      connector:{line:{color:'#3d4049',width:1}},
+      increasing:{marker:{color:'#55efc4'}},
+      decreasing:{marker:{color:'#ff7675'}},
+      totals:{marker:{color:'#a29bfe'}}
+    }], {margin:{l:30,r:10,t:25,b:30},paper_bgcolor:'#0d1117',plot_bgcolor:'#0d1117',
+        font:{color:'#8b949e',size:8},title:{text:'4️⃣ Waterfall (Incremental)',font:{size:9,color:'#8b949e'}},
+        xaxis:{showgrid:false,color:'#3d4049'},yaxis:{showgrid:false,color:'#3d4049'}}, o);
+  }
+
+  // 5. Schedule Chart (Gantt)
+  var s5 = document.getElementById('ch-schedule');
+  if (s5) {
+    var tasks = ['Research','Design','Dev','Testing','Deploy'];
+    var starts = [0,3,6,9,12];
+    var ends = [3,6,9,12,13];
+    var colors = ['#55efc4','#ffd93d','#ff7675','#74b9ff','#a29bfe'];
+    Plotly.newPlot(s5, [
+      {y:tasks, x:[3,3,3,3,1], type:'bar',
+       orientation:'h', marker:{color:colors},
+       text:['Research','Design','Development','Testing','Deploy'],
+       textposition:'inside', textfont:{color:'#0d1117',size:8}}
+    ], {margin:{l:80,r:10,t:25,b:25},paper_bgcolor:'#0d1117',plot_bgcolor:'#0d1117',
+        font:{color:'#8b949e',size:8},title:{text:'5️⃣ Schedule Chart (Gantt)',font:{size:9,color:'#8b949e'}},
+        xaxis:{showgrid:false,color:'#3d4049'},yaxis:{showgrid:false,color:'#3d4049',autorange:'reversed'},
+        bargap:0.3}, o);
+  }
+});
+</script>
+</body>
+</html>

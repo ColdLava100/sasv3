@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Static Filters Quiz</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Practice Quiz — Static Filters</p>
+</div>
+
+<div class="nav-bar">
+  <select onchange="if(this.value)window.location.href=this.value;" class="nav-select">    <option value="index.html">📋 Quiz Index</option>
+    <option value="rank-filter.html">🏆 Rank/Filter</option>
+    <option value="columns-lattice.html">📐 Columns/Lattice</option>
+    <option value="crosstab-rows.html">📋 Crosstab Rows</option>
+    <option value="measure-heading.html">📋 Measure Heading</option>
+    <option value="box-plot.html">📦 Box Plot</option>
+    <option value="bubble-plot.html">🫧 Bubble</option>
+    <option value="treemap.html">🟦 Treemap</option>
+    <option value="geo-maps.html">🗺️ Geo Maps</option>
+    <option value="path-analysis.html">🔀 Path</option>
+    <option value="parameters-expressions.html">🎯 Param/Expr</option>
+    <option value="sharing-reports.html">📤 Sharing</option>
+    <option value="decision-tree.html">🌳 Decision Tree</option>
+    <option value="calculated-items.html">🧮 Calc Items</option>
+    <option value="common-filters.html">🔄 Common Filters</option>
+    <option value="auto-explanation.html">🤖 Auto Explain</option>
+    <option value="content-objects.html">📦 Content Objects</option>
+    <option value="dual-axis.html">📊 Dual Axis</option>
+    <option value="time-variant.html">📈 Time Variant</option>
+    <option value="static-filters.html">🏷️ Static Filters</option>
+  </select>
+</div>
+
+<div class="content">
+<details class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #0984e3;">
+  🏷️ Static Filters Quiz
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <div class="quiz-card">
+    <h3 id="qz-static-filters">🏷️ Static Filters</h3>
+    <div class="quiz-q"><p><strong>Q1:</strong> Which filter operates at the REPORT level?</p>
+      <div><button class="quiz-btn" data-answer="zsf1" data-correct>Data Source Filter</button><button class="quiz-btn" data-answer="zsf1">Basic Filter</button><button class="quiz-btn" data-answer="zsf1">Advanced Filter</button><button class="quiz-btn" data-answer="zsf1">Common Filter</button></div>
+      <div id="zsf1" class="quiz-answer">✅ <strong>Data Source Filter</strong> — "A global filter that subsets data for the entire report." The other three are object-level filters.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> A Basic Filter uses how many data items?</p>
+      <div><button class="quiz-btn" data-answer="zsf2">None — it uses aggregated values</button><button class="quiz-btn" data-answer="zsf2" data-correct>1 — a single data item</button><button class="quiz-btn" data-answer="zsf2">2 or more data items</button><button class="quiz-btn" data-answer="zsf2">As many as needed</button></div>
+      <div id="zsf2" class="quiz-answer">✅ <strong>1 data item</strong> — "A basic filter includes only one data item."<br>
+        ❌ 2+: That's Advanced Filter.<br>
+        ❌ Aggregated: That's Post-Aggregate Filter.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3:</strong> How many Data Source Filters can you have per data source?</p>
+      <div><button class="quiz-btn" data-answer="zsf3">Unlimited</button><button class="quiz-btn" data-answer="zsf3">3</button><button class="quiz-btn" data-answer="zsf3" data-correct>1</button><button class="quiz-btn" data-answer="zsf3">10</button></div>
+      <div id="zsf3" class="quiz-answer">✅ <strong>1 per data source</strong> — "There is a limit of one data source filter per data source." Use a complex Boolean expression for multiple conditions.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4 🔥:</strong> A filter needs to show only products where TOTAL sales &gt; $10,000 (after grouping). Which filter?</p>
+      <div><button class="quiz-btn" data-answer="zsf4">Basic Filter</button><button class="quiz-btn" data-answer="zsf4">Advanced Filter</button><button class="quiz-btn" data-answer="zsf4" data-correct>Post-Aggregate Filter</button><button class="quiz-btn" data-answer="zsf4">Data Source Filter</button></div>
+      <div id="zsf4" class="quiz-answer">✅ <strong>Post-Aggregate Filter</strong> — "Subsets using aggregated values, not individual values." After SUM(Sales) is calculated, it keeps only products &gt; $10K.<br>
+        ❌ Basic/Advanced: Work on detail data (individual rows), not totals.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q5:</strong> What types of filters can be converted to a Common Filter?</p>
+      <div><button class="quiz-btn" data-answer="zsf5">Basic only</button><button class="quiz-btn" data-answer="zsf5" data-correct>Basic, Advanced, OR Post-Aggregate</button><button class="quiz-btn" data-answer="zsf5">Data Source only</button><button class="quiz-btn" data-answer="zsf5">Advanced only</button></div>
+      <div id="zsf5" class="quiz-answer">✅ <strong>Basic, Advanced, OR Post-Aggregate</strong> — "A common filter can be a basic, advanced, or post-aggregate filter that is shared between objects."</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q6:</strong> Who defines static filters?</p>
+      <div><button class="quiz-btn" data-answer="zsf6" data-correct>Report designer</button><button class="quiz-btn" data-answer="zsf6">Report viewer</button><button class="quiz-btn" data-answer="zsf6">System administrator</button><button class="quiz-btn" data-answer="zsf6">Data source owner</button></div>
+      <div id="zsf6" class="quiz-answer">✅ <strong>Report designer</strong> — "Static filters must be defined and applied by the report designer." (Dynamic filters like prompts are used by viewers.)</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q7 🔥:</strong> Which is TRUE about a Data Source Filter?</p>
+      <div><button class="quiz-btn" data-answer="zsf7" data-correct>It updates cardinalities in the Data pane</button><button class="quiz-btn" data-answer="zsf7">It is applied after object-level filters</button><button class="quiz-btn" data-answer="zsf7">It can be converted to a Common Filter</button><button class="quiz-btn" data-answer="zsf7">Multiple data source filters per source are allowed</button></div>
+      <div id="zsf7" class="quiz-answer">✅ <strong>Updates cardinalities</strong> — "Data pane cardinalities are updated" when a Data Source Filter is applied. It acts as a pre-filter.<br>
+        ❌ After object-level: It's applied BEFORE (acts as pre-filter).<br>
+        ❌ Convert to Common: Data Source cannot be converted — only Basic/Adv/Post can.<br>
+        ❌ Multiple: Only 1 per data source.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q8:</strong> The Detail data option is disabled if what exists?</p>
+      <div><button class="quiz-btn" data-answer="zsf8">A Basic Filter</button><button class="quiz-btn" data-answer="zsf8" data-correct>A Post-Aggregate Filter</button><button class="quiz-btn" data-answer="zsf8">A Data Source Filter</button><button class="quiz-btn" data-answer="zsf8">A Common Filter</button></div>
+      <div id="zsf8" class="quiz-answer">✅ <strong>A Post-Aggregate Filter</strong> — "The Detail data option is not available if the list table already includes a post-aggregate filter."</div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/static-filters.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+</div>
+</details>
+</div>
+
+<script src="../js/tracker.js"></script>
+<script src="../js/common.js"></script>
+</body>
+</html>

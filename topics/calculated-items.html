@@ -125,11 +125,88 @@
     </div>
   </div>
 
+  <!-- PERIODIC AGGREGATED MEASURES -->
+  <div class="info-box">
+    <p class="label">📅 Periodic Aggregated Measures — Time-Based Calculations</p>
+    <p style="font-size:0.78rem;color:var(--text2);">
+      <strong>Periodic functions</strong> aggregate values over time. From course: <em>"Periodic functions are evaluated over time intervals, allowing you to analyze how data changes over time. To use the periodic functions, your data source must contain date or datetime data items."</em>
+    </p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;">
+    <div class="card" style="border-top:3px solid #74b9ff;">
+      <p class="label" style="color:#74b9ff;font-size:0.7rem;">5 Periodic Functions</p>
+      <p style="font-size:0.68rem;color:var(--text2);">
+        <strong>CumulativePeriod</strong> — Current + all previous periods within a larger period<br>
+        <strong>ParallelPeriod</strong> — Value from a parallel time period (e.g., same month last year)<br>
+        <strong>Period</strong> — Value for a specific period (e.g., current month)<br>
+        <strong>PeriodWithDate</strong> — Value for a specific, constant period<br>
+        <strong>RelativePeriod</strong> — Value relative to current period (e.g., 3 months ago)
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #ffd93d;">
+      <p class="label" style="color:#ffd93d;font-size:0.7rem;">Filter Options</p>
+      <p style="font-size:0.68rem;color:var(--text2);">
+        <strong>ApplyAllFilters</strong> — All filters applied before processing<br>
+        <strong>IgnoreAllTimeFrameFilters</strong> — Date/time filters ignored<br>
+        <strong>IgnoreInteractiveTimeFrameFilters</strong> — Only interactive date filters ignored
+      </p>
+    </div>
+  </div>
+
+  <!-- EXAM QUESTION -->
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #e17055;">
+      <p class="label" style="color:#e17055;">🎯 Exam Question: Percent Difference in a Crosstab</p>
+      <p style="font-size:0.82rem;color:var(--text2);">
+        <strong>Situation:</strong> An aggregated measure "Product Sale (Percent diff from previous period)" was created <strong>using the Year data item</strong>. It's added to a crosstab with City in Rows. The column shows dashes "—".<br><br>
+        <strong>Question:</strong> <em>"Which data item should be added to the Columns role to correctly display the percent difference?"</em>
+      </p>
+      <div class="option-correct">✅ <strong>C) Year</strong> — The period dimension must be in the table structure</div>
+    </div>
+    <div class="card" style="border-top:3px solid #00b894;">
+      <p class="label" style="color:#00b894;">🔍 Why Year is Correct</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        The aggregated measure was created <strong>"using the Year data item"</strong> — Year defines the periods. For a periodic function like Percent Difference to calculate values, the period dimension must be present in either <strong>Columns</strong> or <strong>Rows</strong> of the crosstab.<br><br>
+        <strong>Without Year in Columns:</strong><br>
+        ┌──────┬──────────┬───────────────┐<br>
+        │ City │ Sales    │ % Diff (—) ❌ │<br>
+        ├──────┼──────────┼───────────────┤<br>
+        │ Fresn│ $193,659 │ — (no period) │<br>
+        └──────┴──────────┴───────────────┘<br><br>
+        <strong>With Year in Columns:</strong><br>
+        ┌──────┬───────┬───────┬───────┐<br>
+        │ City │ 2022  │ 2023  │ %Diff │<br>
+        ├──────┼───────┼───────┼───────┤<br>
+        │ Fresn│$180K │$193K │ +7.2%✅│<br>
+        └──────┴───────┴───────┴───────┘
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #ff7675;">
+      <p class="label" style="color:#ff7675;">❌ Why NOT the Others</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <strong>A) Quarter</strong> — Period is YEAR, not quarter. Wrong granularity.<br>
+        <strong>B) Month</strong> — 226 distinct months, too granular. Also wrong period type.<br>
+        <strong>D) Date</strong> — 4,900 distinct dates! Would create thousands of columns.<br><br>
+        <em>The period dimension must match what the aggregated measure was created with.</em>
+      </p>
+    </div>
+  </div>
+
+  <div class="tip blue">
+    <strong>🧠 Key Rule:</strong> <em>"Periodic functions need their period dimension in the table structure. When the % Diff shows dashes, the period is missing from Columns or Rows."</em>
+  </div>
+
   <!-- EXAM TIP -->
   <div class="tip red">
     <strong>⚠️ Exam Tip:</strong> In the expression editor, aggregated functions do NOT accept aggregated measures as inputs (no nested aggregations). Also, "Min and Max aggregated measures return a date/datetime formatted aggregated measure — it cannot be used directly in filters."
   </div>
 
+  <!-- QUIZ LINK -->
+  <div style="text-align:center;margin-top:12px;padding:10px;background:var(--bg2);border-radius:8px;border:1px solid var(--border);">
+    <a href="../quizzes/calculated-items.html" style="color:var(--accent2);text-decoration:none;font-size:0.85rem;font-weight:600;">
+      📝 Practice: Take the Quiz for this Topic →</a>
+  </div>
 </div>
 </details>
 </div>

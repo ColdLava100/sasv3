@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Auto Explanation Quiz</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Practice Quiz — Automated Explanation &amp; Prediction</p>
+</div>
+
+<div class="nav-bar">
+  <select onchange="if(this.value)window.location.href=this.value;" class="nav-select">    <option value="index.html">📋 Quiz Index</option>
+    <option value="rank-filter.html">🏆 Rank/Filter</option>
+    <option value="columns-lattice.html">📐 Columns/Lattice</option>
+    <option value="crosstab-rows.html">📋 Crosstab Rows</option>
+    <option value="measure-heading.html">📋 Measure Heading</option>
+    <option value="box-plot.html">📦 Box Plot</option>
+    <option value="bubble-plot.html">🫧 Bubble</option>
+    <option value="treemap.html">🟦 Treemap</option>
+    <option value="geo-maps.html">🗺️ Geo Maps</option>
+    <option value="path-analysis.html">🔀 Path</option>
+    <option value="parameters-expressions.html">🎯 Param/Expr</option>
+    <option value="sharing-reports.html">📤 Sharing</option>
+    <option value="decision-tree.html">🌳 Decision Tree</option>
+    <option value="calculated-items.html">🧮 Calc Items</option>
+    <option value="common-filters.html">🔄 Common Filters</option>
+    <option value="auto-explanation.html">🤖 Auto Explain</option>
+    <option value="content-objects.html">📦 Content Objects</option>
+  </select>
+</div>
+
+<div class="content">
+<details class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #6c5ce7;">
+  🤖 Automated Explanation &amp; Prediction Quiz
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <div class="quiz-card">
+    <h3 id="qz-auto-explanation">🤖 Automated Explanation &amp; Prediction</h3>
+    <div class="quiz-q"><p><strong>Q1 🔥:</strong> In the Automated Explanation object, what happens when you CLICK on an underlying factor in the bar chart?</p>
+      <img src="../images/exam-auto-explanation.png" style="max-width:100%;border-radius:6px;margin:4px 0 8px;border:1px solid #333;display:block;" alt="Auto explanation exam">
+      <div><button class="quiz-btn" data-answer="za1">The factor is removed</button><button class="quiz-btn" data-correct="true" data-answer="za1">The relationship plot is displayed</button><button class="quiz-btn" data-answer="za1">A new prediction is created</button><button class="quiz-btn" data-answer="za1">The factor characteristics are shown alone</button></div>
+      <div id="za1" class="quiz-answer">✅ <strong>Relationship plot is displayed</strong> — "Click on an underlying factor to view the relationship plot."<br>❌ Removed: Right-click removes, left-click shows relationship.<br>❌ New prediction: Clicking doesn't create objects.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> What happens when you RIGHT-CLICK an underlying factor?</p>
+      <div><button class="quiz-btn" data-answer="za2">Relationship plot is shown</button><button class="quiz-btn" data-correct="true" data-answer="za2">The factor is removed</button><button class="quiz-btn" data-answer="za2">A new chart is created</button></div>
+      <div id="za2" class="quiz-answer">✅ <strong>The factor is removed</strong> — "You can remove any individual underlying factor from the right-click context menu."<br>❌ Relationship plot: That's left-click.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3:</strong> What models does Automated Prediction run for a CATEGORY response?</p>
+      <div><button class="quiz-btn" data-answer="za3">Linear regression, Gradient boosting, Decision tree</button><button class="quiz-btn" data-correct="true" data-answer="za3">Logistic regression, Gradient boosting, Decision tree</button><button class="quiz-btn" data-answer="za3">ARIMA, Exponential smoothing</button></div>
+      <div id="za3" class="quiz-answer">✅ <strong>Logistic regression, Gradient boosting, Decision tree</strong> — Category response models.<br>❌ Linear regression: Used for MEASURE responses.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4:</strong> How does Automated Prediction choose the champion model?</p>
+      <div><button class="quiz-btn" data-answer="za4">User selects manually</button><button class="quiz-btn" data-correct="true" data-answer="za4">Category: highest accuracy; Measure: lowest ASE</button><button class="quiz-btn" data-answer="za4">It picks the first model trained</button></div>
+      <div id="za4" class="quiz-answer">✅ <strong>Category: highest accuracy; Measure: lowest ASE</strong> — "Champion Model based on highest accuracy for category, lowest ASE for measure."<br>❌ Manual: "No manual model selection."</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q5:</strong> Which data items are NOT automatically added as underlying factors?</p>
+      <div><button class="quiz-btn" data-answer="za5">Categories and measures</button><button class="quiz-btn" data-correct="true" data-answer="za5">Aggregated measures and date/time values</button><button class="quiz-btn" data-answer="za5">Geographies</button></div>
+      <div id="za5" class="quiz-answer">✅ <strong>Aggregated measures and date/time values</strong> — Also excluded: calculated items, custom categories, derived items.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q6:</strong> Can Automated Prediction be a source for actions?</p>
+      <div><button class="quiz-btn" data-answer="za6">Yes, always</button><button class="quiz-btn" data-correct="true" data-answer="za6">No — cannot be source or target of actions</button><button class="quiz-btn" data-answer="za6">Only as a target</button></div>
+      <div id="za6" class="quiz-answer">✅ <strong>No</strong> — "Cannot use as source or target of actions" is a key limitation.</div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/auto-explanation.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+</div>
+</details>
+</div>
+
+<script src="../js/tracker.js"></script>
+<script src="../js/common.js"></script>
+</body>
+</html>

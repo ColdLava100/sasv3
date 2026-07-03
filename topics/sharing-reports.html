@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Sharing Reports</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  .share-card { background:var(--bg3);border-radius:8px;padding:10px;margin-bottom:6px;border-left:3px solid; }
+  .share-card h4 { font-size:0.82rem;margin-bottom:4px; }
+  .share-card p { font-size:0.72rem;color:var(--text2); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+
+<details id="t1" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #fdcb6e;">
+  📤 Sharing &amp; Embedding Reports — The Complete Guide
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <!-- INTRO -->
+  <div style="background:var(--bg3);border-radius:8px;padding:14px;margin-bottom:10px;">
+    <p style="color:var(--text2);font-size:0.85rem;">
+      From course: <em>"You have many ways to share reports in Visual Analytics."</em> This topic covers all methods for sharing reports — <strong>online</strong> (live connection) and <strong>offline</strong> (static exports).
+    </p>
+  </div>
+
+  <!-- BIG PICTURE: Online vs Offline -->
+  <div class="info-box">
+    <p class="label">📤 The Big Picture: Online vs Offline Sharing</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
+    <div style="background:#1a3a2a;border-radius:8px;padding:12px;border:1px solid #55efc4;">
+      <h4 style="color:#55efc4;font-size:0.85rem;">🌐 ONLINE — Live connection to SAS Viya</h4>
+      <p style="font-size:0.72rem;color:var(--text2);">
+        ✅ Interactive, live data<br>
+        ✅ Updates when data changes<br>
+        ❌ Viewer needs authentication (OR Guest Access)<br><br>
+        <strong>Methods:</strong><br>
+        🔗 Share Report (within Viya)<br>
+        🔗 Copy Link<br>
+        🔗 Copy Embeddable Markup (SDK)<br>
+        👤 Guest Access
+      </p>
+    </div>
+    <div style="background:#3d1a2a;border-radius:8px;padding:12px;border:1px solid #ff7675;">
+      <h4 style="color:#ff7675;font-size:0.85rem;">📦 OFFLINE — Static exports, no connection</h4>
+      <p style="font-size:0.72rem;color:var(--text2);">
+        ✅ No sign-in required<br>
+        ✅ Self-contained<br>
+        ❌ Static — data doesn't refresh<br>
+        ❌ No interactivity with SAS Viya<br><br>
+        <strong>Methods:</strong><br>
+        📄 Export PDF<br>
+        📦 Export Report Package<br>
+        🖼️ Save Object Image
+      </p>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE: THE SHARING DECISION TREE -->
+  <div class="info-box">
+    <p class="label">📊 Decision Tree: Which Sharing Method to Use?</p>
+  </div>
+  <div id="share-tree" style="height:320px;background:#0d1117;border-radius:8px;margin-bottom:8px;"></div>
+
+  <!-- DETAILED METHODS -->
+  <div class="info-box">
+    <p class="label">🔍 All Sharing Methods — Detailed</p>
+  </div>
+
+  <!-- ONLINE METHODS -->
+  <div style="background:#1a3a2a;border-radius:6px;padding:6px 10px;margin:8px 0;font-size:0.78rem;font-weight:700;color:#55efc4;">🌐 ONLINE METHODS (Live connection to SAS Viya)</div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px;">
+    <div class="share-card" style="border-color:#55efc4;">
+      <h4 style="color:#55efc4;">🔗 Share Report (within Viya)</h4>
+      <p>Share with users <strong>within SAS Viya</strong>. Notification sent to their banner. Available in SAS Content folders.</p>
+    </div>
+    <div class="share-card" style="border-color:#ffd93d;">
+      <h4 style="color:#ffd93d;">🔗 Copy Link</h4>
+      <p>Generate link to report, page, or objects. Can include <strong>Guest Access</strong>, parameters, banners. Interactive link.<br>
+        <em>"If recipient already signed in → report opens. If not → prompted for credentials or Guest button."</em></p>
+    </div>
+    <div class="share-card" style="border-color:#74b9ff;">
+      <h4 style="color:#74b9ff;">🔗 Copy Embeddable Markup (SDK)</h4>
+      <p>Code snippet for <strong>SAS Viya SDK for JavaScript</strong>. Custom web page can embed reports.<br>
+        <em>"Custom web page must handle authentication, or each object displays sign-in screen."</em><br>
+        Solution: Use <strong>Guest Access</strong> in the embed options.</p>
+    </div>
+    <div class="share-card" style="border-color:#a29bfe;">
+      <h4 style="color:#a29bfe;">👤 Guest Access</h4>
+      <p><em>"Provides anonymous Read-Only access to select resources."</em><br>
+        ✅ No sign-in required for viewers<br>
+        ⚠️ Requires <strong>admin</strong> to configure in SAS Environment Manager<br>
+        ⚠️ Data must be in CAS with guest access granted<br>
+        ⚠️ ALL guests see same data — limit sensitive info!</p>
+    </div>
+  </div>
+
+  <!-- OFFLINE METHODS -->
+  <div style="background:#3d1a2a;border-radius:6px;padding:6px 10px;margin:8px 0;font-size:0.78rem;font-weight:700;color:#ff7675;">📦 OFFLINE METHODS (Static exports, no Viya connection)</div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:8px;">
+    <div class="share-card" style="border-color:#ff7675;">
+      <h4 style="color:#ff7675;">📄 Export PDF</h4>
+      <p>Full report or selection as PDF.<br>
+        ⚠️ <em>"If report contains private data, exporting to PDF is disabled."</em></p>
+    </div>
+    <div class="share-card" style="border-color:#ffd93d;">
+      <h4 style="color:#ffd93d;">📦 Export Report Package</h4>
+      <p><em>"A snapshot of data and query results."</em><br>
+        ✅ Can view OFFLINE or host on a web server<br>
+        ✅ No sign-in required (static file)<br>
+        ❌ Not interactive — no live Viya connection<br>
+        ❌ <em>"Private data disables report package export."</em></p>
+    </div>
+    <div class="share-card" style="border-color:#74b9ff;">
+      <h4 style="color:#74b9ff;">🖼️ Save Object Image</h4>
+      <p>Export individual chart/object as image.<br>
+        Quick way to capture a visualization.</p>
+    </div>
+  </div>
+
+  <!-- YOUR EXAM QUESTION -->
+  <div class="info-box">
+    <p class="label">🎯 Your Exam Question Breakdown</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #e17055;">
+      <p class="label" style="color:#e17055;">Exam Question</p>
+      <p style="font-size:0.82rem;color:var(--text2);">
+        <strong>Question:</strong> <em>"What are two methods you can use to embed a report in a website using the SAS Visual Analytics SDK, ensuring the report viewer does NOT have to sign in?"</em>
+      </p>
+      <div class="option-wrong">❌ Your answer: Exported report package + Guest Access (WRONG combination)</div>
+      <div class="option-correct">✅ Correct: Exported report package (standalone) AND Direct connection + Guest Access</div>
+    </div>
+  </div>
+
+  <!-- ANALYSIS TABLE -->
+  <table class="data-table" style="font-size:0.72rem;margin-top:6px;">
+    <tr><th>Option</th><th>Method</th><th>Guest Access?</th><th>Correct?</th><th>Why?</th></tr>
+    <tr>
+      <td>a</td>
+      <td>Direct connection, admin creates link</td>
+      <td>❌ Not mentioned</td>
+      <td>❌</td>
+      <td>No Guest Access = viewer must sign in</td>
+    </tr>
+    <tr>
+      <td>b ⚠️</td>
+      <td><strong>Exported report package + Guest Access enabled</strong></td>
+      <td>✅ BUT misplaced</td>
+      <td>❌ <strong>TRAP!</strong></td>
+      <td>Guest Access is for LIVE connections, not static packages! A report package is already offline — no auth needed. Adding "Guest Access" is irrelevant/contradictory.</td>
+    </tr>
+    <tr style="background:#1a3a2a;">
+      <td>c ✅</td>
+      <td><strong>Exported report package on website</strong></td>
+      <td>❌ Not needed</td>
+      <td>✅ <strong>CORRECT</strong></td>
+      <td>Static file = no sign-in needed. Simple and effective.</td>
+    </tr>
+    <tr style="background:#1a3a2a;">
+      <td>d ✅</td>
+      <td><strong>Direct connection + Guest Access enabled</strong></td>
+      <td>✅ Enabled</td>
+      <td>✅ <strong>CORRECT</strong></td>
+      <td>Guest Access allows anonymous viewing via live Viya connection.</td>
+    </tr>
+  </table>
+
+  <!-- WHY YOU GOT IT WRONG -->
+  <div class="tip red" style="margin-top:6px;">
+    <strong>🔥 Why Option B is WRONG:</strong><br>
+    You selected <strong>option b</strong> (exported report package WITH guest access). The issue is that <strong>"Guest Access" and "Exported Report Package" are contradictory concepts:</strong><br><br>
+    📦 <strong>Exported Report Package</strong> = offline, static file, NO connection to Viya → inherently no sign-in needed<br>
+    👤 <strong>Guest Access</strong> = a feature of a LIVE connection to SAS Viya<br><br>
+    You put them together in option b, but they don't belong together! The exported package ALONE (option c) is sufficient — no Guest Access needed. For a live connection (option d), Guest Access MUST be explicitly enabled.
+  </div>
+
+  <!-- KEY CONCEPT: Guest Access -->
+  <div class="info-box">
+    <p class="label">👤 Guest Access — What You MUST Know</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #a29bfe;">
+      <p class="label" style="color:#a29bfe;">What is it?</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Guest Access provides anonymous Read-Only access to reports."</em><br>
+        ✅ Viewers don't need credentials<br>
+        ✅ Works with Copy Link and Embeddable Markup (SDK)<br>
+        ⚠️ Admin must enable it in SAS Environment Manager<br>
+        ⚠️ Grant Read access to SAS Content folders and reports<br>
+        ⚠️ ALL guests see same data — restrict sensitive info
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #55efc4;">
+      <p class="label" style="color:#55efc4;">Where is it used?</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <strong>Copy Link:</strong> "Customize link with Guest Access"<br>
+        <strong>Embeddable Markup:</strong> "Customize code with Guest Access"<br>
+        <strong>Not used in:</strong> Exported Report Package (static, no Viya connection needed)
+      </p>
+    </div>
+  </div>
+
+  <!-- KEY CONCEPT: Report Package -->
+  <div class="info-box">
+    <p class="label">📦 Report Package — What You MUST Know</p>
+  </div>
+  <div style="background:var(--bg3);border-radius:8px;padding:10px;margin-bottom:8px;">
+    <p style="font-size:0.78rem;color:var(--text2);">
+      <em>"You can export a report package, which is a snapshot of the data and query results for a report. You can then use the report package to view the report offline or host it on a webserver for others to access."</em><br><br>
+      ✅ <strong>Self-contained</strong> — no SAS Viya connection needed<br>
+      ✅ <strong>No sign-in</strong> — anyone can view<br>
+      ❌ <strong>Static</strong> — data doesn't refresh<br>
+      ❌ <strong>Private data</strong> — disables report package export
+    </p>
+  </div>
+
+  <!-- EXPORT QUESTION -->
+  <div class="info-box">
+    <p class="label">🎯 Exporting Objects — Filters &amp; Images</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #e17055;">
+      <p class="label" style="color:#e17055;">Exam Question</p>
+      <p style="font-size:0.82rem;color:var(--text2);">
+        <strong>Situation:</strong> A bar chart (MSRP by Type) has a filter action linked to a scatter plot (MPG City vs Highway). When "Wagon" is clicked on the bar chart, the scatter plot filters to show only Wagons. You export the <strong>scatter plot as an image</strong>.<br><br>
+        <strong>Question:</strong> <em>"Which statement is true?"</em>
+      </p>
+      <img src="../images/exam-export-filter.png" style="max-width:100%;border-radius:6px;margin:6px 0;border:1px solid var(--border);" alt="Bar chart linked to scatter plot via filter action">
+      <div class="option-correct">✅ <strong>D) Information about the applied filter action will not be displayed in the exported image.</strong></div>
+      <div class="option-wrong">❌ A) Filter removed, unfiltered shown — Wrong! Filter IS applied to exported image.</div>
+      <div class="option-wrong">❌ B) Bar chart also exported — Wrong! Only the scatter plot is exported.</div>
+      <div class="option-wrong">❌ C) Filter shown as appendix — Wrong! Images don't have appendices or metadata.</div>
+    </div>
+    <div class="card" style="border-top:3px solid #00b894;">
+      <p class="label" style="color:#00b894;">🧠 Key Rule</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Exporting an object as an image captures the <strong>visual state</strong> (filtered data), but <strong>NOT the filter/action metadata</strong> itself."</em><br><br>
+        ✅ Filtered data IS shown in the image<br>
+        ❌ Filter/action info is NOT included<br>
+        ❌ Other objects are NOT included<br>
+        ❌ No "appendix" or metadata is embedded
+      </p>
+    </div>
+  </div>
+
+  <!-- KEY CONCEPT: Embeddable Markup (SDK) -->
+  <div class="info-box">
+    <p class="label">🔗 Embeddable Markup / SAS Viya SDK</p>
+  </div>
+  <div style="background:var(--bg3);border-radius:8px;padding:10px;margin-bottom:8px;">
+    <p style="font-size:0.78rem;color:var(--text2);">
+      <em>"The copy embeddable markup feature generates a code snippet for a report, page, or object for use in the SAS Viya SDK for JavaScript."</em><br><br>
+      <strong>Two authentication options:</strong><br>
+      1️⃣ <strong>credentials</strong> — Viewer must sign in (default)<br>
+      2️⃣ <strong>guest</strong> — Viewer can view anonymously (if Guest Access is enabled)<br><br>
+      <em>"Custom web page must handle authentication, or each report object will display a sign-in screen."</em>
+    </p>
+  </div>
+
+  <!-- COMPARISON TABLE -->
+  <div class="info-box">
+    <p class="label">📋 Quick Reference: Which Method When?</p>
+  </div>
+  <table class="data-table" style="font-size:0.72rem;">
+    <tr><th>Situation</th><th>Method to use</th><th>Online/Offline</th><th>Sign-in needed?</th></tr>
+    <tr><td>Share with colleagues who have SAS accounts</td><td>Share Report (within Viya)</td><td>🌐 Online</td><td>✅ Yes</td></tr>
+    <tr><td>Send a live link via email</td><td>Copy Link</td><td>🌐 Online</td><td>⚠️ Depends (Guest Access optional)</td></tr>
+    <tr><td>Embed in custom website, no sign-in</td><td>Copy Embeddable Markup + Guest Access</td><td>🌐 Online</td><td>❌ No (Guest Access)</td></tr>
+    <tr><td>Email a static copy of the report</td><td>Export PDF</td><td>📦 Offline</td><td>❌ No</td></tr>
+    <tr><td>Host report on webserver, no Viya access</td><td>Export Report Package</td><td>📦 Offline</td><td>❌ No</td></tr>
+    <tr><td>Quick screenshot of a chart</td><td>Save Object Image</td><td>📦 Offline</td><td>❌ No</td></tr>
+  </table>
+
+  <!-- EXAM TIPS -->
+  <div class="tip red">
+    <strong>⚠️ Exam Tips for This Topic:</strong><br>
+    • <strong>Guest Access</strong> = live connection only. NOT needed for offline/static exports.<br>
+    • <strong>Report Package</strong> = static snapshot. Already no sign-in. Adding "Guest Access" to it is WRONG.<br>
+    • <strong>Two ways for NO sign-in:</strong> (1) Direct connection + Guest Access, (2) Exported Report Package (standalone).<br>
+    • <strong>Guest Access requires ADMIN</strong> to set up in SAS Environment Manager.<br>
+    • <strong>Private data</strong> disables PDF and Report Package exports.
+  </div>
+
+  <!-- MNEMONIC -->
+  <div class="tip green">
+    <strong>🧠 Memory Trick:</strong><br>
+    <strong>Live = must sign in</strong> (unless Guest Access is ON) 🌐<br>
+    <strong>Static = no sign in</strong> (package/PDF/image) 📦<br><br>
+    <em>"Package = Passive (no connection needed).<br>
+     Guest = Granted (admin must enable it for live access)."</em>
+  </div>
+  <div style="margin-top:12px;text-align:center;"><a href="../quizzes/sharing-reports.html" class="nav-btn" style="text-decoration:none;">📝 Practice Quiz →</a></div>
+  <!-- QUIZ LINK -->
+  <div style="text-align:center;margin-top:12px;padding:10px;background:var(--bg2);border-radius:8px;border:1px solid var(--border);">
+    <a href="../quizzes/sharing-reports.html" style="color:var(--accent2);text-decoration:none;font-size:0.85rem;font-weight:600;">
+      📝 Practice: Take the Quiz for this Topic →</a>
+  </div>
+</div>
+</details>
+
+</div>
+
+<a href="#" class="back-top" title="Back to top">⬆</a>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Decision Tree - Sankey showing sharing flow
+  var labels = ['Need to share\nreport?', 'Viewer has\nSAS account?', 'Need live\ndata updates?', 'Admin enabled\nGuest Access?', '🌐 Share within\nViya', '🔗 Copy Link\n(with Guest)', '📦 Export Report\nPackage', '📄 Export\nPDF'];
+  var src = [0,0,0, 1,1,1, 2,2,2, 3,3,4,5,6,7];
+  var tgt = [1,2,3, 4,5,6, 5,6,7, 5,6, 4,5,6,7];
+  var val = [10,10,10, 8,7,5, 6,5,4, 4,3, 3,3,3,3];
+  
+  var colors = ['#55efc4','#ffd93d','#74b9ff','#a29bfe','#55efc4','#ffd93d','#ff7675','#74b9ff'];
+  
+  Plotly.newPlot('share-tree', [{
+    type:'sankey', orientation:'h',
+    node:{label:labels, color:colors, pad:12, thickness:16, line:{color:'#3d4049',width:1},
+      hovertemplate:'%{label}'},
+    link:{source:src,target:tgt,value:val,
+      color:['rgba(85,239,196,0.2)','rgba(255,217,61,0.2)','rgba(116,185,255,0.2)',
+             'rgba(85,239,196,0.3)','rgba(255,217,61,0.3)','rgba(255,118,117,0.3)',
+             'rgba(116,185,255,0.3)','rgba(255,118,117,0.3)','rgba(116,185,255,0.3)',
+             'rgba(162,155,254,0.3)','rgba(255,118,117,0.3)',
+             'rgba(85,239,196,0.4)','rgba(255,217,61,0.4)','rgba(255,118,117,0.4)','rgba(116,185,255,0.4)']}
+  }], {
+    title:{text:'📤 Sharing Method Decision Tree',font:{color:'#8b949e',size:10}},
+    paper_bgcolor:'#0d1117',font:{color:'#8b949e',size:8},
+    margin:{l:30,r:30,t:30,b:10},height:320
+  }, {displayModeBar:false, responsive:true});
+});
+</script>
+
+</body>
+</html>

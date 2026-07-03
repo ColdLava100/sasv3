@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Quiz History</title>
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/tracker.js"></script>
+<script src="../js/history.js"></script>
+<style>
+.stat-cards { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px; }
+.stat-card { background:var(--bg3); border:1px solid var(--border); border-radius:var(--radius); padding:16px; text-align:center; }
+.stat-value { font-size:1.8rem; font-weight:800; }
+.stat-label { font-size:0.8rem; color:var(--text2); margin-top:4px; }
+.session-card { background:var(--bg3); border:1px solid var(--border); border-radius:var(--radius-sm); margin:6px 0; cursor:pointer; }
+.session-summary { display:flex; justify-content:space-between; align-items:center; padding:10px 14px; gap:8px; flex-wrap:wrap; }
+.session-topic { font-weight:600; font-size:0.85rem; text-transform:capitalize; }
+.session-date { font-size:0.75rem; color:var(--text3); }
+.session-score { font-weight:700; font-size:0.85rem; }
+.session-toggle { font-size:0.7rem; color:var(--text3); }
+.session-detail { padding:0 14px 10px; }
+.empty-state { margin-top:20px; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Quiz History &amp; Statistics</p>
+</div>
+
+<div class="nav-bar">
+  <a href="index.html" class="nav-btn">📋 Quiz Index</a>
+  <a href="all.html" class="nav-btn">📝 All Quizzes</a>
+  <button id="clear-history-btn" class="nav-btn" style="background:#3a1a1a;border-color:#6a3a3a;color:var(--danger);cursor:pointer;">🗑️ Clear History</button>
+</div>
+
+<div class="content">
+  <h2 style="font-size:1.1rem;color:#fff;">📈 Your Performance</h2>
+  <div id="stats-container"></div>
+</div>
+
+</body>
+</html>

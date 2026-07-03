@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Static Filters</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+
+<details id="t1" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #0984e3;">
+  🏷️ Static Filters — Data Source, Basic, Advanced, Post-Aggregate, Common
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <div style="background:var(--bg3);border-radius:8px;padding:14px;margin-bottom:10px;">
+    <p style="color:var(--text2);font-size:0.85rem;">
+      From course: <em>"Static filters must be defined and applied by the report designer. They include: data source filter, basic filter, advanced filter, post-aggregate filter, and common filter."</em>
+    </p>
+  </div>
+
+  <!-- HIERARCHY DIAGRAM -->
+  <div class="info-box">
+    <p class="label">📋 From the Course: Static Filters Hierarchy</p>
+  </div>
+  <img src="../images/exam-static-filters.png" style="max-width:100%;border-radius:6px;margin:4px 0 8px;border:1px solid var(--border);" alt="Static filters hierarchy from course">
+
+  <!-- COMPARISON TABLE -->
+  <div class="info-box">
+    <p class="label">📋 Complete Comparison</p>
+  </div>
+  <table class="data-table" style="font-size:0.72rem;">
+    <tr><th>Feature</th><th style="color:#55efc4;">1️⃣ Data Source</th><th style="color:#ffd93d;">2️⃣ Basic</th><th style="color:#ff7675;">3️⃣ Advanced</th><th style="color:#74b9ff;">4️⃣ Post-Aggregate</th><th style="color:#a29bfe;">5️⃣ Common</th></tr>
+    <tr><td><strong>Level</strong></td><td>📊 Report-level</td><td>📋 Object-level</td><td>📋 Object-level</td><td>📋 Object-level</td><td>📋 Object-level (shared)</td></tr>
+    <tr><td><strong>Expression</strong></td><td>Complex Boolean</td><td>Simple (1 data item)</td><td>Complex (2+ data items)</td><td>Aggregated values</td><td>Any (Basic/Adv/Post)</td></tr>
+    <tr><td><strong>Applied via</strong></td><td>Data source menu</td><td>Filters pane</td><td>Filters pane + editor</td><td>Filters pane</td><td>Filters pane or drag from Data pane</td></tr>
+    <tr><td><strong>Affects</strong></td><td>✅ Every object</td><td>❌ 1 object only</td><td>❌ 1 object only</td><td>❌ 1 object only</td><td>✅ Multiple objects (shared)</td></tr>
+    <tr><td><strong>Limit</strong></td><td>1 per data source</td><td>No limit</td><td>No limit</td><td>No limit</td><td>No limit</td></tr>
+    <tr><td><strong>Can be Common?</strong></td><td>❌ No</td><td>✅ Yes</td><td>✅ Yes</td><td>✅ Yes</td><td>✅ Already is</td></tr>
+  </table>
+
+  <!-- 5 DETAIL CARDS -->
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #55efc4;">
+      <p class="label" style="color:#55efc4;">1️⃣ Data Source Filter</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"A global filter that subsets data for the entire report. Acts as a pre-filter."</em><br><br>
+        🌍 Applies to <strong>every object</strong> using that data source<br>
+        🔢 <strong>1 per data source</strong> (use complex Boolean for multiple conditions)<br>
+        📊 Updates cardinalities in Data pane<br>
+        ⚙️ Applied via: Data source menu → Apply data filter<br><br>
+        <strong>Example:</strong> Filter to only show North region → all charts/tables show only North
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #ffd93d;">
+      <p class="label" style="color:#ffd93d;">2️⃣ Basic Filter</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"A filter that includes only one data item. Uses Filters pane to click through steps."</em><br><br>
+        📋 <strong>Object-level</strong> — only affects 1 object<br>
+        🔢 Contains <strong>1 data item</strong><br>
+        🖱️ Created via Filters pane (point-and-click)<br>
+        🔄 Can be converted to a Common filter<br><br>
+        <strong>Example:</strong> Filter list table: Job Title ≠ 'Sales Rep' → bar chart next to it still shows ALL
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #ff7675;">
+      <p class="label" style="color:#ff7675;">3️⃣ Advanced Filter</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Build a complex Boolean expression with more than one data item."</em><br><br>
+        📋 <strong>Object-level</strong> — only affects 1 object<br>
+        🔢 Contains <strong>2+ data items</strong><br>
+        ✍️ Uses Expression Editor for complex logic<br>
+        🔄 Can be converted to a Common filter<br><br>
+        <strong>Example:</strong> Sales &gt; $10,000 AND Region = 'North' AND Date &gt; 01JAN2024
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #74b9ff;">
+      <p class="label" style="color:#74b9ff;">4️⃣ Post-Aggregate Filter</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Subsets the report object using aggregated values, not individual values."</em><br><br>
+        📊 Filters <strong>after</strong> aggregation happens<br>
+        🔢 Uses results like SUM, AVG, COUNT<br>
+        ⚠️ Detail data option disabled if post-aggregate filter exists<br>
+        🔄 Can be converted to a Common filter<br><br>
+        <strong>Example:</strong> Show only products where SUM(Sales) &gt; $10K → small products removed<br>
+        ↔️ Vs Basic filter: Sales &gt; $100 removes individual rows
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #a29bfe;">
+      <p class="label" style="color:#a29bfe;">5️⃣ Common Filter</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"A basic, advanced, or post-aggregate filter that can be shared between objects."</em><br><br>
+        🔗 <strong>Shared</strong> across objects using same data source<br>
+        🌍 Available across the <strong>entire report</strong><br>
+        ⚡ Edit once → updates everywhere<br>
+        🔙 Can revert to object-specific copy<br>
+        📍 Appears in Data pane under Common Filter group<br><br>
+        <strong>Example:</strong> Filter Region='North' converted to common → drag onto 3 objects → edit to 'East' → all 3 update
+      </p>
+    </div>
+  </div>
+
+  <!-- DECISION GUIDE -->
+  <div class="info-box">
+    <p class="label">🎯 Which Filter to Use?</p>
+  </div>
+  <div style="background:var(--bg3);border-radius:8px;padding:10px;margin-bottom:8px;">
+    <p style="font-size:0.78rem;color:var(--text2);">
+      <strong>Want to filter the whole report?</strong> → Use <strong>Data Source Filter</strong><br>
+      <strong>Need one simple condition on one object?</strong> → Use <strong>Basic Filter</strong><br>
+      <strong>Need multiple conditions on one object?</strong> → Use <strong>Advanced Filter</strong><br>
+      <strong>Need to filter by totals after grouping?</strong> → Use <strong>Post-Aggregate Filter</strong><br>
+      <strong>Want the same filter on multiple objects?</strong> → Convert to <strong>Common Filter</strong>
+    </p>
+  </div>
+
+  <!-- EXAM TIPS -->
+  <div class="tip red">
+    <strong>🎯 Key Exam Points:</strong><br>
+    • <strong>Data Source Filter:</strong> Report-level, 1 per data source, complex Boolean ⚠️<br>
+    • <strong>Basic Filter:</strong> Object-level, 1 data item, Filters pane ✅<br>
+    • <strong>Advanced Filter:</strong> Object-level, 2+ data items, Expression Editor ⚠️<br>
+    • <strong>Post-Aggregate Filter:</strong> Object-level, uses aggregated values ⚠️<br>
+    • <strong>Common Filter:</strong> Shared, available across report, edit once → all update ✅<br>
+    • Common filters <strong>CAN</strong> be created from Basic, Advanced, OR Post-Aggregate ✅<br>
+    • Static filters = defined by <strong>report designer</strong> (not viewer) ⚠️
+  </div>
+
+  <div class="tip green">
+    <strong>🧠 Memory Trick:</strong><br>
+    <strong>D</strong>ata Source = <strong>D</strong>oors to building (everyone enters filtered)<br>
+    <strong>B</strong>asic = <strong>B</strong>oxing match (1 vs 1 — one data item)<br>
+    <strong>A</strong>dvanced = <strong>A</strong>ll vs All (multiple conditions)<br>
+    <strong>P</strong>ost-Aggregate = <strong>P</strong>ost-game stats (after summing)<br>
+    <strong>C</strong>ommon = <strong>C</strong>ommunity share (use it everywhere)
+  </div>
+
+</div>
+</details>
+
+</div>
+
+<a href="#" class="back-top" title="Back to top">⬆</a>
+
+</body>
+</html>

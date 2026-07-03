@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Hidden Concepts</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+
+<details id="t1" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #a29bfe;">
+  🙈 The 3 "Hidden" Concepts — Data Role vs Page vs Column
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <div style="background:var(--bg3);border-radius:8px;padding:14px;margin-bottom:10px;">
+    <p style="color:var(--text2);font-size:0.85rem;">
+      SAS VA has <strong>3 different features</strong> called "Hidden" — they sound the same but are completely different. This page helps you tell them apart.
+    </p>
+  </div>
+
+  <!-- COMPARISON TABLE -->
+  <div class="info-box">
+    <p class="label">📋 Side-by-Side Comparison</p>
+  </div>
+  <table class="data-table" style="font-size:0.72rem;">
+    <tr><th>Feature</th><th style="color:#55efc4;">🔲 Hidden Data Role</th><th style="color:#ffd93d;">📄 Hidden Page</th><th style="color:#ff7675;">🗂️ Hide Column</th></tr>
+    <tr><td><strong>What's hidden?</strong></td><td>A data item inside an object</td><td>An entire page tab in a report</td><td>A column in a list table</td></tr>
+    <tr><td><strong>Where found</strong></td><td>Roles pane of any object</td><td>Page tabs area of report</td><td>Right-click menu on list table</td></tr>
+    <tr><td><strong>Who can see it?</strong></td><td>Designers see it in Roles pane</td><td>Designers see tab; viewers don't</td><td>Designers see it in Roles pane as Hidden role</td></tr>
+    <tr><td><strong>Can it be accessed?</strong></td><td>✅ Yes — used for links/rules in background</td><td>✅ Yes — via a page link (viewer sees it as normal page)</td><td>✅ Yes — still in query for functional use</td></tr>
+    <tr><td><strong>In PDF export?</strong></td><td>Depends on object inclusion</td><td>❌ <strong>Not included</strong></td><td>Depends on object inclusion</td></tr>
+    <tr><td><strong>Primary purpose</strong></td><td>Functional data (links, mapping, display rules)</td><td>Draft pages, revision history, reference notes</td><td>Same as Hidden Data Role (shortcut)</td></tr>
+  </table>
+
+  <!-- 3 DETAIL CARDS -->
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #55efc4;">
+      <p class="label" style="color:#55efc4;">🔲 1. Hidden Data Role</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Enables you to include a data item in the query results when you want to use its values but do not want the data item displayed."</em><br><br>
+        🎯 Used for: <strong>color-mapped display rules, external links, mapping data sources</strong><br>
+        📍 Found in: Roles pane of any object (bar chart, table, geo map, etc.)<br>
+        ⚠️ Not available for all objects<br>
+        ⚠️ Must not increase row count in query<br>
+        ⚠️ Cannot assign to Hidden AND Data tip values simultaneously<br><br>
+        <strong>Example:</strong> URL column in Hidden → rows clickable but URL text invisible
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #ffd93d;">
+      <p class="label" style="color:#ffd93d;">📄 2. Hidden Page</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Visible to report designers as a page tab, but not to report viewers."</em><br><br>
+        🎯 Used for: <strong>under construction, revision history, notes, reference details</strong><br>
+        📍 Found in: Page tabs area of a report<br>
+        ✅ Can be source of links (report, page, external URL)<br>
+        ✅ If a link targets a hidden page → viewer sees it like a regular page<br>
+        ❌ <strong>Not included in PDF export</strong><br><br>
+        <strong>Example:</strong> A "Data Dictionary" page with column definitions — hidden from viewers but accessible via a "📖 View Data Dictionary" link
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #ff7675;">
+      <p class="label" style="color:#ff7675;">🗂️ 3. Hide Column</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"To hide a column in a list table, you can right-click the column and select Hide column or use the Roles pane to move the column to the Hidden data role."</em><br><br>
+        🎯 This is simply a <strong>shortcut to the Hidden Data Role</strong><br>
+        📍 Found in: Right-click menu on a list table column<br>
+        ✅ Same functionality as dragging to Hidden role<br>
+        ⚠️ Hidden columns might increase the number of rows for the query<br><br>
+        <strong>Note:</strong> Hide Column is NOT a separate concept — it's just a quicker way to use the Hidden Data Role!
+      </p>
+    </div>
+  </div>
+
+  <!-- DATA TIP VS HIDDEN -->
+  <div class="info-box">
+    <p class="label">🔍 Hidden Data Role vs Data Tip Values — The Difference</p>
+  </div>
+  <table class="data-table" style="font-size:0.72rem;">
+    <tr><th>Role</th><th>Shows on screen?</th><th>Shows on hover?</th><th>Purpose</th><th>Can share same data?</th></tr>
+    <tr><td><strong>Visible roles</strong></td><td>✅ Yes</td><td>✅ Yes</td><td>Main display</td><td>—</td></tr>
+    <tr><td><strong>Data tip values</strong></td><td>❌ No</td><td>✅ Yes (hover tooltip)</td><td>Extra info on mouseover</td><td>—</td></tr>
+    <tr><td><strong>Hidden</strong></td><td>❌ No</td><td>❌ No</td><td>Backend use (links, rules, mapping)</td><td>❌ Cannot share with Data tip</td></tr>
+  </table>
+
+  <!-- EXAM TIPS -->
+  <div class="tip red">
+    <strong>🎯 Key Exam Points:</strong><br>
+    • <strong>Hidden Data Role</strong> = data item in query but NOT displayed ⚠️<br>
+    • <strong>Hidden Page</strong> = page tab invisible to viewers 📄<br>
+    • <strong>Hide Column</strong> = shortcut to Hidden Data Role 🗂️<br>
+    • Hidden pages are <strong>NOT included in PDF</strong> ❌<br>
+    • Hidden pages <strong>CAN be accessed</strong> via links ✅<br>
+    • Hidden Data Role cannot be used with Data Tip Values (mutually exclusive) ❌<br>
+    • Hidden Data Role must <strong>not increase row count</strong> ⚠️
+  </div>
+
+  <div class="tip green">
+    <strong>🧠 Memory Trick:</strong><br>
+    <strong>R</strong>ole hides a <strong>R</strong>ow/data item 🎭<br>
+    <strong>P</strong>age hides the whole <strong>P</strong>age tab 📄<br>
+    <strong>C</strong>olumn = <strong>C</strong>lick to hide (same as Role) 🗂️<br><br>
+    <em>"Role hides data, Page hides tab, Column is just a shortcut lab."</em>
+  </div>
+
+</div>
+</details>
+
+</div>
+
+<a href="#" class="back-top" title="Back to top">⬆</a>
+
+</body>
+</html>

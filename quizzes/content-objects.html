@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Content Objects Quiz</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Practice Quiz — Content Objects</p>
+</div>
+
+<div class="nav-bar">
+  <select onchange="if(this.value)window.location.href=this.value;" class="nav-select">    <option value="index.html">📋 Quiz Index</option>
+    <option value="rank-filter.html">🏆 Rank/Filter</option>
+    <option value="columns-lattice.html">📐 Columns/Lattice</option>
+    <option value="crosstab-rows.html">📋 Crosstab Rows</option>
+    <option value="measure-heading.html">📋 Measure Heading</option>
+    <option value="box-plot.html">📦 Box Plot</option>
+    <option value="bubble-plot.html">🫧 Bubble</option>
+    <option value="treemap.html">🟦 Treemap</option>
+    <option value="geo-maps.html">🗺️ Geo Maps</option>
+    <option value="path-analysis.html">🔀 Path</option>
+    <option value="parameters-expressions.html">🎯 Param/Expr</option>
+    <option value="sharing-reports.html">📤 Sharing</option>
+    <option value="decision-tree.html">🌳 Decision Tree</option>
+    <option value="calculated-items.html">🧮 Calc Items</option>
+    <option value="common-filters.html">🔄 Common Filters</option>
+    <option value="auto-explanation.html">🤖 Auto Explain</option>
+    <option value="content-objects.html">📦 Content Objects</option>
+  </select>
+</div>
+
+<div class="content">
+<details class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #fd79a8;">
+  📦 Content Objects Quiz
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <div class="quiz-card">
+    <h3 id="qz-content-objects">📦 Content Objects</h3>
+    <div class="quiz-q"><p><strong>Q1:</strong> Which Content Object can be the source of a filter action?</p>
+      <div><button class="quiz-btn" data-answer="zo1">Web Content</button><button class="quiz-btn" data-answer="zo1">Job Content</button><button class="quiz-btn" data-correct="true" data-answer="zo1">Data-Driven Content</button><button class="quiz-btn" data-answer="zo1">None of them</button></div>
+      <div id="zo1" class="quiz-answer">✅ <strong>Data-Driven Content</strong> — "Can even be the source of an action." Web and Job Content cannot be sources of filter actions.<br>
+        ❌ Web/Job: "Cannot be the source of a filter action: images, job content, text, and web content."</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> Which Content Objects are NOT included in PDF export?</p>
+      <div><button class="quiz-btn" data-answer="zo2">Web Content only</button><button class="quiz-btn" data-correct="true" data-answer="zo2">Web Content AND Data-Driven Content</button><button class="quiz-btn" data-answer="zo2">Job Content only</button><button class="quiz-btn" data-answer="zo2">All content objects</button></div>
+      <div id="zo2" class="quiz-answer">✅ <strong>Web Content AND Data-Driven Content</strong> — "Data-driven content objects and web content objects are not included in the PDF."<br>
+        ❌ Web only: Data-Driven also excluded.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3:</strong> What does the Web Content object use to display external pages?</p>
+      <div><button class="quiz-btn" data-answer="zo3">A new browser tab</button><button class="quiz-btn" data-correct="true" data-answer="zo3">An iFrame</button><button class="quiz-btn" data-answer="zo3">A screenshot</button><button class="quiz-btn" data-answer="zo3">A popup window</button></div>
+      <div id="zo3" class="quiz-answer">✅ <strong>An iFrame</strong> — "Display web page, embed video in an iFrame." Some websites block iFrame embedding (x-frame-options=sameorigin).</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4 🔥:</strong> Which Content Object receives data from Visual Analytics in JSON format?</p>
+      <div><button class="quiz-btn" data-answer="zo4">Web Content</button><button class="quiz-btn" data-answer="zo4">Job Content</button><button class="quiz-btn" data-correct="true" data-answer="zo4">Data-Driven Content</button><button class="quiz-btn" data-answer="zo4">All three</button></div>
+      <div id="zo4" class="quiz-answer">✅ <strong>Data-Driven Content</strong> — "Data messages (data assigned to object and metadata information) are sent from VA to the data-driven content object in JSON format."</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q5:</strong> Which data items does the Web Content object require?</p>
+      <div><button class="quiz-btn" data-answer="zo5">Category and Measure</button><button class="quiz-btn" data-correct="true" data-answer="zo5">None — just a URL reference</button><button class="quiz-btn" data-answer="zo5">Date and Measure</button></div>
+      <div id="zo5" class="quiz-answer">✅ <strong>None — just a URL</strong> — Web Content displays an external web page. It doesn't use any data items from VA.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q6:</strong> What is required to use the Data-Driven Content object?</p>
+      <div><button class="quiz-btn" data-answer="zo6">A SAS Viya job</button><button class="quiz-btn" data-correct="true" data-answer="zo6">HTML, CSS, and JavaScript knowledge</button><button class="quiz-btn" data-answer="zo6">A valid URL</button></div>
+      <div id="zo6" class="quiz-answer">✅ <strong>HTML, CSS, and JavaScript</strong> — "To use the data-driven content object, you will need some knowledge of HTML, CSS, and JavaScript."<br>
+        ❌ SAS job: That's for Job Content.<br>
+        ❌ URL: That's for Web Content.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q7 🧠:</strong> "Web = ____. Job = ____. Data-Driven = ____."</p>
+      <div><button class="quiz-btn" data-correct="true" data-answer="zo7">URL / SAS Code / HTML+Data</button><button class="quiz-btn" data-answer="zo7">Chart / Table / Graph</button><button class="quiz-btn" data-answer="zo7">Filter / Rank / Action</button></div>
+      <div id="zo7" class="quiz-answer">✅ <strong>URL / SAS Code / HTML+Data</strong> — Web = URL link, Job = pre-built SAS code, Data-Driven = custom code + live VA data.</div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/content-objects.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+</div>
+</details>
+</div>
+
+<script src="../js/tracker.js"></script>
+<script src="../js/common.js"></script>
+</body>
+</html>

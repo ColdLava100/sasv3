@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Decision Tree</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+
+<details id="t1" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #6c5ce7;">
+  🌳 Decision Tree — Analytic Object
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <!-- INTRO -->
+  <div style="background:var(--bg3);border-radius:8px;padding:14px;margin-bottom:10px;">
+    <p style="color:var(--text2);font-size:0.85rem;">
+      <strong style="color:#fff;">Decision Tree</strong> is an analytic object in SAS VA. From course: <em>"A decision tree is an explainable and powerful machine learning algorithm that can be used for both classification and regression tasks."</em>
+    </p>
+  </div>
+
+  <!-- WHAT IS A DECISION TREE -->
+  <div class="info-box">
+    <p class="label">🌳 What is a Decision Tree?</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #55efc4;">
+      <p class="label" style="color:#55efc4;">How it works</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"By learning from the data, a decision tree iteratively creates a set of <strong>decision rules</strong> to accurately predict the response variable."</em><br><br>
+        <strong>1️⃣ Start</strong> — Pick a response variable to predict<br>
+        <strong>2️⃣ Split</strong> — Find the best predictor to split on<br>
+        <strong>3️⃣ Branch</strong> — Create branches based on split rules<br>
+        <strong>4️⃣ Repeat</strong> — Continue splitting until done<br>
+        <strong>5️⃣ Predict</strong> — New data follows rules to get prediction
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #ffd93d;">
+      <p class="label" style="color:#ffd93d;">White Box Model</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Decision trees are considered <strong>white box models</strong> because their structure is easily visualized, the decision-making process is transparent and easily understandable."</em><br><br>
+        Unlike "black box" models (neural networks), you can SEE and EXPLAIN exactly why a decision tree made its prediction!
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #74b9ff;">
+      <p class="label" style="color:#74b9ff;">License Notes</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <strong>Base decision tree</strong> — Included with SAS VA license ✅<br>
+        <strong>Advanced decision tree</strong> — Requires SAS Visual Statistics license ⚠️<br><br>
+        Advanced features: predictor importance, assessment plots, interactive mode (prune, edit split, train), score code generation, Model Studio integration
+      </p>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE PLOTLY TREE -->
+  <div class="info-box">
+    <p class="label">📊 Interactive: Iris Flower Decision Tree</p>
+    <p style="font-size:0.78rem;color:var(--text2);"><em>Hover over nodes. This is the classic Iris example from your course!</em></p>
+  </div>
+  <div id="tree-chart" style="height:400px;background:#0d1117;border-radius:8px;margin-bottom:8px;"></div>
+
+  <!-- DATA ROLES -->
+  <div class="info-box">
+    <p class="label">📋 Required Data Roles</p>
+  </div>
+  <table class="data-table" style="font-size:0.72rem;">
+    <tr><th>Role</th><th>Required?</th><th>Data type</th><th>Purpose</th></tr>
+    <tr><td><strong>Response</strong></td><td>✅ Mandatory</td><td>Category, Measure, or Geography</td><td>The variable to predict</td></tr>
+    <tr><td><strong>Predictors</strong></td><td>✅ Mandatory</td><td>Measures, Categories, Geographies (1+)</td><td>Variables that explain/predict the response</td></tr>
+    <tr><td><strong>Partition ID</strong></td><td>❌ Optional</td><td>Data item</td><td>Splits data into training, validation, test sets</td></tr>
+  </table>
+
+  <!-- KEY OPTIONS -->
+  <div class="info-box">
+    <p class="label">⚙️ Key Options</p>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;">
+    <div class="card" style="border-top:3px solid #55efc4;">
+      <p class="label" style="color:#55efc4;font-size:0.7rem;">Event Level</p>
+      <p style="font-size:0.68rem;color:var(--text2);">For category responses — choose which outcome level to model. Affects predictions and False Positive Rate.</p>
+    </div>
+    <div class="card" style="border-top:3px solid #ffd93d;">
+      <p class="label" style="color:#ffd93d;font-size:0.7rem;">Growth Strategy</p>
+      <p style="font-size:0.68rem;color:var(--text2);">Default or Custom. Custom lets you control: max branches, max levels, min leaf size, predictor bins, pruning, bin method, reuse predictors.</p>
+    </div>
+    <div class="card" style="border-top:3px solid #74b9ff;">
+      <p class="label" style="color:#74b9ff;font-size:0.7rem;">Prediction Cutoff</p>
+      <p style="font-size:0.68rem;color:var(--text2);">Probability threshold — above this, the outcome is considered to occur.</p>
+    </div>
+    <div class="card" style="border-top:3px solid #a29bfe;">
+      <p class="label" style="color:#a29bfe;font-size:0.7rem;">Interactive Mode</p>
+      <p style="font-size:0.68rem;color:var(--text2);">Right-click to enter. Prune nodes, edit split rules, or grow tree further.</p>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="info-box">
+    <p class="label">📊 Results You Can View</p>
+  </div>
+  <div style="background:var(--bg3);border-radius:8px;padding:10px;margin-bottom:8px;">
+    <p style="font-size:0.78rem;color:var(--text2);">
+      <strong>When you maximize the decision tree, you can see:</strong><br>
+      ✅ <strong>Decision Tree</strong> — Visual tree with branches and leaves<br>
+      ✅ <strong>Icicle Plot</strong> — Alternative view of the tree (selected nodes highlight in BOTH views)<br>
+      ✅ <strong>Assessment Statistic</strong> — Shown at the top (e.g., accuracy, ASE)<br>
+      ✅ <strong>Predictor Importance</strong> — Which variables matter most (advanced license)<br>
+      ✅ <strong>Assessment Plots</strong> — Evaluate model fit (e.g., ROC, lift) — right-click to toggle<br>
+      ✅ <strong>Confusion Matrix</strong> — Shows correct vs incorrect predictions<br>
+      ✅ <strong>Score Code</strong> — Right-click to generate code for scoring new data
+    </p>
+  </div>
+
+  <!-- EXAM QUESTION -->
+  <div class="tip red">
+    <strong>🎯 Exam Question Answer:</strong><br>
+    <strong>Q:</strong> "Which statement describes how a decision tree is used?"<br>
+    ✅ <strong>B) It segments data into branches based on input variables to predict a target outcome.</strong><br><br>
+    ❌ A) Histograms & box plots = <strong>descriptive statistics</strong>, not decision trees<br>
+    ❌ C) Form-filling prediction = <strong>not what decision trees do</strong><br>
+    ❌ D) Scatter plot correlation = <strong>correlation analysis</strong>, not decision trees
+  </div>
+
+  <!-- MNEMONIC -->
+  <div class="tip green">
+    <strong>🧠 Memory Trick:</strong><br>
+    <strong>D</strong>ecision <strong>T</strong>ree = <strong>D</strong>ata <strong>T</strong>hrough <strong>D</strong>ecision rules → <strong>P</strong>redict<br>
+    <em>"A tree doesn't describe or correlate — it <strong>splits and predicts</strong>."</em>
+  </div>
+
+  <!-- QUIZ LINK -->
+  <div style="text-align:center;margin-top:12px;padding:10px;background:var(--bg2);border-radius:8px;border:1px solid var(--border);">
+    <a href="../quizzes/decision-tree.html" style="color:var(--accent2);text-decoration:none;font-size:0.85rem;font-weight:600;">
+      📝 Practice: Take the Decision Tree Quiz →</a>
+  </div>
+
+</div>
+</details>
+
+</div>
+
+<a href="#" class="back-top" title="Back to top">⬆</a>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Decision tree visualization using Plotly scatter
+  // Nodes: [root, s1, s2, leaf1, leaf2, leaf3]
+  var x = [0.5, 0.25, 0.75, 0.0, 0.35, 0.65, 1.0];
+  var y = [1.0, 0.6, 0.6, 0.2, 0.2, 0.2, 0.2];
+  var labels = ['Petal Length?<br>&lt; 30?','Setosa', 'Petal Width?<br>&lt; 18?', '','Setosa','Versicolor','Virginica'];
+  var colors = ['#a29bfe','#55efc4','#a29bfe','#2d3039','#55efc4','#ffd93d','#ff7675'];
+  var sizes = [30, 22, 30, 0.1, 22, 22, 22];
+  
+  // Edges
+  var ex = [0.5,0.5, 0.25,0.25, 0.75,0.75];
+  var ey = [0.9,0.9, 0.5,0.5, 0.5,0.5];
+  var etx = [0.25,0.75, 0.0,0.35, 0.65,1.0];
+  var ety = [0.6,0.6, 0.2,0.2, 0.2,0.2];
+  
+  var lineX = [], lineY = [];
+  for(var i=0;i<ex.length;i++){
+    lineX.push(ex[i], etx[i], null);
+    lineY.push(ey[i], ety[i], null);
+  }
+
+  Plotly.newPlot('tree-chart', [
+    {type:'scatter', x:lineX, y:lineY, mode:'lines',
+     line:{color:'#3d4049',width:2}, hoverinfo:'none', showlegend:false},
+    {type:'scatter', x:x, y:y, mode:'markers+text',
+     marker:{size:sizes, color:colors, line:{color:'#fff',width:1}},
+     text:labels, textposition:'middle center',
+     textfont:{color:'#fff',size:9,family:'monospace'},
+     hoverinfo:'text',
+     hovertext:['Root: Petal Length &lt; 30?','Leaf: Setosa (class=0)','Node: Petal Width &lt; 18?','','Leaf: Setosa','Leaf: Versicolor','Leaf: Virginica']}
+  ], {
+    title:{text:'🌳 Iris Decision Tree — Petal Length &rarr; Petal Width &rarr; Species',font:{color:'#8b949e',size:11}},
+    paper_bgcolor:'#0d1117', plot_bgcolor:'#0d1117',
+    xaxis:{range:[-0.1,1.1],showgrid:false,zeroline:false,showticklabels:false},
+    yaxis:{range:[0.1,1.1],showgrid:false,zeroline:false,showticklabels:false},
+    margin:{l:10,r:10,t:50,b:10},
+    font:{color:'#8b949e'},
+    shapes:[
+      {type:'rect', x0:0.35,y0:0.1,x1:0.55,y1:0.3, line:{color:'#55efc4',width:1,dash:'dash'}, fillcolor:'rgba(85,239,196,0.05)'}
+    ]
+  }, {displayModeBar:false, responsive:true});
+});
+</script>
+
+</body>
+</html>

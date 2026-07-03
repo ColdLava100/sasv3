@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Treemap Quiz</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Practice Quiz — Treemap</p>
+</div>
+
+<div class="nav-bar">
+  <select onchange="if(this.value)window.location.href=this.value;" class="nav-select">
+    <option value="">Jump to quiz →</option>
+    <option value="index.html">📋 Quiz Index</option>
+    <option value="rank-filter.html">🏆 Rank/Filter</option>
+    <option value="columns-lattice.html">📐 Columns/Lattice</option>
+    <option value="crosstab-rows.html">📋 Crosstab Rows</option>
+    <option value="measure-heading.html">📋 Measure Heading</option>
+    <option value="box-plot.html">📦 Box Plot</option>
+    <option value="bubble-plot.html">🫧 Bubble</option>
+    <option value="treemap.html">🟦 Treemap</option>
+    <option value="geo-maps.html">🗺️ Geo Maps</option>
+    <option value="path-analysis.html">🔀 Path</option>
+    <option value="parameters-expressions.html">🎯 Param/Expr</option>
+    <option value="sharing-reports.html">📤 Sharing</option>
+  </select>
+  <a href="index.html" class="nav-btn">📋 Quiz Index</a>
+  <a href="../topics/treemap.html" class="nav-btn">← Back to Topic</a>
+</div>
+
+<div class="content">
+<details class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #00cec9;">
+  🟦 Treemap — Practice Quiz <span class="badge badge-tree">QUIZ</span>
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <div class="quiz-card" id="quiz-treemap-basic">
+    <h3>🟦 Topic 9: Treemap — Basic</h3>
+    <div class="quiz-q"><p><strong>Q1:</strong> In a treemap what defines the actual tiles/groups?</p>
+      <div><button class="quiz-btn" data-answer="qg1">Size measure</button><button class="quiz-btn" data-answer="qg1">Color measure</button><button class="quiz-btn" data-correct="true" data-answer="qg1">Category</button><button class="quiz-btn" data-answer="qg1">Frequency</button></div>
+      <div id="qg1" class="quiz-answer">✅ <strong>Category</strong> - Each unique category value becomes a tile.<br>
+        ❌ Size: Controls tile area not which tiles exist.<br>
+        ❌ Color: Controls color gradient not tile definition.<br>
+        ❌ Frequency: Default for Size when no measure assigned.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> What determines tile SIZE in a treemap?</p>
+      <div><button class="quiz-btn" data-answer="qg2">Category</button><button class="quiz-btn" data-answer="qg2">Color</button><button class="quiz-btn" data-correct="true" data-answer="qg2">Size measure or Frequency by default</button><button class="quiz-btn" data-answer="qg2">The tiles position</button></div>
+      <div id="qg2" class="quiz-answer">✅ <strong>Size measure or Frequency</strong> - A measure controls tile area. If none assigned defaults to Frequency count.<br>
+        ❌ Category: Category defines WHICH tiles not their size.<br>
+        ❌ Color: Color is independent of size.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3:</strong> What type of chart is a treemap?</p>
+      <div><button class="quiz-btn" data-answer="qg3">Relationship</button><button class="quiz-btn" data-correct="true" data-answer="qg3">Part-to-whole</button><button class="quiz-btn" data-answer="qg3">Time series</button><button class="quiz-btn" data-answer="qg3">Distribution</button></div>
+      <div id="qg3" class="quiz-answer">✅ <strong>Part-to-whole</strong> - Like pie/donut charts shows how parts contribute to a whole.<br>
+        ❌ Relationship: Scatter plots show relationships.<br>
+        ❌ Time series: Line charts show trends over time.<br>
+        ❌ Distribution: Histograms show distribution.</div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/treemap.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+  <div class="quiz-card" id="quiz-treemap-advanced">
+    <h3>🟦 Topic 9: Treemap — Advanced</h3>
+    <div class="quiz-q"><p><strong>Q4:</strong> Profit is assigned to Color. If Profit is removed from Color what happens?</p>
+      <img src="../images/exam-treemap.png" style="max-width:100%;border-radius:6px;margin:4px 0 8px;border:1px solid var(--border);" alt="Exam screenshot">
+      <div><button class="quiz-btn" data-answer="qg4">Tiles colored by Product Line frequency</button><button class="quiz-btn" data-correct="true" data-answer="qg4">All tiles same color</button><button class="quiz-btn" data-answer="qg4">SAS shows an error</button><button class="quiz-btn" data-answer="qg4">Tile sizes change</button></div>
+      <div id="qg4" class="quiz-answer">✅ <strong>All tiles same color</strong> - No Color assignment = no data for colors. Color and Size are independent roles.<br>
+        ❌ Frequency colors: Frequency affects SIZE not Color.<br>
+        ❌ Error: No error - it just uses default color.<br>
+        ❌ Sizes change: Size is independent of Color.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q5:</strong> True or False: If you remove the Color measure tiles will be colored by Frequency instead.</p>
+      <div><button class="quiz-btn" data-answer="qg5">True</button><button class="quiz-btn" data-correct="true" data-answer="qg5">False</button></div>
+      <div id="qg5" class="quiz-answer">✅ <strong>False</strong> - Exam trap! Frequency affects SIZE only not Color. No Color = all same color.<br>
+        ❌ True: This is exactly what the exam tested - Frequency does NOT replace Color.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q6:</strong> Can treemaps display negative values?</p>
+      <div><button class="quiz-btn" data-answer="qg6">Yes</button><button class="quiz-btn" data-correct="true" data-answer="qg6">No</button></div>
+      <div id="qg6" class="quiz-answer">✅ <strong>No</strong> - Course: Pie charts and treemaps cannot display negative values.<br>
+        ❌ Yes: They cannot because tiles represent area and negative area is impossible.</div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/treemap.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+</div>
+</details>
+</div>
+
+<script src="../js/tracker.js"></script>
+<script src="../js/common.js"></script>
+</body>
+</html>

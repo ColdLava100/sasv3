@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Common Filters</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+
+<details id="t1" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #55efc4;">
+  🔄 Common Filters — Shared Across Objects
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <div style="background:var(--bg3);border-radius:8px;padding:14px;margin-bottom:10px;">
+    <p style="color:var(--text2);font-size:0.85rem;">
+      From course: <em>"Common filters are tied to a data source, are able to be shared between objects, are available to the entire report, and, if edits are made, those changes are applied everywhere the filter is used."</em>
+    </p>
+  </div>
+
+  <!-- WHAT IS A COMMON FILTER -->
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #55efc4;">
+      <p class="label" style="color:#55efc4;">🔄 What is a Common Filter?</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        A <strong>common filter</strong> is a filter that is <strong>shared between objects</strong> using the same data source. It can be a basic, advanced, or post-aggregate filter that you convert to a common filter.<br><br>
+        <em>"A common filter can be a basic, advanced, or post-aggregate filter that is shared between objects."</em>
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #ffd93d;">
+      <p class="label" style="color:#ffd93d;">📋 How to Create One</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <strong>Step 1:</strong> Create a filter (basic, advanced, or post-aggregate)<br>
+        <strong>Step 2:</strong> Click <strong>More</strong> on the filter<br>
+        <strong>Step 3:</strong> Select <strong>Change to common filter</strong><br>
+        <strong>Step 4:</strong> Apply to any object using the same data source<br><br>
+        The common filter appears in the <strong>Data pane</strong> under the <strong>Common Filter</strong> group.
+      </p>
+    </div>
+  </div>
+
+  <!-- THE 4 ATTRIBUTES -->
+  <div class="info-box">
+    <p class="label">🔑 The 4 Key Attributes of Common Filters</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;">
+    <div style="background:#1a3a2a;border-radius:8px;padding:10px;border-left:3px solid #55efc4;">
+      <h4 style="color:#55efc4;font-size:0.8rem;">🔗 Tied to a data source</h4>
+      <p style="font-size:0.72rem;color:var(--text2);">
+        Each common filter belongs to a specific data source. Only objects using that data source can use the filter.
+      </p>
+    </div>
+    <div style="background:#1a3a2a;border-radius:8px;padding:10px;border-left:3px solid #ffd93d;">
+      <h4 style="color:#ffd93d;font-size:0.8rem;">🤝 Shared between objects</h4>
+      <p style="font-size:0.72rem;color:var(--text2);">
+        Apply the same filter to multiple objects — bar charts, tables, KPIs — all stay in sync.
+      </p>
+    </div>
+    <div style="background:#1a3a2a;border-radius:8px;padding:10px;border-left:3px solid #74b9ff;">
+      <h4 style="color:#74b9ff;font-size:0.8rem;">📄 Available to entire report</h4>
+      <p style="font-size:0.72rem;color:var(--text2);">
+        ✅ <strong>Across pages too!</strong> The filter works on every page of the report, not just the page where it was created.
+      </p>
+    </div>
+    <div style="background:#1a3a2a;border-radius:8px;padding:10px;border-left:3px solid #ff7675;">
+      <h4 style="color:#ff7675;font-size:0.8rem;">⚡ Edits apply everywhere</h4>
+      <p style="font-size:0.72rem;color:var(--text2);">
+        <em>"If the common filter is edited, those edits are immediately applied to all the objects using the common filter."</em>
+      </p>
+    </div>
+  </div>
+
+  <!-- EXAM QUESTION -->
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #e17055;">
+      <p class="label" style="color:#e17055;">🎯 Exam Question</p>
+      <img src="../images/exam-common-filters.png" style="max-width:100%;border-radius:6px;margin:4px 0 8px;border:1px solid var(--border);" alt="Common filters exam question">
+      <p style="font-size:0.82rem;color:var(--text2);">
+        <strong>Question:</strong> <em>"Common filters are tied to a data source and can be shared between objects. What are two additional attributes of common filters?"</em>
+      </p>
+      <div class="option-correct">✅ <strong>A) Available to the entire report.</strong> — "Available to the entire report (yes, across pages)."</div>
+      <div class="option-correct">✅ <strong>D) Edits are applied instantaneously everywhere the filter is used.</strong> — "Edits are immediately applied to all objects using the filter."</div>
+      <div class="option-wrong">❌ B) Available only on the page the filter is created. — WRONG! It's available across ALL pages.</div>
+      <div class="option-wrong">❌ C) Administrators have to publish common filters. — WRONG! Any user can create and apply common filters.</div>
+    </div>
+  </div>
+
+  <!-- COMPARISON: Common vs Object-Specific -->
+  <div class="info-box">
+    <p class="label">📋 Common Filter vs Object-Specific Filter</p>
+  </div>
+  <table class="data-table" style="font-size:0.72rem;">
+    <tr><th>Aspect</th><th>🔗 Common Filter</th><th>🔒 Object-Specific Filter</th></tr>
+    <tr><td><strong>Scope</strong></td><td>Entire report (all pages)</td><td>Single object only</td></tr>
+    <tr><td><strong>Edits</strong></td><td>Apply to all objects using it</td><td>Only affect that one object</td></tr>
+    <tr><td><strong>Reusability</strong></td><td>Can be applied to any object with same data source</td><td>Cannot be reused</td></tr>
+    <tr><td><strong>Appears in</strong></td><td>Data pane → Common Filter group</td><td>Only in object's Filters pane</td></tr>
+    <tr><td><strong>Revert?</strong></td><td>Can revert to object-specific for one-off changes</td><td>Cannot be promoted to common</td></tr>
+  </table>
+
+  <!-- REVERT TO OBJECT-SPECIFIC -->
+  <div class="tip blue">
+    <strong>🔧 Reverting a Common Filter:</strong> <em>"For a specific instance of a common filter, you can revert the common filter to an object-specific copy."</em> This lets you make one-off changes to a single object without affecting others.
+  </div>
+
+  <div class="tip green">
+    <strong>🧠 Memory Trick:</strong><br>
+    <strong>C</strong>ommon = <strong>C</strong>ross-page, <strong>C</strong>onnected, <strong>C</strong>hanges propagate<br>
+    <em>"A common filter is COMMON to ALL pages and ALL objects — change it once, it updates everywhere."</em>
+  </div>
+
+</div>
+</details>
+
+</div>
+
+<a href="#" class="back-top" title="Back to top">⬆</a>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Sharing & Embedding Reports Quiz</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Practice Quiz — Sharing and Embedding Reports</p>
+</div>
+
+<div class="nav-bar">
+  <select onchange="if(this.value)window.location.href=this.value;" class="nav-select">
+    <option value="">Jump to quiz →</option>
+    <option value="index.html">📋 Quiz Index</option>
+    <option value="rank-filter.html">🏆 Rank/Filter</option>
+    <option value="columns-lattice.html">📐 Columns/Lattice</option>
+    <option value="crosstab-rows.html">📋 Crosstab Rows</option>
+    <option value="measure-heading.html">📋 Measure Heading</option>
+    <option value="box-plot.html">📦 Box Plot</option>
+    <option value="bubble-plot.html">🫧 Bubble</option>
+    <option value="treemap.html">🟦 Treemap</option>
+    <option value="geo-maps.html">🗺️ Geo Maps</option>
+    <option value="path-analysis.html">🔀 Path</option>
+    <option value="parameters-expressions.html">🎯 Param/Expr</option>
+    <option value="sharing-reports.html">📤 Sharing</option>
+  </select>
+  <a href="index.html" class="nav-btn">📋 Quiz Index</a>
+  <a href="../topics/sharing-reports.html" class="nav-btn">← Back to Topic</a>
+</div>
+
+<div class="content">
+<details class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #fd79a8;">
+  📤 Sharing & Embedding Reports — Practice Quiz <span class="badge badge-calc">QUIZ</span>
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+<div class="quiz-card" id="quiz-sharing-reports">
+    <h3>📤 Sharing &amp; Embedding Reports</h3>
+    <div class="quiz-q"><p><strong>Q1:</strong> What is Guest Access in SAS VA?</p>
+      <div><button class="quiz-btn" data-answer="ts1">A paid subscription feature</button><button class="quiz-btn" data-correct="true" data-answer="ts1">Anonymous Read-Only access to reports</button><button class="quiz-btn" data-answer="ts1">A way to edit reports from mobile</button></div>
+      <div id="ts1" class="quiz-answer">✅ <strong>Anonymous Read-Only access</strong> — "Guest Access provides anonymous Read-Only access to reports."<br>
+        ❌ Paid: Guest Access is an optional admin-configured feature, not a paid tier.<br>
+        ❌ Mobile editing: Guest is read-only — no editing.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> What does an exported Report Package contain?</p>
+      <div><button class="quiz-btn" data-answer="ts2">A live link to SAS Viya</button><button class="quiz-btn" data-correct="true" data-answer="ts2">A snapshot of data and query results</button><button class="quiz-btn" data-answer="ts2">Only the chart images without data</button></div>
+      <div id="ts2" class="quiz-answer">✅ <strong>A snapshot of data and query results</strong> — "You can export a report package, which is a snapshot of the data and query results for a report."<br>
+        ❌ Live link: A package is static/offline — no live Viya connection.<br>
+        ❌ Chart images only: It includes data too.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3 🔥:</strong> Two methods to embed a report on a website with NO viewer sign-in?</p>
+      <div><button class="quiz-btn" data-answer="ts3">Export PDF + Copy Link</button><button class="quiz-btn" data-correct="true" data-answer="ts3">Exported Report Package + Direct Connection with Guest Access</button><button class="quiz-btn" data-answer="ts3">Share within Viya + Save Image</button></div>
+      <div id="ts3" class="quiz-answer">✅ <strong>Exported Report Package + Direct Connection with Guest Access</strong> — These are the EXAM QUESTION correct answers!<br>
+        ❌ PDF + Copy Link: PDF is static (good) but Copy Link alone requires sign-in unless Guest Access is enabled.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4 🔥:</strong> Why is "Exported Report Package WITH Guest Access enabled" WRONG?</p>
+      <div><button class="quiz-btn" data-answer="ts4">Guest Access requires admin approval first</button><button class="quiz-btn" data-correct="true" data-answer="ts4">Guest Access is for LIVE connections — Report Package is offline/static, so Guest Access is irrelevant</button><button class="quiz-btn" data-answer="ts4">Exported packages can't be hosted on websites</button></div>
+      <div id="ts4" class="quiz-answer">✅ <strong>Guest Access is for LIVE connections — Report Package is static</strong> — The exam trap! Guest Access is a feature of SAS Viya live connections. An exported package is offline (no Viya connection), so "Guest Access" doesn't apply to it. The package alone already needs no sign-in.<br>
+        ❌ Admin approval: True but that's not why it's wrong.<br>
+        ❌ Can't be hosted: They CAN be hosted on webservers.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q5:</strong> Who must enable Guest Access?</p>
+      <div><button class="quiz-btn" data-answer="ts5">The report viewer</button><button class="quiz-btn" data-correct="true" data-answer="ts5">An administrator in SAS Environment Manager</button><button class="quiz-btn" data-answer="ts5">Any report designer</button></div>
+      <div id="ts5" class="quiz-answer">✅ <strong>An administrator</strong> — "An administrator must create a new configuration in SAS Environment Manager for the sas.guest service."<br>
+        ❌ Viewer: Viewers can't enable it — it's an admin-level config.<br>
+        ❌ Designer: Regular designers don't have admin permissions.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q6:</strong> What prevents PDF and Report Package exports?</p>
+      <div><button class="quiz-btn" data-answer="ts6">Reports with too many pages</button><button class="quiz-btn" data-correct="true" data-answer="ts6">Reports containing private data</button><button class="quiz-btn" data-answer="ts6">Reports with no charts</button></div>
+      <div id="ts6" class="quiz-answer">✅ <strong>Private data</strong> — "If a report contains private data, then exporting to PDF and exporting the report package are disabled."<br>
+        ❌ Too many pages: Not a limitation.<br>
+        ❌ No charts: Text-based reports can still be exported.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q7:</strong> Which method generates code for the SAS Viya SDK for JavaScript?</p>
+      <div><button class="quiz-btn" data-answer="ts7">Copy Link</button><button class="quiz-btn" data-correct="true" data-answer="ts7">Copy Embeddable Markup</button><button class="quiz-btn" data-answer="ts7">Export Report Package</button></div>
+      <div id="ts7" class="quiz-answer">✅ <strong>Copy Embeddable Markup</strong> — "Generates a code snippet for use in the SAS Viya SDK for JavaScript to embed content in a custom web page."<br>
+        ❌ Copy Link: Gives a URL link, not code/snippet.<br>
+        ❌ Report Package: Exports a static file, not embed code.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q8 🧠:</strong> "Package = _____. Guest = _____."</p>
+      <div><button class="quiz-btn" data-correct="true" data-answer="ts8">Passive / Granted</button><button class="quiz-btn" data-answer="ts8">Active / Denied</button><button class="quiz-btn" data-answer="ts8">Online / Offline</button></div>
+      <div id="ts8" class="quiz-answer">✅ <strong>Passive / Granted</strong> — "Package = Passive (no connection needed). Guest = Granted (admin must enable)."<br>
+        ❌ Active/Denied: Opposite meanings.<br>
+        ❌ Online/Offline: Package is offline, Guest is for online.</div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/sharing-reports.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+</div>
+</details>
+</div>
+
+<script src="../js/tracker.js"></script>
+<script src="../js/common.js"></script>
+</body>
+</html>

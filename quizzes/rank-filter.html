@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Rank vs Filter Quiz</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Practice Quiz — Rank vs Filter</p>
+</div>
+
+<div class="nav-bar">
+  <select onchange="if(this.value)window.location.href=this.value;" class="nav-select">
+    <option value="">Jump to quiz →</option>
+    <option value="index.html">📋 Quiz Index</option>
+    <option value="rank-filter.html">🏆 Rank/Filter</option>
+    <option value="columns-lattice.html">📐 Columns/Lattice</option>
+    <option value="crosstab-rows.html">📋 Crosstab Rows</option>
+    <option value="measure-heading.html">📋 Measure Heading</option>
+    <option value="box-plot.html">📦 Box Plot</option>
+    <option value="bubble-plot.html">🫧 Bubble</option>
+    <option value="treemap.html">🟦 Treemap</option>
+    <option value="geo-maps.html">🗺️ Geo Maps</option>
+    <option value="path-analysis.html">🔀 Path</option>
+    <option value="parameters-expressions.html">🎯 Param/Expr</option>
+    <option value="sharing-reports.html">📤 Sharing</option>
+  </select>
+  <a href="index.html" class="nav-btn">📋 Quiz Index</a>
+  <a href="../topics/rank-filter.html" class="nav-btn">← Back to Topic</a>
+</div>
+
+<div class="content">
+<details class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #fdcb6e;">
+  🏆 Rank vs Filter — Practice Quiz <span class="badge badge-rank">QUIZ</span>
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <div class="quiz-card" id="quiz-rank-filter-inline">
+    <h3>🏆 Topic 1: Rank vs Filter — Inline</h3>
+    <div class="quiz-q"><p><strong>Q1:</strong> Show products where Sales &gt; $10,000. Use <strong>Filter</strong> or <strong>Rank</strong>?</p>
+      <div><button class="quiz-btn" data-correct="true" data-answer="t1a1">Filter</button><button class="quiz-btn" data-answer="t1a1">Rank</button></div>
+      <div id="t1a1" class="quiz-answer">✅ <strong>Filter</strong> — Condition: Sales &gt; $10,000. Rows not matching are removed.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> Show <strong>Top 10</strong> best-selling products. Use <strong>Filter</strong> or <strong>Rank</strong>?</p>
+      <div><button class="quiz-btn" data-answer="t1a2">Filter</button><button class="quiz-btn" data-correct="true" data-answer="t1a2">Rank</button></div>
+      <div id="t1a2" class="quiz-answer">✅ <strong>Rank</strong> — Top N by a measure = Rank.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3:</strong> Top 5 products by Profit, only for "Sports" category. What do you need?</p>
+      <div><button class="quiz-btn" data-answer="t1a3">Filter only</button><button class="quiz-btn" data-answer="t1a3">Rank only</button><button class="quiz-btn" data-correct="true" data-answer="t1a3">Both</button></div>
+      <div id="t1a3" class="quiz-answer">✅ <strong>Both!</strong> Filter non-Sports first, then Rank Top 5 by Profit.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4:</strong> Rank's "Count" can be controlled by what?</p>
+      <div><button class="quiz-btn" data-answer="t1a4">Calculated Item</button><button class="quiz-btn" data-correct="true" data-answer="t1a4">Parameter</button><button class="quiz-btn" data-answer="t1a4">Data Source Filter</button><button class="quiz-btn" data-answer="t1a4">Display Rule</button></div>
+      <div id="t1a4" class="quiz-answer">✅ <strong>Parameter</strong> — Slider + parameter controls rank count dynamically.</div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/rank-filter.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+  <div class="quiz-card" id="quiz-rank-filter-basic">
+    <h3>🏆 Topic 1: Rank vs Filter — Basic</h3>
+    <div class="quiz-q"><p><strong>Q1:</strong> Show products where Sales &gt; $10,000. Filter or Rank?</p>
+      <div><button class="quiz-btn" data-correct="true" data-answer="qa1">Filter</button><button class="quiz-btn" data-answer="qa1">Rank</button></div>
+      <div id="qa1" class="quiz-answer">✅ <strong>Filter</strong> — Condition: Sales &gt; $10,000. Rows not matching are removed.<br>
+        ❌ Rank: Rank picks Top/Bottom N by a measure, not by a condition threshold.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> "Show Top 10 best-selling products." Filter or Rank?</p>
+      <div><button class="quiz-btn" data-answer="qa2">Filter</button><button class="quiz-btn" data-correct="true" data-answer="qa2">Rank</button></div>
+      <div id="qa2" class="quiz-answer">✅ <strong>Rank</strong> — "Top N by a measure" = Rank.<br>
+        ❌ Filter: No condition like "Sales &gt; X" is specified. You want the top-scoring items, not items matching a condition.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3:</strong> Can a Rank's count be controlled by a Parameter + Slider?</p>
+      <div><button class="quiz-btn" data-correct="true" data-answer="qa3">Yes</button><button class="quiz-btn" data-answer="qa3">No</button></div>
+      <div id="qa3" class="quiz-answer">✅ <strong>Yes!</strong> Connect a slider to a numeric parameter, use that parameter as the rank count. User slides → rank updates dynamically.<br>
+        ❌ No: This is actually a common SAS VA feature — parameters can drive rank counts interactively!</div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/rank-filter.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+  <div class="quiz-card" id="quiz-rank-filter-advanced">
+    <h3>🏆 Topic 1: Rank vs Filter — Advanced</h3>
+    <div class="quiz-q"><p><strong>Q4 🔥:</strong> "Show Top 10 products by Profit, but only for the Sports category." What do you need?</p>
+      <div><button class="quiz-btn" data-answer="qa4">Filter only</button><button class="quiz-btn" data-answer="qa4">Rank only</button><button class="quiz-btn" data-correct="true" data-answer="qa4">Both Filter AND Rank</button></div>
+      <div id="qa4" class="quiz-answer">✅ <strong>Both!</strong> First Filter to keep only Sports, then Rank Top 10 by Profit from what's left.<br>
+        ❌ Filter only: Filter keeps Sports but doesn't rank — you'd get all sports products, not just Top 10.<br>
+        ❌ Rank only: Rank doesn't filter — you'd get Top 10 across ALL categories, not just Sports.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q5 🔥:</strong> A manager wants "Bottom 5 stores by Profit Margin." You also need to exclude stores with less than $1,000 total sales first. What's the order of operations?</p>
+      <div><button class="quiz-btn" data-answer="qa5">Rank first, then Filter</button><button class="quiz-btn" data-correct="true" data-answer="qa5">Filter first, then Rank</button><button class="quiz-btn" data-answer="qa5">Either order works</button></div>
+      <div id="qa5" class="quiz-answer">✅ <strong>Filter first, then Rank</strong> — Always filter before ranking! Remove stores with sales &lt; $1,000 (Filter), then find Bottom 5 from the remaining stores (Rank).<br>
+        ❌ Rank first: You'd rank ALL stores including the ones with low sales, potentially getting wrong results.<br>
+        ❌ Either order: The order matters — Filter removes data, Rank works on what remains.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q6 🧠:</strong> Which statement is TRUE about Rank vs Filter?</p>
+      <div><button class="quiz-btn" data-answer="qa6">Rank removes data rows permanently</button><button class="quiz-btn" data-correct="true" data-answer="qa6">Filter uses a condition to decide which rows to keep</button><button class="quiz-btn" data-answer="qa6">Filter can pick "Top 5 by Sales"</button><button class="quiz-btn" data-answer="qa6">Rank keeps ALL rows and just reorders them</button></div>
+      <div id="qa6" class="quiz-answer">✅ <strong>Filter uses a condition</strong> — "Does each row match my condition? Yes→keep, No→remove."<br>
+        ❌ Rank removes rows: Yes, Rank DOES remove rows (only shows Top/Bottom N). Filter also removes rows.<br>
+        ❌ Filter picks Top 5: That's what Rank does. Filter uses conditions like "Sales &gt; $10,000."<br>
+        ❌ Rank reorders: Sort reorders. Rank reduces to Top/Bottom N — it also removes rows.</div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/rank-filter.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+</div>
+</details>
+</div>
+
+<script src="../js/tracker.js"></script>
+<script src="../js/common.js"></script>
+</body>
+</html>

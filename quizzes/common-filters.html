@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Common Filters Quiz</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Practice Quiz — Common Filters</p>
+</div>
+
+<div class="nav-bar">
+  <select onchange="if(this.value)window.location.href=this.value;" class="nav-select">    <option value="index.html">📋 Quiz Index</option>
+    <option value="rank-filter.html">🏆 Rank/Filter</option>
+    <option value="columns-lattice.html">📐 Columns/Lattice</option>
+    <option value="crosstab-rows.html">📋 Crosstab Rows</option>
+    <option value="measure-heading.html">📋 Measure Heading</option>
+    <option value="box-plot.html">📦 Box Plot</option>
+    <option value="bubble-plot.html">🫧 Bubble</option>
+    <option value="treemap.html">🟦 Treemap</option>
+    <option value="geo-maps.html">🗺️ Geo Maps</option>
+    <option value="path-analysis.html">🔀 Path</option>
+    <option value="parameters-expressions.html">🎯 Param/Expr</option>
+    <option value="sharing-reports.html">📤 Sharing</option>
+    <option value="decision-tree.html">🌳 Decision Tree</option>
+    <option value="calculated-items.html">🧮 Calc Items</option>
+    <option value="common-filters.html">🔄 Common Filters</option>
+    <option value="auto-explanation.html">🤖 Auto Explain</option>
+    <option value="content-objects.html">📦 Content Objects</option>
+  </select>
+</div>
+
+<div class="content">
+<details class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #55efc4;">
+  🔄 Common Filters Quiz
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <div class="quiz-card">
+    <h3 id="qz-common-filters">🔄 Common Filters</h3>
+        <div class="quiz-q"><p><strong>Q1:</strong> What types of filters can become a Common Filter?</p>
+      <div><button class="quiz-btn" data-answer="zc1">Basic only</button><button class="quiz-btn" data-correct="true" data-answer="zc1">Basic, Advanced, or Post-Aggregate</button><button class="quiz-btn" data-answer="zc1">Data source filters only</button></div>
+      <div id="zc1" class="quiz-answer">✅ <strong>Basic, Advanced, or Post-Aggregate</strong> — "A common filter can be a basic, advanced, or post-aggregate filter."</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> Where does a Common Filter appear after creation?</p>
+      <div><button class="quiz-btn" data-answer="zc2">In the Filters pane only</button><button class="quiz-btn" data-correct="true" data-answer="zc2">Data pane under Common Filter group</button><button class="quiz-btn" data-answer="zc2">In the toolbar menu</button></div>
+      <div id="zc2" class="quiz-answer">✅ <strong>Data pane under Common Filter group</strong> — Appears in the Data pane and can be applied via Filters pane.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3 🔥:</strong> Common filters are tied to a data source and shared between objects. What are two MORE attributes? (Choose 2)</p>
+      <img src="../images/exam-common-filters.png" style="max-width:100%;border-radius:6px;margin:4px 0 8px;border:1px solid #333;display:block;" alt="Common filters exam">
+      <div><button class="quiz-btn" data-correct="true" data-answer="zc3">Available to the entire report</button><button class="quiz-btn" data-answer="zc3">Available only on the page created</button><button class="quiz-btn" data-answer="zc3">Admins must publish them</button><button class="quiz-btn" data-answer="zc3">Edits apply everywhere</button></div>
+      <div id="zc3" class="quiz-answer">✅ <strong>A) Available to entire report</strong> AND <strong>D) Edits apply everywhere</strong><br>❌ B) Only on page: FALSE — available to ENTIRE report (across pages).<br>❌ C) Admins: FALSE — any user can create common filters.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4:</strong> How do you change a common filter for only ONE object?</p>
+      <div><button class="quiz-btn" data-answer="zc4">Edit the common filter</button><button class="quiz-btn" data-correct="true" data-answer="zc4">Revert to object-specific copy</button><button class="quiz-btn" data-answer="zc4">You can't</button></div>
+      <div id="zc4" class="quiz-answer">✅ <strong>Revert to object-specific copy</strong> — "You can revert the common filter to an object-specific copy" for one-off changes.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q5:</strong> A Common Filter is available to what scope?</p>
+      <div><button class="quiz-btn" data-answer="zc5">Only the page where created</button><button class="quiz-btn" data-correct="true" data-answer="zc5">The entire report (all pages)</button><button class="quiz-btn" data-answer="zc5">Only the first object applied</button></div>
+      <div id="zc5" class="quiz-answer">✅ <strong>The entire report (all pages)</strong> — "Available to the entire report (yes, across pages)." The #1 exam trap!</div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/common-filters.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+</div>
+</details>
+</div>
+
+<script src="../js/tracker.js"></script>
+<script src="../js/common.js"></script>
+</body>
+</html>

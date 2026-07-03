@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Dual Axis Charts</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+
+<details id="t1" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #0984e3;">
+  📊 Dual Axis Charts — Compare Two Series with Different Ranges
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <div style="background:var(--bg3);border-radius:8px;padding:14px;margin-bottom:10px;">
+    <p style="color:var(--text2);font-size:0.85rem;">
+      From course: <em>"Dual axis charts are useful for comparing two series with different ranges. Located in the Graphs group in the Objects pane."</em>
+    </p>
+  </div>
+
+  <!-- 4 CHARTS SIDE BY SIDE -->
+  <div class="info-box">
+    <p class="label">📊 Interactive: All 4 Types</p>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;">
+    <div id="chart-bar" style="height:200px;background:#0d1117;border-radius:8px;"></div>
+    <div id="chart-barline" style="height:200px;background:#0d1117;border-radius:8px;"></div>
+    <div id="chart-line" style="height:200px;background:#0d1117;border-radius:8px;"></div>
+    <div id="chart-timeseries" style="height:200px;background:#0d1117;border-radius:8px;"></div>
+  </div>
+
+  <!-- COMPARISON TABLE -->
+  <div class="info-box">
+    <p class="label">📋 Complete Comparison</p>
+  </div>
+  <img src="../images/exam-dual-axis.png" style="max-width:100%;border-radius:6px;margin:4px 0 8px;border:1px solid var(--border);" alt="Dual axis charts from course">
+
+  <table class="data-table" style="font-size:0.72rem;">
+    <tr><th>Feature</th><th style="color:#55efc4;">1️⃣ Bar-Bar</th><th style="color:#ffd93d;">2️⃣ Bar-Line</th><th style="color:#ff7675;">3️⃣ Line-Line</th><th style="color:#74b9ff;">4️⃣ Time Series</th></tr>
+    <tr><td><strong>Categories</strong></td><td>Independent</td><td>Bar=Indep, Line=Dep</td><td>Dependent</td><td>Time (date required)</td></tr>
+    <tr><td><strong>Bar axis</strong></td><td>Starts at 0 ✅</td><td>Starts at 0 ✅</td><td>N/A</td><td>N/A</td></tr>
+    <tr><td><strong>Line axis</strong></td><td>N/A</td><td>Does NOT start at 0</td><td>Does NOT start at 0</td><td>Does NOT start at 0</td></tr>
+    <tr><td><strong>Forecasts?</strong></td><td>❌ No</td><td>❌ No</td><td>❌ No</td><td>❌ No</td></tr>
+    <tr><td><strong>Roles</strong></td><td>Category + 2 Measures</td><td>Category + 2 Measures</td><td>Category + 2 Measures</td><td>Time + 2 Measures</td></tr>
+    <tr><td><strong>Best for</strong></td><td>Comparing groups</td><td>Volume vs Rate</td><td>Trends over ordinal categories</td><td>Seasonal patterns</td></tr>
+  </table>
+
+  <!-- DETAIL CARDS -->
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #55efc4;">
+      <p class="label" style="color:#55efc4;">1️⃣ Dual Axis Bar Chart</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Display two bar charts with a shared category axis and separate response axes."</em><br><br>
+        ✅ Categories are <strong>independent</strong><br>
+        ✅ Bar axis starts at zero<br>
+        ✅ Sorted descending by first measure by default<br>
+        ❌ Forecasts are not available<br><br>
+        <strong>Example:</strong> Customer satisfaction vs number of sales reps by continent
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #ffd93d;">
+      <p class="label" style="color:#ffd93d;">2️⃣ Dual Axis Bar-Line Chart</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Combines a bar chart and a line chart on a shared category axis."</em><br><br>
+        ✅ Bar = independent, Line = dependent<br>
+        ✅ Bar axis starts at zero<br>
+        ✅ Line axis does NOT start at zero<br>
+        ✅ Additional options: markers, line thickness, grouping style<br><br>
+        <strong>Example:</strong> Temperature (bars) and rainfall (line) by month
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #ff7675;">
+      <p class="label" style="color:#ff7675;">3️⃣ Dual Axis Line Chart</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Display data using two lines that connect data values for a shared category axis."</em><br><br>
+        ✅ Categories are <strong>dependent</strong><br>
+        ✅ Line axes do NOT start at zero<br>
+        ✅ Good for showing relationships between measures of different scales<br><br>
+        <strong>Example:</strong> Facility efficiency and number of employees by month
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #74b9ff;">
+      <p class="label" style="color:#74b9ff;">4️⃣ Dual Axis Time Series Plot</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Display two time series with a common time axis on separate response axes."</em><br><br>
+        ✅ Time axis (date/datetime required)<br>
+        ✅ Good for spotting <strong>seasonal movements</strong><br>
+        ❌ <strong>Forecasts are NOT added</strong><br>
+        ✅ Supports binning interval<br><br>
+        <strong>Example:</strong> Unit actual vs yield rates over time
+      </p>
+    </div>
+  </div>
+
+  <!-- KEY EXAM POINTS -->
+  <div class="tip red">
+    <strong>🎯 Key Exam Points:</strong><br>
+    • All 4 types located in <strong>Graphs group</strong> ✅<br>
+    • All compare <strong>two measures with different ranges</strong> ✅<br>
+    • <strong>Left Y = primary</strong>, <strong>Right Y = secondary</strong> ⚠️<br>
+    • Sorted <strong>descending by first measure</strong> by default ⚠️<br>
+    • <strong>Forecasts are NOT added</strong> to dual axis time series plot ❌<br>
+    • Bar axes start at zero — Line axes do NOT start at zero ⚠️<br>
+    • <strong>Independent categories</strong> → use Bar or Bar-Line<br>
+    • <strong>Dependent categories</strong> → use Line or Time Series
+  </div>
+
+  <div class="tip green">
+    <strong>🧠 Memory Trick:</strong><br>
+    <strong>B</strong>ar-<strong>B</strong>ar = <strong>B</strong>oth independent (by group)<br>
+    <strong>B</strong>ar-<strong>L</strong>ine = <strong>B</strong>ulk + <strong>L</strong>ine (volume vs rate)<br>
+    <strong>L</strong>ine-<strong>L</strong>ine = <strong>L</strong>inked across periods<br>
+    <strong>T</strong>ime Series = <strong>T</strong>ime + seasonal patterns
+  </div>
+
+</div>
+</details>
+
+</div>
+
+<a href="#" class="back-top" title="Back to top">⬆</a>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var opts = {displayModeBar:false, responsive:true};
+  var cats = ['Q1','Q2','Q3','Q4'];
+  var m1 = [30,25,35,20];
+  var m2 = [800,650,900,500];
+  var months = ['Jan','Feb','Mar','Apr','May'];
+  var temp = [25,28,32,35,33];
+  var rain = [120,90,70,50,80];
+  var eff = [85,82,88,84,86];
+  var emp = [240,235,250,245,248];
+  var timeM1 = [400,420,380,450,430,410,390,440];
+  var timeM2 = [88,90,85,92,89,87,84,91];
+  var tLabs = ['Jan','Mar','May','Jul','Sep','Nov','Jan','Mar'];
+
+  function barOpt(title, color) {
+    return {margin:{l:30,r:30,t:25,b:20},paper_bgcolor:'#0d1117',plot_bgcolor:'#0d1117',
+      font:{color:'#8b949e',size:8},title:{text:title,font:{size:9,color:'#8b949e'}},
+      xaxis:{showgrid:false,color:'#3d4049'},yaxis:{showgrid:false,color:'#3d4049'},
+      yaxis2:{overlaying:'y',side:'right',showgrid:false,color:'#3d4049'},bargap:0.3};
+  }
+
+  // 1. Bar-Bar
+  var chart1 = document.getElementById('chart-bar');
+  if (chart1) Plotly.newPlot(chart1, [
+    {x:cats, y:m1, type:'bar', name:'Revenue ($M)', marker:{color:'#55efc4'}, yaxis:'y'},
+    {x:cats, y:m2, type:'bar', name:'Customers (K)', marker:{color:'#74b9ff'}, yaxis:'y2'}
+  ], barOpt('1️⃣ Bar-Bar (Independent)','#55efc4'), opts);
+
+  // 2. Bar-Line
+  var chart2 = document.getElementById('chart-barline');
+  if (chart2) Plotly.newPlot(chart2, [
+    {x:months, y:rain, type:'bar', name:'Rainfall (mm)', marker:{color:'#55efc4'}, yaxis:'y'},
+    {x:months, y:temp, type:'scatter', mode:'lines+markers', name:'Temp (°C)', line:{color:'#ff7675',width:2}, marker:{size:4}, yaxis:'y2'}
+  ], barOpt('2️⃣ Bar-Line (Volume+Rate)','#ffd93d'), opts);
+
+  // 3. Line-Line
+  var chart3 = document.getElementById('chart-line');
+  if (chart3) Plotly.newPlot(chart3, [
+    {x:months, y:eff, type:'scatter', mode:'lines+markers', name:'Efficiency', line:{color:'#ffd93d',width:2}, marker:{size:4}},
+    {x:months, y:emp, type:'scatter', mode:'lines+markers', name:'Employees', line:{color:'#ff7675',width:2}, marker:{size:4}, yaxis:'y2'}
+  ], barOpt('3️⃣ Line-Line (Dependent)','#ff7675'), opts);
+
+  // 4. Time Series
+  var chart4 = document.getElementById('chart-timeseries');
+  if (chart4) Plotly.newPlot(chart4, [
+    {x:tLabs, y:timeM1, type:'scatter', mode:'lines+markers', name:'Unit Actual', line:{color:'#74b9ff',width:2}, marker:{size:4}},
+    {x:tLabs, y:timeM2, type:'scatter', mode:'lines+markers', name:'Yield Rate', line:{color:'#55efc4',width:2}, marker:{size:4}, yaxis:'y2'}
+  ], barOpt('4️⃣ Time Series (Seasonal)','#74b9ff'), opts);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Hidden Concepts Quiz</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Practice Quiz — Hidden Concepts</p>
+</div>
+
+<div class="nav-bar">
+  <select onchange="if(this.value)window.location.href=this.value;" class="nav-select">    <option value="index.html">📋 Quiz Index</option>
+    <option value="rank-filter.html">🏆 Rank/Filter</option>
+    <option value="columns-lattice.html">📐 Columns/Lattice</option>
+    <option value="crosstab-rows.html">📋 Crosstab Rows</option>
+    <option value="measure-heading.html">📋 Measure Heading</option>
+    <option value="box-plot.html">📦 Box Plot</option>
+    <option value="bubble-plot.html">🫧 Bubble</option>
+    <option value="treemap.html">🟦 Treemap</option>
+    <option value="geo-maps.html">🗺️ Geo Maps</option>
+    <option value="path-analysis.html">🔀 Path</option>
+    <option value="parameters-expressions.html">🎯 Param/Expr</option>
+    <option value="sharing-reports.html">📤 Sharing</option>
+    <option value="decision-tree.html">🌳 Decision Tree</option>
+    <option value="calculated-items.html">🧮 Calc Items</option>
+    <option value="common-filters.html">🔄 Common Filters</option>
+    <option value="auto-explanation.html">🤖 Auto Explain</option>
+    <option value="content-objects.html">📦 Content Objects</option>
+    <option value="dual-axis.html">📊 Dual Axis</option>
+    <option value="time-variant.html">📈 Time Variant</option>
+    <option value="static-filters.html">🏷️ Static Filters</option>
+    <option value="hidden-concepts.html">🙈 Hidden Concepts</option>
+  </select>
+</div>
+
+<div class="content">
+<details class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #a29bfe;">
+  🙈 Hidden Concepts Quiz
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <div class="quiz-card">
+    <h3 id="qz-hidden-concepts">🙈 Hidden Concepts</h3>
+    <div class="quiz-q"><p><strong>Q1:</strong> What does the Hidden Data Role do?</p>
+      <div><button class="quiz-btn" data-answer="zh1" data-correct>Includes data in the query but not displayed</button><button class="quiz-btn" data-answer="zh1">Hides an entire page from viewers</button><button class="quiz-btn" data-answer="zh1">Removes data from the query entirely</button><button class="quiz-btn" data-answer="zh1">Prevents data from being exported</button></div>
+      <div id="zh1" class="quiz-answer">✅ <strong>Includes in query, not displayed</strong> — "The hidden data role enables you to include a data item in the query results when you want to use its values but do not want the data item displayed."<br>
+        ❌ Hides page: That's Hidden Page, a different concept.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> A Hidden Page is visible to whom?</p>
+      <div><button class="quiz-btn" data-answer="zh2">No one — it's completely invisible</button><button class="quiz-btn" data-answer="zh2" data-correct>Report designers, but not viewers</button><button class="quiz-btn" data-answer="zh2">Everyone — it's just grayed out</button><button class="quiz-btn" data-answer="zh2">Only system administrators</button></div>
+      <div id="zh2" class="quiz-answer">✅ <strong>Designers, not viewers</strong> — "Hidden pages are visible to report designers as a page tab, but not to report viewers." Viewers CAN access it via a link though.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3:</strong> Can a Hidden Page be accessed by report viewers?</p>
+      <div><button class="quiz-btn" data-answer="zh3">No, never</button><button class="quiz-btn" data-answer="zh3" data-correct>Yes, if a link targets it</button><button class="quiz-btn" data-answer="zh3">Only if admin grants permission</button></div>
+      <div id="zh3" class="quiz-answer">✅ <strong>Yes, via a link</strong> — "In view mode, a linked hidden page will appear like a regular page." It's hidden from the tab bar, but accessible if navigated to.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4 🔥:</strong> What is NOT included in PDF export?</p>
+      <div><button class="quiz-btn" data-answer="zh4">Hidden Data Role items</button><button class="quiz-btn" data-answer="zh4" data-correct>Hidden Pages</button><button class="quiz-btn" data-answer="zh4">Hide Column columns</button><button class="quiz-btn" data-answer="zh4">All of the above</button></div>
+      <div id="zh4" class="quiz-answer">✅ <strong>Hidden Pages</strong> — "Hidden pages are not included in the PDF." Hidden Data Role items and hidden columns ARE included if their objects are exported.<br>
+        ❌ All: Only Hidden Pages are excluded from PDF.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q5:</strong> What is Hide Column in a list table?</p>
+      <div><button class="quiz-btn" data-answer="zh5" data-correct>A shortcut to the Hidden Data Role</button><button class="quiz-btn" data-answer="zh5">A way to create a Hidden Page</button><button class="quiz-btn" data-answer="zh5">A security feature to restrict data access</button><button class="quiz-btn" data-answer="zh5">A display-only option that removes data from query</button></div>
+      <div id="zh5" class="quiz-answer">✅ <strong>Shortcut to Hidden Data Role</strong> — "To hide a column, right-click and select Hide column or use the Roles pane to move it to the Hidden data role." Same thing!<br>
+        ❌ Security: Hidden is not for security — data is still in the query.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q6 🔥:</strong> Which statement is TRUE about the Hidden Data Role?</p>
+      <div><button class="quiz-btn" data-answer="zh6">It's available for all object types</button><button class="quiz-btn" data-answer="zh6" data-correct>It cannot be used with Data Tip Values at the same time</button><button class="quiz-btn" data-answer="zh6">It provides column-level security</button><button class="quiz-btn" data-answer="zh6">It always increases the number of rows in query</button></div>
+      <div id="zh6" class="quiz-answer">✅ <strong>Cannot use with Data Tip Values</strong> — "You cannot assign a data item to the Hidden role and the Data tip values role at the same time." They're mutually exclusive.<br>
+        ❌ All objects: "Not available for all objects."<br>
+        ❌ Security: "Not intended for column-level security."<br>
+        ❌ Always increases: It should NOT increase rows.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q7 🧠:</strong> "Role hides a ____. Page hides a ____. Column is a ____."</p>
+      <div><button class="quiz-btn" data-answer="zh7" data-correct>data item / page tab / shortcut to Role</button><button class="quiz-btn" data-answer="zh7">page tab / data item / separate concept</button><button class="quiz-btn" data-answer="zh7">chart / table / filter</button></div>
+      <div id="zh7" class="quiz-answer">✅ <strong>data item / page tab / shortcut to Role</strong> — Hidden Data Role hides a data item, Hidden Page hides a page tab, Hide Column is just a shortcut to the Role.</div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/hidden-concepts.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+</div>
+</details>
+</div>
+
+<script src="../js/tracker.js"></script>
+<script src="../js/common.js"></script>
+</body>
+</html>

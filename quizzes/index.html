@@ -3,525 +3,130 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SAS VA — All Quizzes</title>
+<title>SAS VA — Quiz Index</title>
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-
 <div class="header">
   <h1>📊 SAS Visual Analytics — Study Companion</h1>
-  <p class="subtitle">All Quizzes — Test your knowledge</p>
+  <p class="subtitle">Quiz Index — Choose a topic to practice</p>
 </div>
 
-<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
-  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+<div class="nav-bar">
+  <select onchange="if(this.value)window.location.href=this.value;" class="nav-select">
+    <option value="">Jump to quiz →</option>
+    <option value="index.html">📋 Quiz Index</option>
+    <option value="rank-filter.html">🏆 Rank/Filter</option>
+    <option value="columns-lattice.html">📐 Columns/Lattice</option>
+    <option value="crosstab-rows.html">📋 Crosstab Rows</option>
+    <option value="measure-heading.html">📋 Measure Heading</option>
+    <option value="box-plot.html">📦 Box Plot</option>
+    <option value="bubble-plot.html">🫧 Bubble</option>
+    <option value="treemap.html">🟦 Treemap</option>
+    <option value="geo-maps.html">🗺️ Geo Maps</option>
+    <option value="path-analysis.html">🔀 Path</option>
+    <option value="parameters-expressions.html">🎯 Param/Expr</option>
+    <option value="sharing-reports.html">📤 Sharing</option>
+    <option value="decision-tree.html">🌳 Decision Tree</option>
+    <option value="calculated-items.html">🧮 Calc Items</option>
+    <option value="common-filters.html">🔄 Common Filters</option>
+    <option value="auto-explanation.html">🤖 Auto Explain</option>
+  </select>
+  <a href="../index.html" class="nav-btn">🏠 Main Index</a>
+  <a href="all.html" class="nav-btn">📋 View All Quizzes</a>
+  <a href="history.html" class="nav-btn">📊 History</a>
 </div>
 
 <div class="content">
-<details class="topic" open>
-<summary class="topic-header" style="border-left:4px solid #fd79a8;">
-  📝 All Quizzes <span class="badge badge-object">PRACTICE</span>
-  <span class="arrow">▶</span>
-</summary>
-<div class="topic-body">
+  <h2 style="margin-bottom:16px;font-size:1.2rem;color:#fff;">📝 Practice Quizzes</h2>
 
-  <!-- Inline Quiz: Rank vs Filter (from topic page) -->
-  <div class="quiz-card">
-    <h3>🏆 Topic 1: Rank vs Filter — Inline</h3>
-    <div class="quiz-q"><p><strong>Q1:</strong> Show products where Sales &gt; $10,000. Use <strong>Filter</strong> or <strong>Rank</strong>?</p>
-      <div><button class="quiz-btn" data-answer="t1a1">Filter</button><button class="quiz-btn" data-answer="t1a1">Rank</button></div>
-      <div id="t1a1" class="quiz-answer">✅ <strong>Filter</strong> — Condition: Sales &gt; $10,000. Rows not matching are removed.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q2:</strong> Show <strong>Top 10</strong> best-selling products. Use <strong>Filter</strong> or <strong>Rank</strong>?</p>
-      <div><button class="quiz-btn" data-answer="t1a2">Filter</button><button class="quiz-btn" data-answer="t1a2">Rank</button></div>
-      <div id="t1a2" class="quiz-answer">✅ <strong>Rank</strong> — Top N by a measure = Rank.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q3:</strong> Top 5 products by Profit, only for "Sports" category. What do you need?</p>
-      <div><button class="quiz-btn" data-answer="t1a3">Filter only</button><button class="quiz-btn" data-answer="t1a3">Rank only</button><button class="quiz-btn" data-answer="t1a3">Both</button></div>
-      <div id="t1a3" class="quiz-answer">✅ <strong>Both!</strong> Filter non-Sports first, then Rank Top 5 by Profit.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q4:</strong> Rank's "Count" can be controlled by what?</p>
-      <div><button class="quiz-btn" data-answer="t1a4">Calculated Item</button><button class="quiz-btn" data-answer="t1a4">Parameter</button><button class="quiz-btn" data-answer="t1a4">Data Source Filter</button><button class="quiz-btn" data-answer="t1a4">Display Rule</button></div>
-      <div id="t1a4" class="quiz-answer">✅ <strong>Parameter</strong> — Slider + parameter controls rank count dynamically.</div>
-    </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+    <a href="rank-filter.html" style="text-decoration:none;" class="hub-card">
+      <h3>🏆 Rank vs Filter</h3>
+      <p>Filter vs Rank, Top N, combining both</p>
+      <span class="badge badge-rank">3 SECTIONS</span>
+    </a>
+    <a href="columns-lattice.html" style="text-decoration:none;" class="hub-card">
+      <h3>📐 Columns, Rows &amp; Lattice</h3>
+      <p>Crosstab roles vs chart lattice panels</p>
+      <span class="badge badge-lattice">2 SECTIONS</span>
+    </a>
+    <a href="crosstab-rows.html" style="text-decoration:none;" class="hub-card">
+      <h3>📋 Crosstab Rows Role</h3>
+      <p>Categories, hierarchies &amp; measures in rows</p>
+      <span class="badge badge-rows">1 SECTION</span>
+    </a>
+    <a href="measure-heading.html" style="text-decoration:none;" class="hub-card">
+      <h3>📋 Measure Heading Placement</h3>
+      <p>Above vs left, transposition misconceptions</p>
+      <span class="badge badge-measure">2 SECTIONS</span>
+    </a>
+    <a href="box-plot.html" style="text-decoration:none;" class="hub-card">
+      <h3>📦 Box Plot</h3>
+      <p>Mean vs median, outlier settings (Show/Hide/Ignore)</p>
+      <span class="badge badge-box">2 SECTIONS</span>
+    </a>
+    <a href="bubble-plot.html" style="text-decoration:none;" class="hub-card">
+      <h3>🫧 Bubble Plot</h3>
+      <p>3 required measures, Group role, animation</p>
+      <span class="badge badge-bubble">2 SECTIONS</span>
+    </a>
+    <a href="treemap.html" style="text-decoration:none;" class="hub-card">
+      <h3>🟦 Treemap</h3>
+      <p>Category defines tiles, Size vs Color roles</p>
+      <span class="badge badge-tree">2 SECTIONS</span>
+    </a>
+    <a href="geo-maps.html" style="text-decoration:none;" class="hub-card">
+      <h3>🗺️ Geo Maps</h3>
+      <p>Point, polyline, polygon geometry types</p>
+      <span class="badge badge-geo">2 SECTIONS</span>
+    </a>
+    <a href="path-analysis.html" style="text-decoration:none;" class="hub-card">
+      <h3>🔀 Path Analysis</h3>
+      <p>Sankey diagram, link color options</p>
+      <span class="badge badge-table">1 SECTION</span>
+    </a>
+    <a href="parameters-expressions.html" style="text-decoration:none;" class="hub-card">
+      <h3>🎯 Parameters &amp; Expressions</h3>
+      <p>Parameter types, expression-based params</p>
+      <span class="badge badge-object">1 SECTION</span>
+    </a>
+    <a href="sharing-reports.html" style="text-decoration:none;" class="hub-card">
+      <h3>📤 Sharing &amp; Embedding Reports</h3>
+      <p>Guest Access, Report Packages, embed code</p>
+      <span class="badge badge-calc">1 SECTION</span>
+    </a>
+    <a href="decision-tree.html" style="text-decoration:none;" class="hub-card">
+      <h3>🌳 Decision Tree</h3>
+      <p>White box model, response/predictor roles, interactive mode</p>
+      <span class="badge badge-table">1 SECTION</span>
+    </a>
+    <a href="calculated-items.html" style="text-decoration:none;" class="hub-card">
+      <h3>🧮 Calc Items</h3>
+      <p>Detail vs aggregated, periodic functions, Year in Columns</p>
+      <span class="badge badge-geo">1 SECTION</span>
+    </a>
+    <a href="common-filters.html" style="text-decoration:none;" class="hub-card">
+      <h3>🔄 Common Filters</h3>
+      <p>Tied to data source, shared across objects, entire report scope</p>
+      <span class="badge badge-object">1 SECTION</span>
+    </a>
+    <a href="auto-explanation.html" style="text-decoration:none;" class="hub-card">
+      <h3>🤖 Auto Explain &amp; Predict</h3>
+      <p>Underlying factors, relative importance, champion model</p>
+      <span class="badge badge-calc">1 SECTION</span>
+    </a>
+
+    <a href="content-objects.html" style="text-decoration:none;" class="hub-card">
+      <h3>📦 Content Objects</h3>
+      <p>Web Content, Job Content, Data-Driven Content differences</p>
+      <span class="badge badge-calc">1 SECTION</span>
+    </a>
   </div>
-
-  <!-- Quiz: Rank vs Filter - Basic -->
-  <div class="quiz-card">
-    <h3>🏆 Topic 1: Rank vs Filter — Basic</h3>
-    <div class="quiz-q"><p><strong>Q1:</strong> Show products where Sales &gt; $10,000. Filter or Rank?</p>
-      <div><button class="quiz-btn" data-answer="qa1">Filter</button><button class="quiz-btn" data-answer="qa1">Rank</button></div>
-      <div id="qa1" class="quiz-answer">✅ <strong>Filter</strong> — Condition: Sales &gt; $10,000. Rows not matching are removed.<br>
-        ❌ Rank: Rank picks Top/Bottom N by a measure, not by a condition threshold.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q2:</strong> "Show Top 10 best-selling products." Filter or Rank?</p>
-      <div><button class="quiz-btn" data-answer="qa2">Filter</button><button class="quiz-btn" data-answer="qa2">Rank</button></div>
-      <div id="qa2" class="quiz-answer">✅ <strong>Rank</strong> — "Top N by a measure" = Rank.<br>
-        ❌ Filter: No condition like "Sales &gt; X" is specified. You want the top-scoring items, not items matching a condition.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q3:</strong> Can a Rank's count be controlled by a Parameter + Slider?</p>
-      <div><button class="quiz-btn" data-answer="qa3">Yes</button><button class="quiz-btn" data-answer="qa3">No</button></div>
-      <div id="qa3" class="quiz-answer">✅ <strong>Yes!</strong> Connect a slider to a numeric parameter, use that parameter as the rank count. User slides → rank updates dynamically.<br>
-        ❌ No: This is actually a common SAS VA feature — parameters can drive rank counts interactively!</div>
-    </div>
+  <div style="text-align:center;margin:24px 0;">
+    <a href="all.html" class="nav-btn" style="font-size:0.85rem;padding:8px 20px;text-decoration:none;">📋 View All Quizzes on One Page</a>
   </div>
-
-  <!-- Quiz: Rank & Filter - Advanced -->
-  <div class="quiz-card">
-    <h3>🏆 Topic 1: Rank vs Filter — Advanced</h3>
-    <div class="quiz-q"><p><strong>Q4 🔥:</strong> "Show Top 10 products by Profit, but only for the Sports category." What do you need?</p>
-      <div><button class="quiz-btn" data-answer="qa4">Filter only</button><button class="quiz-btn" data-answer="qa4">Rank only</button><button class="quiz-btn" data-answer="qa4">Both Filter AND Rank</button></div>
-      <div id="qa4" class="quiz-answer">✅ <strong>Both!</strong> First Filter to keep only Sports, then Rank Top 10 by Profit from what's left.<br>
-        ❌ Filter only: Filter keeps Sports but doesn't rank — you'd get all sports products, not just Top 10.<br>
-        ❌ Rank only: Rank doesn't filter — you'd get Top 10 across ALL categories, not just Sports.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q5 🔥:</strong> A manager wants "Bottom 5 stores by Profit Margin." You also need to exclude stores with less than $1,000 total sales first. What's the order of operations?</p>
-      <div><button class="quiz-btn" data-answer="qa5">Rank first, then Filter</button><button class="quiz-btn" data-answer="qa5">Filter first, then Rank</button><button class="quiz-btn" data-answer="qa5">Either order works</button></div>
-      <div id="qa5" class="quiz-answer">✅ <strong>Filter first, then Rank</strong> — Always filter before ranking! Remove stores with sales &lt; $1,000 (Filter), then find Bottom 5 from the remaining stores (Rank).<br>
-        ❌ Rank first: You'd rank ALL stores including the ones with low sales, potentially getting wrong results.<br>
-        ❌ Either order: The order matters — Filter removes data, Rank works on what remains.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q6 🧠:</strong> Which statement is TRUE about Rank vs Filter?</p>
-      <div><button class="quiz-btn" data-answer="qa6">Rank removes data rows permanently</button><button class="quiz-btn" data-answer="qa6">Filter uses a condition to decide which rows to keep</button><button class="quiz-btn" data-answer="qa6">Filter can pick "Top 5 by Sales"</button><button class="quiz-btn" data-answer="qa6">Rank keeps ALL rows and just reorders them</button></div>
-      <div id="qa6" class="quiz-answer">✅ <strong>Filter uses a condition</strong> — "Does each row match my condition? Yes→keep, No→remove."<br>
-        ❌ Rank removes rows: Yes, Rank DOES remove rows (only shows Top/Bottom N). Filter also removes rows.<br>
-        ❌ Filter picks Top 5: That's what Rank does. Filter uses conditions like "Sales &gt; $10,000."<br>
-        ❌ Rank reorders: Sort reorders. Rank reduces to Top/Bottom N — it also removes rows.</div>
-    </div>
-  </div>
-
-  <!-- Quiz: Columns/Rows/Lattice - Basic -->
-  <div class="quiz-card">
-    <h3>📐 Topic 3: Columns, Rows &amp; Lattice — Basic</h3>
-    <div class="quiz-q"><p><strong>Q1:</strong> A crosstab has Region in Columns, Year in Rows. Where does "Asia" appear?</p>
-      <div><button class="quiz-btn" data-answer="qb1">Across top as column header</button><button class="quiz-btn" data-answer="qb1">Down side as row label</button><button class="quiz-btn" data-answer="qb1">Inside a cell as a value</button></div>
-      <div id="qb1" class="quiz-answer">✅ <strong>Across top as column header</strong> — Region is in the Columns role, so values like "Asia" spread across the top.<br>
-        ❌ Down side: That's the Rows role. Year would be there instead.<br>
-        ❌ Inside a cell: That's where Measures (values) appear, not categories.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q2:</strong> Which objects use <strong>Lattice Columns/Rows</strong>?</p>
-      <div><button class="quiz-btn" data-answer="qb2">Crosstabs only</button><button class="quiz-btn" data-answer="qb2">Charts only (Bar, Scatter, etc.)</button><button class="quiz-btn" data-answer="qb2">Both crosstabs and charts</button><button class="quiz-btn" data-answer="qb2">None — it's a display setting</button></div>
-      <div id="qb2" class="quiz-answer">✅ <strong>Charts only</strong> — Lattice Columns/Rows are for chart panels. Crosstabs use their own Columns/Rows data roles, which are different!<br>
-        ❌ Crosstabs: They use regular Columns/Rows roles, not Lattice.<br>
-        ❌ Both: No object uses both sets — they're mutually exclusive by object type.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q3:</strong> A bar chart has three panels side by side (North, South, East). What role is "Region"?</p>
-      <div><button class="quiz-btn" data-answer="qb3">Lattice Columns</button><button class="quiz-btn" data-answer="qb3">Lattice Rows</button><button class="quiz-btn" data-answer="qb3">Group</button></div>
-      <div id="qb3" class="quiz-answer">✅ <strong>Lattice Columns</strong> — Side-by-side panels = Lattice Columns.<br>
-        ❌ Lattice Rows: That's for stacked (vertical) panels.<br>
-        ❌ Group: Group controls color, not panel arrangement.</div>
-    </div>
-  </div>
-
-  <!-- Quiz: Columns/Rows/Lattice - Advanced -->
-  <div class="quiz-card">
-    <h3>📐 Topic 3: Columns, Rows &amp; Lattice — Advanced</h3>
-    <div class="quiz-q"><p><strong>Q4 🔥:</strong> Scatter plot with two panels: Heavy (top), Moderate (bottom). Smoking Status role?</p>
-      <div><button class="quiz-btn" data-answer="qb4">Lattice columns</button><button class="quiz-btn" data-answer="qb4">Lattice rows</button><button class="quiz-btn" data-answer="qb4">Color</button><button class="quiz-btn" data-answer="qb4">Filter</button></div>
-      <div id="qb4" class="quiz-answer">✅ <strong>Lattice rows</strong> — Stacked vertically = Lattice Rows.<br>
-        ❌ Lattice columns: Would be side-by-side, not stacked.<br>
-        ❌ Color: Color would assign different colors per value, not create separate panels.<br>
-        ❌ Filter: Filter would remove data, not split into panels.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q5 🔥:</strong> Why can't a Crosstab use Lattice Columns?</p>
-      <div><button class="quiz-btn" data-answer="qb5">It can, users just don't use it</button><button class="quiz-btn" data-answer="qb5">Lattice is for charts — Crosstab has its own Columns/Roles roles</button><button class="quiz-btn" data-answer="qb5">It's a software limitation that SAS plans to fix</button></div>
-      <div id="qb5" class="quiz-answer">✅ <strong>Lattice is for charts</strong> — They're fundamentally different! Crosstab Columns/Rows = data categories that create grid headers. Lattice Columns/Rows = chart panels that split visual space.<br>
-        ❌ "It can": No, the roles are designed for different object types and can't be swapped.<br>
-        ❌ "Planned fix": Not a bug — it's by design.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q6 🧠:</strong> If you had a crosstab and wanted to split it into side-by-side mini-tables by Region, what would you use?</p>
-      <div><button class="quiz-btn" data-answer="qb6">Lattice Columns (but crosstabs can't use Lattice)</button><button class="quiz-btn" data-answer="qb6">Put Region in both Columns AND Rows</button><button class="quiz-btn" data-answer="qb6">Use a page prompt with Region</button><button class="quiz-btn" data-answer="qb6">Cannot be done in SAS VA</button></div>
-      <div id="qb6" class="quiz-answer">✅ <strong>Lattice Columns (but crosstabs can't use Lattice)</strong> — This reveals the key difference! Crosstabs can't create panel layouts. You'd need to use separate report pages or a page prompt to simulate the effect.<br>
-        ❌ Both Columns and Rows: Would create a grid, not side-by-side panels.<br>
-        ❌ Page prompt: Can filter but doesn't create side-by-side views.</div>
-    </div>
-  </div>
-
-  <!-- Quiz: Crosstab Rows -->
-  <div class="quiz-card">
-    <h3>📋 Topic 5: Crosstab Rows Role</h3>
-    <div class="quiz-q"><p><strong>Q1:</strong> Which data item types can go in the <strong>Rows</strong> role of a crosstab? (Choose all that apply)</p>
-      <div><button class="quiz-btn" data-answer="qc1">Category</button><button class="quiz-btn" data-answer="qc1">Measure</button><button class="quiz-btn" data-answer="qc1">Single hierarchy</button><button class="quiz-btn" data-answer="qc1">Multiple hierarchies</button></div>
-      <div id="qc1" class="quiz-answer">✅ <strong>Category + Single hierarchy</strong> — From course: "Both Columns and Rows accept either a single hierarchy or any number of categories."<br>
-        ❌ Measure: Measures go in the Measures role (cells), not in Rows or Columns.<br>
-        ❌ Multiple hierarchies: Only ONE hierarchy allowed in Rows at a time.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q2:</strong> What's the difference between a Category and a Single Hierarchy in Rows?</p>
-      <div><button class="quiz-btn" data-answer="qc2">They're the same thing</button><button class="quiz-btn" data-answer="qc2">Category = no drill-down; Single Hierarchy = drill-down levels</button><button class="quiz-btn" data-answer="qc2">Category requires more memory</button></div>
-      <div id="qc2" class="quiz-answer">✅ <strong>Category = no drill-down; Single Hierarchy = drill-down</strong> — A hierarchy (like Year→Quarter→Month) enables drill-down. A plain category (like Product) just shows one level.<br>
-        ❌ Same thing: Categories and hierarchies are different data item types with different capabilities.<br>
-        ❌ Memory: Not about memory — about structure and drill-down behavior.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q3 🔥:</strong> Can Measures ever go in the Rows role of a Crosstab?</p>
-      <div><button class="quiz-btn" data-answer="qc3">Yes, always</button><button class="quiz-btn" data-answer="qc3">No, measures only go in the Measures role (cells)</button><button class="quiz-btn" data-answer="qc3">Only if aggregated</button></div>
-      <div id="qc3" class="quiz-answer">✅ <strong>No</strong> — Measures NEVER go in Rows or Columns roles. They belong in the Measures role, which fills the data cells of the crosstab.<br>
-        ❌ Aggregated: Even aggregated measures stay in the Measures role, not Rows.</div>
-    </div>
-  </div>
-
-  <!-- Quiz: Measure Heading - Basic -->
-  <div class="quiz-card">
-    <h3>📋 Topic 6: Measure Heading Placement — Basic</h3>
-    <div class="quiz-q"><p><strong>Q1:</strong> Changing Measure heading placement from ABOVE to LEFT does what?</p>
-      <div><button class="quiz-btn" data-answer="qd1">Transposes rows and columns</button><button class="quiz-btn" data-answer="qd1">Moves Frequency label to the rows side</button><button class="quiz-btn" data-answer="qd1">Moves Origin to the rows side</button><button class="quiz-btn" data-answer="qd1">Moves Make to the columns side</button></div>
-      <div id="qd1" class="quiz-answer">✅ <strong>Moves Frequency label to the rows side</strong> — Only the measure name label moves from above the columns to the left side.<br>
-        ❌ Transposes: Transposing would swap Make↔Origin entirely. Only the LABEL moves.<br>
-        ❌ Origin moves: Origin stays as columns — only the measure label moves.<br>
-        ❌ Make moves: Make stays as rows — only the measure label moves.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q2:</strong> What does Measure heading placement NOT change?</p>
-      <div><button class="quiz-btn" data-answer="qd2">Where the measure name label appears</button><button class="quiz-btn" data-answer="qd2">Which data items are assigned to Columns vs Rows</button></div>
-      <div id="qd2" class="quiz-answer">✅ <strong>Data item role assignments</strong> — It ONLY moves the measure label. Make still in Rows, Origin still in Columns.<br>
-        ❌ Where the label appears: That IS what it changes — it moves the label from above to the left.</div>
-    </div>
-  </div>
-
-  <!-- Quiz: Measure Heading - Advanced -->
-  <div class="quiz-card">
-    <h3>📋 Topic 6: Measure Heading Placement — Advanced</h3>
-    <div class="quiz-q"><p><strong>Q3 🔥:</strong> True or False: Changing Measure heading placement redesigns the entire crosstab by swapping which categories are in rows vs columns.</p>
-      <div><button class="quiz-btn" data-answer="qd3">True</button><button class="quiz-btn" data-answer="qd3">False</button></div>
-      <div id="qd3" class="quiz-answer">✅ <strong>False</strong> — It ONLY moves the measure label. The category role assignments (which data items are in Rows vs Columns) stay EXACTLY the same.<br>
-        ❌ True: This is the #1 misconception! Only the word "Frequency" changes position — nothing else.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q4 🧠:</strong> You have Make in Rows, Origin in Columns, Frequency as measure. Someone says "just transpose it." What's the minimum change needed to switch the view?</p>
-      <div><button class="quiz-btn" data-answer="qd4">Change Measure heading placement to LEFT</button><button class="quiz-btn" data-answer="qd4">Swap data items: Move Make to Columns, Origin to Rows</button><button class="quiz-btn" data-answer="qd4">Change the aggregation type</button></div>
-      <div id="qd4" class="quiz-answer">✅ <strong>Swap data items</strong> — To truly transpose you must reassign the data items: Move Make from Rows to Columns, Origin from Columns to Rows. Measure heading placement only moves the label — it's NOT transposition!<br>
-        ❌ Heading placement: That only moves the label, doesn't swap categories.<br>
-        ❌ Aggregation type: Doesn't change layout at all.</div>
-    </div>
-  </div>
-
-  <!-- Quiz: Box Plot - Basic -->
-  <div class="quiz-card">
-    <h3>📦 Topic 7: Box Plot — Basic</h3>
-    <div class="quiz-q"><p><strong>Q1:</strong> What does the horizontal LINE (──) inside the box represent?</p>
-      <div><button class="quiz-btn" data-answer="qe1">Mean</button><button class="quiz-btn" data-answer="qe1">Median</button><button class="quiz-btn" data-answer="qe1">Standard deviation</button><button class="quiz-btn" data-answer="qe1">Q1</button></div>
-      <div id="qe1" class="quiz-answer">✅ <strong>Median</strong> - LiMe LINE = MEDIAN. The median is the middle value.<br>
-        ❌ Mean: The mean is shown as a SQUARE, only if Averages option is ON.<br>
-        ❌ Std dev: Not shown as a line in the box.<br>
-        ❌ Q1: Q1 is the bottom edge of the box.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q2:</strong> What does the black SQUARE inside the box represent?</p>
-      <div><button class="quiz-btn" data-answer="qe2">Median</button><button class="quiz-btn" data-answer="qe2">Mean</button><button class="quiz-btn" data-answer="qe2">Mode</button><button class="quiz-btn" data-answer="qe2">Q3</button></div>
-      <div id="qe2" class="quiz-answer">✅ <strong>Mean</strong> - SqMean SQUARE = MEAN. Only with Averages option ON.<br>
-        ❌ Median: The median is the LINE inside the box.<br>
-        ❌ Mode: Not shown in standard box plots.<br>
-        ❌ Q3: Q3 is the top edge of the box.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q3:</strong> What SAS option turns ON the black square mean marker?</p>
-      <div><button class="quiz-btn" data-answer="qe3">Outliers</button><button class="quiz-btn" data-answer="qe3">Averages</button><button class="quiz-btn" data-answer="qe3">Display Rules</button><button class="quiz-btn" data-answer="qe3">Box Direction</button></div>
-      <div id="qe3" class="quiz-answer">✅ <strong>Averages</strong> - Adds mean marker for comparing mean vs median.<br>
-        ❌ Outliers: Controls how extreme values display Show/Hide/Ignore.<br>
-        ❌ Display Rules: Conditional formatting thresholds.<br>
-        ❌ Box Direction: Horizontal vs vertical orientation.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q4:</strong> If LINE median and SQUARE mean are FAR APART, what does that mean?</p>
-      <div><button class="quiz-btn" data-answer="qe4">Data is normally distributed</button><button class="quiz-btn" data-answer="qe4">Data is skewed outliers pulling the mean</button><button class="quiz-btn" data-answer="qe4">The box is too small to read</button></div>
-      <div id="qe4" class="quiz-answer">✅ <strong>Data is skewed</strong> - Outliers pull the mean away from the median.<br>
-        ❌ Normal: If normal, mean median, so they would be close together.<br>
-        ❌ Box too small: Box size IQR is independent of mean-median distance.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q5:</strong> What are whiskers in a box plot?</p>
-      <div><button class="quiz-btn" data-answer="qe5">Decorative lines at top and bottom</button><button class="quiz-btn" data-answer="qe5">Acceptable range lines from box to furthest non-outlier</button><button class="quiz-btn" data-answer="qe5">Lines that connect different box plots</button></div>
-      <div id="qe5" class="quiz-answer">✅ <strong>Acceptable range lines</strong> - Like a cats whiskers extending from its face!<br>
-        ❌ Decorative: Whiskers have statistical meaning - data range within 1.5 IQR.<br>
-        ❌ Connecting lines: Each box plot is independent.</div>
-    </div>
-  </div>
-
-  <!-- Quiz: Box Plot - Advanced -->
-  <div class="quiz-card">
-    <h3>📦 Topic 7: Box Plot — Advanced</h3>
-    <div class="quiz-q"><p><strong>Q6:</strong> Which outlier setting is the DEFAULT in SAS box plots?</p>
-      <div><button class="quiz-btn" data-answer="qe6">Show Outliers</button><button class="quiz-btn" data-answer="qe6">Hide Outliers</button><button class="quiz-btn" data-answer="qe6">Ignore Outliers</button></div>
-      <div id="qe6" class="quiz-answer">✅ <strong>Hide Outliers</strong> - By default outliers are hidden. Included within whiskers.<br>
-        ❌ Show: Must manually toggle to see outlier dots.<br>
-        ❌ Ignore: Must manually toggle to exclude outliers.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q7:</strong> With Show Outliers what happens to the whiskers?</p>
-      <div><button class="quiz-btn" data-answer="qe7">They extend to full data range</button><button class="quiz-btn" data-answer="qe7">They stop at 1.5 IQR dots appear beyond</button><button class="quiz-btn" data-answer="qe7">They disappear entirely</button></div>
-      <div id="qe7" class="quiz-answer">✅ <strong>Stop at 1.5 IQR</strong> - Dots or gray bins shown for outliers beyond.<br>
-        ❌ Full range: That is Hide Outliers whiskers extend to include outliers.<br>
-        ❌ Disappear: Whiskers are always present unless IQR = 0.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q8:</strong> Three box plots same data. BP1 has gray outlier bins. BP2 looks normal. BP3 has no box. Which is Hide Outliers?</p>
-      <div><button class="quiz-btn" data-answer="qe8">BP1 gray area</button><button class="quiz-btn" data-answer="qe8">BP2 normal</button><button class="quiz-btn" data-answer="qe8">BP3 no box</button><button class="quiz-btn" data-answer="qe8">None</button></div>
-      <div id="qe8" class="quiz-answer">✅ <strong>BP2 normal</strong> - Gray bins = SHOW. Normal = HIDE default. No box = IGNORE.<br>
-        ❌ BP1: Gray area means outlier bins visible = SHOW not Hide.<br>
-        ❌ BP3: No box means IQR = 0 because outliers excluded = IGNORE.<br>
-        ❌ None: Since Hide is DEFAULT the normal box IS hiding outliers.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q9:</strong> Outliers are included within the whiskers means what?</p>
-      <div><button class="quiz-btn" data-answer="qe9">Whiskers shrink to hide outliers</button><button class="quiz-btn" data-answer="qe9">Whiskers extend to cover outlier values no dots shown</button><button class="quiz-btn" data-answer="qe9">Outliers become part of the box</button></div>
-      <div id="qe9" class="quiz-answer">✅ <strong>Whiskers extend to cover outlier values</strong> - Outliers absorbed into whisker range.<br>
-        ❌ Shrink: That would hide outliers by cutting them off not including.<br>
-        ❌ Part of box: Outliers dont affect IQR only the whisker range.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q10:</strong> What does MSRP stand for?</p>
-      <div><button class="quiz-btn" data-answer="qe10">Market Standard Retail Price</button><button class="quiz-btn" data-answer="qe10">Manufacturers Suggested Retail Price</button><button class="quiz-btn" data-answer="qe10">Maximum Sale Retail Percentage</button></div>
-      <div id="qe10" class="quiz-answer">✅ <strong>Manufacturers Suggested Retail Price</strong> - Car sticker price from SAS data.<br>
-        ❌ Market: Manufacturer not Market.<br>
-        ❌ Maximum: Wrong terms entirely.</div>
-    </div>
-  </div>
-
-  <!-- Quiz: Bubble Plot - Basic -->
-  <div class="quiz-card">
-    <h3>🫧 Topic 8: Bubble Plot — Basic</h3>
-    <div class="quiz-q"><p><strong>Q1:</strong> Product Line controls bubble colors. What SAS role?</p>
-      <div><button class="quiz-btn" data-answer="qf1">Measures (Y axis)</button><button class="quiz-btn" data-answer="qf1">Measures (Size)</button><button class="quiz-btn" data-answer="qf1">Group</button><button class="quiz-btn" data-answer="qf1">Lattice Columns</button></div>
-      <div id="qf1" class="quiz-answer">✅ <strong>Group</strong> - Group role assigns colors by category.<br>
-        ❌ Measures: Measures control position or size not color.<br>
-        ❌ Lattice Columns: Lattice splits into panels it doesnt assign colors.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q2:</strong> How many measures does a bubble plot require?</p>
-      <div><button class="quiz-btn" data-answer="qf2">1</button><button class="quiz-btn" data-answer="qf2">2</button><button class="quiz-btn" data-answer="qf2">3</button><button class="quiz-btn" data-answer="qf2">4</button></div>
-      <div id="qf2" class="quiz-answer">✅ <strong>3</strong> - X axis Y axis and Size.<br>
-        ❌ 1 or 2: Need all three for position and size.<br>
-        ❌ 4: Only three required optional roles like Group and Animation are extra.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q3:</strong> Revenue is on the Y-axis. What role is it assigned to?</p>
-      <div><button class="quiz-btn" data-answer="qf3">Lattice rows</button><button class="quiz-btn" data-answer="qf3">Measures (Y axis)</button><button class="quiz-btn" data-answer="qf3">Group</button><button class="quiz-btn" data-answer="qf3">Animation</button></div>
-      <div id="qf3" class="quiz-answer">✅ <strong>Measures (Y axis)</strong> - Revenue controls vertical position.<br>
-        ❌ Lattice rows: Lattice creates panels it doesnt assign axis data.<br>
-        ❌ Group: Group controls color.<br>
-        ❌ Animation: Controls time-based animation.</div>
-    </div>
-  </div>
-
-  <!-- Quiz: Bubble Plot - Advanced -->
-  <div class="quiz-card">
-    <h3>🫧 Topic 8: Bubble Plot — Advanced</h3>
-    <div class="quiz-q"><p><strong>Q4:</strong> The chart title says sized by Profit. What role does Profit play?</p>
-      <div><button class="quiz-btn" data-answer="qf4">Y-axis position</button><button class="quiz-btn" data-answer="qf4">Bubble color</button><button class="quiz-btn" data-answer="qf4">Animation</button><button class="quiz-btn" data-answer="qf4">Bubble SIZE</button></div>
-      <div id="qf4" class="quiz-answer">✅ <strong>Bubble SIZE</strong> - Bigger profit = bigger bubble. Sized by = Size measure.<br>
-        ❌ Y-axis: That is Revenue.<br>
-        ❌ Color: Sized by refers to size not color.<br>
-        ❌ Animation: Sized by is about bubble dimensions not time.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q5:</strong> Which is NOT available as a role for bubble plots?</p>
-      <div><button class="quiz-btn" data-answer="qf5">Group</button><button class="quiz-btn" data-answer="qf5">Animation</button><button class="quiz-btn" data-answer="qf5">Columns/Rows (like Crosstab)</button><button class="quiz-btn" data-answer="qf5">Lattice columns</button></div>
-      <div id="qf5" class="quiz-answer">✅ <strong>Columns/Rows</strong> - Those are for Crosstab only. Bubble plots use Lattice Columns/Rows.<br>
-        ❌ Group: IS available - controls bubble colors.<br>
-        ❌ Animation: IS available - for time animation.<br>
-        ❌ Lattice columns: IS available - for panel layouts.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q6:</strong> 3 Measures make the bubble. The _____ gives it color.</p>
-      <div><button class="quiz-btn" data-answer="qf6">Lattice</button><button class="quiz-btn" data-answer="qf6">Group</button><button class="quiz-btn" data-answer="qf6">Animation</button><button class="quiz-btn" data-answer="qf6">Hidden</button></div>
-      <div id="qf6" class="quiz-answer">✅ <strong>Group</strong> - 3 Measures make the bubble. The Group gives it color.<br>
-        ❌ Lattice: Creates panel splits not colors.<br>
-        ❌ Animation: Controls time not colors.<br>
-        ❌ Hidden: Stores data but doesnt display it.</div>
-    </div>
-  </div>
-
-  <!-- Quiz: Treemap - Basic -->
-  <div class="quiz-card">
-    <h3>🟦 Topic 9: Treemap — Basic</h3>
-    <div class="quiz-q"><p><strong>Q1:</strong> In a treemap what defines the actual tiles/groups?</p>
-      <div><button class="quiz-btn" data-answer="qg1">Size measure</button><button class="quiz-btn" data-answer="qg1">Color measure</button><button class="quiz-btn" data-answer="qg1">Category</button><button class="quiz-btn" data-answer="qg1">Frequency</button></div>
-      <div id="qg1" class="quiz-answer">✅ <strong>Category</strong> - Each unique category value becomes a tile.<br>
-        ❌ Size: Controls tile area not which tiles exist.<br>
-        ❌ Color: Controls color gradient not tile definition.<br>
-        ❌ Frequency: Default for Size when no measure assigned.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q2:</strong> What determines tile SIZE in a treemap?</p>
-      <div><button class="quiz-btn" data-answer="qg2">Category</button><button class="quiz-btn" data-answer="qg2">Color</button><button class="quiz-btn" data-answer="qg2">Size measure or Frequency by default</button><button class="quiz-btn" data-answer="qg2">The tiles position</button></div>
-      <div id="qg2" class="quiz-answer">✅ <strong>Size measure or Frequency</strong> - A measure controls tile area. If none assigned defaults to Frequency count.<br>
-        ❌ Category: Category defines WHICH tiles not their size.<br>
-        ❌ Color: Color is independent of size.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q3:</strong> What type of chart is a treemap?</p>
-      <div><button class="quiz-btn" data-answer="qg3">Relationship</button><button class="quiz-btn" data-answer="qg3">Part-to-whole</button><button class="quiz-btn" data-answer="qg3">Time series</button><button class="quiz-btn" data-answer="qg3">Distribution</button></div>
-      <div id="qg3" class="quiz-answer">✅ <strong>Part-to-whole</strong> - Like pie/donut charts shows how parts contribute to a whole.<br>
-        ❌ Relationship: Scatter plots show relationships.<br>
-        ❌ Time series: Line charts show trends over time.<br>
-        ❌ Distribution: Histograms show distribution.</div>
-    </div>
-  </div>
-
-  <!-- Quiz: Treemap - Advanced -->
-  <div class="quiz-card">
-    <h3>🟦 Topic 9: Treemap — Advanced</h3>
-    <div class="quiz-q"><p><strong>Q4:</strong> Profit is assigned to Color. If Profit is removed from Color what happens?</p>
-      <div><button class="quiz-btn" data-answer="qg4">Tiles colored by Product Line frequency</button><button class="quiz-btn" data-answer="qg4">All tiles same color</button><button class="quiz-btn" data-answer="qg4">SAS shows an error</button><button class="quiz-btn" data-answer="qg4">Tile sizes change</button></div>
-      <div id="qg4" class="quiz-answer">✅ <strong>All tiles same color</strong> - No Color assignment = no data for colors. Color and Size are independent roles.<br>
-        ❌ Frequency colors: Frequency affects SIZE not Color.<br>
-        ❌ Error: No error - it just uses default color.<br>
-        ❌ Sizes change: Size is independent of Color.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q5:</strong> True or False: If you remove the Color measure tiles will be colored by Frequency instead.</p>
-      <div><button class="quiz-btn" data-answer="qg5">True</button><button class="quiz-btn" data-answer="qg5">False</button></div>
-      <div id="qg5" class="quiz-answer">✅ <strong>False</strong> - Exam trap! Frequency affects SIZE only not Color. No Color = all same color.<br>
-        ❌ True: This is exactly what the exam tested - Frequency does NOT replace Color.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q6:</strong> Can treemaps display negative values?</p>
-      <div><button class="quiz-btn" data-answer="qg6">Yes</button><button class="quiz-btn" data-answer="qg6">No</button></div>
-      <div id="qg6" class="quiz-answer">✅ <strong>No</strong> - Course: Pie charts and treemaps cannot display negative values.<br>
-        ❌ Yes: They cannot because tiles represent area and negative area is impossible.</div>
-    </div>
-  </div>
-
-  <!-- Quiz: Geo Maps - Basic -->
-  <div class="quiz-card">
-    <h3>🗺️ Topic 10: Geo Maps — Basic</h3>
-    <div class="quiz-q"><p><strong>Q1:</strong> A <strong>Geo Bubble</strong> map uses which geometry type?</p>
-      <div><button class="quiz-btn" data-answer="qi1">Points ●</button><button class="quiz-btn" data-answer="qi1">Polylines ═══</button><button class="quiz-btn" data-answer="qi1">Polygons █</button></div>
-      <div id="qi1" class="quiz-answer">✅ <strong>Points ●</strong> — Geo Bubble, Geo Coordinate, and Geo Pie are all point maps.<br>
-        ❌ Polylines ═══: Used for Geo Line, Geo Network, Geo Line-Coordinate (paths/routes).<br>
-        ❌ Polygons █: Used for Geo Region, Geo Cluster, Geo Contour (filled regions).</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q2:</strong> A <strong>Geo Line</strong> map uses which geometry type?</p>
-      <div><button class="quiz-btn" data-answer="qi2">Points ●</button><button class="quiz-btn" data-answer="qi2">Polylines ═══</button><button class="quiz-btn" data-answer="qi2">Polygons █</button></div>
-      <div id="qi2" class="quiz-answer">✅ <strong>Polylines ═══</strong> — Geo Line and Geo Network display paths/routes.<br>
-        ❌ Points ●: Used for Geo Bubble, Geo Coordinate, Geo Pie (pinpointing locations).<br>
-        ❌ Polygons █: Used for Geo Region maps (filling regions with color).</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q3:</strong> A <strong>Geo Region</strong> map uses which geometry type?</p>
-      <div><button class="quiz-btn" data-answer="qi3">Points ●</button><button class="quiz-btn" data-answer="qi3">Polylines ═══</button><button class="quiz-btn" data-answer="qi3">Polygons █</button></div>
-      <div id="qi3" class="quiz-answer">✅ <strong>Polygons █</strong> — Geo Region fills regions with color (choropleth map).<br>
-        ❌ Points ●: Can't show regions — only dots at specific coordinates.<br>
-        ❌ Polylines ═══: Can't fill areas — only draw paths between points.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q4:</strong> What are the <strong>3 ways</strong> to create a geography data item?</p>
-      <div><button class="quiz-btn" data-answer="qi4">Lookup, Lat/Lon, Provider</button><button class="quiz-btn" data-answer="qi4">Lookup, Measure, Category</button><button class="quiz-btn" data-answer="qi4">Lat/Lon, Category, Hierarchy</button><button class="quiz-btn" data-answer="qi4">Provider, Measure, Parameter</button></div>
-      <div id="qi4" class="quiz-answer">✅ <strong>Geographic name/code lookup, Latitude & Longitude in data, Geographic data provider</strong><br>
-        ❌ Measure/Category/Parameter: These are data item types, not methods for creating geography data items.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q5:</strong> Which type of geo map is <strong>NOT</strong> a point map?</p>
-      <div><button class="quiz-btn" data-answer="qi5">Geo Bubble</button><button class="quiz-btn" data-answer="qi5">Geo Coordinate</button><button class="quiz-btn" data-answer="qi5">Geo Pie</button><button class="quiz-btn" data-answer="qi5">Geo Line</button></div>
-      <div id="qi5" class="quiz-answer">✅ <strong>Geo Line</strong> — It's a polyline map (paths/routes).<br>
-        ❌ Geo Bubble: Point map — bubbles at coordinates, sized by a measure.<br>
-        ❌ Geo Coordinate: Point map — dots at coordinates.<br>
-        ❌ Geo Pie: Point map — mini pie charts at coordinates.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q6:</strong> Which map type combines <strong>polygons + points</strong> in one view?</p>
-      <div><button class="quiz-btn" data-answer="qi6">Geo Region</button><button class="quiz-btn" data-answer="qi6">Geo Region-Coordinate</button><button class="quiz-btn" data-answer="qi6">Geo Cluster</button><button class="quiz-btn" data-answer="qi6">Geo Bubble</button></div>
-      <div id="qi6" class="quiz-answer">✅ <strong>Geo Region-Coordinate</strong> — Fills regions AND shows coordinate dots.<br>
-        ❌ Geo Region: Polygons only — no coordinate dots.<br>
-        ❌ Geo Cluster: Groups regions — doesn't show individual points.<br>
-        ❌ Geo Bubble: Points only — no polygon regions.</div>
-    </div>
-  </div>
-
-  <!-- Quiz: Geo Maps - Advanced -->
-  <div class="quiz-card">
-    <h3>🗺️ Topic 10: Geo Maps — Advanced</h3>
-    <div class="quiz-q"><p><strong>Q7 🔥:</strong> Sales data across US states with <strong>uneven distribution</strong> — California has $50M but Delaware has $2M. Which point map is BEST?</p>
-      <div><button class="quiz-btn" data-answer="qi7">Geo Coordinate — uniform dots</button><button class="quiz-btn" data-answer="qi7">Geo Bubble — sized bubbles by measure</button><button class="quiz-btn" data-answer="qi7">Geo Pie — mini pie charts</button></div>
-      <div id="qi7" class="quiz-answer">✅ <strong>Geo Bubble</strong> — From course: "Geo bubble maps are useful when data is <strong>not evenly distributed</strong>." Bubble size represents the measure, so Delaware doesn't look as big as California.<br>
-        ❌ Geo Coordinate: Should only be used with <strong>evenly distributed</strong> data. Uniform dots would make tiny and big states look equal.<br>
-        ❌ Geo Pie: Used for showing distribution among a few groups per location, not for comparing a single measure across many regions.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q8 🔥:</strong> Display <strong>flight routes</strong> between airports. The route path matters AND you want airport names on hover. Which type?</p>
-      <div><button class="quiz-btn" data-answer="qi8">Geo Line</button><button class="quiz-btn" data-answer="qi8">Geo Line-Coordinate</button><button class="quiz-btn" data-answer="qi8">Geo Network</button><button class="quiz-btn" data-answer="qi8">Geo Bubble</button></div>
-      <div id="qi8" class="quiz-answer">✅ <strong>Geo Line-Coordinate</strong> — Shows route paths (polylines) AND coordinate markers at endpoints with hover info.<br>
-        ❌ Geo Line: Shows paths but no interactive dots or hover labels on endpoints.<br>
-        ❌ Geo Network: For interconnected nodes with many-to-many connections, not simple routes.<br>
-        ❌ Geo Bubble: Bubbles show measures at points — can't show route paths.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q9 🔥:</strong> Data has <strong>store addresses as Lat/Lon</strong>. You want <strong>regions colored by total sales</strong>. What can you use?</p>
-      <div><button class="quiz-btn" data-answer="qi9">Geo Region — fill states by sales</button><button class="quiz-btn" data-answer="qi9">Geo Coordinate — dots colored by sales</button><button class="quiz-btn" data-answer="qi9">Geo Bubble — sized by sales</button><button class="quiz-btn" data-answer="qi9">Both B and C</button></div>
-      <div id="qi9" class="quiz-answer">✅ <strong>Both B and C</strong> — You CANNOT use Geo Region with Lat/Lon!<br>
-        ❌ Geo Region: Course says: "Geography data items created using latitude and longitude in data <strong>cannot</strong> be used in geo region maps."<br>
-        ✅ Geo Coordinate (dots colored by sales) and Geo Bubble (bubbles sized by sales) both work with Lat/Lon data items.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q10 🔥:</strong> A <strong>Geo Network</strong> shows connections between nodes. What must be TRUE about source &amp; target data items?</p>
-      <div><button class="quiz-btn" data-answer="qi10">Both must be measures</button><button class="quiz-btn" data-answer="qi10">Both must be geographic data items</button><button class="quiz-btn" data-answer="qi10">One Lat/Lon, one category</button><button class="quiz-btn" data-answer="qi10">Different data sources</button></div>
-      <div id="qi10" class="quiz-answer">✅ <strong>Both must be geographic data items</strong> — Course: "If both the source and target nodes are geographic data items, then the network can be overlaid on a geo map."<br>
-        ❌ Both measures: Networks need geographic locations, not numeric values.<br>
-        ❌ Different data sources: They can be from the same source — what matters is geographic classification.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q11 🔥:</strong> What permissions are needed to create a <strong>geographic data provider</strong>? Why does this matter for geo line maps?</p>
-      <div><button class="quiz-btn" data-answer="qi11">No special permissions</button><button class="quiz-btn" data-answer="qi11">Special user permissions — defines custom routes for polylines</button><button class="quiz-btn" data-answer="qi11">Admin can view, not create</button><button class="quiz-btn" data-answer="qi11">Only for point maps</button></div>
-      <div id="qi11" class="quiz-answer">✅ <strong>Special user permissions required</strong> — Course: "Special user permissions are required to define and edit geographic data providers." Geo line maps need polylines, which often come from a geographic data provider (custom routes). Without permission, you can't create custom polyline data!</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q12 🔥:</strong> Show <strong>profit by country</strong> (colored regions) + <strong>store locations</strong> (dots) in one map. Which type?</p>
-      <div><button class="quiz-btn" data-answer="qi12">Geo Region</button><button class="quiz-btn" data-answer="qi12">Geo Region-Coordinate</button><button class="quiz-btn" data-answer="qi12">Geo Bubble</button><button class="quiz-btn" data-answer="qi12">Two separate maps</button></div>
-      <div id="qi12" class="quiz-answer">✅ <strong>Geo Region-Coordinate</strong> — Combines polygon regions (colored by profit) WITH coordinate dots (store locations) in a single map.<br>
-        ❌ Geo Region: Shows regions but NO coordinate dots.<br>
-        ❌ Geo Bubble: Shows points but NO filled regions.<br>
-        ❌ Two separate maps: Possible but unnecessary when Geo Region-Coordinate exists!</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q13 🔥:</strong> Sales <strong>territory groupings</strong> — custom clusters not matching state lines. Which combination?</p>
-      <div><button class="quiz-btn" data-answer="qi13">Geo Region + Geographic name/code lookup</button><button class="quiz-btn" data-answer="qi13">Geo Cluster + Geographic data provider</button><button class="quiz-btn" data-answer="qi13">Geo Bubble + Lat/Lon</button><button class="quiz-btn" data-answer="qi13">Geo Coordinate + Lookup</button></div>
-      <div id="qi13" class="quiz-answer">✅ <strong>Geo Cluster + Geographic data provider</strong> — Course: "To use custom polygonal shapes, a geographic data provider must be defined." Standard lookups won't work for custom territories.<br>
-        ❌ Geo Region + Lookup: Lookup only knows standard boundaries (countries, states), not custom clusters.<br>
-        ❌ Geo Bubble + Lat/Lon: Shows points, not region groupings.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q14 🔥:</strong> A <strong>Geo Contour</strong> map is BEST for what?</p>
-      <div><button class="quiz-btn" data-answer="qi14">Exact sales figures per country</button><button class="quiz-btn" data-answer="qi14">Density patterns (customer concentration)</button><button class="quiz-btn" data-answer="qi14">Individual store locations</button><button class="quiz-btn" data-answer="qi14">Airline routes</button></div>
-      <div id="qi14" class="quiz-answer">✅ <strong>Density patterns</strong> — Contour lines show areas of equal value/density (like elevation or heat maps).<br>
-        ❌ Exact sales: Use Geo Region (colored states/countries) for exact values per region.<br>
-        ❌ Store locations: Use Geo Coordinate or Geo Bubble for individual points.<br>
-        ❌ Airline routes: Use Geo Line or Geo Line-Coordinate for paths between locations.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q15 🔥:</strong> Identify the <strong>FALSE</strong> statement about geo maps:</p>
-      <div><button class="quiz-btn" data-answer="qi15">Geo Bubble uses point geometry and is good for uneven data</button><button class="quiz-btn" data-answer="qi15">Geo Coordinate should only be used with evenly distributed data</button><button class="quiz-btn" data-answer="qi15">Lat/Lon data items can be used with ALL geo map types</button><button class="quiz-btn" data-answer="qi15">A geographic data provider can be from ESRI or CAS table</button></div>
-      <div id="qi15" class="quiz-answer">✅ <strong>FALSE: Lat/Lon works with ALL types</strong> — This is wrong! Lat/Lon CANNOT be used with Geo Region maps.<br>
-        ✅ Geo Bubble + uneven data: TRUE — from course: "Geo bubble maps are useful when data is not evenly distributed."<br>
-        ✅ Geo Coordinate + even data: TRUE — from course: "Geo coordinate maps should be used only when there is an even distribution of values."<br>
-        ✅ Provider from ESRI/CAS: TRUE — from course: "The geographic data provider can be created from either an Esri feature service or a CAS table."</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q16 🏆:</strong> Supply chain dashboard: distribution centers as <strong>bubbles</strong>, delivery <strong>routes</strong>, sales <strong>regions</strong> colored. Minimum geo maps needed?</p>
-      <div><button class="quiz-btn" data-answer="qi16">1 — custom geo map layers all three</button><button class="quiz-btn" data-answer="qi16">2 — one polyline + one point map</button><button class="quiz-btn" data-answer="qi16">3 — one per geometry type</button><button class="quiz-btn" data-answer="qi16">Cannot be done</button></div>
-      <div id="qi16" class="quiz-answer">✅ <strong>1 — custom geo map layers all three</strong> — Course: "You can mix and match these elements to create your custom geo map." A custom geo map in Graph Builder can layer Geo Map (polygons) + Scatter Plot (points) + Bubble Plot (bubbles) + Line Plot (routes) all in one.</div>
-    </div>
-  </div>
-
-  <!-- Quiz: Path Analysis -->
-  <div class="quiz-card">
-    <h3>🔀 Path Analysis — Link Color Options</h3>
-    <div class="quiz-q"><p><strong>Q1:</strong> What is a Path Analysis diagram also called?</p>
-      <div><button class="quiz-btn" data-answer="tp1">Flow map</button><button class="quiz-btn" data-answer="tp1">Sankey diagram</button><button class="quiz-btn" data-answer="tp1">Network graph</button><button class="quiz-btn" data-answer="tp1">Tree map</button></div>
-      <div id="tp1" class="quiz-answer">✅ <strong>Sankey diagram</strong> — Course: "This type of diagram is also called a Sankey diagram."<br>
-        ❌ Flow map: Geo maps show flow, not path analysis.<br>
-        ❌ Network graph: Network analysis is different — shows relationships, not sequential flows.<br>
-        ❌ Tree map: Shows part-to-whole relationships, not flows.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q2:</strong> Which Link color option gives each unique journey its own distinct color from start to end?</p>
-      <div><button class="quiz-btn" data-answer="tp2">Path</button><button class="quiz-btn" data-answer="tp2">Drop off</button><button class="quiz-btn" data-answer="tp2">Event</button><button class="quiz-btn" data-answer="tp2">Sequence order</button></div>
-      <div id="tp2" class="quiz-answer">✅ <strong>Path</strong> — "Displays each path as a separate group with a distinct color."<br>
-        ❌ Drop off: Only 2 colors — continuing vs dropping.<br>
-        ❌ Event: Color by the node/stage type, not by path.<br>
-        ❌ Sequence: Color by position number, not by path identity.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q3 🔥:</strong> A Sankey has each path with its OWN color throughout. Which option is set?</p>
-      <div><button class="quiz-btn" data-answer="tp3">Path</button><button class="quiz-btn" data-answer="tp3">Drop off</button><button class="quiz-btn" data-answer="tp3">Event</button><button class="quiz-btn" data-answer="tp3">Sequence order</button></div>
-      <div id="tp3" class="quiz-answer">✅ <strong>Path</strong> — The exam question! Each path having its own color = Path coloring.<br>
-        ❌ Drop off: Would show only 2 colors — "continuing" vs "drop-off."<br>
-        ❌ Event: All paths at the same stage would share the same color.<br>
-        ❌ Sequence: All 1st steps would share one color, all 2nd steps another.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q4:</strong> What determines link WIDTH in a path analysis?</p>
-      <div><button class="quiz-btn" data-answer="tp4">Link color setting</button><button class="quiz-btn" data-answer="tp4">Weight measure or frequency</button><button class="quiz-btn" data-answer="tp4">Number of nodes</button><button class="quiz-btn" data-answer="tp4">The title</button></div>
-      <div id="tp4" class="quiz-answer">✅ <strong>Weight measure or frequency</strong> — "Width of link represents frequency or weight measure."<br>
-        ❌ Link color: Color controls grouping, not width.<br>
-        ❌ Number of nodes: Node count doesn't affect link thickness.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q5:</strong> Which data role in Path Analysis uniquely labels each object (e.g., customer ID)?</p>
-      <div><button class="quiz-btn" data-answer="tp5">Event</button><button class="quiz-btn" data-answer="tp5">Sequence order</button><button class="quiz-btn" data-answer="tp5">Transaction identifier</button><button class="quiz-btn" data-answer="tp5">Weight</button></div>
-      <div id="tp5" class="quiz-answer">✅ <strong>Transaction identifier</strong> — "Uniquely labels each object to analyze."<br>
-        ❌ Event: Defines the nodes/stages.<br>
-        ❌ Sequence order: Orders the events.<br>
-        ❌ Weight: Link width.</div>
-    </div>
-    <div class="quiz-q"><p><strong>Q6 🧠:</strong> "Each Path gets its own _______."</p>
-      <div><button class="quiz-btn" data-answer="tp6">Color</button><button class="quiz-btn" data-answer="tp6">Drop off</button><button class="quiz-btn" data-answer="tp6">Event</button><button class="quiz-btn" data-answer="tp6">Width</button></div>
-      <div id="tp6" class="quiz-answer">✅ <strong>Paint job (color)</strong> — "Each Path gets its own Paint job" 🎨<br>
-        ❌ Drop off: Only determines if a link terminates or not.<br>
-        ❌ Event: Defines the node/stage.<br>
-        ❌ Width: Determined by weight measure or frequency.</div>
-    </div>
-  </div>
-
-</div>
-</details>
 </div>
 
-<a href="#" class="back-top" title="Back to top">⬆</a>
-
-<script src="../js/common.js"></script>
 </body>
 </html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Time Variant Quiz</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Practice Quiz — Time Variant Charts</p>
+</div>
+
+<div class="nav-bar">
+  <select onchange="if(this.value)window.location.href=this.value;" class="nav-select">    <option value="index.html">📋 Quiz Index</option>
+    <option value="rank-filter.html">🏆 Rank/Filter</option>
+    <option value="columns-lattice.html">📐 Columns/Lattice</option>
+    <option value="crosstab-rows.html">📋 Crosstab Rows</option>
+    <option value="measure-heading.html">📋 Measure Heading</option>
+    <option value="box-plot.html">📦 Box Plot</option>
+    <option value="bubble-plot.html">🫧 Bubble</option>
+    <option value="treemap.html">🟦 Treemap</option>
+    <option value="geo-maps.html">🗺️ Geo Maps</option>
+    <option value="path-analysis.html">🔀 Path</option>
+    <option value="parameters-expressions.html">🎯 Param/Expr</option>
+    <option value="sharing-reports.html">📤 Sharing</option>
+    <option value="decision-tree.html">🌳 Decision Tree</option>
+    <option value="calculated-items.html">🧮 Calc Items</option>
+    <option value="common-filters.html">🔄 Common Filters</option>
+    <option value="auto-explanation.html">🤖 Auto Explain</option>
+    <option value="content-objects.html">📦 Content Objects</option>
+    <option value="dual-axis.html">📊 Dual Axis</option>
+    <option value="time-variant.html">📈 Time Variant</option>
+  </select>
+</div>
+
+<div class="content">
+<details class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #0984e3;">
+  📈 Time Variant Charts Quiz
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <div class="quiz-card">
+    <h3 id="qz-time-variant">📈 Time Variant Charts</h3>
+    <div class="quiz-q"><p><strong>Q1:</strong> Which Time Variant chart requires exactly 4 measures?</p>
+      <div><button class="quiz-btn" data-answer="zvc1" data-correct>Vector Plot</button><button class="quiz-btn" data-answer="zvc1">Bubble Change Plot</button><button class="quiz-btn" data-answer="zvc1">Waterfall Chart</button><button class="quiz-btn" data-answer="zvc1">Schedule Chart</button></div>
+      <div id="zvc1" class="quiz-answer">✅ <strong>Vector Plot</strong> — Requires 4 measures: X Origin, X, Y Origin, Y.<br>
+        ❌ Bubble Change: Requires 6 measures!<br>
+        ❌ Waterfall: Only needs 1 measure.<br>
+        ❌ Schedule: Needs Task + Start + Finish (no measures).</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> Which chart requires the most data items (6 measures)?</p>
+      <div><button class="quiz-btn" data-answer="zvc2">Step Plot</button><button class="quiz-btn" data-answer="zvc2">Vector Plot</button><button class="quiz-btn" data-answer="zvc2" data-correct>Bubble Change Plot</button><button class="quiz-btn" data-answer="zvc2">Waterfall Chart</button></div>
+      <div id="zvc2" class="quiz-answer">✅ <strong>Bubble Change Plot</strong> — 6 measures: X start, X end, Y start, Y end, Size start, Size end.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3:</strong> What does a Waterfall chart show?</p>
+      <div><button class="quiz-btn" data-answer="zvc3">Direction and magnitude of change</button><button class="quiz-btn" data-answer="zvc3" data-correct>How incremental changes lead to a final value</button><button class="quiz-btn" data-answer="zvc3">Irregular, discrete intervals</button><button class="quiz-btn" data-answer="zvc3">Project tasks and timelines</button></div>
+      <div id="zvc3" class="quiz-answer">✅ <strong>Incremental changes → final value</strong> — A progressive bar chart showing cumulative effects.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4:</strong> A Step Plot is sorted by what, by default?</p>
+      <div><button class="quiz-btn" data-answer="zvc4" data-correct>Ascending by X axis</button><button class="quiz-btn" data-answer="zvc4">Descending by Y axis</button><button class="quiz-btn" data-answer="zvc4">Ascending by measure value</button><button class="quiz-btn" data-answer="zvc4">Not sorted</button></div>
+      <div id="zvc4" class="quiz-answer">✅ <strong>Ascending by X axis</strong> — "By default, the step plot is sorted in ascending order by the value of the X axis."<br>
+        ❌ Descending: That's the default for Dual Axis Bar charts.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q5:</strong> What roles does a Schedule Chart require?</p>
+      <div><button class="quiz-btn" data-answer="zvc5">Category + Measure</button><button class="quiz-btn" data-answer="zvc5">X Origin + X + Y Origin + Y</button><button class="quiz-btn" data-answer="zvc5" data-correct>Task + Start + Finish</button><button class="quiz-btn" data-answer="zvc5">Time + 2 Measures</button></div>
+      <div id="zvc5" class="quiz-answer">✅ <strong>Task + Start + Finish</strong> — Schedule charts (Gantt) need task name, start date, and finish date. No measures needed!</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q6 🔥:</strong> Which chart is also called a "progressive bar chart", "Mario chart", or "bridge chart"?</p>
+      <div><button class="quiz-btn" data-answer="zvc6">Step Plot</button><button class="quiz-btn" data-answer="zvc6">Vector Plot</button><button class="quiz-btn" data-answer="zvc6" data-correct>Waterfall Chart</button><button class="quiz-btn" data-answer="zvc6">Bubble Change Plot</button></div>
+      <div id="zvc6" class="quiz-answer">✅ <strong>Waterfall Chart</strong> — "Also known as: progressive bar charts, flying bricks charts, Mario charts, and bridges (in finance)."</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q7:</strong> Where are Time Variant Charts located?</p>
+      <div><button class="quiz-btn" data-answer="zvc7" data-correct>Graphs group</button><button class="quiz-btn" data-answer="zvc7">Content group</button><button class="quiz-btn" data-answer="zvc7">Analytics group</button><button class="quiz-btn" data-answer="zvc7">Controls group</button></div>
+      <div id="zvc7" class="quiz-answer">✅ <strong>Graphs group</strong> — Same as Dual Axis Charts. Content group has Text, Image, Web Content, etc.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q8 🧠:</strong> Match: "Step = ___. Vector = ___. Bubble = ___. Waterfall = ___. Schedule = ___."</p>
+      <div><button class="quiz-btn" data-answer="zvc8" data-correct>Staircase / 4 Measures / 6 Measures / Incremental / Gantt</button><button class="quiz-btn" data-answer="zvc8">Gantt / Staircase / 4 Meas / 6 Meas / Incremental</button><button class="quiz-btn" data-answer="zvc8">Incremental / Gantt / Staircase / 4 Meas / 6 Meas</button></div>
+      <div id="zvc8" class="quiz-answer">✅ <strong>Step=Staircase, Vector=4 Measures, Bubble=6 Measures, Waterfall=Incremental, Schedule=Gantt</strong></div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/time-variant.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+</div>
+</details>
+</div>
+
+<script src="../js/tracker.js"></script>
+<script src="../js/common.js"></script>
+</body>
+</html>

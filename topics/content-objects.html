@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Content Objects</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+
+<details id="t1" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #fd79a8;">
+  📦 Content Objects — Web, Job &amp; Data-Driven
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <div style="background:var(--bg3);border-radius:8px;padding:14px;margin-bottom:10px;">
+    <p style="color:var(--text2);font-size:0.85rem;">
+      From course: <em>"Content objects are useful for conveying information when a graph is not required."</em> Located in the <strong>Content group</strong> of the Objects pane.
+    </p>
+  </div>
+
+  <!-- COMPARISON TABLE -->
+  <div class="info-box">
+    <p class="label">📊 Interactive: 3 Content Objects Visualized</p>
+  </div>
+  <div id="chart-content" style="height:360px;background:#0d1117;border-radius:8px;margin-bottom:8px;"></div>
+
+  <!-- DETAILED TABLE -->
+  <div class="info-box">
+    <p class="label">📋 Complete Comparison</p>
+  </div>
+  <table class="data-table" style="font-size:0.72rem;">
+    <tr><th>Feature</th><th style="color:#55efc4;">🌐 Web Content</th><th style="color:#ffd93d;">⚙️ Job Content</th><th style="color:#ff7675;">📊 Data-Driven Content</th></tr>
+    <tr><td><strong>What it does</strong></td><td>Display web page / video in iFrame</td><td>Run SAS code, display output</td><td>Custom third-party visualizations</td></tr>
+    <tr><td><strong>Data source</strong></td><td>External URL</td><td>SAS Viya job</td><td>HTML/CSS/JS + data from VA (JSON)</td></tr>
+    <tr><td><strong>Receives VA data?</strong></td><td>❌ No</td><td>❌ No (code accesses data)</td><td>✅ Yes — data messages in JSON</td></tr>
+    <tr><td><strong>Source of action?</strong></td><td>❌ No</td><td>❌ No</td><td>✅ Yes — can trigger actions</td></tr>
+    <tr><td><strong>Interacts with filters?</strong></td><td>❌ No</td><td>❌ No</td><td>✅ Yes — responds to ranks/actions</td></tr>
+    <tr><td><strong>In PDF export?</strong></td><td>❌ No</td><td>—</td><td>❌ No</td></tr>
+    <tr><td><strong>Coding required?</strong></td><td>❌ No (just a URL)</td><td>❌ No (pre-made jobs)</td><td>✅ Yes — HTML, CSS, JS</td></tr>
+    <tr><td><strong>Limitation</strong></td><td>Some sites block iFrame (<code>x-frame-options</code>)</td><td>Styling handled in SAS code</td><td>Not in PDF export</td></tr>
+  </table>
+
+  <!-- 3 DETAIL CARDS -->
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #55efc4;">
+      <p class="label" style="color:#55efc4;">🌐 Web Content</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Useful for adding references and video instructions to your report."</em><br><br>
+        ✅ Display web page (URL)<br>
+        ✅ Embed video in an iFrame<br>
+        ❌ Websites that block iFrame won't show<br>
+        ❌ Cannot be source of filter action<br>
+        ❌ Not included in PDF export
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #ffd93d;">
+      <p class="label" style="color:#ffd93d;">⚙️ Job Content</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Enables you to access the functionality of SAS code and display the output in your report."</em><br><br>
+        ✅ Access any data<br>
+        ✅ Create output<br>
+        ✅ Update tables<br>
+        ✅ Works with or without forms<br>
+        ✅ Legacy job support<br>
+        ❌ Cannot be source of filter action
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #ff7675;">
+      <p class="label" style="color:#ff7675;">📊 Data-Driven Content</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Enables you to utilize custom third-party visualizations in your report."</em><br><br>
+        ✅ Uses D3.js, Google Charts, CanvasJS, etc.<br>
+        ✅ Receives data from VA (JSON format)<br>
+        ✅ Can be source of action<br>
+        ✅ Responds to filters/ranks/actions<br>
+        ❌ Requires HTML, CSS, JS knowledge<br>
+        ❌ Not included in PDF export
+      </p>
+    </div>
+  </div>
+
+  <!-- 3 MESSAGE TYPES FOR DATA-DRIVEN -->
+  <div class="info-box">
+    <p class="label">📨 Data-Driven Content — 3 Message Types</p>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:8px;">
+    <div style="background:var(--bg3);border-radius:8px;padding:10px;border-left:3px solid #74b9ff;">
+      <h4 style="color:#74b9ff;font-size:0.7rem;">📝 Instructional</h4>
+      <p style="font-size:0.68rem;color:var(--text2);">Data-Driven Content → VA<br><em>"Type, number, and order of required data items."</em></p>
+    </div>
+    <div style="background:var(--bg3);border-radius:8px;padding:10px;border-left:3px solid #55efc4;">
+      <h4 style="color:#55efc4;font-size:0.7rem;">📊 Data</h4>
+      <p style="font-size:0.68rem;color:var(--text2);">VA → Data-Driven Content<br><em>"Data assigned to object and metadata in JSON format."</em></p>
+    </div>
+    <div style="background:var(--bg3);border-radius:8px;padding:10px;border-left:3px solid #ff7675;">
+      <h4 style="color:#ff7675;font-size:0.7rem;">🔘 Selection</h4>
+      <p style="font-size:0.68rem;color:var(--text2);">Data-Driven Content → VA<br><em>"Details about selections, used when source of action."</em></p>
+    </div>
+  </div>
+
+  <!-- EXAM TIP -->
+  <div class="tip red">
+    <strong>🎯 Key Exam Points:</strong><br>
+    • Only <strong>Data-Driven Content</strong> can be a source of action ✅<br>
+    • Only <strong>Data-Driven Content</strong> receives data from VA ✅<br>
+    • <strong>Web Content</strong> and <strong>Job Content</strong> CANNOT be source of filter action ❌<br>
+    • <strong>Web Content</strong> and <strong>Data-Driven Content</strong> are NOT in PDF export ❌<br>
+    • <strong>Web Content</strong> uses iFrame — some websites block this ⚠️<br>
+    • <strong>Data-Driven Content</strong> requires HTML, CSS, and JavaScript ⚠️
+  </div>
+
+  <div class="tip green">
+    <strong>🧠 Memory Trick:</strong><br>
+    <strong>W</strong>eb = <strong>W</strong>ebsite URL (just paste!)<br>
+    <strong>J</strong>ob = <strong>J</strong>ust SAS code (pre-built)<br>
+    <strong>D</strong>ata-Driven = <strong>D</strong>ynamic data + code (most powerful!)<br><br>
+    <em>"Web is a link, Job runs code, Data-Driven does both AND talks back to VA."</em>
+  </div>
+
+</div>
+</details>
+
+</div>
+
+<a href="#" class="back-top" title="Back to top">⬆</a>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var chart = document.getElementById('chart-content');
+  if (!chart) return;
+
+  // 3 distinct areas showing the 3 content objects
+  Plotly.newPlot(chart, [
+    // Web Content - simple URL icon (left)
+    {type:'scatter', x:[0.17,0.17,0.17], y:[0.7,0.7,0.7], mode:'text',
+     text:['🌐','Web','Content'], textfont:[{size:30},{size:14,color:'#55efc4'},{size:11,color:'#8b949e'}],
+     textposition:['middle center','top center','bottom center'], showlegend:false},
+    // Data flow indicators
+    {type:'scatter', x:[0.3,0.5,0.7], y:[0.5,0.7,0.5], mode:'lines+text',
+     line:{color:'#3d4049',width:2,dash:'dot'}, text:['','',''],
+     hoverinfo:'none', showlegend:false},
+    // Job Content - gear icon (center)
+    {type:'scatter', x:[0.5,0.5,0.5], y:[0.7,0.7,0.7], mode:'text',
+     text:['⚙️','Job','Content'], textfont:[{size:30},{size:14,color:'#ffd93d'},{size:11,color:'#8b949e'}],
+     textposition:['middle center','top center','bottom center'], showlegend:false},
+    // Data-Driven - chart icon (right)  
+    {type:'scatter', x:[0.83,0.83,0.83], y:[0.7,0.7,0.7], mode:'text',
+     text:['📊','Data-Driven','Content'], textfont:[{size:30},{size:14,color:'#ff7675'},{size:11,color:'#8b949e'}],
+     textposition:['middle center','top center','bottom center'], showlegend:false},
+    // Features table as text annotations
+    {type:'scatter', x:[0.17,0.5,0.83], y:[0.3,0.3,0.3], mode:'text',
+     text:['❌ No data<br>❌ No actions<br>❌ No filters<br>✅ URL only','❌ No data<br>❌ No actions<br>❌ No filters<br>✅ SAS code','✅ Receives data<br>✅ Source action<br>✅ Responds filters<br>✅ HTML/CSS/JS'],
+     textfont:[{size:9,color:'#8b949e'},{size:9,color:'#8b949e'},{size:9,color:'#8b949e'}],
+     showlegend:false}
+  ], {
+    title:{text:'📦 Content Objects — Capability Comparison',font:{color:'#8b949e',size:11}},
+    paper_bgcolor:'#0d1117', plot_bgcolor:'#0d1117',
+    xaxis:{range:[0,1],showgrid:false,zeroline:false,showticklabels:false},
+    yaxis:{range:[0,1],showgrid:false,zeroline:false,showticklabels:false},
+    margin:{l:10,r:10,t:50,b:10},
+    font:{color:'#8b949e'}
+  }, {displayModeBar:false, responsive:true});
+});
+</script>
+
+</body>
+</html>

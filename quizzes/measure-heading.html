@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Measure Heading Placement Quiz</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Practice Quiz — Measure Heading Placement</p>
+</div>
+
+<div class="nav-bar">
+  <select onchange="if(this.value)window.location.href=this.value;" class="nav-select">
+    <option value="">Jump to quiz →</option>
+    <option value="index.html">📋 Quiz Index</option>
+    <option value="rank-filter.html">🏆 Rank/Filter</option>
+    <option value="columns-lattice.html">📐 Columns/Lattice</option>
+    <option value="crosstab-rows.html">📋 Crosstab Rows</option>
+    <option value="measure-heading.html">📋 Measure Heading</option>
+    <option value="box-plot.html">📦 Box Plot</option>
+    <option value="bubble-plot.html">🫧 Bubble</option>
+    <option value="treemap.html">🟦 Treemap</option>
+    <option value="geo-maps.html">🗺️ Geo Maps</option>
+    <option value="path-analysis.html">🔀 Path</option>
+    <option value="parameters-expressions.html">🎯 Param/Expr</option>
+    <option value="sharing-reports.html">📤 Sharing</option>
+  </select>
+  <a href="index.html" class="nav-btn">📋 Quiz Index</a>
+  <a href="../topics/measure-heading.html" class="nav-btn">← Back to Topic</a>
+</div>
+
+<div class="content">
+<details class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #ff7675;">
+  📋 Measure Heading Placement — Practice Quiz <span class="badge badge-measure">QUIZ</span>
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <div class="quiz-card" id="quiz-measure-heading-basic">
+    <h3>📋 Topic 6: Measure Heading Placement — Basic</h3>
+    <div class="quiz-q"><p><strong>Q1:</strong> Changing Measure heading placement from ABOVE to LEFT does what?</p>
+      <div><button class="quiz-btn" data-answer="qd1">Transposes rows and columns</button><button class="quiz-btn" data-correct="true" data-answer="qd1">Moves Frequency label to the rows side</button><button class="quiz-btn" data-answer="qd1">Moves Origin to the rows side</button><button class="quiz-btn" data-answer="qd1">Moves Make to the columns side</button></div>
+      <div id="qd1" class="quiz-answer">✅ <strong>Moves Frequency label to the rows side</strong> — Only the measure name label moves from above the columns to the left side.<br>
+        ❌ Transposes: Transposing would swap Make↔Origin entirely. Only the LABEL moves.<br>
+        ❌ Origin moves: Origin stays as columns — only the measure label moves.<br>
+        ❌ Make moves: Make stays as rows — only the measure label moves.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> What does Measure heading placement NOT change?</p>
+      <div><button class="quiz-btn" data-answer="qd2">Where the measure name label appears</button><button class="quiz-btn" data-correct="true" data-answer="qd2">Which data items are assigned to Columns vs Rows</button></div>
+      <div id="qd2" class="quiz-answer">✅ <strong>Data item role assignments</strong> — It ONLY moves the measure label. Make still in Rows, Origin still in Columns.<br>
+        ❌ Where the label appears: That IS what it changes — it moves the label from above to the left.</div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/measure-heading.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+  <div class="quiz-card" id="quiz-measure-heading-advanced">
+    <h3>📋 Topic 6: Measure Heading Placement — Advanced</h3>
+    <div class="quiz-q"><p><strong>Q3 🔥:</strong> True or False: Changing Measure heading placement redesigns the entire crosstab by swapping which categories are in rows vs columns.</p>
+      <div><button class="quiz-btn" data-answer="qd3">True</button><button class="quiz-btn" data-correct="true" data-answer="qd3">False</button></div>
+      <div id="qd3" class="quiz-answer">✅ <strong>False</strong> — It ONLY moves the measure label. The category role assignments (which data items are in Rows vs Columns) stay EXACTLY the same.<br>
+        ❌ True: This is the #1 misconception! Only the word "Frequency" changes position — nothing else.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4 🧠:</strong> You have Make in Rows, Origin in Columns, Frequency as measure. Someone says "just transpose it." What's the minimum change needed to switch the view?</p>
+      <div><button class="quiz-btn" data-answer="qd4">Change Measure heading placement to LEFT</button><button class="quiz-btn" data-correct="true" data-answer="qd4">Swap data items: Move Make to Columns, Origin to Rows</button><button class="quiz-btn" data-answer="qd4">Change the aggregation type</button></div>
+      <div id="qd4" class="quiz-answer">✅ <strong>Swap data items</strong> — To truly transpose you must reassign the data items: Move Make from Rows to Columns, Origin from Columns to Rows. Measure heading placement only moves the label — it's NOT transposition!<br>
+        ❌ Heading placement: That only moves the label, doesn't swap categories.<br>
+        ❌ Aggregation type: Doesn't change layout at all.</div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/measure-heading.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+</div>
+</details>
+</div>
+
+<script src="../js/tracker.js"></script>
+<script src="../js/common.js"></script>
+</body>
+</html>

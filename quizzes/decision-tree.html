@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Decision Tree Quiz</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Practice Quiz — Decision Tree</p>
+</div>
+
+<div class="nav-bar">
+  <select onchange="if(this.value)window.location.href=this.value;" class="nav-select">    <option value="index.html">📋 Quiz Index</option>
+    <option value="rank-filter.html">🏆 Rank/Filter</option>
+    <option value="columns-lattice.html">📐 Columns/Lattice</option>
+    <option value="crosstab-rows.html">📋 Crosstab Rows</option>
+    <option value="measure-heading.html">📋 Measure Heading</option>
+    <option value="box-plot.html">📦 Box Plot</option>
+    <option value="bubble-plot.html">🫧 Bubble</option>
+    <option value="treemap.html">🟦 Treemap</option>
+    <option value="geo-maps.html">🗺️ Geo Maps</option>
+    <option value="path-analysis.html">🔀 Path</option>
+    <option value="parameters-expressions.html">🎯 Param/Expr</option>
+    <option value="sharing-reports.html">📤 Sharing</option>
+    <option value="decision-tree.html">🌳 Decision Tree</option>
+    <option value="calculated-items.html">🧮 Calc Items</option>
+    <option value="common-filters.html">🔄 Common Filters</option>
+    <option value="auto-explanation.html">🤖 Auto Explain</option>
+    <option value="content-objects.html">📦 Content Objects</option>
+  </select>
+</div>
+
+<div class="content">
+<details class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #6c5ce7;">
+  🌳 Decision Tree Quiz
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <div class="quiz-card">
+    <h3 id="qz-decision-tree">🌳 Decision Tree</h3>
+        <div class="quiz-q"><p><strong>Q1:</strong> Which statement describes how a decision tree is used?</p>
+      <img src="../images/exam-decision-tree.png" style="max-width:100%;border-radius:6px;margin:4px 0 8px;border:1px solid #333;display:block;" alt="Decision tree exam">
+      <div><button class="quiz-btn" data-answer="zd1">It summarizes data using histograms</button><button class="quiz-btn" data-correct="true" data-answer="zd1">It segments data into branches to predict</button><button class="quiz-btn" data-answer="zd1">It prompts form-filling</button><button class="quiz-btn" data-answer="zd1">It visualizes correlation via scatter</button></div>
+      <div id="zd1" class="quiz-answer">✅ <strong>Segments data into branches to predict</strong> — The EXAM question! "Creates decision rules to predict the response variable."<br>❌ Histograms: Descriptive stats.<br>❌ Form: Tree learns from data.<br>❌ Scatter: Correlation analysis.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> What two roles are MANDATORY for a decision tree?</p>
+      <div><button class="quiz-btn" data-correct="true" data-answer="zd2">Response + Predictors</button><button class="quiz-btn" data-answer="zd2">Category + Measures</button><button class="quiz-btn" data-answer="zd2">Group + Lattice</button><button class="quiz-btn" data-answer="zd2">Time axis + Measure</button></div>
+      <div id="zd2" class="quiz-answer">✅ <strong>Response + Predictors</strong> — Response = what to predict. Predictors = explaining variables.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3:</strong> Why are decision trees "white box" models?</p>
+      <div><button class="quiz-btn" data-answer="zd3">Drawn in white boxes</button><button class="quiz-btn" data-correct="true" data-answer="zd3">Structure is visualized and decisions transparent</button><button class="quiz-btn" data-answer="zd3">Only work with white data</button></div>
+      <div id="zd3" class="quiz-answer">✅ <strong>Transparent decision-making</strong> — "Structure is easily visualized, decision-making is transparent and understandable."</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4:</strong> Which license for advanced decision tree features?</p>
+      <div><button class="quiz-btn" data-answer="zd4">Base Visual Analytics</button><button class="quiz-btn" data-correct="true" data-answer="zd4">SAS Visual Statistics</button><button class="quiz-btn" data-answer="zd4">SAS Forecasting</button></div>
+      <div id="zd4" class="quiz-answer">✅ <strong>SAS Visual Statistics</strong> — Advanced features: predictor importance, assessment plots, interactive mode.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q5 🔥:</strong> What can you do in Interactive Mode on a decision tree?</p>
+      <div><button class="quiz-btn" data-answer="zd5">Change chart colors</button><button class="quiz-btn" data-correct="true" data-answer="zd5">Prune nodes, edit split rules, train</button><button class="quiz-btn" data-answer="zd5">Export to PDF</button></div>
+      <div id="zd5" class="quiz-answer">✅ <strong>Prune, edit splits, train</strong> — Right-click to enter. Cut nodes (prune), change split rule, or grow tree.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q6:</strong> What does the Icicle Plot show?</p>
+      <div><button class="quiz-btn" data-answer="zd6">Temperature data</button><button class="quiz-btn" data-correct="true" data-answer="zd6">Alternative view of decision tree</button><button class="quiz-btn" data-answer="zd6">Different analysis</button></div>
+      <div id="zd6" class="quiz-answer">✅ <strong>Alternative view of the tree</strong> — Selecting a node in one view highlights it in the other.</div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/decision-tree.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+</div>
+</details>
+</div>
+
+<script src="../js/tracker.js"></script>
+<script src="../js/common.js"></script>
+</body>
+</html>
