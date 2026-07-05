@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Graph Builder - Troubleshooting Guide</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  .wrong { background:#2d1b1b; border-left:3px solid #ff7675; padding:10px; border-radius:6px; margin:8px 0; font-size:0.82rem; }
+  .right { background:#1b2d1b; border-left:3px solid #55efc4; padding:10px; border-radius:6px; margin:8px 0; font-size:0.82rem; }
+  .why   { background:#1b1b2d; border-left:3px solid #ffd93d; padding:10px; border-radius:6px; margin:8px 0; font-size:0.82rem; }
+  .analogy { background:#2d1b2d; border-left:3px solid #a29bfe; padding:10px; border-radius:6px; margin:8px 0; font-size:0.82rem; }
+</style>
+</head>
+<body>
+<div class="header"><h1>📊 SAS VA — Graph Builder</h1><p class="subtitle">🚨 TROUBLESHOOTING GUIDE — Graph Builder Specifics</p></div>
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+  <span style="color:var(--text2);margin:0 10px;">|</span>
+  <a href="m2-graph-builder.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">📖 Full Graph Builder Page</a>
+</div>
+<div class="content">
+
+<details class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #ffd93d;">
+  🎨 Graph Builder — The Complete Reference (No More Confusion!)
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <!-- ===== BIG PICTURE ===== -->
+  <div class="info-box"><p class="label" style="color:#55efc4;">📐 The Big Picture — Graph Builder Layout</p></div>
+  <div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;text-align:center;font-size:0.78rem;color:var(--text2);">
+    <pre>
+       Col A    Col B
+Row 1 ┌────────┬────────┐
+      │  A1    │  B1    │  ← Top row = Row 1
+      │ (top-  │ (top-  │
+      │  left) │  right)│
+Row 2 ├────────┼────────┤
+      │  A2    │  B2    │  ← Bottom row = Row 2
+      │ (bot-  │ (bot-  │
+      │  tom-  │  tom-  │
+      │  left) │  right)│
+      └────────┴────────┘
+
+📌 Cells are: LETTER = column, NUMBER = row
+    </pre>
+  </div>
+
+  <!-- ===== MISTAKE 1 ===== -->
+  <div class="info-box"><p class="label" style="color:#ff7675;">❌ Your Mistake 1: Cell Naming — Letters = Columns, Numbers = Rows</p></div>
+
+  <div class="wrong">
+    <strong>Question:</strong> "What is the name of the highlighted cell in the graph template shown below?"<br>
+    <em>(A 2×2 grid with bottom-left cell highlighted in yellow)</em><br>
+    <strong>You answered:</strong> <span style="color:#ff7675;">b) B1</span> ❌<br>
+    <strong>Correct answer:</strong> <span style="color:#55efc4;">c) A2</span> ✅
+  </div>
+
+  <div class="why">
+    <strong>Why you got confused:</strong><br>
+    You swapped columns and rows! The rule is:<br>
+    • <strong>Letters</strong> = <strong>C</strong>olumns (A, B, C...)<br>
+    • <strong>Numbers</strong> = <strong>R</strong>ows (1, 2, 3...)<br><br>
+    The bottom-left cell is:<br>
+    • Column = left side = <strong>A</strong> ✅<br>
+    • Row = bottom = <strong>2</strong> ✅<br>
+    • Therefore = <strong>A2</strong><br><br>
+    <strong>B1</strong> would be top-right (column B, row 1).
+  </div>
+
+  <div class="analogy">
+    <strong>🧠 Memory Trick — The Alphabet Analogy:</strong><br>
+    Think of a spreadsheet:<br>
+    <strong>A</strong> is the first column (left side). <strong>1</strong> is the first row (top).<br>
+    So <strong>A1</strong> = top-left, <strong>A2</strong> = bottom-left, <strong>B1</strong> = top-right, <strong>B2</strong> = bottom-right.<br><br>
+    <strong>"L</strong>etters = <strong>L</strong>eft-to-right (columns). <strong>N</strong>umbers = <strong>N</strong>orth-to-south (rows)."
+  </div>
+
+  <img src="../images/quiz-graph-cell.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Cell naming question screenshot">
+<img src="../images/quiz-graph-cell2.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Cell naming question screenshot 2">
+  <div class="right">
+    <strong>✅ Quick Check:</strong> Bottom-left = A2. Top-left = A1. Bottom-right = B2. Top-right = B1.<br>
+    Just like Excel/Google Sheets naming!
+  </div>
+
+  <!-- ===== MISTAKE 2 ===== -->
+  <div class="info-box"><p class="label" style="color:#ff7675;">❌ Your Mistake 2: Roles in Graph Builder</p></div>
+
+  <div class="wrong">
+    <strong>Question:</strong> "Which of the following is true about roles in SAS Graph Builder?"<br>
+    <strong>You answered:</strong> <span style="color:#ff7675;">a) You can assign data items to roles in graph builder</span> ❌<br>
+    <strong>Correct answer:</strong> <span style="color:#55efc4;">b) Each object has certain required roles</span> ✅
+  </div>
+
+  <div class="why">
+    <strong>Why A is wrong and B is right:</strong><br>
+    Option A says "You can assign data items to roles" — this is true in a general sense but it's <strong>too obvious</strong>. The question asks about what's <strong>specifically true about Graph Builder</strong>.<br><br>
+    Option B "Each object has certain required roles" — this is the <strong>more specific</strong> correct answer because in Graph Builder, when you create a template, you define which roles are required vs optional. Some roles are mandatory for the graph to work.<br><br>
+    <strong>Also wrong:</strong><br>
+    • Option c) "You can only add one optional role" → ❌ You can add <strong>many</strong> optional roles<br>
+    • Option d) "Each object has the same roles" → ❌ Different objects have DIFFERENT roles
+  </div>
+
+  <div class="analogy">
+    <strong>🧠 Analogy — Building a Car:</strong><br>
+    • <strong>Option a</strong> = "You can put parts on a car" — obvious, not specifically about Graph Builder<br>
+    • <strong>Option b</strong> = "Each car has certain required parts (engine, wheels, steering wheel)" — specific and correct! ✅<br>
+    • <strong>Option c</strong> = "You can only add one extra feature" — wrong, you can add many<br>
+    • <strong>Option d</strong> = "Every car has the same parts" — a truck ≠ a sports car
+  </div>
+
+<img src="../images/quiz-graph-roles2.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Roles question screenshot">
+  <div class="right">
+    <strong>✅ Memory Trick:</strong> In Graph Builder, when you drop a graph element (like a bar chart), it has <strong>required roles</strong> (like Category + Measure) and <strong>optional roles</strong> (like Group, Color, etc.). You can specify which roles are required vs optional. That's the specific truth about Graph Builder roles!
+  </div>
+
+  <!-- ===== MISTAKE 3 ===== -->
+  <div class="info-box"><p class="label" style="color:#ff7675;">❌ Your Mistake 3: Renaming Roles</p></div>
+
+  <div class="wrong">
+    <strong>Question:</strong> "Where can you rename roles in Custom Graph Builder?"<br>
+    <strong>You answered:</strong> <span style="color:#ff7675;">a) In the Options menu</span> ❌<br>
+    <strong>Correct answer:</strong> <span style="color:#55efc4;">b) In the Roles menu</span> ✅
+  </div>
+
+  <div class="why">
+    <strong>Why B and not A:</strong><br>
+    The course says: <em>"You can rename roles in the <strong>Roles menu</strong>, by clicking on the overflow menu (three dots) next to the role."</em><br><br>
+    <strong>Think about it logically:</strong><br>
+    • If you want to rename a <strong>Role</strong>, where would you look? → The <strong>Roles menu</strong> (makes sense!)<br>
+    • The <strong>Options menu</strong> is for visual properties (colors, fonts, sizes)<br>
+    • The <strong>Outline menu</strong> is for the structure/layout hierarchy<br>
+    • The <strong>Elements menu</strong> is for selecting graph elements
+  </div>
+
+  <div class="analogy">
+    <strong>🧠 Analogy — The Right Tool for the Job:</strong><br>
+    • To rename a <strong>role</strong> → go to <strong>Roles menu</strong> (rename things where they belong) 🎯<br>
+    • To change <strong>colors</strong> → go to <strong>Options menu</strong> 🎨<br>
+    • To see the <strong>structure</strong> → go to <strong>Outline menu</strong> 🏗️<br>
+    <br>
+    <strong>"<strong>R</strong>oles are renamed in the <strong>R</strong>oles menu — it's that simple!"</strong>
+  </div>
+
+<img src="../images/quiz-graph-roles.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Rename roles question screenshot">
+  <div class="right">
+    <strong>✅ Memory Trick:</strong> <em>"To rename a <strong>R</strong>ole, use the <strong>R</strong>oles menu. Three dots (⋮) → Rename."</em>
+  </div>
+
+  <!-- ===== MISTAKE 4 ===== -->
+  <div class="info-box"><p class="label" style="color:#ff7675;">❌ Your Mistake 4: Data-Driven Lattice</p></div>
+
+  <div class="wrong">
+    <strong>Question:</strong> "You create a custom graph template with multiple cells. If the number of cells can vary based on unique values of a class variable, what kind of template?"<br>
+    <strong>You answered:</strong> <span style="color:#ff7675;">a) A user-defined lattice</span> ❌<br>
+    <strong>Correct answer:</strong> <span style="color:#55efc4;">d) A data-driven lattice</span> ✅
+  </div>
+
+  <div class="why">
+    <strong>The key difference:</strong><br>
+    <table style="font-size:0.75rem;border-collapse:collapse;">
+    <tr><th style="border:1px solid #444;padding:4px;">Type</th><th style="border:1px solid #444;padding:4px;">Cells defined by...</th><th style="border:1px solid #444;padding:4px;">Number of cells</th></tr>
+    <tr><td style="border:1px solid #444;padding:4px;"><strong>User-defined lattice</strong></td><td style="border:1px solid #444;padding:4px;">You manually set the rows & columns</td><td style="border:1px solid #444;padding:4px;">Fixed (e.g., 2×2, 3×1)</td></tr>
+    <tr><td style="border:1px solid #444;padding:4px;"><strong>Data-driven lattice</strong></td><td style="border:1px solid #444;padding:4px;">Values of a class variable</td><td style="border:1px solid #444;padding:4px;">Varies based on unique values ✅</td></tr>
+    </table>
+    <br>
+    The question says "number of cells can <strong>vary based on unique values</strong>" → That's the definition of a <strong>data-driven lattice</strong>!<br><br>
+    <strong>User-defined lattice</strong> = YOU decide the layout (2 cols × 2 rows, fixed).<br>
+    <strong>Data-driven lattice</strong> = The DATA decides (if your class variable has 5 unique values, you get 5 cells).
+  </div>
+
+  <div class="analogy">
+    <strong>🧠 Analogy — Seating Arrangements:</strong><br>
+    • <strong>User-defined lattice</strong> = A wedding seating chart where you pre-define 10 tables of 8 seats each (fixed) 🪑<br>
+    • <strong>Data-driven lattice</strong> = A restaurant where tables are added or removed based on how many guests show up (variable) 🔄<br><br>
+    <strong>"<strong>U</strong>ser-defined = <strong>U</strong>ou choose (fixed). <strong>D</strong>ata-driven = <strong>D</strong>ata decides (variable)."</strong>
+  </div>
+
+<img src="../images/quiz-graph-lattice.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Data-driven lattice question screenshot">
+  <div class="right">
+    <strong>✅ Memory Trick:</strong> <em>"If the number of cells <strong>varies</strong> with the data → It's <strong>data-driven</strong>. If <strong>you</strong> define the grid → It's <strong>user-defined</strong>."</em>
+  </div>
+
+  <!-- ===== COMPLETE GRAPH BUILDER REFERENCE ===== -->
+  <div class="info-box"><p class="label" style="color:#55efc4;">📋 Complete Graph Builder Quick Reference</p></div>
+  <table class="data-table" style="font-size:0.7rem;">
+  <tr><th>Concept</th><th>What You Must Remember</th><th>Memory Trick</th></tr>
+  <tr>
+    <td><strong>Cell naming</strong></td>
+    <td><strong>Letter = Column</strong> (A, B, C...). <strong>Number = Row</strong> (1, 2, 3...). A1 = top-left.</td>
+    <td><span style="color:#55efc4;">"<strong>L</strong>etters = <strong>L</strong>eft-to-right. <strong>N</strong>umbers = <strong>N</strong>orth-to-south."</span></td>
+  </tr>
+  <tr>
+    <td><strong>Roles</strong></td>
+    <td>Each object has <strong>required</strong> roles. You can add optional roles too. Role names = user-defined. Rename via Roles menu → overflow (⋮).</td>
+    <td><span style="color:#55efc4;">"<strong>R</strong>ole renamed in <strong>R</strong>oles menu. Required + optional roles."</span></td>
+  </tr>
+  <tr>
+    <td><strong>User-defined lattice</strong></td>
+    <td>YOU set the grid (rows × columns). Cells are <strong>independent</strong>. Auto-sized but manually adjustable.</td>
+    <td><span style="color:#55efc4;">"<strong>U</strong>ou define = <strong>U</strong>ou choose the grid."</span></td>
+  </tr>
+  <tr>
+    <td><strong>Data-driven lattice</strong></td>
+    <td>Number of cells determined by <strong>unique values of class variable</strong>. Same graph elements in each cell.</td>
+    <td><span style="color:#55efc4;">"<strong>D</strong>ata decides = <strong>D</strong>ynamic cells."</span></td>
+  </tr>
+  <tr>
+    <td><strong>Overlay</strong></td>
+    <td>One graph element on top of another in the same cell. <strong>Shared role</strong> auto-added. Not all elements compatible (e.g., pie + bar won't work).</td>
+    <td><span style="color:#55efc4;">"Overlay = On top of each other. Shared role = Auto."</span></td>
+  </tr>
+  <tr>
+    <td><strong>Access</strong></td>
+    <td>From <strong>Applications menu</strong> (NOT Objects pane). Available to all users.</td>
+    <td><span style="color:#55efc4;">"Graph Builder = Apps menu, NOT Objects pane."</span></td>
+  </tr>
+  <tr>
+    <td><strong>Two ways</strong></td>
+    <td><strong>From scratch</strong> (select elements → layout → roles → options → save). Or <strong>Graph Gallery</strong>.</td>
+    <td><span style="color:#55efc4;">"Scratch = Build. Gallery = Start from template."</span></td>
+  </tr>
+  <tr>
+    <td><strong>Elements</strong></td>
+    <td>Over 15 graph elements: Bar, Line, Scatter, Pie, Band, Contour, etc.</td>
+    <td><span style="color:#55efc4;">"<strong>15+</strong> elements to choose from."</span></td>
+  </tr>
+  </table>
+
+  <div class="tip red">
+    <strong>🎯 Your 4 Graph Builder Mistakes — The Fix:</strong><br>
+    1. <strong>Cell naming:</strong> A1 = top-left (not B1). Letters = columns, numbers = rows ✅<br>
+    2. <strong>Roles:</strong> Each object has required roles. NOT "you can just assign data" (too obvious). The specific truth is about required vs optional ✅<br>
+    3. <strong>Rename roles:</strong> In the Roles menu (three dots), NOT Options menu ⚠️<br>
+    4. <strong>Data-driven lattice:</strong> Varies with data values. NOT user-defined (which is fixed) ⚠️
+  </div>
+
+  <div class="tip green">
+    <strong>🧠 Final Memory Aid — The "G" in Graph Builder:</strong><br>
+    • <strong>G</strong>rid: A1 = top-left, A2 = bot-left, B1 = top-right, B2 = bot-right<br>
+    • <strong>R</strong>oles: Each object has required + optional. Rename in Roles menu (⋮)<br>
+    • <strong>A</strong>ccess: From Apps menu (not Objects pane)<br>
+    • <strong>P</strong>aths: Two ways — From scratch OR Graph Gallery<br>
+    • <strong>H</strong>ow cells vary: User-defined (fixed) vs Data-driven (variable)<br>
+    • <strong>B</strong>uilder = You build templates with 15+ elements
+  </div>
+
+</div>
+</details>
+</div>
+<a href="#" class="back-top">⬆</a>
+</body>
+</html>

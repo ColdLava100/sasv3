@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>SAS VA — M2 L6: Best Practices</title><link rel="stylesheet" href="../css/style.css"></head>
+<body>
+<div class="header"><h1>📊 SAS Visual Analytics — Study Companion</h1><p class="subtitle">Advanced Module — Lesson 6: Best Practices for Designing Reports</p></div>
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;"><a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a></div>
+<div class="content">
+<details id="t1" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #55efc4;">✨ M2 L6: Best Practices for Designing Reports<span class="arrow">▶</span></summary>
+<div class="topic-body">
+
+<div class="info-box"><p class="label" style="color:#55efc4;">📋 The 5-Step Process</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<strong>Step 1 — Draft a Plan:</strong> Know your audience. What do they need? Select + prepare data. Create needed data items.<br>
+<strong>Step 2 — Choose the Best Chart:</strong> Match chart type to the message (see chart guide below).<br>
+<strong>Step 3 — Focus on What's Important:</strong> Use KPI objects. Use filters/ranks to reduce noise. Every element should serve a purpose.<br>
+<strong>Step 4 — Consider the Layout:</strong> Tell a single data story. Limit pages/objects. Use containers. Use neutral background. Avoid borders. Use default grid or containers. Consider placement of objects with actions. Use negative space.<br>
+<strong>Step 5 — Test, Test, and Test Again:</strong> "Test, Test, and Test Again." Sample audience. Verify interactions. Test on different devices. Review with stakeholders.
+</p>
+</div>
+
+<div class="info-box"><p class="label" style="color:#ffd93d;">📊 Chart Selection Guide</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<strong>Highlight a fact:</strong> Key value, Dynamic text, Donut chart, Faded bar chart<br>
+<strong>Compare (general):</strong> Bar chart, Dot plot (groups with close values), Butterfly chart (two groups across categories)<br>
+<strong>Compare (different ranges):</strong> Dual axis chart — ⚠️ might be misinterpreted! Fixed axis ranges useful for accessibility (sonification)<br>
+<strong>Compare (benchmark):</strong> Needle plot, Bullet gauge, Targeted bar chart, Display rules, Reference lines<br>
+<strong>Over time:</strong> Line chart, Time series, Step plot. Use line patterns for multiple lines (High Contrast theme).<br>
+<strong>Survey/results:</strong> Vertical bar chart, Crosstab, Box plots (provide explanation!)<br>
+<strong>Parts of whole:</strong> Pie (≤5 groups ⚠️), Donut, Treemap<br>
+<strong>Relationships:</strong> Scatter plot, Bubble plot, Heat map, Correlation matrix. Limit decimal places.<br>
+<strong>Processes:</strong> Path analysis, Network diagram<br>
+<strong>No graph needed:</strong> Word cloud, Image (specify alt text!), Text (avoid sensory characteristics), Data-Driven Content
+</p>
+</div>
+
+<div class="info-box"><p class="label" style="color:#ff7675;">♿ Accessibility Tips</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+• Use colors with different luminosity in gradients. Use default colors. Avoid 3-color gradients. Test with gray-scale mode.<br>
+• High Contrast theme: Override report theme. Include note about overriding. View line patterns and fill patterns.<br>
+• Avoid: animation, color-dependent display rules, lattices, linked selection actions, overview axes (screen readers can't interact).<br>
+• Provide meaningful titles and alternative text for accessibility.<br>
+• Screen readers cannot perceive highlighted elements (linked selection).<br>
+• Ensures legends display on all screen sizes.
+</p>
+</div>
+
+<div class="info-box"><p class="label" style="color:#74b9ff;">👤 Viewer Capabilities</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<strong>Comprehensive edits (default):</strong> Viewers can change object types, sorting, labels, legends.<br>
+Customize what viewers can do: export, print, comments, share. Configure in report options before publishing.<br>
+<strong>Auto control for prompts:</strong> Choose appropriate control based on type + cardinality. For hierarchies: control per level + cascading filters.
+</p>
+</div>
+
+<div class="tip red">
+<strong>🎯 Key Exam Points — M2 L6:</strong><br>
+• <strong>5 steps:</strong> Draft → Chart → Focus → Layout → Test (Test Test Test) ⚠️<br>
+• <strong>Pie chart:</strong> Only for ≤5 groups. Hard to compare sizes ⚠️<br>
+• <strong>Dual axis:</strong> Can be misinterpreted. Fixed ranges for accessibility ✅<br>
+• <strong>Accessibility:</strong> Avoid animation, color rules, lattices, linked selection, overview axes. Use High Contrast theme ⚠️<br>
+• Just because you can doesn't mean you should — use simplest chart ✅<br>
+• <strong>Viewer capabilities:</strong> Comprehensive edits (default) → change types, sorting, labels, legends ✅<br>
+• <strong>Images:</strong> Must specify alternative text ⚠️<br>
+• Report Review pane available for testing ✅
+</div>
+
+</div>
+</details>
+</div>
+<a href="#" class="back-top" title="Back to top">⬆</a>
+</body>
+</html>

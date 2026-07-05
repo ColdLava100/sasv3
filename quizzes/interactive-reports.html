@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Interactive Reports Quiz</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Practice Quiz — Designing Interactive Reports</p>
+</div>
+
+<div class="nav-bar">
+  <select onchange="if(this.value)window.location.href=this.value;" class="nav-select">    <option value="index.html">📋 Quiz Index</option>
+    <option value="rank-filter.html">🏆 Rank/Filter</option>
+    <option value="columns-lattice.html">📐 Columns/Lattice</option>
+    <option value="crosstab-rows.html">📋 Crosstab Rows</option>
+    <option value="measure-heading.html">📋 Measure Heading</option>
+    <option value="box-plot.html">📦 Box Plot</option>
+    <option value="bubble-plot.html">🫧 Bubble</option>
+    <option value="treemap.html">🟦 Treemap</option>
+    <option value="geo-maps.html">🗺️ Geo Maps</option>
+    <option value="path-analysis.html">🔀 Path</option>
+    <option value="parameters-expressions.html">🎯 Param/Expr</option>
+    <option value="sharing-reports.html">📤 Sharing</option>
+    <option value="decision-tree.html">🌳 Decision Tree</option>
+    <option value="calculated-items.html">🧮 Calc Items</option>
+    <option value="common-filters.html">🔄 Common Filters</option>
+    <option value="auto-explanation.html">🤖 Auto Explain</option>
+    <option value="content-objects.html">📦 Content Objects</option>
+    <option value="dual-axis.html">📊 Dual Axis</option>
+    <option value="time-variant.html">📈 Time Variant</option>
+    <option value="static-filters.html">🏷️ Static Filters</option>
+    <option value="hidden-concepts.html">🙈 Hidden Concepts</option>
+    <option value="prompts.html">🎛️ Prompts</option>
+    <option value="interactive-reports.html">🎮 Interactive Reports</option>
+  </select>
+</div>
+
+<div class="content">
+<details class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #0984e3;">
+  🎮 Interactive Reports Quiz
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <div class="quiz-card">
+    <h3 id="qz-interactive-reports">🎮 Designing Interactive Reports</h3>
+    <div class="quiz-q"><p><strong>Q1 🔥:</strong> Can Automatic and Manual actions be combined on the same page?</p>
+      <div><button class="quiz-btn" data-answer="zn1">Yes, always</button><button class="quiz-btn" data-answer="zn1" data-correct>No, each page can only have one type</button><button class="quiz-btn" data-answer="zn1">Only with data source mapping</button><button class="quiz-btn" data-answer="zn1">Only with linked selection</button></div>
+      <div id="zn1" class="quiz-answer">✅ <strong>No</strong> — "Each page can either have manual actions or automatic actions, but not both." This is a critical exam point! ❌</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> What does Linked Selection do?</p>
+      <div><button class="quiz-btn" data-answer="zn2">Subsets data in target objects</button><button class="quiz-btn" data-answer="zn2" data-correct>Highlights related data in multiple objects</button><button class="quiz-btn" data-answer="zn2">Navigates to another page</button><button class="quiz-btn" data-answer="zn2">Creates a new prompt</button></div>
+      <div id="zn2" class="quiz-answer">✅ <strong>Highlights data</strong> — "The automatic linked selection action highlights related data in multiple objects." Other rows stay visible but grayed out.<br>
+        ❌ Subsets: That's a filter action.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3 🔥:</strong> What does the Two-Way Filter action do?</p>
+      <div><button class="quiz-btn" data-answer="zn3">Highlights data only</button><button class="quiz-btn" data-answer="zn3" data-correct>Applies filters between ALL objects, even previously selected ones</button><button class="quiz-btn" data-answer="zn3">Filters in one direction only</button><button class="quiz-btn" data-answer="zn3">Creates a page link</button></div>
+      <div id="zn3" class="quiz-answer">✅ <strong>Filters ALL objects both ways</strong> — "The automatic two-way filter action applies filters between all objects, even previously selected objects." ⚠️ Don't use with required prompts!</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4:</strong> Which objects CANNOT be the source of a filter action?</p>
+      <div><button class="quiz-btn" data-answer="zn4">Bar charts and tables</button><button class="quiz-btn" data-answer="zn4" data-correct>Images, Text, Web Content, Job Content</button><button class="quiz-btn" data-answer="zn4">Dropdown controls and sliders</button><button class="quiz-btn" data-answer="zn4">Geo maps and KPI objects</button></div>
+      <div id="zn4" class="quiz-answer">✅ <strong>Images, Text, Web Content, Job Content</strong> — "These additional objects cannot be the source of a filter action: images, job content, text, and web content."<br>
+        ❌ Dropdowns/Bar charts: They CAN be sources.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q5:</strong> Filter actions are ____________ and ____________.</p>
+      <div><button class="quiz-btn" data-answer="zn5" data-correct>Unidirectional and transitive</button><button class="quiz-btn" data-answer="zn5">Bidirectional and independent</button><button class="quiz-btn" data-answer="zn5">Automatic and manual</button></div>
+      <div id="zn5" class="quiz-answer">✅ <strong>Unidirectional and transitive</strong> — "All filter actions are unidirectional and transitive." Source→Target only (uni) and A→B→C means A→C (transitive).</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q6:</strong> Which link type navigates to another page within the same report?</p>
+      <div><button class="quiz-btn" data-answer="zn6">Report Link</button><button class="quiz-btn" data-answer="zn6" data-correct>Page Link</button><button class="quiz-btn" data-answer="zn6">URL Link</button><button class="quiz-btn" data-answer="zn6">Return Link</button></div>
+      <div id="zn6" class="quiz-answer">✅ <strong>Page Link</strong> — Page links navigate within the same report. Report links go to a different report. URL links go to a website. Return links go back.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q7:</strong> What happens when you create a page link to a Hidden Page?</p>
+      <div><button class="quiz-btn" data-answer="zn7">The page stays hidden and cannot be viewed</button><button class="quiz-btn" data-answer="zn7" data-correct>It appears like a normal page to the viewer</button><button class="quiz-btn" data-answer="zn7">An error occurs because hidden pages cannot be linked</button><button class="quiz-btn" data-answer="zn7">The link is only visible to designers</button></div>
+      <div id="zn7" class="quiz-answer">✅ <strong>Appears like a normal page</strong> — "In view mode, a linked hidden page will appear like a regular page." The tab is hidden, but the page is accessible via link.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q8 🧠:</strong> "Prompts = ____. Actions = ____. Links = ____."</p>
+      <div><button class="quiz-btn" data-answer="zn8" data-correct>TV remote / Steering wheel / GPS</button><button class="quiz-btn" data-answer="zn8">Steering wheel / GPS / TV remote</button><button class="quiz-btn" data-answer="zn8">GPS / TV remote / Steering wheel</button></div>
+      <div id="zn8" class="quiz-answer">✅ <strong>Prompts=TV remote (pick), Actions=Steering wheel (respond), Links=GPS (navigate)</strong> — Memorize this analogy!</div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/interactive-reports.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+</div>
+</details>
+</div>
+
+<script src="../js/tracker.js"></script>
+<script src="../js/common.js"></script>
+</body>
+</html>

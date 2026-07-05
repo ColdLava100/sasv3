@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — M2 L3: Analytic Objects - Troubleshooting Guide</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  .wrong { background:#2d1b1b; border-left:3px solid #ff7675; padding:10px; border-radius:6px; margin:8px 0; font-size:0.82rem; }
+  .right { background:#1b2d1b; border-left:3px solid #55efc4; padding:10px; border-radius:6px; margin:8px 0; font-size:0.82rem; }
+  .why   { background:#1b1b2d; border-left:3px solid #ffd93d; padding:10px; border-radius:6px; margin:8px 0; font-size:0.82rem; }
+  .analogy { background:#2d1b2d; border-left:3px solid #a29bfe; padding:10px; border-radius:6px; margin:8px 0; font-size:0.82rem; }
+</style>
+</head>
+<body>
+<div class="header"><h1>📊 SAS VA — M2 L3 Analytic Objects</h1><p class="subtitle">🚨 TROUBLESHOOTING GUIDE — Your Wrong Answers Explained</p></div>
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+  <span style="color:var(--text2);margin:0 10px;">|</span>
+  <a href="m2-analytic-objects.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">📖 Full Lesson Page</a>
+</div>
+<div class="content">
+
+<details class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #ff7675;">
+  🚨 5 Mistakes You Made + How To Never Make Them Again
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <!-- ===== MISTAKE 1 ===== -->
+  <div class="info-box"><p class="label" style="color:#ff7675;">❌ Mistake 1: Network Analysis — Ungrouped vs Hierarchy vs Targeted</p></div>
+
+  <div class="wrong">
+    <strong>Question:</strong> "Which type of network analysis object shows a series of linked nodes from a source to a target?"<br>
+    <strong>You answered:</strong> <span style="color:#ff7675;">d) Targeted</span> ❌<br>
+    <strong>Correct answer:</strong> <span style="color:#55efc4;">c) Ungrouped</span> ✅
+  </div>
+
+  <div class="why">
+    <strong>Why C is right and D is wrong:</strong><br>
+    The course says: <em>"An <strong>ungrouped</strong> network diagram creates a series of linked nodes from a source to a target."</em><br>
+    "Targeted" is NOT a network analysis type at all. There are only <strong>TWO</strong> network structures:<br>
+    • <strong>Ungrouped</strong> → Source → Target (linked nodes)<br>
+    • <strong>Hierarchy</strong> → Parent → Children levels
+  </div>
+
+  <div class="analogy">
+    <strong>🧠 Analogy — Family Tree:</strong><br>
+    • <strong>Ungrouped</strong> = "Who talks to who?" (any connection between any two people) — like a phone call network 📞<br>
+    • <strong>Hierarchy</strong> = "Who reports to who?" (parent-child chain) — like a company org chart 🏢<br>
+    • <strong>"Targeted"</strong> = Not a thing in VA ❌ (you made it up!)
+  </div>
+
+  <img src="../images/quiz-network-ungrouped.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Network ungrouped question">
+  <div class="right">
+    <strong>✅ Memory Trick:</strong> <em>"<strong>UN</strong>grouped = <strong>UN</strong>structured connections (any→any). <strong>H</strong>ierarchy = <strong>H</strong>as levels (parent→child)."</em>
+  </div>
+
+  <!-- ===== MISTAKE 2 ===== -->
+  <div class="info-box"><p class="label" style="color:#ff7675;">❌ Mistake 2: Network Analysis — Data Structure (Source ⊆ Target)</p></div>
+
+  <div class="wrong">
+    <strong>Question:</strong> "Which table is structured appropriately for ungrouped network analysis?"<br>
+    <strong>You answered:</strong> <span style="color:#ff7675;">d</span> ❌<br>
+    <strong>Correct answer:</strong> <span style="color:#55efc4;">c</span> ✅
+  </div>
+
+  <div class="why">
+    <strong>The Rule You Missed:</strong><br>
+    <em>"Target values must be a <strong>subset</strong> of Source values."</em><br><br>
+    Look at the tables:<br>
+    <table style="font-size:0.75rem;border-collapse:collapse;">
+    <tr><th></th><th style="border:1px solid #444;padding:4px;">Option c ✅</th><th style="border:1px solid #444;padding:4px;">Option d ❌</th></tr>
+    <tr><td style="border:1px solid #444;padding:4px;">Rows</td>
+        <td style="border:1px solid #444;padding:4px;">RACHEL→MONICA, RACHEL→ROSS, MONICA→(empty), ROSS→(empty)</td>
+        <td style="border:1px solid #444;padding:4px;">RACHEL→MONICA, RACHEL→ROSS, MONICA→CHANDLER, ROSS→JOEY</td></tr>
+    </table>
+    <br>
+    In <strong>option d</strong>: CHANDLER and JOEY appear as EMPLOYEE (target) but <strong>NOT</strong> as MANAGER (source).<br>
+    ❌ Sources = {RACHEL, MONICA, ROSS}. Targets = {MONICA, ROSS, CHANDLER, JOEY}.<br>
+    ❌ Targets contains CHANDLER and JOEY which are NOT in Sources → violates the rule!<br><br>
+    In <strong>option c</strong>: All EMPLOYEE values (MONICA, ROSS) also appear as MANAGER values.<br>
+    ✅ Sources = {RACHEL, MONICA, ROSS}. Targets = {MONICA, ROSS}. All targets are sources. ✅<br>
+    The empty cells just mean those managers have no direct reports — that's allowed.
+  </div>
+
+  <div class="analogy">
+    <strong>🧠 Analogy — The "Everyone Works Here" Rule:</strong><br>
+    Think of it like a company: every employee must ALSO be someone's manager (or at least exist in the manager list).<br>
+    You can't have an employee who doesn't appear in the employee directory at all!<br>
+    <strong>Target ⊆ Source</strong> = "You can only be assigned as a subordinate if you also appear as a manager somewhere."
+  </div>
+
+  <img src="../images/quiz-network-data.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Network data structure question">
+  <div class="right">
+    <strong>✅ Memory Trick:</strong> <em>"<strong>T</strong>arget must be <strong>T</strong>iny part of <strong>S</strong>ource. <strong>T</strong> ⊆ <strong>S</strong>. Every target must also be a source."</em><br>
+    <strong>Check:</strong> List all unique sources. List all unique targets. Are all targets in the source list? If NO → wrong table.
+  </div>
+
+  <!-- ===== MISTAKE 3 ===== -->
+  <div class="info-box"><p class="label" style="color:#ff7675;">❌ Mistake 3: Decision Tree — Data Item Types</p></div>
+
+  <div class="wrong">
+    <strong>Question:</strong> "What kind of data items can be used in a decision tree?"<br>
+    <strong>You answered:</strong> <span style="color:#ff7675;">a) Response = category only</span> ❌<br>
+    <strong>Correct answer:</strong> <span style="color:#55efc4;">c) Response + Predictors = category, measure OR geography</span> ✅
+  </div>
+
+  <div class="why">
+    <strong>Why you got tricked:</strong><br>
+    You thought "Response must be a category" — but the course says:<br>
+    <em>"Response: Category, measure <strong>or</strong> geography."</em><br><br>
+    The decision tree works with <strong>ALL 3 types</strong> for BOTH response AND predictors:<br>
+    • Response = <strong>category, measure, OR geography</strong> ✅<br>
+    • Predictors = <strong>any number of categories, measures, OR geographies</strong> ✅<br><br>
+    The only restriction: <strong>ONE</strong> response + <strong>any number</strong> of predictors.
+  </div>
+
+  <div class="analogy">
+    <strong>🧠 Analogy — The All-Accepting Tree:</strong><br>
+    The decision tree is like a friend who accepts everyone at their party:<br>
+    • You can predict ANY type: category (Sports/Toys), measure ($50K), or geography (USA/Asia)<br>
+    • You can use ANY number of predictors: 2, 10, 50 — doesn't matter<br>
+    • The tree splits based on the data type automatically
+  </div>
+
+  <img src="../images/quiz-decision-tree-data.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Decision tree data types question">
+  <div class="right">
+    <strong>✅ Memory Trick:</strong> <em>"<strong>D</strong>ecision tree = <strong>D</strong>oesn't discriminate — accepts <strong>ALL</strong> data types for BOTH response and predictors."</em><br>
+    <strong>Role requirements:</strong> Response (mandatory) + Predictors (mandatory). Partition ID (optional).
+  </div>
+
+  <!-- ===== MISTAKE 4 ===== -->
+  <div class="info-box"><p class="label" style="color:#ff7675;">❌ Mistake 4: Text Topics — Required Roles</p></div>
+
+  <div class="wrong">
+    <strong>Question:</strong> "What types of data items are needed to create a text topics object?"<br>
+    <strong>You answered:</strong> <span style="color:#ff7675;">a) ID + Document details + Language</span> ❌<br>
+    <strong>Correct answer:</strong> <span style="color:#55efc4;">c) Unique row identifier + Document collection + Language</span> ✅
+  </div>
+
+  <div class="why">
+    <strong>You swapped "document collection" with "document details":</strong><br>
+    <table style="font-size:0.75rem;border-collapse:collapse;">
+    <tr><th style="border:1px solid #444;padding:4px;">Role</th><th style="border:1px solid #444;padding:4px;">Type</th><th style="border:1px solid #444;padding:4px;">Your choice a ❌</th><th style="border:1px solid #444;padding:4px;">Correct c ✅</th></tr>
+    <tr><td style="border:1px solid #444;padding:4px;"><strong>Document collection</strong></td><td style="border:1px solid #444;padding:4px;">Category (contains text)</td><td style="border:1px solid #444;padding:4px;">❌ Missing!</td><td style="border:1px solid #444;padding:4px;">✅ Required</td></tr>
+    <tr><td style="border:1px solid #444;padding:4px;"><strong>Unique identifier</strong></td><td style="border:1px solid #444;padding:4px;">Any (row ID)</td><td style="border:1px solid #444;padding:4px;">✅ Had it</td><td style="border:1px solid #444;padding:4px;">✅ Required</td></tr>
+    <tr><td style="border:1px solid #444;padding:4px;"><strong>Language</strong></td><td style="border:1px solid #444;padding:4px;">Category</td><td style="border:1px solid #444;padding:4px;">✅ Had it</td><td style="border:1px solid #444;padding:4px;">✅ Required</td></tr>
+    <tr><td style="border:1px solid #444;padding:4px;"><strong>Document details</strong></td><td style="border:1px solid #444;padding:4px;">Optional</td><td style="border:1px solid #444;padding:4px;">❌ Not required!</td><td style="border:1px solid #444;padding:4px;">Optional only</td></tr>
+    </table>
+    <br>
+    <strong>Document details</strong> is <strong>OPTIONAL</strong> (additional info like author, date).<br>
+    <strong>Document collection</strong> is the <strong>REQUIRED</strong> one — it contains the actual text to analyze.
+  </div>
+
+  <div class="analogy">
+    <strong>🧠 Analogy — Library Books:</strong><br>
+    • <strong>Document collection</strong> = The actual book with words/text 📖 (REQUIRED)<br>
+    • <strong>Unique identifier</strong> = The book's ISBN number (REQUIRED)<br>
+    • <strong>Language</strong> = English/Spanish/French (REQUIRED)<br>
+    • <strong>Document details</strong> = Author, publisher, year (OPTIONAL — nice to have)
+  </div>
+
+  <img src="../images/quiz-text-topics-roles.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Text topics roles question">
+  <div class="right">
+    <strong>✅ Memory Trick:</strong> <em>"Text Topics needs <strong>CIL</strong> — <strong>C</strong>ollection (the text), <strong>I</strong>dentifier (row ID), <strong>L</strong>anguage."</em><br>
+    Document details is NOT required — it's extra!
+  </div>
+
+  <!-- ===== MISTAKE 5 ===== -->
+  <div class="info-box"><p class="label" style="color:#ff7675;">❌ Mistake 5: Text Topics — Stem Words (+ sign)</p></div>
+
+  <div class="wrong">
+    <strong>Question:</strong> "For the second topic, what does '+drop' represent?"<br>
+    <strong>You answered:</strong> <span style="color:#ff7675;">a) Positive sentiment</span> ❌<br>
+    <strong>Correct answer:</strong> <span style="color:#55efc4;">d) Stem words (drop, dropped, drops, dropping)</span> ✅
+  </div>
+
+  <div class="why">
+    <strong>Why the + does NOT mean positive:</strong><br>
+    The course says: <em>"Different forms of a term (i.e. dropped and drop) are treated as the same term. They appear as <strong>+stem</strong> in topic bar chart."</em><br><br>
+    The <strong>+</strong> before a word = <strong>stemming</strong> (showing the root word), NOT sentiment!<br>
+    • +drop = includes drop, dropped, drops, dropping — all forms of the verb "drop"<br>
+    • Sentiment is shown by the <strong>BAR COLORS</strong> (teal=negative, orange=neutral, green=positive)<br><br>
+    Looking at the chart: Topic 2 (+drop, risk, supplier, +dissatisfy) has a HUGE teal (negative) segment — that shows the sentiment, not the + sign!
+  </div>
+
+  <div class="analogy">
+    <strong>🧠 Analogy — Word Roots:</strong><br>
+    Think of <strong>+drop</strong> like a tree: "drop" is the ROOT, and different forms are the BRANCHES:<br>
+    • 🌳 <strong>drop</strong> (root)<br>
+    • ├── drop (present)<br>
+    • ├── dropped (past)<br>
+    • ├── drops (third person)<br>
+    • └── dropping (continuous)<br><br>
+    The <strong>+</strong> tells you: "Hey, we grouped all forms of this word together!"<br>
+    The sentiment (positive/negative) is determined by the actual document content, not the +.
+  </div>
+
+  <img src="../images/quiz-text-topics-stem.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Text topics stem words question">
+  <div class="right">
+    <strong>✅ Memory Trick:</strong> <em>"<strong>+</strong> before a word = <strong>+</strong>tems (stem). <strong>+</strong> does NOT mean positive."</em><br>
+    Sentiment is in the BAR COLORS (teal=negative, green=positive), not the + sign ⚠️
+  </div>
+
+  <!-- SUMMARY TABLE -->
+  <div class="tip red">
+    <strong>📋 Quick Reference — Your 5 Mistakes at a Glance</strong>
+  </div>
+  <table class="data-table" style="font-size:0.7rem;">
+  <tr><th>#</th><th>Topic</th><th>You Said</th><th>Correct</th><th>Key Rule You Missed</th></tr>
+  <tr><td>1</td><td>Network structure</td><td>Targeted ❌</td><td><strong>Ungrouped</strong> ✅</td><td>Only 2 types exist: Ungrouped & Hierarchy. "Targeted" is made up.</td></tr>
+  <tr><td>2</td><td>Network data</td><td>d ❌</td><td><strong>c</strong> ✅</td><td><strong>Target ⊆ Source</strong> — every target must also be a source value</td></tr>
+  <tr><td>3</td><td>Decision Tree roles</td><td>Cat only ❌</td><td><strong>All types</strong> ✅</td><td>Response can be category, measure OR geography. Predictors = any number.</td></tr>
+  <tr><td>4</td><td>Text Topics roles</td><td>Details ❌</td><td><strong>Collection</strong> ✅</td><td><strong>CIL</strong>: Collection + ID + Language. Doc details = optional.</td></tr>
+  <tr><td>5</td><td>Text Topics +sign</td><td>Positive ❌</td><td><strong>Stem words</strong> ✅</td><td><strong>+</strong> = stem word grouping. Sentiment = bar colors, NOT the +.</td></tr>
+  </table>
+
+  <div class="tip green">
+    <strong>🧠 Final Memory Aid — The 5 Rules:</strong><br>
+    1. Network has <strong>2</strong> structures: <strong>U</n>ngrouped (<strong>U</strong>nstructured) and <strong>H</strong>ierarchy (<strong>H</strong>as levels) ✅<br>
+    2. Network data: <strong>T</strong>arget must be a <strong>T</strong>iny part of <strong>S</strong>ource (<strong>T ⊆ S</strong>) ⚠️<br>
+    3. Decision tree: <strong>D</strong>oesn't care about type — accepts ALL (cat, meas, geo) ✅<br>
+    4. Text Topics: <strong>CIL</strong> — <strong>C</strong>ollection, <strong>I</strong>dentifier, <strong>L</strong>anguage (not Details) ⚠️<br>
+    5. Text +sign: <strong>+</strong> = <strong>+</strong>temize (group word forms), NOT positive sentiment ❌
+  </div>
+
+</div>
+</details>
+</div>
+<a href="#" class="back-top">⬆</a>
+</body>
+</html>

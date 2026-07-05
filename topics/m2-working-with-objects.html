@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — M2 L1: Working with Objects</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="header"><h1>📊 SAS Visual Analytics — Study Companion</h1><p class="subtitle">Advanced Module — Lesson 1: Working with Objects</p></div>
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;"><a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a></div>
+<div class="content">
+<details id="t1" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #55efc4;">🧰 M2 L1: Working with Objects<span class="arrow">▶</span></summary>
+<div class="topic-body">
+
+<div class="info-box"><p class="label">📍 Contents: 1.1 Relationship Plots | 1.2 Automated Explanation | 1.3 Automated Prediction | 1.4 Containers | 1.5 Object Templates</p></div>
+
+<!-- ===== 1.1 RELATIONSHIP PLOTS ===== -->
+<div class="info-box"><p class="label" style="color:#55efc4;">🔗 1.1 Relationship Plots — Complete Guide</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">Located in the <strong>Graphs group</strong>. Include: <strong>Bubble plot, Correlation matrix, Heat map, Numeric series plot, Parallel coordinates plot, Scatter plot.</strong></p>
+</div>
+
+<!-- BUBBLE PLOT -->
+<div class="info-box"><p class="label" style="color:#55efc4;">🫧 Bubble Plot</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<em>"Displays three dimensions of data for a group of category values."</em>
+<table class="data-table" style="font-size:0.72rem;margin-top:6px;">
+<tr><th>Aspect</th><th>Details</th></tr>
+<tr><td><strong>Required Roles</strong></td><td>3 Measures: X axis, Y axis, <strong>Size</strong></td></tr>
+<tr><td><strong>Optional Roles</strong></td><td>Group, Color, Lattice cols/rows, Data tip values, <strong>Animation</strong>, Hidden</td></tr>
+<tr><td><strong>⚠️ Default</strong></td><td><strong>Non-aggregated</strong> — attempts one bubble per row! For large data, assign Group first</td></tr>
+<tr><td><strong>❌ Cannot</strong></td><td>Assign Group AND Color simultaneously</td></tr>
+<tr><td><strong>Animation</strong></td><td>Data item in Animation role → player control (play/pause/scrub) shows changes over time</td></tr>
+<tr><td><strong>Focus</strong></td><td>Focus on bubbles that act differently (outliers)</td></tr>
+</table>
+</p>
+</div>
+
+<!-- CORRELATION MATRIX -->
+<div class="info-box"><p class="label" style="color:#ffd93d;">🔢 Correlation Matrix</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<em>"Evaluates the <strong>linear</strong> relationship between multiple measures using Pearson's correlation coefficient."</em>
+<table class="data-table" style="font-size:0.72rem;margin-top:6px;">
+<tr><th>Aspect</th><th>Details</th></tr>
+<tr><td><strong>Thresholds</strong></td><td>Weak ≤0.3 | Moderate 0.3-0.6 | Strong ≥0.6</td></tr>
+<tr><td><strong>Max Measures</strong></td><td>⚠️ <strong>60</strong></td></tr>
+<tr><td><strong>Modes</strong></td><td><strong>Within one set</strong> (all vs all, default) OR <strong>Between two sets</strong> (first = target)</td></tr>
+<tr><td><strong>⚠️ Critical</strong></td><td>Weak correlation ≠ no relationship! Might be <strong>non-linear</strong>. Use scatter/heat map to check.</td></tr>
+<tr><td><strong>Interaction</strong></td><td>Hover → data tip. Maximize → Details table. <strong>Right-click cell → New model from selection</strong></td></tr>
+<tr><td><strong>Options</strong></td><td>Show border, Rotate axis labels</td></tr>
+</table>
+</p>
+</div>
+
+<!-- HEAT MAP -->
+<div class="info-box"><p class="label" style="color:#ff7675;">🔥 Heat Map</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<strong>3 use cases:</strong> Two high-cardinality measures / Two categories / Category + measure<br>
+<strong>Axis Items:</strong> 2 items = single heat map. Multiple = <strong>matrix of heat maps</strong> (each pairing)<br>
+<strong>Options:</strong> Bin count, Transparency, Fit line (None, Best fit, Linear, Quadratic, Cubic, PSpline). Accepts Color role.<br>
+<strong>Purpose:</strong> Visualize trends, pinpoint outliers, <strong>identify nonlinear relationships</strong> ✅
+</p>
+</div>
+
+<!-- NUMERIC SERIES + PARALLEL + SCATTER -->
+<div class="info-box"><p class="label" style="color:#74b9ff;">📈 Numeric Series / 〰️ Parallel Coordinates / 🔵 Scatter</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<strong>Numeric Series Plot:</strong> Shows measure at intervals after an event. 2 measures (X+Y). Optional: Group, Label, Lattice, Data tips, Hidden.<br>
+<strong>Parallel Coordinates:</strong> Multivariate data analysis. Each measure = vertical axis. Each observation = line. Color role highlights groups/clusters.<br>
+<strong>Scatter Plot:</strong> Two low-cardinality measures. Color: ≤8 values → unique colors, >8 → multiple marker shapes. Fit line: None/Best fit/Linear/Quadratic/Cubic/PSpline (Best fit uses backward variable selection).
+</p>
+</div>
+
+<!-- ===== 1.2 AUTO EXPLANATION + RELATIONSHIP PLOT SELECTION GUIDE ===== -->
+<div class="info-box"><p class="label" style="color:#a29bfe;">🤖 1.2 Automated Explanation — Relationship Plot Selection Guide</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<em>"Determines the most important underlying factors that explain a particular variable."</em><br><br>
+<strong>3 Components:</strong> Natural language summary + Relative importance bar chart + Relationship plot<br>
+<strong>Roles:</strong> Response (mandatory), Time (optional), Underlying factors<br>
+<strong>Interaction:</strong> Click factor → relationship plot. Right-click → remove factor.<br><br>
+</p>
+</div>
+
+<div class="info-box"><p class="label" style="color:#55efc4;">🔑 Relationship Plot Type — Depends on Variable Types</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);"><em>"Type of plot depends on variable type of both response and underlying factor."</em></p>
+<table class="data-table" style="font-size:0.72rem;margin-top:6px;">
+<tr><th></th><th style="color:#55efc4;">📊 Measure underlying factor</th><th style="color:#ffd93d;">🏷️ Category underlying factor</th><th style="color:#ff7675;">🌍 Geography underlying factor</th></tr>
+<tr><td><strong>📊 Measure Response</strong></td><td><span style="color:#55efc4;">Scatter plot</span> or <span style="color:#55efc4;">Heat map</span></td><td><span style="color:#ffd93d;">Bar chart</span></td><td><span style="color:#ff7675;">Geo region map</span> or <span style="color:#ff7675;">Geo coordinate map</span></td></tr>
+<tr><td><strong>🏷️ Category Response</strong></td><td><span style="color:#55efc4;">Histogram grouped by event level of interest</span></td><td><span style="color:#ffd93d;">Stacked bar chart grouped by event level of interest</span></td><td><em>(empty — no geo plot for category response)</em></td></tr>
+</table>
+<p style="font-size:0.75rem;color:var(--text2);margin-top:6px;">
+<strong>🧠 Memory: Measure+M = Scatter/Heat. Measure+C = Bar. Measure+G = Geo. Category+M = Histogram. Category+C = Stacked bar.</strong>
+<br><img src="../images/exam-relplot-guide.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Relationship plot selection guide from course">
+</p>
+</div>
+
+<!-- ===== 1.3 AUTO PREDICTION ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">🎯 1.3 Automated Prediction</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<em>"Predicts values of a response variable by specifying values for underlying factors."</em><br>
+<strong>Category response models:</strong> Logistic regression, Gradient boosting, Decision tree<br>
+<strong>Measure response models:</strong> Linear regression, Gradient boosting, Decision tree<br>
+<strong>Champion:</strong> Category = <strong>highest accuracy</strong>. Measure = <strong>lowest ASE</strong>.<br>
+<strong>⚠️ Cannot:</strong> be action source/target. Excluded from prompts. No manual model selection.<br>
+<strong>Roles:</strong> Response + Underlying factors. Auto-adds remaining data items (except aggregated measures, dates, calculated items, custom categories, derived items, frequency, hierarchies, filter/partition/spline/interaction effects).
+</p>
+</div>
+
+<!-- ===== 1.4 CONTAINERS ===== -->
+<div class="info-box"><p class="label" style="color:#74b9ff;">📐 1.4 Containers — Full Comparison</p></div>
+<img src="../images/exam-containers.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Container types from course">
+<img src="../images/exam-container-standard.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Standard container settings">
+<img src="../images/exam-container-stacking.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Stacking container concepts">
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<em>"Containers are useful for grouping report objects. Located in the Containers group in the Objects pane."</em>
+</p>
+</div>
+
+<table class="data-table" style="font-size:0.7rem;">
+<tr><th>Container</th><th>Purpose</th><th>Layout Options</th><th>⚠️ Key Details</th></tr>
+<tr>
+<td><strong>📦 Standard</strong></td>
+<td>Arrange objects horizontally or vertically <strong>without overlap</strong>. Uses default grid layout.</td>
+<td><strong>Container type:</strong> Flow (default), Stacking, Precision<br><strong>Direction:</strong> Horizontal, Vertical (default)<br><strong>Avoid scrollbars (selected):</strong> Resize content to fit (default) or Resize container to fit content</td>
+<td>Resizes content to fit. No scrollbars by default. Objects size to fill available space.</td>
+</tr>
+<tr>
+<td><strong>📚 Stacking</strong></td>
+<td>Group related objects. <strong>Displays one object at a time</strong>. Takes same space. Easy to navigate.</td>
+<td><strong>Container type:</strong> Flow, Stacking (default), Precision<br><strong>Button type</strong> for nav bar</td>
+<td>Navigation bar to flip through objects. Labels = object names. <strong>Cannot format navigation bar.</strong> 3 uses: Group related objects, Alternative information (table + chart for same data), Pick your metric (different metrics).</td>
+</tr>
+<tr>
+<td><strong>📜 Scrolling</strong></td>
+<td>"Functions like a web page." Shows scrollbar when content exceeds visible area.</td>
+<td><strong>Container type:</strong> Flow (default), Stacking, Precision<br><strong>Direction:</strong> Horizontal, Vertical (default)<br><strong>Avoid scrollbars (deselected)</strong></td>
+<td>Larger graphs, more info, better mobile experience. <strong>Test thoroughly on all devices</strong>.</td>
+</tr>
+<tr>
+<td><strong>🎯 Prompt</strong></td>
+<td>Group control objects. Beneficial for mobile — easier navigation.</td>
+<td><strong>Direction:</strong> Vertical or Horizontal. Width & height settings.</td>
+<td><strong>Cannot define action to the prompt container itself.</strong> In prompt areas: define actions between controls. On canvas: define actions between controls+canvas objects. Delays actions until Apply. ❌ <strong>Prompt containers NOT included in PDF export.</strong></td>
+</tr>
+<tr>
+<td><strong>🎨 Precision</strong></td>
+<td>Create reports with <strong>overlapping objects</strong>. Control placement, alignment, depth, and size.</td>
+<td><strong>Container type:</strong> Flow, Stacking, Precision (default)</td>
+<td>Often used to add <strong>image background</strong>. Most objects are transparent so background shows. ⚠️ <strong>Best practice: Set fixed report size.</strong> Can cause problems when reports are exported. ❌ Avoid precision containers for PDF export.</td>
+</tr>
+</table>
+
+<!-- OBJECT TEMPLATES -->
+<div class="info-box"><p class="label" style="color:#ffd93d;">📦 1.5 Object Templates</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<strong>How:</strong> Right-click object → Save as Template. Appears in Objects pane with default name. Saved without data → added to same group as original (e.g., bar chart template → Graphs group).<br>
+<strong>Where stored:</strong> SAS Content/Products/SAS Visual Analytics/Resources folder<br>
+<strong>Sharing:</strong> (1) Locate template in SAS Content, (2) Export via SAS Environment Manager (right-click → Export → JSON), (3) Import in target environment. Or export entire Resources folder for all templates + data views. CLI option via SAS Viya REST services.
+</p>
+</div>
+
+<div class="tip red">
+<strong>🎯 Must-Know Exam Points — M2 L1:</strong><br>
+• <strong>Bubble plot</strong> = NON-aggregated default. No Group+Color together ❌<br>
+• <strong>Correlation:</strong> Pearson's. Weak ≤0.3. Max 60. Weak ≠ no relationship ⚠️<br>
+• <strong>Relationship plot type</strong> depends on Response + Underlying factor variable types ✅<br>
+• <strong>Auto Predict:</strong> Cannot be action source/target. No manual model selection ⚠️<br>
+• <strong>Standard container:</strong> Flow(default)/Stacking/Precision. Avoid scrollbars by default ✅<br>
+• <strong>Stacking container:</strong> One object at a time. Navigation bar (cannot format). 3 uses ✅<br>
+• <strong>Scrolling container:</strong> "Functions like web page." Avoid scrollbars = deselected ⚠️<br>
+• <strong>Prompt container:</strong> NOT in PDF. Delays Apply. Cannot define action to itself ⚠️<br>
+• <strong>Precision container:</strong> Overlapping objects. Best practice: Set fixed report size ✅<br>
+• <strong>Object templates:</strong> Stored in Resources folder. Export individually or bulk ✅
+</div>
+
+</div>
+</details>
+</div>
+<a href="#" class="back-top" title="Back to top">⬆</a>
+</body>
+</html>

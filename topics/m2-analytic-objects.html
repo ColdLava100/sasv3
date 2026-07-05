@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — M2 L3: Analytic Objects</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="header"><h1>📊 SAS Visual Analytics — Study Companion</h1><p class="subtitle">Advanced Module — Lesson 3: Working with Analytic Objects</p></div>
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;"><a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a></div>
+<div class="content">
+<details id="t1" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #ff7675;">🔬 M2 L3: Working with Analytic Objects<span class="arrow">▶</span></summary>
+<div class="topic-body">
+
+<!-- FORECASTING -->
+<div class="info-box"><p class="label" style="color:#55efc4;">📈 3.1 Forecasting — Full Details</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<em>"A forecasting object uses the statistical trends in your data source to predict future data values."</em>
+<table class="data-table" style="font-size:0.72rem;margin-top:6px;">
+<tr><th>Aspect</th><th>Details</th></tr>
+<tr><td><strong>Data Requirements</strong></td><td><strong>Time series data item</strong> (date/datetime) + at least <strong>1 measure</strong></td></tr>
+<tr><td><strong>Default CI</strong></td><td><strong>95% confidence</strong> — colored band around forecast line</td></tr>
+<tr><td><strong>Default Horizon</strong></td><td><strong>6 periods</strong></td></tr>
+<tr><td><strong>Binning Interval</strong></td><td>Automatic (default), Fixed count, or Use format</td></tr>
+<tr><td><strong>Models tested</strong></td><td>ARIMA, Damped-trend exponential smoothing, Linear exponential smoothing, Seasonal exponential smoothing, Simple exponential smoothing, Winters (additive), Winters (multiplicative)</td></tr>
+<tr><td><strong>Model selection</strong></td><td>VA automatically tests all models and selects the best one</td></tr>
+<tr><td><strong>Display</strong></td><td>Historical values = markers only (no line). Hindcast (historical predicted) = part of forecast line. Forecast = solid line. CI = colored band.</td></tr>
+<tr><td><strong>Underlying Factors</strong></td><td>Additional measures that contribute to forecast. Each gets a weight (default 10%). Multiple factors possible.</td></tr>
+<tr><td><strong>What-If Analysis</strong></td><td><strong>Scenario Analysis:</strong> Modify underlying factor values → see new forecast. <strong>Goal-Seeking:</strong> Set target forecast → find required factor values.</td></tr>
+<tr><td><strong>Measures Layout</strong></td><td>Automatic, Shared axis, or Separate axes</td></tr>
+<tr><td><strong>Optional Roles</strong></td><td>Group, Data tip values</td></tr>
+</table>
+</p>
+</div>
+
+<!-- NETWORK ANALYSIS -->
+<div class="info-box"><p class="label" style="color:#ffd93d;">🔗 3.2 Network Analysis — Full Details</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<em>"Displays relationships by using a series of linked nodes."</em>
+<table class="data-table" style="font-size:0.72rem;margin-top:6px;">
+<tr><th>Aspect</th><th>Details</th></tr>
+<tr><td><strong>Structures</strong></td><td><strong>Ungrouped:</strong> Source → Target linked nodes. <strong>Hierarchy:</strong> Parent-child levels using hierarchy role.</td></tr>
+<tr><td><strong>Required Roles</strong></td><td>Source (mandatory), Target (mandatory). Source must be a <strong>subset</strong> of Target values.</td></tr>
+<tr><td><strong>Optional Roles</strong></td><td>Links (link width/color based on measure), Node size, Node color, Label, Data tip values</td></tr>
+<tr><td><strong>Metrics (Color)</strong></td><td><strong>Betweenness Centrality:</strong> How often a node is on shortest path. <strong>Closeness Centrality:</strong> How close to all connected nodes. <strong>Community:</strong> Local groups. <strong>Disconnected Network ID:</strong> ID for each group of connected nodes.</td></tr>
+<tr><td><strong>Geo Background</strong></td><td>If Source+Target are geographic → can overlay on map (check Map background option)</td></tr>
+<tr><td><strong>Options</strong></td><td>Node size %, Link arrows, Link curvature, Abbreviate numeric values, Data labels. Successors count when source node selected.</td></tr>
+</table>
+</p>
+</div>
+
+<!-- PATH ANALYSIS -->
+<div class="info-box"><p class="label" style="color:#ff7675;">🔀 3.3 Path Analysis — Full Details</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<em>"Displays flows of data — also called a Sankey diagram."</em>
+<table class="data-table" style="font-size:0.72rem;margin-top:6px;">
+<tr><th>Aspect</th><th>Details</th></tr>
+<tr><td><strong>Required Roles</strong></td><td><strong>Event</strong> (category — nodes), <strong>Sequence order</strong> (measure or date/datetime — orders events), <strong>Links</strong></td></tr>
+<tr><td><strong>Link Color Options</strong></td><td><strong>Path:</strong> Each path = separate group with distinct color (use for small # of paths). <strong>Drop-off:</strong> Colors by drop-off rate. <strong>Event:</strong> Colors by event. <strong>Sequence order:</strong> Colors by sequence.</td></tr>
+<tr><td><strong>Link Width</strong></td><td>Weight or frequency (proportional to flow rate)</td></tr>
+<tr><td><strong>Path Length</strong></td><td>Min & Max path length settings. <strong>Path ranking count</strong> and <strong>Compress</strong> options.</td></tr>
+<tr><td><strong>Layout</strong></td><td>Horizontal or vertical</td></tr>
+<tr><td><strong>Summary</strong></td><td>When maximized: <strong>Path Information</strong> tab (data behind diagram) + <strong>Path Analysis Summary</strong> tab (natural language explanation).</td></tr>
+<tr><td><strong>Options</strong></td><td>Node labels, Link labels, Nodes outline, Abbreviate numeric values (scale + digits), Display node titles</td></tr>
+</table>
+</p>
+</div>
+
+<!-- DECISION TREE -->
+<div class="info-box"><p class="label" style="color:#74b9ff;">🌳 3.4 Decision Tree — Full Details</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<em>"An explainable and powerful ML algorithm using the C4.5 algorithm (iterative dichotomizer)."</em>
+<table class="data-table" style="font-size:0.72rem;margin-top:6px;">
+<tr><th>Aspect</th><th>Details</th></tr>
+<tr><td><strong>Required Roles</strong></td><td><strong>Response</strong> (category/measure/geography), <strong>Predictors</strong> (mandatory)</td></tr>
+<tr><td><strong>Optional Roles</strong></td><td>Partition ID, Frequency, Group, Label</td></tr>
+<tr><td><strong>Algorithm</strong></td><td>C4.5 — uses entropy and information gain to select most relevant predictors</td></tr>
+<tr><td><strong>Interactive Mode</strong></td><td>Prune branches, edit split rules, retrain. Zoom in to view leaf statistics. Right-click leaves for percent.</td></tr>
+<tr><td><strong>Leaf ID</strong></td><td>Can create new data item with leaf ID</td></tr>
+<tr><td><strong>General Options</strong></td><td><strong>Event Level:</strong> For category response — which level to model. <strong>Growth Strategy:</strong> Advanced option.</td></tr>
+<tr><td><strong>License</strong></td><td>Advanced decision tree options require additional license</td></tr>
+</table>
+</p>
+</div>
+
+<!-- TEXT TOPICS -->
+<div class="info-box"><p class="label" style="color:#a29bfe;">📝 3.5 Text Topics — Full Details</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<em>"Performs sentiment analysis on text data — identifies topics and themes in unstructured text."</em>
+<table class="data-table" style="font-size:0.72rem;margin-top:6px;">
+<tr><th>Aspect</th><th>Details</th></tr>
+<tr><td><strong>Required Roles</strong></td><td><strong>Document collection</strong> (category — contains text), <strong>Unique identifier</strong></td></tr>
+<tr><td><strong>Optional Roles</strong></td><td>Language, Document details</td></tr>
+<tr><td><strong>Max Topics</strong></td><td>2 to 25 topics</td></tr>
+<tr><td><strong>Cell Weight</strong></td><td>None or Logarithmic</td></tr>
+<tr><td><strong>Term Weight</strong></td><td>Set weighting for terms</td></tr>
+<tr><td><strong>Maximized View</strong></td><td>3 tabs: Topics (bar chart + data), Topic Details, Sentiment Analysis</td></tr>
+<tr><td><strong>Use Cases</strong></td><td>Customer feedback, survey responses, social media analysis</td></tr>
+</table>
+</p>
+</div>
+
+<div class="tip red">
+<strong>🎯 Key Exam Points — M2 L3:</strong><br>
+• <strong>Forecasting:</strong> Default 95% CI, 6 periods. 7 models auto-tested. Binning: Auto/Fixed/Use format ⚠️<br>
+• <strong>Forecasting:</strong> Historical = markers only. Hindcast = part of forecast line ✅<br>
+• <strong>Network Analysis:</strong> Source must be subset of Target. 2 structures: Ungrouped & Hierarchy ⚠️<br>
+• <strong>Network metrics:</strong> Betweenness, Closeness, Community, Disconnected Network ID ✅<br>
+• <strong>Path Analysis:</strong> Event+Sequence order+Links required. Link color: Path/Drop-off/Event/Sequence order ⚠️<br>
+• <strong>Decision Tree:</strong> C4.5 algorithm. Response+Predictors mandatory. Interactive: prune, edit, retrain ✅<br>
+• <strong>Text Topics:</strong> 2-25 topics. Cell weight: None/Logarithmic ✅<br>
+• <strong>Auto Prediction:</strong> No manual model selection. Champion: accuracy (cat) or ASE (meas) ⚠️
+</div>
+
+</div>
+</details>
+</div>
+<a href="#" class="back-top" title="Back to top">⬆</a>
+</body>
+</html>

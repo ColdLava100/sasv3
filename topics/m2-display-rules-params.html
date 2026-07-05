@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>SAS VA — M2 L5: Display Rules & Params</title><link rel="stylesheet" href="../css/style.css"></head>
+<body>
+<div class="header"><h1>📊 SAS Visual Analytics — Study Companion</h1><p class="subtitle">Advanced Module — Lesson 5: Display Rules & Parameters</p></div>
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;"><a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a></div>
+<div class="content">
+<details id="t1" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #a29bfe;">🎯 M2 L5: Creating Advanced Reports — Display Rules & Parameters<span class="arrow">▶</span></summary>
+<div class="topic-body">
+
+<div class="info-box"><p class="label" style="color:#55efc4;">🎨 5.1 Display Rules — All 7 Types + Levels</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<em>"Display rules dynamically color category and measure values to direct attention to specific results."</em><br><br>
+<strong>7 Rule Types:</strong> Expression (Boolean, accepts numeric params), Color-Mapped Values (category value→color), Gauge (measure interval), Icon (value range→icon), Bullet (performance vs target), Slider (value selection), Thermometer (thermometer indicator)<br><br>
+<strong>Levels display rules can be applied:</strong><br>
+• <strong>Report-level:</strong> Applies to all objects. Add via + button. Edit to add more color-mapped values. Considerations: objects may need Group role, may need object-level rule for enhancement, may not be affected.<br>
+• <strong>Table-level (List table):</strong> Expression, Color-Mapped, Gauge, Icon, Bullet. <strong>Crosstab:</strong> Expression only — requires measure in Data Role, can be layered (first rule has priority), applied to column or intersection.<br>
+• <strong>Graph-level:</strong> Color-Mapped Values + Expression. Style: graph element or background. <strong>Geo map:</strong> Icons only for Geo Coordinate/Geo Network. Basic icons (respond to color) + Custom icons (static image). Display Rule OVERRIDES Color Data Role.<br>
+• <strong>Gauge-level:</strong> Gauge type only. Default 3-interval display rule defined. Auto-calculate interval endpoints.<br>
+• <strong>Trigger Alerts:</strong> Expression type. Enable/disable from edit mode. Subscribers get email + notification. Recipients must be registered SAS Viya users.
+</p>
+</div>
+
+<div class="info-box"><p class="label" style="color:#ffd93d;">🔢 5.2 Parameters — All 4 Types</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<em>"A parameter is a variable whose value can be changed and referenced by other objects. Adds interactivity."</em><br><br>
+<strong>1. Numeric Parameter:</strong> Viewer enters a number. Used with slider control. Create via New data item, Expression Editor, or right-click. Specify format + starting value.<br>
+<strong>2. Character Parameter:</strong> Viewer chooses a category or enters alphanumeric string. Used with dropdown/list/text input.<br>
+<strong>3. Date Parameter:</strong> Viewer selects a date or datetime. Used with date picker or slider.<br>
+<strong>4. Expression-Based Parameter:</strong> Value set by formula — <strong>NOT affected by filters or actions</strong>. Based on entire data source. Value remains constant regardless of user selections. Updated when data refreshes. Useful for benchmarks, percent of total calculations.<br><br>
+<strong>Use parameters in:</strong> Calculations, Filters, Display rules, Ranks, URLs (interactive links).<br>
+<strong>Create:</strong> New data item button, Expression Editor, right-click in Data pane.
+</p>
+</div>
+
+<div class="info-box"><p class="label" style="color:#ff7675;">🔗 5.3 Links — Interactive URLs</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<strong>4-step process for interactive links:</strong> Research → Hardcode → Parameterize → Test<br>
+<strong>URL structure types:</strong> Path, Query, or File.<br>
+<strong>Data source mapping:</strong> When source and target use different data sources → prompted to map. Global map data available for page links. Mapped columns must have same format. Column can be mapped only once.<br>
+<strong>Considerations:</strong> Filter applied to prompt areas and canvas (default). Alternative: Use "Set prompt bar values" option.
+</p>
+</div>
+
+<div class="tip red">
+<strong>🎯 Key Exam Points — M2 L5:</strong><br>
+• 7 display rule types: Expression, Color-Mapped, Gauge, Icon, Bullet, Slider, Thermometer ⚠️<br>
+• <strong>Crosstab:</strong> Expression rule ONLY. Requires measure in Data Role. Can be layered ✅<br>
+• <strong>Geo map:</strong> Icons only for Geo Coordinate/Geo Network. Overrides Color role ⚠️<br>
+• <strong>4 parameter types:</strong> Numeric, Character, Date, Expression-based ✅<br>
+• <strong>Expression-based params:</strong> NOT affected by filters. Based on entire data source. Value constant ⚠️<br>
+• <strong>Alerts:</strong> Subscribers must be registered SAS Viya users ✅<br>
+• <strong>Links:</strong> Research → Hardcode → Parameterize → Test ⚠️
+</div>
+
+</div>
+</details>
+</div>
+<a href="#" class="back-top" title="Back to top">⬆</a>
+</body>
+</html>

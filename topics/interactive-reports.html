@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Designing Interactive Reports</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 SAS Visual Analytics — Study Companion</h1>
+  <p class="subtitle">Topic-by-topic explanations, interactive charts, mnemonics &amp; quizzes</p>
+</div>
+
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+
+<div class="content">
+
+<details id="t1" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #0984e3;">
+  🎮 Topic 9: Designing Interactive Reports — Prompts, Actions &amp; Links
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+  <div style="background:var(--bg3);border-radius:8px;padding:14px;margin-bottom:10px;">
+    <p style="color:var(--text2);font-size:0.85rem;">
+      From course: <em>"Prompts and actions can make your reports more versatile by enabling viewers to access the information that's important to them."</em>
+    </p>
+  </div>
+
+  <!-- CAR DASHBOARD ANALOGY -->
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #55efc4;">
+      <p class="label" style="color:#55efc4;">🚗 The Car Dashboard Analogy</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <strong>Prompts 🎛️</strong> = <strong>Climate control</strong> — viewer sets temperature to their liking<br>
+        <strong>Actions 🔗</strong> = <strong>Steering wheel</strong> — click one thing, another responds<br>
+        <strong>Links 🔗</strong> = <strong>GPS</strong> — tap to navigate somewhere else
+      </p>
+    </div>
+  </div>
+
+  <!-- THE BIG PICTURE -->
+  <div class="info-box">
+    <p class="label">📊 The Big Picture</p>
+  </div>
+  <div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;text-align:center;font-size:0.78rem;color:var(--text2);">
+    <pre style="color:var(--text2);font-size:0.72rem;">
+┌─────────────────────────────────────────────────────┐
+│              DESIGNING INTERACTIVE REPORTS           │
+├─────────────────────────────────────────────────────┤
+│   🎛️ PROMPTS = "What data should I see?"           │
+│     ↳ Viewer changes filter values (dynamic)        │
+│                                                      │
+│   🔗 ACTIONS = "Make objects talk to each other"    │
+│     ↳ Click SOURCE → TARGET responds                │
+│     ↳ Automatic (all) or Manual (specific)          │
+│                                                      │
+│   🔗 LINKS = "Go somewhere else"                    │
+│     ↳ Page link, Report link, URL link, Return link │
+└─────────────────────────────────────────────────────┘
+    </pre>
+  </div>
+
+  <!-- ACTIONS DEEP DIVE -->
+  <div class="info-box">
+    <p class="label">🔗 Actions — The Core Concept</p>
+  </div>
+
+  <div style="background:var(--bg3);border-radius:8px;padding:10px;margin-bottom:8px;">
+    <p style="font-size:0.78rem;color:var(--text2);">
+      <strong>Actions</strong> let one object <strong>talk to</strong> another when you click. Think of it like a <strong>steering wheel</strong> 🚗 — turn it and the wheels respond.<br><br>
+      <strong>Two types:</strong> Automatic (between ALL objects) vs Manual (between specific objects). <strong>Cannot combine both</strong> on same page ⚠️
+    </p>
+  </div>
+
+  <!-- AUTO VS MANUAL -->
+  <table class="data-table" style="font-size:0.72rem;">
+    <tr><th>Feature</th><th style="color:#55efc4;">⚡ Automatic</th><th style="color:#ffd93d;">✋ Manual</th></tr>
+    <tr><td><strong>Scope</strong></td><td>Between ALL objects on page</td><td>Between specific objects you choose</td></tr>
+    <tr><td><strong>Setup</strong></td><td>One setting = everything connected</td><td>Add one-by-one</td></tr>
+    <tr><td><strong>Combine?</strong></td><td colspan="2" style="text-align:center;color:#ff7675;"><strong>❌ Cannot combine auto + manual on same page</strong></td></tr>
+    <tr><td><strong>Analogy</strong></td><td>Open-plan office 🏢</td><td>Walkie-talkie 🎙️</td></tr>
+  </table>
+
+  <!-- 3 AUTO ACTION TYPES -->
+  <div class="info-box">
+    <p class="label">⚡ 3 Automatic Action Types</p>
+  </div>
+  <div class="card-grid">
+    <div class="card" style="border-top:3px solid #55efc4;">
+      <p class="label" style="color:#55efc4;">🔗 Linked Selection</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Highlights related data in multiple objects."</em><br><br>
+        🖍️ Click → related data <strong>highlights</strong> (blue)<br>
+        ✅ Other rows stay visible (grayed)<br>
+        🔄 Applied in any order<br>
+        🏢 Analogy: <strong>Highlighter pen</strong>
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #ffd93d;">
+      <p class="label" style="color:#ffd93d;">➡️ One-Way Filter</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Enables viewers to apply filters between objects in any order."</em><br><br>
+        🔽 Click → other objects <strong>filter</strong><br>
+        ✅ Hierarchical / cascading<br>
+        🏢 Analogy: <strong>Waterfall</strong> 🌊 — flows one way<br>
+        📋 Default in: Dashboard, Panel, Stack templates
+      </p>
+    </div>
+    <div class="card" style="border-top:3px solid #ff7675;">
+      <p class="label" style="color:#ff7675;">⬅️➡️ Two-Way Filter</p>
+      <p style="font-size:0.78rem;color:var(--text2);">
+        <em>"Applies filters between ALL objects, even previously selected ones."</em><br><br>
+        🔄 Click → filters <strong>ALL</strong> objects<br>
+        ⚠️ Do NOT use with required prompts<br>
+        🏢 Analogy: <strong>Echo</strong> 🔊 — affects everything<br>
+        ❌ Can get stuck if + required prompts
+      </p>
+    </div>
+  </div>
+
+  <!-- MANUAL ACTIONS -->
+  <div class="info-box">
+    <p class="label">✋ Manual Actions — 2 Types</p>
+  </div>
+  <table class="data-table" style="font-size:0.72rem;">
+    <tr><th>Type</th><th>What it does</th><th>Source → Target?</th><th>Best for</th></tr>
+    <tr><td><strong>Filter</strong></td><td>Subsets data in target object</td><td>🔽 Unidirectional</td><td>Click a map → table shows only that region</td></tr>
+    <tr><td><strong>Linked Selection</strong></td><td>Highlights data in target object</td><td>🔽 Unidirectional</td><td>Click a bar → related rows light up in the table</td></tr>
+  </table>
+
+  <!-- FILTER ACTION RULES -->
+  <div class="info-box">
+    <p class="label">⚠️ Filter Action Rules</p>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;">
+    <div style="background:var(--bg3);border-radius:8px;padding:10px;border-left:3px solid #55efc4;">
+      <h4 style="color:#55efc4;font-size:0.7rem;">✅ CAN be source/target</h4>
+      <p style="font-size:0.68rem;color:var(--text2);">
+        Bar chart, table, geo map, KPI, controls (dropdown, slider*), etc.<br>
+        <em>*Slider with "Set fixed range" cannot be source</em>
+      </p>
+    </div>
+    <div style="background:var(--bg3);border-radius:8px;padding:10px;border-left:3px solid #ff7675;">
+      <h4 style="color:#ff7675;font-size:0.7rem;">❌ CANNOT be source</h4>
+      <p style="font-size:0.68rem;color:var(--text2);">
+        Images, Job Content, Text, Web Content
+      </p>
+    </div>
+  </div>
+
+  <div style="background:#1a1a2a;border-radius:8px;padding:10px;margin-bottom:8px;border:1px solid #3a3a5a;">
+    <p style="font-size:0.75rem;color:var(--text2);">
+      <strong>🔑 Key Properties:</strong><br>
+      1. <strong>Unidirectional</strong> 🔽 — Source → Target only (not backward)<br>
+      2. <strong>Transitive</strong> 🔄 — A filters B, B filters C → A also filters C<br>
+      3. <strong>Different data sources</strong> — Need to map data sources first 🗺️
+    </p>
+  </div>
+
+  <!-- LINKS -->
+  <div class="info-box">
+    <p class="label">🔗 Links — Navigation</p>
+  </div>
+  <table class="data-table" style="font-size:0.72rem;">
+    <tr><th>Link Type</th><th>Goes to...</th><th>Analogy</th><th>Notes</th></tr>
+    <tr><td><strong>📄 Page Link</strong></td><td>Another page in same report</td><td>Page turn 📖</td><td>Includes hidden pages (viewer sees as normal)</td></tr>
+    <tr><td><strong>📊 Report Link</strong></td><td>A different report</td><td>Reference book 📚</td><td>Opens separately</td></tr>
+    <tr><td><strong>🌐 URL Link</strong></td><td>An external website</td><td>Browser tab 🌍</td><td>URL must be accessible</td></tr>
+    <tr><td><strong>🔙 Return Link</strong></td><td>Back to previous page</td><td>Back button ↩️</td><td>Auto-added when linking to basic/hidden pages</td></tr>
+  </table>
+
+  <!-- EXAM TIPS -->
+  <div class="tip red">
+    <strong>🎯 Key Exam Points:</strong><br>
+    • <strong>Auto + Manual</strong> actions <strong>CANNOT</strong> be combined on same page ❌<br>
+    • <strong>Linked Selection</strong> = highlights. <strong>Filter</strong> = subsets data ⚠️<br>
+    • All filter actions are <strong>unidirectional</strong> and <strong>transitive</strong> 🔄<br>
+    • Images, Text, Web Content, Job Content = <strong>cannot be source</strong> ❌<br>
+    • <strong>All controls</strong> (dropdown, slider, etc.) <strong>can</strong> be source AND target ✅<br>
+    • Slider with <strong>fixed range</strong> = cannot be source ⚠️<br>
+    • <strong>Required prompts + 2-way filter</strong> = can get stuck ❌<br>
+    • Hidden pages appear normal when accessed via link ✅<br>
+    • New pages default to <strong>manual actions</strong> (not auto) ⚠️<br>
+    • Best practice: <strong>Finalize layout</strong> before enabling automatic actions ✅
+  </div>
+
+  <div class="tip green">
+    <strong>🧠 Memory Trick:</strong><br>
+    <strong>P</strong>rompts = <strong>P</strong>ick what to see (viewer chooses)<br>
+    <strong>A</strong>ctions = Objects <strong>A</strong>nswer each other<br>
+    <strong>L</strong>inks = <strong>L</strong>eave this page (navigate)<br><br>
+    <em>"Prompts are the TV remote 📱, Actions are the steering wheel 🚗, Links are the GPS 🗺️."</em>
+  </div>
+
+</div>
+</details>
+
+</div>
+
+<a href="#" class="back-top" title="Back to top">⬆</a>
+
+</body>
+</html>

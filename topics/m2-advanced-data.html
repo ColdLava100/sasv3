@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>SAS VA — M2 L4: Advanced Data</title><link rel="stylesheet" href="../css/style.css"></head>
+<body>
+<div class="header"><h1>📊 SAS Visual Analytics — Study Companion</h1><p class="subtitle">Advanced Module — Lesson 4: Creating Data for Advanced Reports</p></div>
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;"><a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a></div>
+<div class="content">
+<details id="t1" class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #74b9ff;">🗃️ M2 L4: Creating Data for Advanced Reports<span class="arrow">▶</span></summary>
+<div class="topic-body">
+
+<div class="info-box"><p class="label" style="color:#55efc4;">🔗 4.1 Data Joins</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<em>"Data source joins enable you to combine two data sources. The join creates a temporary table that is executed every time the report is opened."</em>
+<table class="data-table" style="font-size:0.72rem;margin-top:6px;">
+<tr><th>Aspect</th><th>Details</th></tr>
+<tr><td><strong>Join</strong></td><td>Combines two tables by <strong>matching rows and adding columns</strong></td></tr>
+<tr><td><strong>Append</strong></td><td>Combines two tables by <strong>adding rows</strong> with matching columns</td></tr>
+<tr><td><strong>Available in VA?</strong></td><td>✅ Joins (Left, Right, Inner, Full). ❌ <strong>Append NOT available</strong></td></tr>
+<tr><td><strong>Temporary</strong></td><td>Stored in CASUSER caslib — visible only to creator. Cleaned up when no longer needed.</td></tr>
+<tr><td><strong>Considerations</strong></td><td>⚠️ Performance: Join runs every time report opens for every user.<br>⚠️ Can join only 2 tables at a time. No self-joins.<br>⚠️ Only simple matching. Dates must have matching formats.<br>⚠️ Temporary results can be very large — impacts concurrent users.</td></tr>
+</table>
+</p>
+</div>
+
+<div class="info-box"><p class="label" style="color:#ffd93d;">📊 4.2 Aggregated Data Sources</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+Creates a new temporary data source with aggregated subset of original columns. Improves performance. <strong>Can be joined back to original data source.</strong><br>
+Used for <strong>nested aggregated measures</strong> — aggregated functions do NOT accept aggregated measures, so use data items from the aggregated data source instead.
+</p>
+</div>
+
+<div class="info-box"><p class="label" style="color:#ff7675;">📝 4.3-4.5 Expression Editor Functions</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<strong>Conditional Logic:</strong> IF...ELSE (IF condition THEN result ELSE alt END). SELECT...WHEN...OTHERWISE for multiple conditions.<br><br>
+<strong>Text Functions (Simple & Advanced):</strong> Substr, Trim, Upcase, Lowcase, ReplaceWord, GetWord, Length, Cat (concatenate), Cats (concatenate without spaces)<br><br>
+<strong>Date & Time Functions:</strong> Year, Month, Day, Weekday, DatePart, TimePart, Today(), Now(), <strong>IntNX</strong>(interval, start, inc) — advance date, <strong>IntCK</strong>(interval, start, end) — count intervals, <strong>DHMS</strong>(date, hr, min, sec) — create datetime<br><br>
+<strong>Aggregated — Simple:</strong> SUM, AVG, MIN, MAX, COUNT, STD, VAR, NMiss<br>
+<strong>Aggregated — Periodic:</strong> CumulativePeriod, ParallelPeriod, Period, PeriodWithDate, RelativePeriod<br>
+<strong>Aggregated — Advanced:</strong> CoefVar, CSS, Kurtosis, PvalT, Skewness, First, Last, Suppress (hides values for privacy)<br>
+<strong>Tabular:</strong> AggregateCells (specific cells), AggregateTable (independent aggregations), Moving sum/avg/median, Cumulative functions
+</p>
+</div>
+
+<div class="tip red">
+<strong>🎯 Key Exam Points — M2 L4:</strong><br>
+• Join = adds columns. Append = adds rows. <strong>Append NOT in VA</strong> ⚠️<br>
+• Only <strong>simple matching</strong> available. Dates must match formats ⚠️<br>
+• Join runs <strong>every time report opens</strong> for every user — performance impact ⚠️<br>
+• <strong>IntNX</strong> = advance date. <strong>IntCK</strong> = count intervals ✅<br>
+• Aggregated functions do NOT accept aggregated measures ❌<br>
+• <strong>Suppress</strong> = obscure data for privacy. <strong>CoefVar, Kurtosis, Skewness</strong> = advanced stats ✅<br>
+• Periodic functions: Cumulative, Parallel, Period, PeriodWithDate, RelativePeriod ✅
+</div>
+
+</div>
+</details>
+</div>
+<a href="#" class="back-top" title="Back to top">⬆</a>
+</body>
+</html>
