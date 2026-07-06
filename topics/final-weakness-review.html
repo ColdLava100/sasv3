@@ -13,6 +13,7 @@
   .keytable th { border:1px solid #444; padding:6px; }
   .keytable td { border:1px solid #444; padding:6px; }
   .weak-category { color:#ff7675; font-weight:bold; }
+  img { display:block; max-width:100%; border-radius:4px; margin:4px 0; border:1px solid #555; }
 </style>
 </head>
 <body>
@@ -29,159 +30,455 @@
 </summary>
 <div class="topic-body">
 
-<!-- ===== WEAKNESS 1: Display Rules ===== -->
-<div class="info-box"><p class="label" style="color:#ff7675;">🔴 WEAKNESS #1: Display Rules — Types & Levels (3+ mistakes)</p></div>
-
-<div class="why">
-<strong>Questions you got wrong:</strong> "Which rule is based on a category?", "Which is based on a measure interval?", "What are the levels of display rules?"<br>
-<strong>Your wrong answers:</strong> Character ❌ | Color-mapped ❌ | Report/Page/Auto/Manual ❌
-</div>
-
+<div class="info-box"><p class="label" style="color:#55efc4;">📋 The 3 Display Rule Types</p></div>
 <table class="keytable">
-<tr><th style="background:#ff7675;color:#fff;">Rule Type</th><th style="background:#ff7675;color:#fff;">Based On</th><th style="background:#ff7675;color:#fff;">🧠 Memory</th></tr>
-<tr><td><strong>Expression</strong></td><td>Measure — Boolean expression (X > Y)</td><td><em>"<strong>E</strong>xpr = <strong>E</strong>valuate condition"</em></td></tr>
-<tr><td><strong>Color-Mapped Values</strong></td><td><strong>Category</strong> data item value</td><td><em>"<strong>C</strong>olor = <strong>C</strong>ategory"</em></td></tr>
-<tr><td><strong>Gauge</strong></td><td>Measure — <strong>interval definition</strong> (ranges)</td><td><em>"<strong>G</strong>auge = <strong>G</strong>roups by <strong>G</strong>aps"</em></td></tr>
+<tr><th>Rule Type</th><th>Based On</th><th>🧠 Memory</th></tr>
+<tr><td><strong>Expression</strong></td><td>Measure — Boolean expression (X > Y)</td><td><em>"Expr = Evaluate condition"</em></td></tr>
+<tr><td><strong>Color-Mapped Values</strong></td><td><strong>Category</strong> data item value</td><td><em>"Color = Category"</em></td></tr>
+<tr><td><strong>Gauge</strong></td><td>Measure — <strong>interval definition</strong> (ranges)</td><td><em>"Gauge = Groups by Gaps"</em></td></tr>
 </table>
+<div class="right"><strong>✅ Levels of Display Rules = Report, Table, Object, Gauge</strong> (NOT Page/Auto/Manual)</div>
 
-<div class="right">
-<strong>✅ Levels of Display Rules = Report, Table, Object, Gauge</strong> (NOT Page/Auto/Manual — those are ACTION types!)
-</div>
+<div class="info-box"><p class="label" style="color:#55efc4;">📋 Parameters</p></div>
+<div class="right"><strong>Character params:</strong> ✅ CAN in calculations, filters, URLs, text. ❌ NOT in display rules<br>
+<strong>Expression-based:</strong> NOT affected by filters. NOT subset-based. Can set initial values.<br>
+<strong>Create step:</strong> First determine type → create → add control → use.</div>
 
-<!-- ===== WEAKNESS 2: Parameters ===== -->
-<div class="info-box"><p class="label" style="color:#ff7675;">🔴 WEAKNESS #2: Parameters (3+ mistakes)</p></div>
+<div class="info-box"><p class="label" style="color:#55efc4;">📋 Containers</p></div>
+<div class="right"><strong>Stacking</strong> = slide deck. <strong>Scrolling</strong> = web page. <strong>Standard</strong> = grid. <strong>Precision</strong> = overlap. <strong>Prompt</strong> = control group.</div>
 
-<div class="why">
-<strong>Questions you got wrong:</strong> "Where can character parameters NOT be used?", "What is true about expression-based parameters?", "What do you do in the Create step?"<br>
-<strong>Your wrong answers:</strong> Calculated items ❌ | Subset of data ❌ | Add data source ❌
-</div>
+<div class="info-box"><p class="label" style="color:#55efc4;">📋 Filters & Actions</p></div>
+<div class="right"><strong>Basic</strong>=1 item. <strong>Advanced</strong>=2+ items. <strong>Common</strong>=crosses pages. <strong>Linked Selection</strong>=highlights. <strong>Page prompt</strong>=filters same-DS objects.</div>
 
-<table class="keytable">
-<tr><th style="background:#ff7675;color:#fff;">Parameter Type</th><th style="background:#ff7675;color:#fff;">Key Fact</th></tr>
-<tr><td><strong>Numeric</strong></td><td>Viewer enters a number. Used with slider controls.</td></tr>
-<tr><td><strong>Character</strong></td><td>Viewer selects a category. ✅ CAN be used in: calculations, filters, URLs, text objects. ❌ CANNOT be used in: <strong>display rules</strong></td></tr>
-<tr><td><strong>Date</strong></td><td>Viewer selects a date. Used with date picker.</td></tr>
-<tr><td><strong>Expression-Based</strong></td><td>✅ <strong>NOT affected by filters or actions</strong>. Based on entire data source. Value stays constant. ✅ Can set initial values. ❌ NOT based on a subset of data.</td></tr>
-</table>
+<div class="info-box"><p class="label" style="color:#55efc4;">📋 Graph Builder</p></div>
+<div class="right">Roles renamed in <strong>Roles menu</strong>. Overlay = <strong>Shared Role</strong> via Roles pane. Each object has required+optional roles.</div>
 
-<div class="right">
-<strong>✅ Create step:</strong> First determine the type of parameter needed → THEN create it → THEN add control → THEN use it.
-</div>
+<div class="info-box"><p class="label" style="color:#55efc4;">📋 Hidden Role & Aggregated DS</p></div>
+<div class="right"><strong>Hidden:</strong> rules, links, mapping (NOT lattice). <strong>Agg DS:</strong> temporary (NOT permanent).</div>
 
-<!-- ===== WEAKNESS 3: Containers ===== -->
-<div class="info-box"><p class="label" style="color:#ff7675;">🔴 WEAKNESS #3: Containers (Stacking vs Scrolling)</p></div>
+<div class="info-box"><p class="label" style="color:#55efc4;">📋 Sharing & Prompts</p></div>
+<div class="right">Set prompt values = <strong>same level only</strong>. PDF: ✅ filters in appendix. ❌ DW HR PP excluded. Dynamic text: ❌ no direct category.</div>
+
+<!-- ===== BATCH 2: Exam Screenshots ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">🔴 BATCH 2: Latest Mistakes</p></div>
 
 <div class="why">
-<strong>Question:</strong> "Which container displays objects like a slide deck, one at a time?"<br>
-<strong>You answered:</strong> Scrolling container ❌<br>
-<strong>Correct:</strong> <strong>Stacking container</strong> ✅
+<img src="../images/exam-sku-import.png">
+<strong>❌ Data Import:</strong> You answered "Category"<br>
+<strong>✅ Correct: Measure</strong> — Only 2 rows scanned, values "107712" and "435770" appear numeric!
 </div>
-
-<table class="keytable">
-<tr><th style="background:#ff7675;color:#fff;">Container</th><th style="background:#ff7675;color:#fff;">Behavior</th><th style="background:#ff7675;color:#fff;">🧠 Analogy</th></tr>
-<tr><td><strong>Stacking</strong></td><td>One object at a time. Navigation bar to flip through.</td><td>Slide deck 📑 — like PowerPoint slides</td></tr>
-<tr><td><strong>Scrolling</strong></td><td>Shows scroll bar. Functions like a web page.</td><td>Web page 🌐 — scroll down to see more</td></tr>
-<tr><td><strong>Standard</strong></td><td>Arranges objects without overlap. No scroll.</td><td>Grid layout 📋 — everything visible at once</td></tr>
-<tr><td><strong>Precision</strong></td><td>Overlapping objects. Controlled placement.</td><td>Layered art 🎨 — stack things on top</td></tr>
-<tr><td><strong>Prompt</strong></td><td>Groups controls. Delays Apply. ❌ NOT in PDF.</td><td>Control panel 🎮 — settings grouped together</td></tr>
-</table>
-
-<!-- ===== WEAKNESS 4: Actions & Static Filters ===== -->
-<div class="info-box"><p class="label" style="color:#ff7675;">🔴 WEAKNESS #4: Filters & Actions (Confusing Types)</p></div>
 
 <div class="why">
-<strong>Questions you got wrong:</strong> "Which filter uses multiple data items?" (Basic vs Advanced), "Which filter applies across pages?" (Common), "Which action shows same data in all objects?" (Linked Selection), "Page prompt filters which objects?"<br>
-<strong>Your wrong answers:</strong> Basic ❌ | Basic ❌ | Two-way filter ❌ | Treemap+list ❌
+<img src="../images/exam-page-template.png">
+<strong>❌ Page Template:</strong> You answered "Ranks + Objects"<br>
+<strong>✅ Correct: Actions + Objects</strong>
 </div>
-
-<table class="keytable">
-<tr><th style="background:#ff7675;color:#fff;">Filter/Action</th><th style="background:#ff7675;color:#fff;">Key Fact</th><th style="background:#ff7675;color:#fff;">🧠 Memory</th></tr>
-<tr><td><strong>Basic Filter</strong></td><td><strong>1</strong> data item in expression</td><td><strong>B</strong>asic = <strong>B</strong>oxing match (1v1)</td></tr>
-<tr><td><strong>Advanced Filter</strong></td><td><strong>2+</strong> data items in expression</td><td><strong>A</strong>dvanced = <strong>A</strong>ll conditions together</td></tr>
-<tr><td><strong>Common Filter</strong></td><td>Shared across objects, even <strong>different pages</strong></td><td><strong>C</strong>ommon = <strong>C</strong>rosses pages</td></tr>
-<tr><td><strong>Page Prompt</strong></td><td>Filters all objects on that page sharing the data source</td><td>In question 11: button bar=page prompt → only bar chart + list table (same data source) were filtered</td></tr>
-<tr><td><strong>Auto Linked Selection</strong></td><td><strong>Highlights</strong> same data across objects</td><td>Highlighter 🖍️ — glows, doesn't hide</td></tr>
-<tr><td><strong>One-Way Filter</strong></td><td>Filters other objects</td><td>One direction ➡️</td></tr>
-<tr><td><strong>Two-Way Filter</strong></td><td>Filters ALL objects even previously selected</td><td>Both directions ↔️</td></tr>
-</table>
-
-<!-- ===== WEAKNESS 5: Graph Builder ===== -->
-<div class="info-box"><p class="label" style="color:#ff7675;">🔴 WEAKNESS #5: Graph Builder (Roles & Overlay)</p></div>
 
 <div class="why">
-<strong>Questions you got wrong:</strong> "True about roles?", "Where to rename roles?", "Overlay shared role"<br>
-<strong>Your wrong answers:</strong> "You can assign data items" ❌ | Options menu ❌ | Auto share x-axis ❌
+<img src="../images/exam-boxplot-mean.png">
+<strong>❌ Box Plot:</strong> You answered "Median"<br>
+<strong>✅ Correct: Mean</strong>
 </div>
-
-<div class="right">
-<strong>✅ Graph Builder rules:</strong><br>
-1. Each object has certain <strong>required roles</strong>. You can add optional roles too.<br>
-2. Roles are renamed in the <strong>Roles menu</strong> (three dots ⋮ next to the role name)<br>
-3. For <strong>overlay</strong> (bar + line chart together), use <strong>Roles → Shared Role</strong> so both share x-axis but have different y-axes<br>
-4. "You can assign data items" is too vague — the specific truth is about required/optional roles
-</div>
-
-<!-- ===== WEAKNESS 6: Hidden Data Role & Aggregated DS ===== -->
-<div class="info-box"><p class="label" style="color:#ff7675;">🔴 WEAKNESS #6: Special Roles & Data Sources</p></div>
 
 <div class="why">
-<strong>Questions you got wrong:</strong> "What is NOT a use for Hidden data role?", "Which is NOT true about aggregated data sources?"<br>
-<strong>Your wrong answers:</strong> External links ❌ | "You can add a simple filter" ❌
+<img src="../images/exam-boxplot-hide-outliers2.png">
+<strong>❌ Box Plot Hide Outliers:</strong> You answered "BP1"<br>
+<strong>✅ Correct: BP3</strong>
 </div>
-
-<div class="right">
-<strong>✅ Hidden Data Role uses:</strong> Color-mapped display rules, External links, Mapping data sources.<br>
-❌ <strong>NOT</strong> a use: Creating lattice rows<br>
-<em>"Hides data in query but available for: rules, links, and mapping."</em><br><br>
-<strong>✅ Aggregated Data Sources:</strong> TEMPORARY (not permanent). CAN simplify processing. CAN create nested agg measures. ✅ CAN add a simple filter when creating.
-</div>
-
-<!-- ===== WEAKNESS 7: Prompts, Links & PDF ===== -->
-<div class="info-box"><p class="label" style="color:#ff7675;">🔴 WEAKNESS #7: Sharing, Prompts & Links</p></div>
 
 <div class="why">
-<strong>Questions you got wrong:</strong> "Set prompt values → which area?", "Export PDF — what's true?", "Dynamic text — what can't be displayed?", "Outline pane"<br>
-<strong>Your wrong answers:</strong> Both areas ❌ | Can't expand clipped ❌ | Interactive filters ❌ | Overview Pane ❌
+<img src="../images/exam-geo-line-map.png">
+<strong>❌ Geo Line Map:</strong> You answered "Lat/Lon"<br>
+<strong>✅ Correct: Geo data provider + name/code lookup</strong>
 </div>
 
-<div class="right">
-<strong>✅ Set prompt values of target REPORT → Report prompt area ONLY</strong><br>
-Set prompt values of target PAGE → Page prompt area ONLY<br>
-These options work at the same level they're applied. Report link = report prompts only. Never both.<br><br>
-<strong>✅ PDF Export:</strong> Filters ARE displayed in appendix. You CAN expand clipped content. ❌ NOT included: Data-Driven Content, Web Content, Hidden pages, Report prompts, Page prompts, Prompt containers.<br><br>
-<strong>✅ Dynamic Text in Text Object:</strong> Can display: table modified time, interactive filters, measures, parameters. ❌ Cannot display: Category directly (only via expression-based parameter with rank).<br><br>
-<strong>✅ Outline Pane:</strong> Shows report structure — pages, prompts, and objects. Use to understand report design, rename objects, drag to reorganize.
+<div class="why">
+<img src="../images/exam-text-object.png">
+<strong>❌ Text Object:</strong> NOT true = "Cannot define actions"
 </div>
 
-<!-- ===== MASTER SUMMARY ===== -->
-<div class="tip red">
-<strong>📋 YOUR TOP 7 WEAKNESSES — Quick Cheat Sheet</strong>
+<div class="why">
+<img src="../images/exam-set-prompt-page.png">
+<strong>❌ Set Prompt Page:</strong> You answered "Title display"<br>
+<strong>✅ Correct: Selected in button bar</strong>
 </div>
-<table class="keytable">
-<tr><th>#</th><th>Weak Area</th><th># Wrong</th><th>Root Cause</th></tr>
-<tr><td>1</td><td><strong>Display Rules</strong></td><td>3-4</td><td>Confusing types (Expression/Color-Mapped/Gauge) with parameter types (Character). Confusing levels (RTOG) with action types (Auto/Manual).</td></tr>
-<tr><td>2</td><td><strong>Parameters</strong></td><td>3</td><td>Character params CAN be in calc items, NOT in display rules. Expression-based params: NOT affected by filters, NOT based on subset.</td></tr>
-<tr><td>3</td><td><strong>Containers</strong></td><td>1</td><td>Stacking = slide deck (one at a time). Scrolling = web page (scroll down).</td></tr>
-<tr><td>4</td><td><strong>Filters & Actions</strong></td><td>4</td><td>Basic=1 item, Advanced=2+, Common=crosses pages. Linked Selection = highlight, not filter.</td></tr>
-<tr><td>5</td><td><strong>Graph Builder</strong></td><td>3</td><td>Roles renamed in Roles menu. Overlay shared role via Roles pane. Each object has required+optional roles.</td></tr>
-<tr><td>6</td><td><strong>Hidden Role & Agg DS</strong></td><td>2</td><td>Hidden used for: rules, links, mapping (NOT lattice). Agg DS = temporary, NOT permanent.</td></tr>
-<tr><td>7</td><td><strong>Sharing & Prompts</strong></td><td>4</td><td>Set prompt values = same level only. PDF appendix = filters included. Dynamic text = no direct category.</td></tr>
-</table>
+
+<!-- ===== BATCH 3: More Mistakes ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">🔴 BATCH 3: 9 More Mistakes (31/40 Score)</p></div>
+<img src="../images/exam-score-31-40.png" style="max-width:200px;">
+
+<div class="why">
+<img src="../images/exam-param-filter2.png">
+<strong>❌ Parameter Filter:</strong> You answered "Hidden role"<br>
+<strong>✅ Correct: Use in filter expression</strong>
+</div>
+
+<div class="why">
+<img src="../images/exam-crosstab-rows-role.png">
+<strong>❌ Crosstab Rows:</strong> You answered "Measure + Category"<br>
+<strong>✅ Correct: Category + Single Hierarchy</strong>
+</div>
+
+<div class="why">
+<img src="../images/exam-boxplot-mean2.png">
+<strong>❌ Box Plot Mean:</strong> You answered "Median" (3rd time!)<br>
+<strong>✅ Correct: Mean</strong>
+</div>
+
+<div class="why">
+<img src="../images/exam-aggregatecells-row.png">
+<strong>❌ AggregateCells Row:</strong> You answered "Across columns"<br>
+<strong>✅ Correct: Across rows</strong>
+</div>
+
+<div class="why">
+<img src="../images/exam-sas-date-values.png">
+<strong>❌ SAS Date Values:</strong> You answered "Milliseconds"<br>
+<strong>✅ Correct: Days since 1960</strong>
+</div>
+
+<div class="why">
+<img src="../images/exam-forecasting-time.png">
+<strong>❌ Forecasting:</strong> You answered "Aggregated only"<br>
+<strong>✅ Correct: Equally spaced</strong>
+</div>
+
+<div class="why">
+<img src="../images/exam-auto-predict-ase.png">
+<strong>❌ Auto Prediction:</strong> You answered "Most branches"<br>
+<strong>✅ Correct: Lowest ASE</strong>
+</div>
+
+<div class="why">
+<img src="../images/exam-save-custom-graph.png">
+<strong>❌ Save Custom Graph:</strong> You answered "Restart CAS"<br>
+<strong>✅ Correct: Import template</strong>
+</div>
 
 <div class="tip green">
-<strong>🧠 YOUR EXAM SURVIVAL KIT — The 10 Rules You Keep Forgetting:</strong><br>
+<strong>🧠 10 Exam Survival Rules</strong><br>
 1. <strong>Display Rules:</strong> Color-mapped = Category | Gauge = Measure intervals | Expression = Measure Boolean<br>
 2. <strong>Levels:</strong> <strong>RTOG</strong> (Report, Table, Object, Gauge) — NOT Page/Auto/Manual<br>
 3. <strong>Character params:</strong> CAN in calc items. ❌ CANNOT in display rules<br>
 4. <strong>Expression-based params:</strong> NOT affected by filters. NOT subset-based. Can set initial values.<br>
-5. <strong>Stacking container</strong> = slide deck (one at a time). <strong>Scrolling</strong> = web page.<br>
+5. <strong>Stacking container</strong> = slide deck. <strong>Scrolling</strong> = web page.<br>
 6. <strong>Common filter</strong> = crosses pages. <strong>Advanced</strong> = multiple data items. <strong>Basic</strong> = one item.<br>
-7. <strong>Linked Selection</strong> = highlights (not filters). Page prompt = filters same-DS objects.<br>
+7. <strong>Linked Selection</strong> = highlights. Page prompt = filters same-DS objects.<br>
 8. <strong>Graph Builder:</strong> Rename roles in Roles menu. Overlay shared role. Required + optional roles.<br>
 9. <strong>Hidden role:</strong> Rules, Links, Mapping. NOT for lattice rows.<br>
-10. <strong>PDF:</strong> ✅ Filters in appendix. ❌ DW HR PP (Data-driven, Web, Hidden, Report prompts, Page prompts, Prompt containers).
+10. <strong>PDF:</strong> ✅ Filters in appendix. ❌ DW HR PP excluded.<br>
+11. <strong>Box Plot:</strong> Black square = Mean. Middle line = Median.<br>
+12. <strong>Parameter filter:</strong> Use in filter expression, not hidden role.<br>
+13. <strong>Crosstab Rows:</strong> Category + Hierarchy (NOT measures).<br>
+14. <strong>SAS Dates:</strong> Days since 1960.<br>
+15. <strong>Forecasting:</strong> Needs equally spaced time data.<br>
+16. <strong>Auto Prediction:</strong> Lowest ASE = champion.<br>
+17. <strong>Save graph:</strong> Import template (no restart).<br>
+18. <strong>AggregateCells Row:</strong> Across rows (horizontal).
 </div>
 
+
+<!-- ===== BATCH 4 ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">🔴 BATCH 4: Final Mistakes</p></div>
+
+<div class="why">
+<img src="../images/exam-multi-threaded.png">
+<strong>❌ Multi-threaded Processing:</strong> You answered "Workers communicate directly"<br>
+<strong>✅ Correct: Tasks divided among workers + Final aggregation by Controller</strong><br>
+Workers do NOT communicate directly — the Controller manages all work distribution and aggregation.
+</div>
+
+<div class="why">
+<img src="../images/exam-high-cardinality.png">
+<strong>❌ High Cardinality:</strong> You answered "Convert to measure"<br>
+<strong>✅ Correct: Hide the data item</strong> — Too many unique values → hide it to reduce suggested objects.
+</div>
+
+<div class="why">
+<img src="../images/exam-multi-thread-agg.png">
+<strong>❌ Why aggregation in multi-threaded dice?</strong> You answered "Workers process sequentially"<br>
+<strong>✅ Correct: Controller must combine worker results</strong> — Workers run IN PARALLEL, not sequentially. Controller aggregates results.
+</div>
+
+<div class="tip red">
+<strong>🧠 Multi-threaded Processing Memory:</strong><br>
+- Workers = divide tasks, run in PARALLEL ❌ NOT sequential<br>
+- Controller = distributes tasks, combines results (aggregation)<br>
+- Workers do NOT communicate directly — everything goes through Controller<br>
+- High cardinality = too many unique values → Hide the data item (not convert to measure)
+</div>
+
+<!-- ===== BATCH 5 ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">🔴 BATCH 5: Mobile Discovery Mode</p></div>
+
+<div class="why">
+<img src="../images/exam-discovery-mode.png">
+<strong>❌ Discovery Mode:</strong> You answered "Modify server configurations"<br>
+<strong>✅ Correct: Explore and interact with report data</strong><br>
+Discovery Mode is for browsing/exploring data on mobile, NOT modifying server settings!
+</div>
+
+<!-- ===== BATCH 6: Lesson 4 ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">🔴 LESSON 4: 10 Mistakes (Data Refinement)</p></div>
+
+<div class="why">
+<img src="../images/exam-cardinality-types.png">
+<strong>❌ Cardinality displayed for:</strong> You said Category + Measure<br>
+<strong>✅ Correct: Category + Date</strong> — Cardinality (unique value count) is shown for categories and dates, NOT measures.
+</div>
+
+<div class="why">
+<img src="../images/exam-edit-source-tables.png">
+<strong>❌ Who can edit source tables by default?</strong> You said Authenticated Users<br>
+<strong>✅ Correct: Application Administrators</strong>
+</div>
+
+<div class="why">
+<img src="../images/exam-bulk-data-mod.png">
+<strong>❌ Bulk data item modification allows:</strong> You said Classification + CAS memory<br>
+<strong>✅ Correct: Classification, Aggregation, Format</strong> — NOT CAS server memory.
+</div>
+
+<div class="why">
+<img src="../images/exam-outlier-detection.png">
+<strong>❌ Outlier detection disabled in:</strong> You said Expression Editor<br>
+<strong>✅ Correct: Performance settings</strong>
+</div>
+
+<div class="why">
+<img src="../images/exam-hidden-role-use.png">
+<strong>❌ Hidden data role used for:</strong> You said Hide the object<br>
+<strong>✅ Correct: Define color-mapped display rules or external links</strong>
+</div>
+
+<div class="why">
+<img src="../images/exam-agg-measures.png">
+<strong>❌ Aggregated measures differ because they:</strong> You said Row-by-row evaluation<br>
+<strong>✅ Correct: Require aggregation context</strong> — Calc items = row-by-row. Agg measures = need grouping context.
+</div>
+
+<div class="why">
+<img src="../images/exam-sum-bygroup-forall.png">
+<strong>❌ SUM(ByGroup) / SUM(ForAll) = ?</strong> You said Periodic difference<br>
+<strong>✅ Correct: Percent contribution of each group</strong> — ByGroup = group total. ForAll = grand total. Division = %.
+</div>
+
+<div class="why">
+<img src="../images/exam-data-view-settings.png">
+<strong>❌ Data view stores:</strong> You said Hierarchies<br>
+<strong>✅ Correct: Data item formats + Calculated items</strong> — NOT hierarchies.
+</div>
+
+<div class="why">
+<img src="../images/exam-published-data-view.png">
+<strong>❌ Published data view available to:</strong> You said Only the creator<br>
+<strong>✅ Correct: Other users</strong> — Publishing = sharing with others.
+</div>
+
+<div class="why">
+<img src="../images/exam-data-view-changes.png">
+<strong>❌ Changes to data view are:</strong> You said Applied to all data sources<br>
+<strong>✅ Correct: Not pushed to reports where already applied</strong> — Existing reports keep using the original version.
+</div>
+
+<div class="tip red">
+<strong>🧠 Lesson 4 Memory Aid:</strong><br>
+- Cardinality: <strong>C</strong>ategory + <strong>D</strong>ate (NOT measures)<br>
+- Bulk modify: <strong>CAF</strong> = Classification, Aggregation, Format<br>
+- Hidden role: for <strong>rules + links</strong>, NOT for hiding objects<br>
+- Aggregated measures = need aggregation context (not row-by-row)<br>
+- SUM(ByGroup)/SUM(ForAll) = percent contribution<br>
+- Data view stores: formats + calculated items (NOT hierarchies)<br>
+- Published data view = available to <strong>other users</strong><br>
+- Changes to data view = <strong>NOT</strong> pushed to existing reports
+</div>
+
+<!-- ===== BATCH 7: Lesson 5 ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">🔴 LESSON 5: 8 Mistakes (Score 22/30)</p></div>
+
+<div class="why">
+<img src="../images/exam-high-cardinality-items.png">
+<strong>❌ High-cardinality data items:</strong> You said Country Name + Age Group<br>
+<strong>✅ Correct: Employee ID + Street Address</strong> — High cardinality = many unique values. Employee ID (unique per person) and Street Address (many different addresses) have high cardinality. Country Name has few. Age Group has very few.
+</div>
+
+<div class="why">
+<img src="../images/exam-log-axis.png">
+<strong>❌ Logarithmic axis useful when:</strong> You said Values are evenly distributed<br>
+<strong>✅ Correct: There are extreme outliers</strong> — Log scale compresses the range so outliers don't dominate the visualization.
+</div>
+
+<div class="why">
+<img src="../images/exam-log-scale-preserves.png">
+<strong>❌ Log scale preserves:</strong> You said Exact raw values visually<br>
+<strong>✅ Correct: Order of observations</strong> — Log scale preserves ranking/ordering, not exact values. 10→100→1000 looks equally spaced on log scale.
+</div>
+
+<div class="why">
+<img src="../images/exam-best-fit-line.png">
+<strong>❌ Best Fit line models:</strong> You said Linear + Cubic<br>
+<strong>✅ Correct: Linear + Quadratic + P-Spline</strong> — NOT cubic. Available: Linear, Quadratic, P-Spline (Penalized B-Spline).
+</div>
+
+<div class="why">
+<img src="../images/exam-all-other-ranks.png">
+<strong>❌ "All Other" grouping occurs when:</strong> You said Filters applied<br>
+<strong>✅ Correct: Ranks are added</strong> — When you show Top N items, the rest are grouped into "All Other".
+</div>
+
+<div class="why">
+<img src="../images/exam-histogram.png">
+<strong>❌ Histogram assesses:</strong> You said Correlation strength<br>
+<strong>✅ Correct: Normal distribution shape</strong> — Histogram shows frequency distribution. Correlation = scatter plot.
+</div>
+
+<div class="why">
+<img src="../images/exam-binning-interval.png">
+<strong>❌ Default binning in comparative time series:</strong> You said Automatic<br>
+<strong>✅ Correct: Use format</strong> — The format of the time data (e.g., Year, Month) determines the binning interval.
+</div>
+
+<div class="why">
+<img src="../images/exam-cell-visualizations.png">
+<strong>❌ Cell visualizations include:</strong> You said Heat map + Histogram<br>
+<strong>✅ Correct: Bar + Heat map</strong> — Histogram is NOT a cell visualization.
+</div>
+
+<div class="info-box"><p class="label" style="color:#ffd93d;">📖 IN-DEPTH: Logarithmic Scale</p></div>
+<div class="right">
+<strong>What is a log scale?</strong><br>
+Instead of marking numbers evenly (1, 2, 3, 4...), a log scale marks powers of 10 (1, 10, 100, 1000, 10000...). The distance from 1→10 equals the distance from 10→100 equals the distance from 100→1000.<br><br>
+<strong>Why use it?</strong> When data has <strong>extreme outliers</strong> — e.g., most salaries are 30k-200k but CEO makes 50 million. On a normal scale the CEO bar fills the page and everyone else looks tiny. On a log scale, 30k and 50M can both be seen clearly.<br><br>
+<strong>What does it preserve?</strong> <strong>Order of observations</strong> (ranking) — bigger values still appear higher. It does NOT preserve exact visual proportions — 1000 is NOT drawn 10x bigger than 100, they're the same distance apart.<br><br>
+<strong>🧠 Memory:</strong> <em>"<strong>L</strong>og = <strong>L</strong>arge gaps. Use when <strong>L</strong>opsided data. Preserves <strong>O</strong>rder, not <strong>O</strong>riginal values."</em>
+</div>
+
+<div class="info-box"><p class="label" style="color:#ffd93d;">📖 IN-DEPTH: P-Spline vs Linear vs Quadratic</p></div>
+<div class="right">
+<strong>The 3 Best Fit line models:</strong><br><br>
+<strong>1. Linear</strong> — The line is a STRAIGHT line. Y = a + bX. Simple, interpretable. Use when relationship is consistently increasing or decreasing (e.g., age → salary).<br>
+🧠 <em>"<strong>L</strong>inear = <strong>L</strong>ine. A straight ruler 📏."</em><br><br>
+<strong>2. Quadratic</strong> — The line curves once (U-shape or ∩-shape). Y = a + bX + cX². Use when there's a peak or valley (e.g., age → happiness: low in 20s, high in 40s, low in 70s).<br>
+🧠 <em>"<strong>Q</strong>uadratic = <strong>Q</strong>uarter turn (one bend) 🔄."</em><br><br>
+<strong>3. P-Spline (Penalized B-Spline)</strong> — The line can wiggle multiple times to follow complex patterns. It's a flexible, data-driven curve. Use when the relationship is complicated and you don't want to force it into a simple shape.<br>
+🧠 <em>"<strong>P</strong>-Spline = <strong>P</strong>retzel 🥨 — it bends many times to follow the data. 'Penalized' means it's punished for over-complicating (avoids overfitting)."</em><br><br>
+<strong>❌ Why NOT Cubic?</strong> Cubic (X³) is NOT a standard option in SAS VA's Best Fit line. The choices are Linear, Quadratic, and P-Spline only.<br><br>
+<strong>🧠 Memory:</strong> <em>"<strong>L</strong>ine = straight. <strong>Q</strong>uad = one bend. <strong>P</strong>-Spline = many bends. <strong>C</strong>ubic = <strong>C</strong>ut (not available)."</em>
+</div>
+
+<!-- ===== BATCH 8: Lesson 6 ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">🔴 LESSON 6: 7 Mistakes (Score 23/30)</p></div>
+
+<div class="why">
+<img src="../images/exam-cli-export.png">
+<strong>❌ CLI command to export object templates:</strong> You said "sas export template"<br>
+<strong>✅ Correct: sas-viya transfer export</strong> — The transfer plug-in is used for exporting/importing content via CLI.
+</div>
+
+<div class="why">
+<img src="../images/exam-published-template.png">
+<strong>❌ Published object templates available to:</strong> You said "Only the creator"<br>
+<strong>✅ Correct: Other users</strong> — Publishing = sharing with others, not just the creator.
+</div>
+
+<div class="why">
+<img src="../images/exam-object-template-items.png">
+<strong>❌ Object templates include:</strong> You said "Display rules + Filters"<br>
+<strong>✅ Correct: Roles + Filters</strong> — Templates store role assignments and filters, not display rules.
+</div>
+
+<div class="why">
+<img src="../images/exam-bullet-chart.png">
+<strong>❌ Bullet charts used for:</strong> You said "Show distribution shape"<br>
+<strong>✅ Correct: Compare forecast to actual</strong> — Bullet chart = target vs actual performance. Histogram = distribution shape.
+</div>
+
+<div class="why">
+<img src="../images/exam-kpi-intervals.png">
+<strong>❌ Default KPI intervals:</strong> You said "0% to 100%"<br>
+<strong>✅ Correct: 40% to 160%</strong> — KPI measures performance relative to target. Below 40% = bad, above 160% = excellent.
+</div>
+
+<div class="why">
+<img src="../images/exam-waterfall-chart.png">
+<strong>❌ Waterfall chart shows:</strong> You said "Distribution shape"<br>
+<strong>✅ Correct: Cumulative sequential changes</strong> — Waterfall = running total with additions/subtractions. Distribution = histogram.
+</div>
+
+<div class="why">
+<img src="../images/exam-data-driven-action.png">
+<strong>❌ Data-driven content can act as:</strong> You said "Filter replacement"<br>
+<strong>✅ Correct: A source of an action</strong> — Data-driven objects can trigger actions (linked selection, filtering).
+</div>
+
+<div class="tip red">
+<strong>🧠 Lesson 6 Memory Aid — Chart Types & Their Purpose:</strong><br>
+- <strong>Bullet chart</strong> = compare to target (like a gauge) 🎯<br>
+- <strong>Waterfall</strong> = cumulative changes (add/subtract steps) 🌊<br>
+- <strong>Histogram</strong> = distribution shape 📊<br>
+- <strong>KPI intervals</strong> = 40% to 160% (not 0-100%)<br>
+- <strong>Data-driven content</strong> = can be action source (not filter replacement)<br>
+- <strong>Object templates</strong> = Roles + Filters (not display rules)<br>
+- <strong>CLI export</strong>: <code>sas-viya transfer export</code> (not "sas export template")
+</div>
+
+<!-- ===== BATCH 9: Lesson 7 ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">🔴 LESSON 7: 4 Mistakes (Score 16/20)</p></div>
+
+<div class="why">
+<img src="../images/exam-geo-objects.png">
+<strong>❌ Objects that can use Geography data:</strong> You said "Geo map only"<br>
+<strong>✅ Correct: All of the above</strong> — Geo map, Crosstab, Bar chart ALL can use geography-classified data items. Geography is a data item classification, not an object type restriction.
+</div>
+
+<div class="why">
+<img src="../images/exam-geo-cluster.png">
+<strong>❌ Geo cluster maps reevaluate when:</strong> You said "Filters are removed"<br>
+<strong>✅ Correct: Zoom level changes</strong> — Clusters recalculate as you zoom in/out to show more/fewer points per cluster.
+</div>
+
+<div class="why">
+<img src="../images/exam-geo-permissions.png">
+<strong>❌ Special permissions required for URI:</strong> You said "/viya/geo"<br>
+<strong>✅ Correct: /maps/providers</strong> — The maps providers endpoint requires special permissions.
+</div>
+
+<div class="why">
+<img src="../images/exam-custom-geo-group.png">
+<strong>❌ Custom geo maps appear in:</strong> You said "Content Objects"<br>
+<strong>✅ Correct: Graphs group</strong> — Custom geo maps are grouped under Graphs in the Objects pane.
+</div>
+
+<div class="tip red">
+<strong>🧠 Lesson 7 Memory Aid:</strong><br>
+- Geography data = can be used by <strong>ALL</strong> objects (not just geo maps)<br>
+- Geo cluster = reevaluates on <strong>zoom change</strong> 🔍<br>
+- Permissions needed for: <strong>/maps/providers</strong> URI<br>
+- Custom geo maps = <strong>Graphs</strong> group (not Content Objects)<br>
+- <strong>V</strong>iya/<strong>G</strong>eo = ❌ | <strong>M</strong>aps/<strong>P</strong>roviders = ✅ (<strong>MP</strong> = <strong>M</strong>ust have <strong>P</strong>ermissions)
+</div>
+
+<!-- ===== BATCH 10: Lesson 8 ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">🔴 LESSON 8: 2 Mistakes</p></div>
+
+<div class="why">
+<img src="../images/exam-line-display-rules.png">
+<strong>❌ Line charts display rules require:</strong> You said "Markers to be shown"<br>
+<strong>✅ Correct: Hierarchies</strong> — Line charts need a hierarchy (e.g., Year > Quarter > Month) for display rules to work properly on the line elements.
+</div>
+
+<div class="why">
+<img src="../images/exam-custom-icons-geo.png">
+<strong>❌ Custom icons in geo maps:</strong> You said "Respond to color changes"<br>
+<strong>✅ Correct: Do not respond to color changes</strong> — Custom icons are static images. They don't change color when display rules are applied.
+</div>
+
+<div class="tip red">
+<strong>🧠 Lesson 8 Memory Aid:</strong><br>
+- Line chart display rules = need <strong>Hierarchies</strong> (not just markers)<br>
+- Custom geo icons = <strong>static</strong> — do NOT respond to color changes 🖼️<br>
+- For color changes on geo maps, use <strong>built-in markers/shapes</strong>, not custom icons
+</div>
 </div>
 </details>
 </div>
