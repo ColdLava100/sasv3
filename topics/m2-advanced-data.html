@@ -1,64 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>SAS VA — M2 L4: Advanced Data</title><link rel="stylesheet" href="../css/style.css"></head>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — M2 L4: Advanced Data</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  .explain { background:#1b1b2d; border-left:3px solid #ffd93d; padding:10px; border-radius:6px; margin:8px 0; font-size:0.82rem; }
+  .highlight { background:#2d1b1b; border-left:3px solid #ff7675; padding:10px; border-radius:6px; margin:8px 0; font-size:0.82rem; }
+  .summary { background:#1b2d1b; border-left:3px solid #55efc4; padding:10px; border-radius:6px; margin:8px 0; font-size:0.82rem; }
+  code { background:#2a2a2a; color:#ffd93d; padding:2px 6px; border-radius:3px; font-size:0.75rem; }
+</style>
+</head>
 <body>
-<div class="header"><h1>📊 SAS Visual Analytics — Study Companion</h1><p class="subtitle">Advanced Module — Lesson 4: Creating Data for Advanced Reports</p></div>
-<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;"><a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a></div>
+<div class="header"><h1>📊 SAS VA — M2 L4: Advanced Data</h1><p class="subtitle">Creating Data for Advanced Reports — Complete Guide</p></div>
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
 <div class="content">
-<details id="t1" class="topic" open>
-<summary class="topic-header" style="border-left:4px solid #74b9ff;">🗃️ M2 L4: Creating Data for Advanced Reports<span class="arrow">▶</span></summary>
+
+<details class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #74b9ff;">
+  🗃️ M2 L4: Advanced Data — Full Guide
+  <span class="arrow">▶</span>
+</summary>
 <div class="topic-body">
 
-<div class="info-box"><p class="label" style="color:#55efc4;">🔗 4.1 Data Joins</p></div>
+<!-- ===== 1. DATA JOINS ===== -->
+<div class="info-box"><p class="label" style="color:#55efc4;">🔗 4.1 Data Joins — Join vs Append</p></div>
+
+<img src="../images/exam-data-join-vs-append.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Data Join vs Append from course">
+
+<div class="explain">
+  <strong>📌 The Critical Difference:</strong><br>
+  <table style="font-size:0.75rem;border-collapse:collapse;width:100%;">
+  <tr><th style="border:1px solid #444;padding:6px;"></th><th style="border:1px solid #444;padding:6px;color:#55efc4;">🔗 Data Join</th><th style="border:1px solid #444;padding:6px;color:#ff7675;">📥 Append</th></tr>
+  <tr><td style="border:1px solid #444;padding:6px;"><strong>What it does</strong></td><td style="border:1px solid #444;padding:6px;">Matches rows → <strong>adds columns</strong></td><td style="border:1px solid #444;padding:6px;"><strong>Adds rows</strong> under matching columns</td></tr>
+  <tr><td style="border:1px solid #444;padding:6px;"><strong>Result</strong></td><td style="border:1px solid #444;padding:6px;">Wider table (more columns)</td><td style="border:1px solid #444;padding:6px;">Longer table (more rows)</td></tr>
+  <tr><td style="border:1px solid #444;padding:6px;"><strong>Available in VA?</strong></td><td style="border:1px solid #444;padding:6px;color:#55efc4;">✅ YES (Left, Right, Inner, Full)</td><td style="border:1px solid #444;padding:6px;color:#ff7675;">❌ NO — NOT available</td></tr>
+  <tr><td style="border:1px solid #444;padding:6px;"><strong>Analogy</strong></td><td style="border:1px solid #444;padding:6px;">Putting two card decks side by side 🃏🃏</td><td style="border:1px solid #444;padding:6px;">Stacking one deck on top 🃏➡️🃏</td></tr>
+  </table>
+</div>
+
+<div class="highlight">
+  <strong>⚠️ EXAM ALERT:</strong> Append is <strong>NOT available</strong> in Visual Analytics! Only Joins are available. This is a very common exam trick question ❗
+</div>
+
+<div class="summary">
+  <strong>🧠 Memory Trick:</strong> <em>"<strong>J</strong>oin = <strong>J</strong>oin columns (sideways). <strong>A</strong>ppend = <strong>A</strong>dd rows (downwards). <strong>J</strong>oin is <strong>J</strong>ust fine in VA. <strong>A</strong>ppend is <strong>A</strong>bsent."</em>
+</div>
+
+<!-- ===== JOIN DETAILS ===== -->
+<div class="info-box"><p class="label" style="color:#ffd93d;">🔗 Join Types & Considerations</p></div>
 <div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
 <p style="font-size:0.82rem;color:var(--text2);">
-<em>"Data source joins enable you to combine two data sources. The join creates a temporary table that is executed every time the report is opened."</em>
-<table class="data-table" style="font-size:0.72rem;margin-top:6px;">
-<tr><th>Aspect</th><th>Details</th></tr>
-<tr><td><strong>Join</strong></td><td>Combines two tables by <strong>matching rows and adding columns</strong></td></tr>
-<tr><td><strong>Append</strong></td><td>Combines two tables by <strong>adding rows</strong> with matching columns</td></tr>
-<tr><td><strong>Available in VA?</strong></td><td>✅ Joins (Left, Right, Inner, Full). ❌ <strong>Append NOT available</strong></td></tr>
-<tr><td><strong>Temporary</strong></td><td>Stored in CASUSER caslib — visible only to creator. Cleaned up when no longer needed.</td></tr>
-<tr><td><strong>Considerations</strong></td><td>⚠️ Performance: Join runs every time report opens for every user.<br>⚠️ Can join only 2 tables at a time. No self-joins.<br>⚠️ Only simple matching. Dates must have matching formats.<br>⚠️ Temporary results can be very large — impacts concurrent users.</td></tr>
+<strong>4 Join Types:</strong> Left, Right, Inner, Full<br>
+<strong>⚠️ Key facts:</strong><br>
+• Join creates a <strong>temporary table</strong> — executed every time report opens (for every user)<br>
+• Stored in CASUSER caslib — visible only to creator<br>
+• Can join only <strong>2 tables at a time</strong> — no self-joins ❌<br>
+• <strong>Only simple matching</strong> available — dates must have matching formats<br>
+• Temporary results can be very large — impacts concurrent user performance ⚠️
+</p>
+</div>
+
+<!-- ===== 2. PERIODIC FUNCTIONS ===== -->
+<div class="info-box"><p class="label" style="color:#55efc4;">📅 4.2 Periodic Functions — The 5 Types</p></div>
+
+<img src="../images/exam-periodic-functions.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Periodic functions from course">
+
+<div class="explain">
+  <strong>📌 What are Periodic Functions?</strong><br>
+  <em>"Periodic functions aggregate values over time. Evaluated using time intervals."</em> They're used for things like year-over-year comparisons, running totals, etc.
+</div>
+
+<table style="font-size:0.7rem;border-collapse:collapse;width:100%;margin:8px 0;">
+<tr><th style="border:1px solid #444;padding:6px;background:#55efc4;color:#000;">Function</th><th style="border:1px solid #444;padding:6px;background:#55efc4;color:#000;">What it returns</th><th style="border:1px solid #444;padding:6px;background:#55efc4;color:#000;">Analogy 🧠</th></tr>
+<tr style="background:#1b2d2d;">
+<td style="border:1px solid #444;padding:6px;"><strong>CumulativePeriod</strong></td>
+<td style="border:1px solid #444;padding:6px;">Value for current period + <strong>ALL previous periods</strong> within a larger period</td>
+<td style="border:1px solid #444;padding:6px;">Running total 🏃 — like a snowball rolling downhill, growing bigger</td>
+</tr>
+<tr>
+<td style="border:1px solid #444;padding:6px;"><strong>ParallelPeriod</strong></td>
+<td style="border:1px solid #444;padding:6px;">Value for the <strong>same period</strong> in a previous cycle (e.g., same quarter last year)</td>
+<td style="border:1px solid #444;padding:6px;">Time travel ⏪ — go back to the same time last year</td>
+</tr>
+<tr style="background:#1b1b2d;">
+<td style="border:1px solid #444;padding:6px;"><strong>Period</strong></td>
+<td style="border:1px solid #444;padding:6px;">Value for a <strong>specific period</strong> of time</td>
+<td style="border:1px solid #444;padding:6px;">SnapShot 📸 — just that one period, nothing else</td>
+</tr>
+<tr>
+<td style="border:1px solid #444;padding:6px;"><strong>PeriodWithDate</strong></td>
+<td style="border:1px solid #444;padding:6px;">Value for a <strong>specific, constant</strong> period (always the same dates)</td>
+<td style="border:1px solid #444;padding:6px;">Fixed date 🔒 — always points to the same calendar period</td>
+</tr>
+<tr style="background:#1b1b2d;">
+<td style="border:1px solid #444;padding:6px;"><strong>RelativePeriod</strong></td>
+<td style="border:1px solid #444;padding:6px;">Value for a period <strong>relative to the current</strong> period (e.g., last 3 months)</td>
+<td style="border:1px solid #444;padding:6px;">Moving window 🪟 — shifts based on "now"</td>
+</tr>
 </table>
-</p>
+
+<div class="summary">
+  <strong>🧠 Memory Trick:</strong><br>
+  • <strong>C</strong>umulative = <strong>C</strong>urrent + all <strong>C</strong>oming before (running total)<br>
+  • <strong>P</strong>arallel = <strong>P</strong>revious cycle (same spot, different year)<br>
+  • <strong>P</strong>eriod = <strong>P</strong>oint in time (just that one)<br>
+  • <strong>P</strong>eriodWithDate = <strong>P</strong>ermanent date (stays constant)<br>
+  • <strong>R</strong>elative = <strong>R</strong>olling window (moves with current date)
 </div>
 
-<div class="info-box"><p class="label" style="color:#ffd93d;">📊 4.2 Aggregated Data Sources</p></div>
-<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
-<p style="font-size:0.82rem;color:var(--text2);">
-Creates a new temporary data source with aggregated subset of original columns. Improves performance. <strong>Can be joined back to original data source.</strong><br>
-Used for <strong>nested aggregated measures</strong> — aggregated functions do NOT accept aggregated measures, so use data items from the aggregated data source instead.
-</p>
+<!-- ===== 3. SUPPRESS FUNCTION ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">🔒 4.3 Suppress Function — Data Privacy</p></div>
+
+<div class="explain">
+  <strong>📌 What is Suppress?</strong><br>
+  The <code>Suppress</code> function hides (suppresses) aggregated data values for privacy. It's an <strong>Advanced Aggregated Function</strong> used when displaying aggregated data could reveal sensitive information about individuals.
 </div>
 
-<div class="info-box"><p class="label" style="color:#ff7675;">📝 4.3-4.5 Expression Editor Functions</p></div>
-<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
-<p style="font-size:0.82rem;color:var(--text2);">
-<strong>Conditional Logic:</strong> IF...ELSE (IF condition THEN result ELSE alt END). SELECT...WHEN...OTHERWISE for multiple conditions.<br><br>
-<strong>Text Functions (Simple & Advanced):</strong> Substr, Trim, Upcase, Lowcase, ReplaceWord, GetWord, Length, Cat (concatenate), Cats (concatenate without spaces)<br><br>
-<strong>Date & Time Functions:</strong> Year, Month, Day, Weekday, DatePart, TimePart, Today(), Now(), <strong>IntNX</strong>(interval, start, inc) — advance date, <strong>IntCK</strong>(interval, start, end) — count intervals, <strong>DHMS</strong>(date, hr, min, sec) — create datetime<br><br>
-<strong>Aggregated — Simple:</strong> SUM, AVG, MIN, MAX, COUNT, STD, VAR, NMiss<br>
-<strong>Aggregated — Periodic:</strong> CumulativePeriod, ParallelPeriod, Period, PeriodWithDate, RelativePeriod<br>
-<strong>Aggregated — Advanced:</strong> CoefVar, CSS, Kurtosis, PvalT, Skewness, First, Last, Suppress (hides values for privacy)<br>
-<strong>Tabular:</strong> AggregateCells (specific cells), AggregateTable (independent aggregations), Moving sum/avg/median, Cumulative functions
-</p>
+<!-- WITHOUT COMPLEMENT -->
+<div class="info-box"><p class="label" style="color:#ffd93d;">🔓 Suppress — Without Complement</p></div>
+
+<img src="../images/exam-suppress-without-complement.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Suppress without complement">
+
+<div class="explain">
+  <strong>How it works:</strong><br>
+  <code>Suppress(condition, measure, withoutComplement)</code><br><br>
+  <strong>Example scenario:</strong> Hide "Number Tested" when the count is less than 5.<br><br>
+  North High School has only 3 students tested → count is less than 5 → value is suppressed (shows *)<br><br>
+  <strong>BUT:</strong> Total = 91. If you do 91 - (12+15+22+25+16) = 1, you can figure out North = 1.<br>
+  <strong>With <code>withoutComplement</code>:</strong> The suppressed value can still be INFERRED from the total. The summary row makes inference possible.<br><br>
+  <span style="color:#ffd93d;">🔑 In this mode: Only the values meeting the condition are hidden. If the total gives it away, that's acceptable.</span>
 </div>
+
+<!-- WITH COMPLEMENT -->
+<div class="info-box"><p class="label" style="color:#ff7675;">🔒 Suppress — With Complement</p></div>
+
+<img src="../images/exam-suppress-with-complement.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Suppress with complement">
+
+<div class="explain">
+  <strong>How it works:</strong><br>
+  <code>Suppress(condition, measure, withComplement)</code><br><br>
+  <strong>Same scenario:</strong> Hide "Number Tested" when count is less than 5.<br><br>
+  East High School also has a low count → East and North are both hidden (2 values hidden).<br><br>
+  <strong>Why?</strong> If only North was hidden, you could calculate its value from the total. By hiding an <strong>additional</strong> value (East), you CANNOT tell whether any specific hidden school's value is high or low.<br><br>
+  Total = 91, but now you don't know if East + North = some combination. You can't infer individual values.<br><br>
+  <span style="color:#ff7675;">🔑 In this mode: Additional values are suppressed to <strong>prevent inference</strong>. More values are hidden than strictly necessary.</span>
+</div>
+
+<table style="font-size:0.7rem;border-collapse:collapse;width:100%;margin:8px 0;">
+<tr><th style="border:1px solid #444;padding:6px;background:#ffd93d;color:#000;">Mode</th><th style="border:1px solid #444;padding:6px;background:#ffd93d;color:#000;">Meaning</th><th style="border:1px solid #444;padding:6px;background:#ffd93d;color:#000;">What gets hidden</th><th style="border:1px solid #444;padding:6px;background:#ffd93d;color:#000;">Can you infer the value?</th></tr>
+<tr>
+<td style="border:1px solid #444;padding:6px;"><code>withoutComplement</code></td>
+<td style="border:1px solid #444;padding:6px;">Without additional hiding</td>
+<td style="border:1px solid #444;padding:6px;">Only values matching the condition</td>
+<td style="border:1px solid #444;padding:6px;color:#ffd93d;">✅ Yes — if total is visible, you can calculate it</td>
+</tr>
+<tr>
+<td style="border:1px solid #444;padding:6px;"><code>withComplement</code></td>
+<td style="border:1px solid #444;padding:6px;">With additional hiding to prevent inference</td>
+<td style="border:1px solid #444;padding:6px;">Condition values + extra values to obscure totals</td>
+<td style="border:1px solid #444;padding:6px;color:#55efc4;">❌ No — too many values hidden to calculate</td>
+</tr>
+</table>
+
+<div class="summary">
+  <strong>🧠 Memory Trick:</strong><br>
+  • <strong>withoutComplement</strong> = "<strong>W</strong>ithout" = "<strong>W</strong>hat you see is what's hidden" (no extra hiding)<br>
+  • <strong>withComplement</strong> = "<strong>C</strong>omplement" = "<strong>C</strong>omplete the hiding" (hide more to protect privacy)<br><br>
+  <em>"Without = you can figure it out (no extra hiding). With = you can't figure it out (extra values hidden)."</em>
+</div>
+
+<div class="highlight">
+  <strong>⚠️ EXAM ALERT:</strong> The key difference between <code>withComplement</code> and <code>withoutComplement</code> is that <code>withComplement</code> <strong>suppresses additional values</strong> beyond the condition to prevent inference from totals. If you see "Two values hidden" → that's <code>withComplement</code> ❗
+</div>
+
+<!-- ===== COMPLETE REFERENCE ===== -->
+<div class="info-box"><p class="label" style="color:#55efc4;">📋 Quick Reference — M2 L4 Functions</p></div>
+<table style="font-size:0.68rem;border-collapse:collapse;width:100%;margin:8px 0;">
+<tr><th style="border:1px solid #444;padding:4px;">Category</th><th style="border:1px solid #444;padding:4px;">Functions</th><th style="border:1px solid #444;padding:4px;">Purpose</th></tr>
+<tr><td style="border:1px solid #444;padding:4px;"><strong>Conditional</strong></td><td style="border:1px solid #444;padding:4px;">IF...ELSE, SELECT...WHEN</td><td style="border:1px solid #444;padding:4px;">Branch logic based on conditions</td></tr>
+<tr><td style="border:1px solid #444;padding:4px;"><strong>Text</strong></td><td style="border:1px solid #444;padding:4px;">Substr, Trim, Upcase, Lowcase, ReplaceWord, GetWord, Length, Cat, Cats</td><td style="border:1px solid #444;padding:4px;">Manipulate string/character data</td></tr>
+<tr><td style="border:1px solid #444;padding:4px;"><strong>Date/Time</strong></td><td style="border:1px solid #444;padding:4px;">Year, Month, Day, Weekday, DatePart, TimePart, Today, Now, <strong>IntNX</strong>, <strong>IntCK</strong>, DHMS</td><td style="border:1px solid #444;padding:4px;">Extract/manipulate date/time values</td></tr>
+<tr><td style="border:1px solid #444;padding:4px;"><strong>Aggregated Simple</strong></td><td style="border:1px solid #444;padding:4px;">SUM, AVG, MIN, MAX, COUNT, STD, VAR, NMiss</td><td style="border:1px solid #444;padding:4px;">Basic summary statistics</td></tr>
+<tr><td style="border:1px solid #444;padding:4px;"><strong>Aggregated Periodic</strong></td><td style="border:1px solid #444;padding:4px;">CumulativePeriod, ParallelPeriod, Period, PeriodWithDate, RelativePeriod</td><td style="border:1px solid #444;padding:4px;">Time-based aggregations</td></tr>
+<tr><td style="border:1px solid #444;padding:4px;"><strong>Aggregated Advanced</strong></td><td style="border:1px solid #444;padding:4px;">CoefVar, CSS, Kurtosis, PvalT, Skewness, First, Last, <strong>Suppress</strong></td><td style="border:1px solid #444;padding:4px;">Statistical measures + data privacy</td></tr>
+</table>
 
 <div class="tip red">
-<strong>🎯 Key Exam Points — M2 L4:</strong><br>
-• Join = adds columns. Append = adds rows. <strong>Append NOT in VA</strong> ⚠️<br>
-• Only <strong>simple matching</strong> available. Dates must match formats ⚠️<br>
-• Join runs <strong>every time report opens</strong> for every user — performance impact ⚠️<br>
-• <strong>IntNX</strong> = advance date. <strong>IntCK</strong> = count intervals ✅<br>
-• Aggregated functions do NOT accept aggregated measures ❌<br>
-• <strong>Suppress</strong> = obscure data for privacy. <strong>CoefVar, Kurtosis, Skewness</strong> = advanced stats ✅<br>
-• Periodic functions: Cumulative, Parallel, Period, PeriodWithDate, RelativePeriod ✅
+  <strong>🎯 Must-Know Exam Points — M2 L4:</strong><br>
+  1. <strong>Join</strong> = adds columns (✅ Available). <strong>Append</strong> = adds rows (❌ NOT available) ⚠️<br>
+  2. Joins are <strong>temporary</strong> — run every time, every user. Stored in CASUSER ⚠️<br>
+  3. <strong>Periodic functions</strong>: Cumulative (running total), Parallel (same time last year), Period (snapshot), PeriodWithDate (fixed), Relative (moving window) ✅<br>
+  4. <strong>Suppress</strong>: <code>withoutComplement</code> = hides only condition. <code>withComplement</code> = hides extra to prevent inference ⚠️<br>
+  5. <strong>IntNX</strong> = advance date. <strong>IntCK</strong> = count intervals between dates ✅<br>
+  6. Aggregated functions do <strong>NOT</strong> accept aggregated measures ❌
 </div>
 
 </div>
 </details>
 </div>
-<a href="#" class="back-top" title="Back to top">⬆</a>
+
+<!-- ===== YOUR QUIZ MISTAKES ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">❌ Your Quiz Mistakes — Explained Step by Step</p></div>
+
+<!-- MISTAKE 1 -->
+<div class="info-box"><p class="label" style="color:#ff7675;">❌ Mistake 1: Inner Join vs Left Join</p></div>
+<img src="../images/quiz-join-inner.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Join question">
+<div style="background:#2d1b1b;border-left:3px solid #ff7675;padding:10px;border-radius:6px;margin:8px 0;font-size:0.82rem;">
+<strong>Question:</strong> "To create one table that contains only the students that appear in BOTH tables, what kind of join?"<br>
+<strong>You answered:</strong> <span style="color:#ff7675;">a) Left join</span> ❌<br>
+<strong>Correct answer:</strong> <span style="color:#55efc4;">c) Inner join</span> ✅
+</div>
+<div style="background:#1b1b2d;border-left:3px solid #ffd93d;padding:10px;border-radius:6px;margin:8px 0;font-size:0.82rem;">
+<strong>Why not Left join?</strong> Left join keeps ALL rows from the LEFT table, even if they don't match the right. Ashley is in Math but not English — with Left join, Ashley would appear with NULL for English grade.<br><br>
+<strong>Why Inner join?</strong> Inner join = ONLY rows that match in BOTH tables. Only Robert and Rebecca appear in both English and Math tables → only those 2 students in the result.<br><br>
+📊 <strong>Visual:</strong><br>
+Table A (English): Robert(95), Tom(90), Rebecca(97)<br>
+Table B (Math): Robert(75), Ashley(92), Rebecca(94)<br><br>
+<strong>Inner join → Robert + Rebecca</strong> (only ones in BOTH) ✅<br>
+<strong>Left join → Robert + Tom + Rebecca</strong> (all English, Ashley missing) ❌<br>
+<strong>Right join → Robert + Ashley + Rebecca</strong> (all Math, Tom missing) ❌<br>
+<strong>Full join → Robert + Tom + Rebecca + Ashley</strong> (everyone) ❌
+</div>
+<div style="background:#1b2d1b;border-left:3px solid #55efc4;padding:10px;border-radius:6px;margin:8px 0;font-size:0.82rem;">
+<strong>🧠 Memory:</strong> <em>"<strong>I</strong>nner = <strong>I</strong>ntersection (only what's in BOTH). <strong>L</strong>eft = <strong>L</strong>eft table gets everything."</em>
+</div>
+
+<!-- MISTAKE 2 -->
+<div class="info-box"><p class="label" style="color:#ff7675;">❌ Mistake 2: Aggregated Data Sources — Permanent or Temporary?</p></div>
+<img src="../images/quiz-agg-datasource.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Aggregated data source question">
+<div style="background:#2d1b1b;border-left:3px solid #ff7675;padding:10px;border-radius:6px;margin:8px 0;font-size:0.82rem;">
+<strong>Question:</strong> "Which is NOT true about aggregated data sources?"<br>
+<strong>You answered:</strong> <span style="color:#ff7675;">c) You can add a simple filter when creating</span> ❌<br>
+<strong>Correct answer:</strong> <span style="color:#55efc4;">d) Aggregated data sources are saved as a permanent table</span> ✅
+</div>
+<div style="background:#1b1b2d;border-left:3px solid #ffd93d;padding:10px;border-radius:6px;margin:8px 0;font-size:0.82rem;">
+<strong>Why c is wrong?</strong> The statement "You can add a simple filter when creating an aggregated data source" is actually TRUE — you CAN add filters. So it's NOT the "not true" answer.<br><br>
+<strong>Why d is correct?</strong> Aggregated data sources are <strong>NOT permanent tables</strong>. They are temporary tables stored in your personal CASUSER library, generated every time the report opens. This is the FALSE statement → the "not true" answer.<br><br>
+✅ True statements about aggregated data sources:<br>
+• Can simplify visualizations and reduce processing time ✅<br>
+• Can create nested aggregated measure calculations ✅<br>
+• You CAN add a simple filter when creating ✅<br>
+❌ Are saved as permanent tables → <strong>FALSE, they're temporary!</strong>
+</div>
+<div style="background:#1b2d1b;border-left:3px solid #55efc4;padding:10px;border-radius:6px;margin:8px 0;font-size:0.82rem;">
+<strong>🧠 Memory:</strong> <em>"Aggregated data = <strong>Temporary</strong>, not permanent. Aggregated measures do NOT accept other aggregated measures."</em>
+</div>
+
+<!-- MISTAKE 3 -->
+<div class="info-box"><p class="label" style="color:#ff7675;">❌ Mistake 3: FindChar — Text Function</p></div>
+<img src="../images/quiz-findchar.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="FindChar question">
+<div style="background:#2d1b1b;border-left:3px solid #ff7675;padding:10px;border-radius:6px;margin:8px 0;font-size:0.82rem;">
+<strong>Question:</strong> "Which text function can be used to find the position of a character within a text string?"<br>
+<strong>You answered:</strong> <span style="color:#ff7675;">a) SearchChar</span> ❌<br>
+<strong>Correct answer:</strong> <span style="color:#55efc4;">d) FindChar</span> ✅
+</div>
+<div style="background:#1b1b2d;border-left:3px solid #ffd93d;padding:10px;border-radius:6px;margin:8px 0;font-size:0.82rem;">
+<strong>Why SearchChar is wrong?</strong> "SearchChar" is NOT a real function in SAS VA. You made it up!<br><br>
+<strong>Why FindChar is correct?</strong> FindChar is in the <strong>Text (advanced)</strong> section of the expression editor.<br>
+<code>FindChar(string, character)</code> → returns the position (number) where the character first appears.<br><br>
+Example: <code>FindChar("SAS Visual Analytics", "V")</code> → returns <strong>5</strong> (V is the 5th character).<br><br>
+<strong>Other Text functions for reference:</strong><br>
+• <code>Substr(string, start, length)</code> — Extract substring<br>
+• <code>Trim(string)</code> — Remove spaces<br>
+• <code>Upcase/Lowcase</code> — Change case<br>
+• <code>ReplaceWord(string, old, new)</code> — Replace words<br>
+• <code>GetWord(string, position)</code> — Get word at position<br>
+• <code>FindChar(string, char)</code> — <strong>Find position of character</strong> ✅<br>
+• <code>Length(string)</code> — Get string length<br>
+• <code>Cat/Cats</code> — Concatenate
+</div>
+<div style="background:#1b2d1b;border-left:3px solid #55efc4;padding:10px;border-radius:6px;margin:8px 0;font-size:0.82rem;">
+<strong>🧠 Memory:</strong> <em>"<strong>F</strong>indChar = <strong>F</strong>ind the character's <strong>F</strong>irst position. There is NO function called SearchChar — it doesn't exist!"</em>
+</div>
+
+<!-- MISTAKE 4 -->
+<div class="info-box"><p class="label" style="color:#ff7675;">❌ Mistake 4: AggregateCells — Running Total</p></div>
+<img src="../images/quiz-aggregatecells.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="AggregateCells question">
+<div style="background:#2d1b1b;border-left:3px solid #ff7675;padding:10px;border-radius:6px;margin:8px 0;font-size:0.82rem;">
+<strong>Question:</strong> "Which aggregated operator can be used to calculate a running total over a category?"<br>
+<strong>You answered:</strong> <span style="color:#ff7675;">b) CumulativeCells</span> ❌<br>
+<strong>Correct answer:</strong> <span style="color:#55efc4;">c) AggregateCells</span> ✅
+</div>
+<div style="background:#1b1b2d;border-left:3px solid #ffd93d;padding:10px;border-radius:6px;margin:8px 0;font-size:0.82rem;">
+<strong>Why CumulativeCells is wrong?</strong> "CumulativeCells" is NOT a real function! You confused it with "CumulativePeriod" (periodic function) and made up a hybrid name.<br><br>
+<strong>Why AggregateCells is correct?</strong> <em>"The AggregateCells operator applies an aggregate operation to a range of items in a group (for example, calculate a <strong>running total</strong> from the first row to the current row for a category data item)."</em><br><br>
+<strong>Key distinction — Don't confuse these:</strong><br>
+<table style="font-size:0.72rem;border-collapse:collapse;width:100%;">
+<tr><th style="border:1px solid #444;padding:4px;">Function</th><th style="border:1px solid #444;padding:4px;">Category</th><th style="border:1px solid #444;padding:4px;">What it does</th></tr>
+<tr><td style="border:1px solid #444;padding:4px;"><strong>CumulativePeriod</strong></td><td style="border:1px solid #444;padding:4px;">Periodic</td><td style="border:1px solid #444;padding:4px;">Running total over TIME periods</td></tr>
+<tr><td style="border:1px solid #444;padding:4px;"><strong>AggregateCells</strong></td><td style="border:1px solid #444;padding:4px;">Tabular</td><td style="border:1px solid #444;padding:4px;">Running total over CATEGORY/group ✅</td></tr>
+<tr><td style="border:1px solid #444;padding:4px;"><strong>CumulativeCells</strong></td><td style="border:1px solid #444;padding:4px;">❌</td><td style="border:1px solid #444;padding:4px;">NOT a real function!</td></tr>
+</table>
+<br>
+So for a running total over a <strong>CATEGORY</strong>, use <strong>AggregateCells</strong>.<br>
+For a running total over <strong>TIME</strong>, use <strong>CumulativePeriod</strong>.
+</div>
+<div style="background:#1b2d1b;border-left:3px solid #55efc4;padding:10px;border-radius:6px;margin:8px 0;font-size:0.82rem;">
+<strong>🧠 Memory:</strong> <em>"Running total over <strong>C</strong>ategory = <strong>A</strong>ggregate<strong>C</strong>ells. Running total over time = <strong>C</strong>umulative<strong>P</strong>eriod."</em>
+</div>
+
+<!-- MISTAKE 5 -->
+<div class="info-box"><p class="label" style="color:#ff7675;">❌ Mistake 5: AggregateTable — Final Aggregation Timing</p></div>
+<img src="../images/quiz-aggregatetable.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="AggregateTable question">
+<div style="background:#2d1b1b;border-left:3px solid #ff7675;padding:10px;border-radius:6px;margin:8px 0;font-size:0.82rem;">
+<strong>Question:</strong> "In AggregateTable, I specify inner and outer (final) aggregation. When is the final aggregation applied?"<br>
+<strong>You answered:</strong> <span style="color:#ff7675;">c) Always applied after inner</span> ❌<br>
+<strong>Correct answer:</strong> <span style="color:#55efc4;">a) Applied after inner, but ONLY if visualization has fewer group-by crossings</span> ✅
+</div>
+<div style="background:#1b1b2d;border-left:3px solid #ffd93d;padding:10px;border-radius:6px;margin:8px 0;font-size:0.82rem;">
+<strong>The key nuance you missed:</strong><br>
+The final/outer aggregation is NOT always applied. It's applied <strong>only when necessary</strong> — specifically, when the visualization has <strong>fewer group-by crossings</strong> than the inner aggregation.<br><br>
+<strong>Think of it like this:</strong><br>
+• <strong>Inner aggregation</strong>: Calculates values at a detailed level (e.g., daily sales by product)<br>
+• <strong>Visualization</strong>: Shows only monthly totals (fewer group-by crossings)<br>
+• <strong>Final aggregation</strong>: <strong>Only then</strong> is it applied — to "squeeze" the detailed values into the fewer available cells<br><br>
+If the visualization has the same or more crossings than the inner aggregation, no final aggregation is needed!
+</div>
+<div style="background:#1b2d1b;border-left:3px solid #55efc4;padding:10px;border-radius:6px;margin:8px 0;font-size:0.82rem;">
+<strong>🧠 Memory:</strong> <em>"Final aggregation = <strong>F</strong>allback. Applied <strong>F</strong>lexibly — only when visualization cells are too <strong>F</strong>ew for the data."</em>
+</div>
+
+<!-- SUMMARY -->
+<div class="tip red">
+<strong>📋 Your 5 Mistakes — Quick Fix Table</strong>
+</div>
+<table style="font-size:0.7rem;border-collapse:collapse;width:100%;margin:8px 0;">
+<tr><th style="border:1px solid #444;padding:4px;">#</th><th style="border:1px solid #444;padding:4px;">Topic</th><th style="border:1px solid #444;padding:4px;">You answered</th><th style="border:1px solid #444;padding:4px;">Correct</th><th style="border:1px solid #444;padding:4px;">Key Lesson</th></tr>
+<tr><td style="border:1px solid #444;padding:4px;">1</td><td style="border:1px solid #444;padding:4px;">Join types</td><td style="border:1px solid #444;padding:4px;color:#ff7675;">Left</td><td style="border:1px solid #444;padding:4px;color:#55efc4;"><strong>Inner</strong></td><td style="border:1px solid #444;padding:4px;">Inner = intersection (BOTH tables). Left = all from LEFT table</td></tr>
+<tr><td style="border:1px solid #444;padding:4px;">2</td><td style="border:1px solid #444;padding:4px;">Aggregated DS</td><td style="border:1px solid #444;padding:4px;color:#ff7675;">c (filter)</td><td style="border:1px solid #444;padding:4px;color:#55efc4;"><strong>d (permanent)</strong></td><td style="border:1px solid #444;padding:4px;">Aggregated DS = temporary, NOT permanent. You CAN add a filter</td></tr>
+<tr><td style="border:1px solid #444;padding:4px;">3</td><td style="border:1px solid #444;padding:4px;">Text functions</td><td style="border:1px solid #444;padding:4px;color:#ff7675;">SearchChar</td><td style="border:1px solid #444;padding:4px;color:#55efc4;"><strong>FindChar</strong></td><td style="border:1px solid #444;padding:4px;">"SearchChar" doesn't exist! Use <strong>FindChar</strong> to find character position</td></tr>
+<tr><td style="border:1px solid #444;padding:4px;">4</td><td style="border:1px solid #444;padding:4px;">Running total</td><td style="border:1px solid #444;padding:4px;color:#ff7675;">CumulativeCells</td><td style="border:1px solid #444;padding:4px;color:#55efc4;"><strong>AggregateCells</strong></td><td style="border:1px solid #444;padding:4px;">"CumulativeCells" doesn't exist! For category running total → AggregateCells</td></tr>
+<tr><td style="border:1px solid #444;padding:4px;">5</td><td style="border:1px solid #444;padding:4px;">AggregateTable</td><td style="border:1px solid #444;padding:4px;color:#ff7675;">Always after</td><td style="border:1px solid #444;padding:4px;color:#55efc4;"><strong>Only if fewer crossings</strong></td><td style="border:1px solid #444;padding:4px;">Final agg = conditional, not automatic. Only applied when visualization cells are too few</td></tr>
+</table>
+
+<div class="tip green">
+<strong>🧠 The Big Lesson — 3 Made-Up Function Names You Invented:</strong><br>
+❌ "SearchChar" — NOT real. The real function is <strong>FindChar</strong> ✅<br>
+❌ "CumulativeCells" — NOT real. The real function is <strong>AggregateCells</strong> (for running totals over categories) ✅<br>
+❌ "CumulativePeriod" — IS real! But it's for TIME-based running totals, not categories ✅
+</div>
+
+
+<a href="#" class="back-top">⬆</a>
 </body>
 </html>

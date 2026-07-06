@@ -14,7 +14,30 @@
 
 <div class="nav-bar">
   <select onchange="if(this.value)window.location.href=this.value;" class="nav-select">
+    <option value="">Jump to quiz →</option>
     <option value="index.html">📋 Quiz Index</option>
+    <option value="rank-filter.html">🏆 Rank/Filter</option>
+    <option value="columns-lattice.html">📐 Columns/Lattice</option>
+    <option value="crosstab-rows.html">📋 Crosstab Rows</option>
+    <option value="measure-heading.html">📋 Measure Heading</option>
+    <option value="box-plot.html">📦 Box Plot</option>
+    <option value="bubble-plot.html">🫧 Bubble</option>
+    <option value="treemap.html">🟦 Treemap</option>
+    <option value="geo-maps.html">🗺️ Geo Maps</option>
+    <option value="path-analysis.html">🔀 Path</option>
+    <option value="parameters-expressions.html">🎯 Param/Expr</option>
+    <option value="sharing-reports.html">📤 Sharing</option>
+    <option value="decision-tree.html">🌳 Decision Tree</option>
+    <option value="calculated-items.html">🧮 Calc Items</option>
+    <option value="common-filters.html">🔄 Common Filters</option>
+    <option value="auto-explanation.html">🤖 Auto Explain</option>
+    <option value="content-objects.html">📦 Content Objects</option>
+    <option value="dual-axis.html">📊 Dual Axis</option>
+    <option value="time-variant.html">📈 Time Variant</option>
+    <option value="static-filters.html">🏷️ Static Filters</option>
+    <option value="hidden-concepts.html">🙈 Hidden Concepts</option>
+    <option value="prompts.html">🎛️ Prompts</option>
+    <option value="interactive-reports.html">🎮 Interactive Reports</option>
     <option value="m2-working-with-objects.html">🧰 M2 L1</option>
     <option value="m2-graph-builder.html">🎨 M2 L2</option>
     <option value="m2-analytic-objects.html">🔬 M2 L3</option>
@@ -33,31 +56,31 @@
 </summary>
 <div class="topic-body">
 
-  <div class="quiz-card">
+  <div class="quiz-card" id="quiz-m2-working-objects">
     <h3 id="qz-m2-working-with-objects">🧰 M2 L1: Working with Objects</h3>
         <div class="quiz-q"><p><strong>Q1:</strong> Bubble plots display data how by default?</p>
       <div><button class="quiz-btn" data-answer="zs0" >Aggregated</button><button class="quiz-btn" data-answer="zs0" data-correct>Non-aggregated (one bubble per row)</button><button class="quiz-btn" data-answer="zs0" >Summarized</button><button class="quiz-btn" data-answer="zs0" >Grouped</button></div>
-      <div id="zs0" class="quiz-answer">✅ Answer provided in course materials.</div>
+      <div id="zs0" class="quiz-answer">✅ <strong>Non-aggregated</strong> — "By default, bubble plots display non-aggregated data, attempting to display one bubble per row." Assign Group first for large data.</div>
     </div>
     <div class="quiz-q"><p><strong>Q2:</strong> What is the max number of measures for a Correlation Matrix?</p>
       <div><button class="quiz-btn" data-answer="zs1" >30</button><button class="quiz-btn" data-answer="zs1" data-correct>60</button><button class="quiz-btn" data-answer="zs1" >100</button><button class="quiz-btn" data-answer="zs1" >No limit</button></div>
-      <div id="zs1" class="quiz-answer">✅ Answer provided in course materials.</div>
+      <div id="zs1" class="quiz-answer">✅ <strong>60</strong> — "The maximum number of measures that can be assigned to the correlation matrix is 60."</div>
     </div>
     <div class="quiz-q"><p><strong>Q3:</strong> Correlation matrix uses which coefficient?</p>
       <div><button class="quiz-btn" data-answer="zs2" >Spearman's</button><button class="quiz-btn" data-answer="zs2" data-correct>Pearson's</button><button class="quiz-btn" data-answer="zs2" >Kendall's</button><button class="quiz-btn" data-answer="zs2" >Chi-square</button></div>
-      <div id="zs2" class="quiz-answer">✅ Answer provided in course materials.</div>
+      <div id="zs2" class="quiz-answer">✅ <strong>Pearson's</strong> — "The correlation values are calculated by using Pearson's correlation coefficient."</div>
     </div>
     <div class="quiz-q"><p><strong>Q4:</strong> A correlation of |r| = 0.4 is considered:</p>
       <div><button class="quiz-btn" data-answer="zs3" >Weak</button><button class="quiz-btn" data-answer="zs3" data-correct>Moderate</button><button class="quiz-btn" data-answer="zs3" >Strong</button><button class="quiz-btn" data-answer="zs3" >Perfect</button></div>
-      <div id="zs3" class="quiz-answer">✅ Answer provided in course materials.</div>
+      <div id="zs3" class="quiz-answer">✅ <strong>Moderate</strong> — Weak ≤0.3, Moderate 0.3-0.6, Strong ≥0.6. |r|=0.4 falls in moderate range.</div>
     </div>
     <div class="quiz-q"><p><strong>Q5:</strong> What 3 components make up the Automated Explanation object?</p>
       <div><button class="quiz-btn" data-answer="zs4" >Bar, line, pie charts</button><button class="quiz-btn" data-answer="zs4" data-correct>Natural language, importance bar, relationship plot</button><button class="quiz-btn" data-answer="zs4" >Input, process, output</button><button class="quiz-btn" data-answer="zs4" >Training, validation, test</button></div>
-      <div id="zs4" class="quiz-answer">✅ Answer provided in course materials.</div>
+      <div id="zs4" class="quiz-answer">✅ <strong>Natural language + importance bar chart + relationship plot</strong> — The 3 components of Automated Explanation.</div>
     </div>
     <div class="quiz-q"><p><strong>Q6:</strong> Which roles CANNOT be assigned together on a bubble plot?</p>
       <div><button class="quiz-btn" data-answer="zs5" >X axis and Y axis</button><button class="quiz-btn" data-answer="zs5" data-correct>Group and Color</button><button class="quiz-btn" data-answer="zs5" >Size and Animation</button><button class="quiz-btn" data-answer="zs5" >Lattice and Hidden</button></div>
-      <div id="zs5" class="quiz-answer">✅ Answer provided in course materials.</div>
+      <div id="zs5" class="quiz-answer">❌ <strong>Group and Color</strong> — "You cannot assign both the Group and Color role at the same time."</div>
     </div>
 
     <div style="margin-top:10px;text-align:right;"><a href="../topics/m2-working-with-objects.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>

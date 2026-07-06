@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — M2 L5: Troubleshooting Guide</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  .wrong { background:#2d1b1b; border-left:3px solid #ff7675; padding:10px; border-radius:6px; margin:8px 0; font-size:0.82rem; }
+  .right { background:#1b2d1b; border-left:3px solid #55efc4; padding:10px; border-radius:6px; margin:8px 0; font-size:0.82rem; }
+  .why   { background:#1b1b2d; border-left:3px solid #ffd93d; padding:10px; border-radius:6px; margin:8px 0; font-size:0.82rem; }
+  .keytable { font-size:0.7rem; border-collapse:collapse; width:100%; margin:8px 0; }
+  .keytable th { border:1px solid #444; padding:6px; background:#55efc4; color:#000; }
+  .keytable td { border:1px solid #444; padding:6px; }
+</style>
+</head>
+<body>
+<div class="header"><h1>📊 SAS VA — M2 L5: Display Rules & Parameters</h1><p class="subtitle">🚨 TROUBLESHOOTING GUIDE — All Your Wrong Answers Explained</p></div>
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+<div class="content">
+
+<details class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #a29bfe;">
+  🎯 M2 L5: Display Rules & Parameters — Complete Mistake Guide
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+<!-- ===== SECTION 1: DISPLAY RULE BASICS ===== -->
+<div class="info-box"><p class="label" style="color:#55efc4;">📋 The 3 Display Rule Types — Know What Each is Based On</p></div>
+
+<table class="keytable">
+<tr><th>Rule Type</th><th>Based on...</th><th>Accepts</th><th>🧠 Memory</th></tr>
+<tr><td><strong>Expression</strong></td><td>Measure data item <strong>Boolean expression</strong></td><td>Numeric parameters</td><td><em>"<strong>E</strong>xpr = <strong>E</strong>valuate a condition (if X > Y)"</em></td></tr>
+<tr><td><strong>Color-mapped values</strong></td><td><strong>Category</strong> data item value</td><td>Category values → colors</td><td><em>"<strong>C</strong>olor = <strong>C</strong>ategory (assign colors to products)"</em></td></tr>
+<tr><td><strong>Gauge</strong></td><td>Measure data item <strong>interval definition</strong></td><td>Ranges/intervals</td><td><em>"<strong>G</strong>auge = <strong>G</strong>roups by <strong>G</strong>aps (interval ranges)"</em></td></tr>
+</table>
+
+<div class="why">
+<strong>⚠️ NOTE:</strong> The Gauge <strong>type</strong> of display rule is NOT the same as a Gauge-<strong>Level</strong> display rule! The Gauge-level rule applies specifically to the gauge object and has a default 3-interval rule.
+</div>
+
+<!-- ===== MISTAKE 1: Display Rule based on Category ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">❌ Mistake 1: Which rule is based on a CATEGORY data item?</p></div>
+<img src="../images/quiz-display-rule-category.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Category rule question">
+<div class="wrong">
+<strong>Question:</strong> "Which type of display rule is based on a category data item?"<br>
+<strong>You answered:</strong> d) Character ❌<br>
+<strong>Correct answer:</strong> b) <strong>Color-mapped values</strong> ✅
+</div>
+<div class="why">
+<strong>Why "Character" is wrong:</strong> "Character" is a parameter TYPE, not a display rule type! You confused parameter types with display rule types.<br><br>
+<strong>Why "Color-mapped values" is correct:</strong> <em>"A <strong>color-mapped value</strong> display rule is based on a category data item value."</em><br>
+You map specific category values (like "Sports", "Toys") to specific colors.
+</div>
+<div class="right">
+<strong>🧠 Memory:</strong> <em>"<strong>C</strong>olor-mapped = <strong>C</strong>ategory values. <strong>C</strong>haracter = parameter type, NOT display rule."</em>
+</div>
+
+<!-- ===== MISTAKE 2: Display Rule based on MEASURE interval ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">❌ Mistake 2: Which rule is based on a MEASURE data item interval?</p></div>
+<img src="../images/quiz-display-rule-interval.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Measure interval rule question">
+<div class="wrong">
+<strong>Question:</strong> "Which type of display rule is based on a measure data item interval?"<br>
+<strong>You answered:</strong> b) Color-mapped values ❌<br>
+<strong>Correct answer:</strong> c) <strong>Gauge</strong> ✅
+</div>
+<div class="why">
+<strong>Why "Color-mapped values" is wrong:</strong> Color-mapped is based on CATEGORY values, not measure intervals.<br><br>
+<strong>Why "Gauge" is correct:</strong> <em>"A <strong>gauge</strong> display rule is based on a measure data item <strong>interval definition</strong>."</em><br>
+A gauge splits a measure into intervals/ranges (e.g., 0-100 = red, 100-200 = yellow, 200+ = green).
+</div>
+<div class="right">
+<strong>🧠 Memory:</strong> <em>"<strong>G</strong>auge = <strong>G</strong>roups of intervals (measure ranges). Color-mapped = category values (not intervals)."</em>
+</div>
+
+<!-- ===== MISTAKE 3: Display Rule Levels ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">❌ Mistake 3: What are the available levels of Display Rules?</p></div>
+<img src="../images/quiz-display-rule-levels.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Display rule levels question">
+<div class="wrong">
+<strong>Question:</strong> "What are the available levels of Display Rules?"<br>
+<strong>You answered:</strong> a) Report, Page, Automatic, and Manual ❌<br>
+<strong>Correct answer:</strong> b) <strong>Report, Table, Object, and Gauge</strong> ✅
+</div>
+<div class="why">
+<strong>Why you got this wrong:</strong> You confused Display Rule levels with Action types! "Automatic" and "Manual" are ACTION types from Topic 9, not display rule levels.<br><br>
+<strong>The 4 Display Rule levels:</strong><br>
+1. <strong>Report-level</strong> — Applied across ALL objects on ALL pages. Only Color-mapped values type.<br>
+2. <strong>Table-level</strong> — Applied to list table or crosstab objects. List: 3 types (Color-mapped, Expression, Gauge). Crosstab: Expression only.<br>
+3. <strong>Object-level (Graph-level)</strong> — Applied to individual graph objects. Types: Color-mapped, Expression (style graph element OR background).<br>
+4. <strong>Gauge-level</strong> — Applies to gauge objects only. Type: Gauge only. Default 3-interval rule.
+</div>
+<div class="right">
+<strong>🧠 Memory:</strong> <em>"<strong>R</strong>eport, <strong>T</strong>able, <strong>O</strong>bject, <strong>G</strong>auge = <strong>RTOG</strong>. NOT Page/Auto/Manual — those are ACTION types!"</em>
+</div>
+
+<!-- ===== MISTAKE 4: Expression display rule for graphs ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">❌ Mistake 4: Where to apply expression display rule on a graph?</p></div>
+<img src="../images/quiz-expression-graph.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Expression graph rule question">
+<div class="wrong">
+<strong>Question:</strong> "When defining an expression display rule for a graph object, where can you apply the rule?"<br>
+<strong>You answered:</strong> d) Style lines or reference lines ❌<br>
+<strong>Correct answer:</strong> c) <strong>Style graph element or background</strong> ✅
+</div>
+<div class="why">
+<strong>Why "lines or reference lines" is wrong:</strong> You made up specific chart elements. The course says: the expression display rule for graphs lets you choose between styling the <strong>graph element</strong> (bars, markers) or the <strong>background</strong>.<br><br>
+<strong>Why "graph element or background" is correct:</strong> <em>"The expression display rule for graphs allows you to choose to style either the <strong>graph element</strong> or the <strong>background</strong>."</em><br><br>
+<strong>⚠️ Important:</strong> For line charts, only the <strong>markers</strong> are colored by the graph element style — the line itself won't change. To see display rules on line charts, use Options → show markers.
+</div>
+<div class="right">
+<strong>🧠 Memory:</strong> <em>"Expression on graph = Style the <strong>element</strong> (bars/markers) or the <strong>background</strong>. NOT specific parts like lines."</em>
+</div>
+
+<!-- ===== MISTAKE 5: Report-level vs Object-level precedence ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">❌ Mistake 5: Which display rule takes precedence?</p></div>
+<img src="../images/quiz-precedence.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Precedence question">
+<div class="wrong">
+<strong>Question:</strong> "Suppose you have a report-level and object-level display rule. Which takes precedence?"<br>
+<strong>You answered:</strong> c) Both applied simultaneously ❌<br>
+<strong>Correct answer:</strong> b) <strong>The object-level display rule</strong> ✅
+</div>
+<div class="why">
+<strong>Why "both applied" is wrong:</strong> Display rules follow a CLEAR hierarchy — they don't both apply at once.<br><br>
+<strong>Why "Object-level" is correct:</strong> <em>"If multiple Display Rules are defined, then <strong>Object-Level Display Rules take precedence</strong>."</em><br><br>
+The hierarchy is: <strong>Object-level > Report-level</strong><br>
+A more specific rule (on a specific object) overrides a general rule (on the whole report).
+</div>
+<div class="right">
+<strong>🧠 Memory:</strong> <em>"<strong>O</strong>bject beats <strong>R</strong>eport. The closer to the object, the stronger the rule."</em>
+</div>
+
+<!-- ===== MISTAKE 6: Set prompt values ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">❌ Mistake 6: Set prompt values of target report</p></div>
+<img src="../images/quiz-set-prompt-values.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Set prompt values question">
+<div class="wrong">
+<strong>Question:</strong> "When Set prompt values of target report option is set, on which area are values selected?"<br>
+<strong>You answered:</strong> c) Both report and page prompt area ❌<br>
+<strong>Correct answer:</strong> a) <strong>Report prompt area only</strong> ✅
+</div>
+<div class="why">
+<strong>Why "both" is wrong:</strong> The option only works at the level it's applied. For a REPORT link, it only affects the REPORT prompt area.<br><br>
+<strong>Why "Report prompt area only" is correct:</strong> The course materials show:<br>
+• <em>"Set prompt bar values of target <strong>report</strong> → <strong>Report prompt area only</strong>"</em><br>
+• <em>"Set prompt bar values of target <strong>page</strong> → <strong>Page prompt area only</strong>"</em><br><br>
+These options set prompt values <strong>only at the same level</strong> at which they are applied.
+</div>
+<div class="right">
+<strong>🧠 Memory:</strong> <em>"<strong>R</strong>eport link → <strong>R</strong>eport prompts only. <strong>P</strong>age link → <strong>P</strong>age prompts only. Never both."</em>
+</div>
+
+<!-- ===== MISTAKE 7: Character Parameters ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">❌ Mistake 7: Where character parameters CANNOT be used</p></div>
+<img src="../images/quiz-char-param.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Character parameter question">
+<div class="wrong">
+<strong>Question:</strong> "Where can character parameters NOT be used in a report?"<br>
+<strong>You answered:</strong> a) Calculated items ❌<br>
+<strong>Correct answer:</strong> d) <strong>Display rules</strong> ✅
+</div>
+<div class="why">
+<strong>Why "Calculated items" is wrong:</strong> Parameters CAN be used in calculated items! That's one of their main uses: "Use parameters in calculations, filters, text objects, ranks, display rules, URL links." But display rules specifically don't accept CHARACTER parameters. Only EXPRESSION display rules accept NUMERIC parameters.<br><br>
+<strong>Where parameters CAN be used:</strong> Calculations, Filters, Text objects, Ranks, Display rules (expression type only, numeric params), URL links.<br><br>
+<strong>Character parameters specifically:</strong> CAN be used in calculated items, filters, URLs, text objects. <strong>CANNOT</strong> be used in display rules ❌
+</div>
+<div class="right">
+<strong>🧠 Memory:</strong> <em>"<strong>C</strong>haracter params = <strong>C</strong>alculated items, <strong>C</strong>ontrol objects, <strong>C</strong>ontainers — but NOT display rules. Only numeric params work in expression display rules."</em>
+</div>
+
+<!-- ===== ALERTS SECTION ===== -->
+<div class="info-box"><p class="label" style="color:#55efc4;">🔔 BONUS: Alerts — Notification Frequency vs Query Frequency</p></div>
+<img src="../images/quiz-alert-notif-vs-query.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Alert notification vs query frequency">
+<img src="../images/quiz-alert-timeline.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="Alert timeline">
+
+<table class="keytable">
+<tr><th></th><th style="color:#55efc4;">🔔 Notification Frequency</th><th style="color:#ffd93d;">🔍 Query Frequency</th></tr>
+<tr><td><strong>What it is</strong></td><td>How often users are <strong>notified</strong></td><td>How frequently the system <strong>checks</strong> the alert condition</td></tr>
+<tr><td><strong>Options</strong></td><td>Daily, Hourly, Every minute. <strong>Interval</strong> (days, hours, minutes)</td><td>System default, Daily, Hourly, Every minute. <strong>Interval</strong> (days, hours, minutes)</td></tr>
+<tr><td><strong>Key behavior</strong></td><td>Notification is sent the <strong>first time</strong> alert triggers, then next at the specified interval</td><td>Regardless of how often the system checks, <strong>only the last state</strong> is checked at the notification frequency interval</td></tr>
+<tr><td><strong>🧠 Analogy</strong></td><td>Your phone's notification cooldown 🔕</td><td>A security camera checking every minute 📷</td></tr>
+</table>
+
+<div class="why">
+<strong>How the timeline works (second screenshot):</strong><br>
+• Notification frequency = <strong>7 days</strong>. Query frequency = <strong>Once a day</strong>.<br>
+• Day 1: Alert created<br>
+• Day 2: Alert triggers → Notification sent (first time)<br>
+• Days 3-9: System checks daily (query frequency), but <strong>cannot send notification</strong> because 7 days haven't passed<br>
+• Day 9: 7 days passed → Alert CAN be sent, but status = not triggered (so nothing sent)<br>
+• Day 11: Alert triggers → Notification sent (7 days have passed since Day 2)<br>
+• Days 12-18: Another 7-day cooldown cycle begins 🔄
+</div>
+
+<div class="right">
+<strong>🧠 Memory:</strong> <em>"<strong>Q</strong>uery = <strong>Q</strong>uick checks (how often to look). <strong>N</strong>otif = <strong>N</strong>ot too often (cooldown period). The notification is the FIRST trigger, then a timer starts."</em>
+</div>
+
+<!-- ===== FINAL QUICK REFERENCE ===== -->
+<div class="tip red">
+<strong>📋 Complete Quick Reference — M2 L5</strong>
+</div>
+<table class="keytable">
+<tr><th>Topic</th><th>You said</th><th>✅ Correct</th><th>Key Rule</th></tr>
+<tr><td>Rule based on category</td><td>Character ❌</td><td><strong>Color-mapped values</strong></td><td>Color-mapped = category values. Character = parameter type, not rule</td></tr>
+<tr><td>Rule based on measure interval</td><td>Color-mapped ❌</td><td><strong>Gauge</strong></td><td>Gauge = measure intervals (ranges). Color-mapped = categories</td></tr>
+<tr><td>Display rule levels</td><td>Page/Auto/Manual ❌</td><td><strong>Report, Table, Object, Gauge</strong></td><td>Page/Auto/Manual = ACTION types (Topic 9). NOT display rules!</td></tr>
+<tr><td>Graph expression rule where?</td><td>Lines/reference ❌</td><td><strong>Graph element or background</strong></td><td>Style the whole element (bars/markers) or the background</td></tr>
+<tr><td>Report vs Object precedence</td><td>Both applied ❌</td><td><strong>Object-level wins</strong></td><td>Object-level > Report-level. Specific beats general</td></tr>
+<tr><td>Set prompt values of target report</td><td>Both areas ❌</td><td><strong>Report prompt area only</strong></td><td>Report link → report prompts. Page link → page prompts. Never both</td></tr>
+<tr><td>Character params NOT used where?</td><td>Calculated items ❌</td><td><strong>Display rules</strong></td><td>Character params CAN be used in calculated items. Display rules only accept numeric params for expression type</td></tr>
+</table>
+
+<div class="tip green">
+<strong>🧠 Final Memory Aid — The 7 Rules for M2 L5:</strong><br>
+1. <strong>E</strong>xpr = <strong>E</strong>valuate measure (Boolean)<br>
+2. <strong>C</strong>olor = <strong>C</strong>ategory values<br>
+3. <strong>G</strong>auge = <strong>G</strong>aps/intervals (measure ranges)<br>
+4. <strong>RTOG</strong> levels: Report, Table, Object, Gauge (NOT Page/Auto/Manual!)<br>
+5. <strong>O</strong>bject beats <strong>R</strong>eport (precedence)<br>
+6. <strong>R</strong>eport link = <strong>R</strong>eport prompts only<br>
+7. <strong>C</strong>har params: OK in calc items, <strong>NOT</strong> in display rules
+</div>
+
+</div>
+</details>
+</div>
+<a href="#" class="back-top">⬆</a>
+</body>
+</html>

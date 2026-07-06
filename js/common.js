@@ -93,11 +93,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
       if (wasCorrect) correct++;
       var qText = q.querySelector('p') ? q.querySelector('p').textContent.trim() : '';
+      var correctBtn = q.querySelector('.quiz-btn[data-correct]');
+      var correctAnswer = correctBtn ? correctBtn.textContent.trim() : '';
       sessionQuestions.push({
         qId: answerId,
         text: qText,
         selected: selectedText,
-        correct: !!wasCorrect
+        correct: !!wasCorrect,
+        correctAnswer: correctAnswer
       });
     });
 

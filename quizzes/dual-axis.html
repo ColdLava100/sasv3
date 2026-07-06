@@ -13,7 +13,9 @@
 </div>
 
 <div class="nav-bar">
-  <select onchange="if(this.value)window.location.href=this.value;" class="nav-select">    <option value="index.html">📋 Quiz Index</option>
+  <select onchange="if(this.value)window.location.href=this.value;" class="nav-select">
+    <option value="">Jump to quiz →</option>
+    <option value="index.html">📋 Quiz Index</option>
     <option value="rank-filter.html">🏆 Rank/Filter</option>
     <option value="columns-lattice.html">📐 Columns/Lattice</option>
     <option value="crosstab-rows.html">📋 Crosstab Rows</option>
@@ -31,6 +33,18 @@
     <option value="auto-explanation.html">🤖 Auto Explain</option>
     <option value="content-objects.html">📦 Content Objects</option>
     <option value="dual-axis.html">📊 Dual Axis</option>
+    <option value="time-variant.html">📈 Time Variant</option>
+    <option value="static-filters.html">🏷️ Static Filters</option>
+    <option value="hidden-concepts.html">🙈 Hidden Concepts</option>
+    <option value="prompts.html">🎛️ Prompts</option>
+    <option value="interactive-reports.html">🎮 Interactive Reports</option>
+    <option value="m2-working-with-objects.html">🧰 M2 L1</option>
+    <option value="m2-graph-builder.html">🎨 M2 L2</option>
+    <option value="m2-analytic-objects.html">🔬 M2 L3</option>
+    <option value="m2-advanced-data.html">🗃️ M2 L4</option>
+    <option value="m2-display-rules-params.html">🎯 M2 L5</option>
+    <option value="m2-best-practices.html">✨ M2 L6</option>
+    <option value="m2-sharing-managing.html">📤 M2 L7</option>
   </select>
 </div>
 
@@ -42,43 +56,43 @@
 </summary>
 <div class="topic-body">
 
-  <div class="quiz-card">
+  <div class="quiz-card" id="quiz-dual-axis">
     <h3 id="qz-dual-axis">📊 Dual Axis Charts</h3>
     <div class="quiz-q"><p><strong>Q1:</strong> Which category dependency does a Dual Axis Bar Chart require?</p>
-      <div><button class="quiz-btn" data-answer="zda1">Independent categories</button><button class="quiz-btn" data-answer="zda1">Dependent categories</button><button class="quiz-btn" data-answer="zda1">Time-based categories</button></div>
+      <div><button class="quiz-btn" data-correct="true" data-answer="zda1">Independent categories</button><button class="quiz-btn" data-answer="zda1">Dependent categories</button><button class="quiz-btn" data-answer="zda1">Time-based categories</button></div>
       <div id="zda1" class="quiz-answer">✅ <strong>Independent categories</strong> — "Use a dual axis bar chart when the categories are independent." Values for one category don't affect another.<br>
         ❌ Dependent: That's for Line charts.</div>
     </div>
     <div class="quiz-q"><p><strong>Q2:</strong> In a Dual Axis Bar-Line Chart, which axis starts at zero?</p>
-      <div><button class="quiz-btn" data-answer="zda2">Bar axis only</button><button class="quiz-btn" data-answer="zda2">Line axis only</button><button class="quiz-btn" data-answer="zda2">Both axes</button><button class="quiz-btn" data-answer="zda2">Neither</button></div>
+      <div><button class="quiz-btn" data-correct="true" data-answer="zda2">Bar axis only</button><button class="quiz-btn" data-answer="zda2">Line axis only</button><button class="quiz-btn" data-answer="zda2">Both axes</button><button class="quiz-btn" data-answer="zda2">Neither</button></div>
       <div id="zda2" class="quiz-answer">✅ <strong>Bar axis only</strong> — "Axis for bar starts at zero. Axis for line does not start at zero."</div>
     </div>
     <div class="quiz-q"><p><strong>Q3 🔥:</strong> What is NOT added to the Dual Axis Time Series Plot?</p>
-      <div><button class="quiz-btn" data-answer="zda3">Data labels</button><button class="quiz-btn" data-answer="zda3">Forecasts</button><button class="quiz-btn" data-answer="zda3">Markers</button><button class="quiz-btn" data-answer="zda3">Lattice rows</button></div>
+      <div><button class="quiz-btn" data-answer="zda3">Data labels</button><button class="quiz-btn" data-correct="true" data-answer="zda3">Forecasts</button><button class="quiz-btn" data-answer="zda3">Markers</button><button class="quiz-btn" data-answer="zda3">Lattice rows</button></div>
       <div id="zda3" class="quiz-answer">✅ <strong>Forecasts</strong> — "Forecasts are not added to the dual axis time series plot." This is a key exam distinction vs regular Time Series Plot.<br>
         ❌ Lattice: Bar chart can use lattice rows.</div>
     </div>
     <div class="quiz-q"><p><strong>Q4:</strong> Which dual axis chart type requires a date/datetime data item?</p>
-      <div><button class="quiz-btn" data-answer="zda4">Dual Axis Bar Chart</button><button class="quiz-btn" data-answer="zda4">Dual Axis Bar-Line Chart</button><button class="quiz-btn" data-answer="zda4">Dual Axis Line Chart</button><button class="quiz-btn" data-answer="zda4">Dual Axis Time Series Plot</button></div>
+      <div><button class="quiz-btn" data-answer="zda4">Dual Axis Bar Chart</button><button class="quiz-btn" data-answer="zda4">Dual Axis Bar-Line Chart</button><button class="quiz-btn" data-answer="zda4">Dual Axis Line Chart</button><button class="quiz-btn" data-correct="true" data-answer="zda4">Dual Axis Time Series Plot</button></div>
       <div id="zda4" class="quiz-answer">✅ <strong>Dual Axis Time Series Plot</strong> — It requires a Time axis (date/datetime). The other three use a Category axis.</div>
     </div>
     <div class="quiz-q"><p><strong>Q5 🔥:</strong> A report shows facility efficiency and number of employees by month. Values in February are impacted by January. Which dual axis chart?</p>
-      <div><button class="quiz-btn" data-answer="zda5">Dual Axis Bar Chart</button><button class="quiz-btn" data-answer="zda5">Dual Axis Bar-Line Chart</button><button class="quiz-btn" data-answer="zda5">Dual Axis Line Chart</button><button class="quiz-btn" data-answer="zda5">Dual Axis Time Series Plot</button></div>
+      <div><button class="quiz-btn" data-answer="zda5">Dual Axis Bar Chart</button><button class="quiz-btn" data-answer="zda5">Dual Axis Bar-Line Chart</button><button class="quiz-btn" data-correct="true" data-answer="zda5">Dual Axis Line Chart</button><button class="quiz-btn" data-answer="zda5">Dual Axis Time Series Plot</button></div>
       <div id="zda5" class="quiz-answer">✅ <strong>Dual Axis Line Chart</strong> — The categories are DEPENDENT (each month's value affects the next), so use Line-Line.<br>
         ❌ Bar: Requires independent categories.<br>
         ❌ Time Series: Requires date/datetime, but month names as categories are ordinal.</div>
     </div>
     <div class="quiz-q"><p><strong>Q6:</strong> Where are Dual Axis Charts located in the Objects pane?</p>
-      <div><button class="quiz-btn" data-answer="zda6">Content group</button><button class="quiz-btn" data-answer="zda6">Graphs group</button><button class="quiz-btn" data-answer="zda6">Analytics group</button><button class="quiz-btn" data-answer="zda6">Controls group</button></div>
+      <div><button class="quiz-btn" data-answer="zda6">Content group</button><button class="quiz-btn" data-correct="true" data-answer="zda6">Graphs group</button><button class="quiz-btn" data-answer="zda6">Analytics group</button><button class="quiz-btn" data-answer="zda6">Controls group</button></div>
       <div id="zda6" class="quiz-answer">✅ <strong>Graphs group</strong> — "Dual axis charts are located in the Graphs group in the Objects pane."<br>
         ❌ Content: That's for Text, Image, Web Content, etc.</div>
     </div>
     <div class="quiz-q"><p><strong>Q7:</strong> Which axis represents the PRIMARY measure?</p>
-      <div><button class="quiz-btn" data-answer="zda7">Left Y-axis</button><button class="quiz-btn" data-answer="zda7">Right Y-axis</button><button class="quiz-btn" data-answer="zda7">X-axis</button></div>
+      <div><button class="quiz-btn" data-correct="true" data-answer="zda7">Left Y-axis</button><button class="quiz-btn" data-answer="zda7">Right Y-axis</button><button class="quiz-btn" data-answer="zda7">X-axis</button></div>
       <div id="zda7" class="quiz-answer">✅ <strong>Left Y-axis</strong> — "Use the left Y axis to show the primary measure and the right Y axis for the secondary measure."</div>
     </div>
     <div class="quiz-q"><p><strong>Q8 🧠:</strong> "Bar-Bar = _____. Bar-Line = _____. Line-Line = _____. Time Series = _____."</p>
-      <div><button class="quiz-btn" data-answer="zda8">Indep / Volume+Rate / Dependent / Seasonal</button><button class="quiz-btn" data-answer="zda8">Dependent / Seasonal / Indep / Volume</button><button class="quiz-btn" data-answer="zda8">Seasonal / Indep / Volume+Rate / Dependent</button></div>
+      <div><button class="quiz-btn" data-correct="true" data-answer="zda8">Indep / Volume+Rate / Dependent / Seasonal</button><button class="quiz-btn" data-answer="zda8">Dependent / Seasonal / Indep / Volume</button><button class="quiz-btn" data-answer="zda8">Seasonal / Indep / Volume+Rate / Dependent</button></div>
       <div id="zda8" class="quiz-answer">✅ <strong>Indep / Volume+Rate / Dependent / Seasonal</strong> — Bar-Bar = Independent categories, Bar-Line = Volume bars + Rate line, Line-Line = Dependent categories, Time Series = Seasonal patterns.</div>
     </div>
     <div style="margin-top:10px;text-align:right;"><a href="../topics/dual-axis.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>

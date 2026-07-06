@@ -14,7 +14,30 @@
 
 <div class="nav-bar">
   <select onchange="if(this.value)window.location.href=this.value;" class="nav-select">
+    <option value="">Jump to quiz →</option>
     <option value="index.html">📋 Quiz Index</option>
+    <option value="rank-filter.html">🏆 Rank/Filter</option>
+    <option value="columns-lattice.html">📐 Columns/Lattice</option>
+    <option value="crosstab-rows.html">📋 Crosstab Rows</option>
+    <option value="measure-heading.html">📋 Measure Heading</option>
+    <option value="box-plot.html">📦 Box Plot</option>
+    <option value="bubble-plot.html">🫧 Bubble</option>
+    <option value="treemap.html">🟦 Treemap</option>
+    <option value="geo-maps.html">🗺️ Geo Maps</option>
+    <option value="path-analysis.html">🔀 Path</option>
+    <option value="parameters-expressions.html">🎯 Param/Expr</option>
+    <option value="sharing-reports.html">📤 Sharing</option>
+    <option value="decision-tree.html">🌳 Decision Tree</option>
+    <option value="calculated-items.html">🧮 Calc Items</option>
+    <option value="common-filters.html">🔄 Common Filters</option>
+    <option value="auto-explanation.html">🤖 Auto Explain</option>
+    <option value="content-objects.html">📦 Content Objects</option>
+    <option value="dual-axis.html">📊 Dual Axis</option>
+    <option value="time-variant.html">📈 Time Variant</option>
+    <option value="static-filters.html">🏷️ Static Filters</option>
+    <option value="hidden-concepts.html">🙈 Hidden Concepts</option>
+    <option value="prompts.html">🎛️ Prompts</option>
+    <option value="interactive-reports.html">🎮 Interactive Reports</option>
     <option value="m2-working-with-objects.html">🧰 M2 L1</option>
     <option value="m2-graph-builder.html">🎨 M2 L2</option>
     <option value="m2-analytic-objects.html">🔬 M2 L3</option>
@@ -33,23 +56,23 @@
 </summary>
 <div class="topic-body">
 
-  <div class="quiz-card">
+  <div class="quiz-card" id="quiz-m2-sharing">
     <h3 id="qz-m2-sharing-managing">📤 M2 L7: Sharing & Managing</h3>
         <div class="quiz-q"><p><strong>Q1:</strong> Which is NOT included in PDF export?</p>
       <div><button class="quiz-btn" data-answer="zg0" >Bar charts</button><button class="quiz-btn" data-answer="zg0" >Tables</button><button class="quiz-btn" data-answer="zg0" data-correct>Data-Driven Content</button><button class="quiz-btn" data-answer="zg0" >Key values</button></div>
-      <div id="zg0" class="quiz-answer">✅ Answer provided in course materials.</div>
+      <div id="zg0" class="quiz-answer">❌ <strong>Data-Driven Content</strong> — Data-Driven Content, Web Content, Hidden pages, Report prompts, Page prompts, and Prompt containers are NOT included in PDF.</div>
     </div>
     <div class="quiz-q"><p><strong>Q2:</strong> Who must enable Guest Access?</p>
       <div><button class="quiz-btn" data-answer="zg1" >Report designer</button><button class="quiz-btn" data-answer="zg1" >Report viewer</button><button class="quiz-btn" data-answer="zg1" data-correct>Administrator</button><button class="quiz-btn" data-answer="zg1" >Data owner</button></div>
-      <div id="zg1" class="quiz-answer">✅ Answer provided in course materials.</div>
+      <div id="zg1" class="quiz-answer">✅ <strong>Administrator</strong> — Guest Access requires admin to enable via SAS Environment Manager.</div>
     </div>
     <div class="quiz-q"><p><strong>Q3:</strong> What does Copy Embeddable Markup generate?</p>
       <div><button class="quiz-btn" data-answer="zg2" >A URL link</button><button class="quiz-btn" data-answer="zg2" >An image file</button><button class="quiz-btn" data-answer="zg2" data-correct>A code snippet for SDK</button><button class="quiz-btn" data-answer="zg2" >A PDF report</button></div>
-      <div id="zg2" class="quiz-answer">✅ Answer provided in course materials.</div>
+      <div id="zg2" class="quiz-answer">✅ <strong>A code snippet for SDK</strong> — Copy Embeddable Markup generates code for SAS Viya SDK for JavaScript.</div>
     </div>
     <div class="quiz-q"><p><strong>Q4:</strong> Export Report Package creates:</p>
       <div><button class="quiz-btn" data-answer="zg3" >A live connection to Viya</button><button class="quiz-btn" data-answer="zg3" data-correct>A static snapshot of data + queries</button><button class="quiz-btn" data-answer="zg3" >An email alert</button><button class="quiz-btn" data-answer="zg3" >A CSV file</button></div>
-      <div id="zg3" class="quiz-answer">✅ Answer provided in course materials.</div>
+      <div id="zg3" class="quiz-answer">✅ <strong>A static snapshot of data + queries</strong> — Report Package is self-contained, no Viya needed. Can view offline.</div>
     </div>
 
     <div style="margin-top:10px;text-align:right;"><a href="../topics/m2-sharing-managing.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>

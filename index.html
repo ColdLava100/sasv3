@@ -14,54 +14,109 @@
 </div>
 
 <div class="content">
-  <h2 style="margin-bottom:16px;font-size:1.2rem;color:#fff;">Topics</h2>
+  <input type="text" id="topic-search" class="search-bar" placeholder="Search topics..." autocomplete="off">
 
-  <ul style="list-style:none;padding:0;">
-    <li style="margin:8px 0;"><a href="topics/rank-filter.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">🏆 Rank vs Filter</a></li>
-    <li style="margin:8px 0;"><a href="topics/list-crosstab.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">📄 List Table vs Crosstab</a></li>
-    <li style="margin:8px 0;"><a href="topics/columns-lattice.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">📐 Columns, Rows &amp; Lattice</a></li>
-    <li style="margin:8px 0;"><a href="topics/object-guide.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">🎯 Object Reference Guide</a></li>
-    <li style="margin:8px 0;"><a href="topics/crosstab-rows.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">📋 Crosstab Rows Role Rules</a></li>
-    <li style="margin:8px 0;"><a href="topics/measure-heading.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">📋 Measure Heading Placement</a></li>
-    <li style="margin:8px 0;"><a href="topics/box-plot.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">📦 Box Plot — Mean vs Median &amp; Outlier Settings</a></li>
-    <li style="margin:8px 0;"><a href="topics/bubble-plot.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">🫧 Bubble Plot — Roles Explained</a></li>
-    <li style="margin:8px 0;"><a href="topics/treemap.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">🟦 Treemap — Roles Explained</a></li>
-    <li style="margin:8px 0;"><a href="topics/geo-maps.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">🗺️ Geo Maps — Types &amp; Differences</a></li>
-    <li style="margin:8px 0;"><a href="topics/time-plots.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">📈 Time Plots — Line Chart vs Time Series vs Comparative</a></li>
-    <li style="margin:8px 0;"><a href="topics/path-analysis.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">🔀 Path Analysis — Link Color Options</a></li>
-    <li style="margin:8px 0;"><a href="topics/parameters-expressions.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">🎯 Parameters &amp; Expressions — The Difference</a></li>
-    <li style="margin:8px 0;"><a href="topics/sharing-reports.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">📤 Sharing &amp; Embedding Reports</a></li>
-    <li style="margin:8px 0;"><a href="topics/decision-tree.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">🌳 Decision Tree — Analytic Object</a></li>
-    <li style="margin:8px 0;"><a href="topics/common-filters.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">🔄 Common Filters — Shared Across Objects</a></li>
-    <li style="margin:8px 0;"><a href="topics/auto-explanation.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">🤖 Auto Explanation &amp; Prediction</a></li>
-    <li style="margin:8px 0;"><a href="topics/content-objects.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">📦 Content Objects — Web, Job &amp; Data-Driven</a></li>
-    <li style="margin:8px 0;"><a href="topics/dual-axis.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">📊 Dual Axis Charts — Compare Two Series</a></li>
-    <li style="margin:8px 0;"><a href="topics/time-variant.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">📈 Time Variant Charts — Step, Vector, Bubble, Waterfall, Schedule</a></li>
-    <li style="margin:8px 0;"><a href="topics/static-filters.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">🏷️ Static Filters — Data Source, Basic, Advanced, Post-Agg, Common</a></li>
-    <li style="margin:8px 0;"><a href="topics/hidden-concepts.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">🙈 Hidden Concepts — Data Role vs Page vs Column</a></li>
-    <li style="margin:8px 0;"><a href="topics/prompts.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">🎛️ Prompts — Dynamic Filters for Report Viewers</a></li>
-    <li style="margin:8px 0;"><a href="topics/interactive-reports.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">🎮 Interactive Reports — Actions, Links &amp; Prompts</a></li>
-    <li style="margin:8px 0;"><a href="topics/calculated-items.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">🧮 Calculated Data Items &amp; Aggregated Measures</a></li>
-  </ul>
+    <details class="topic" open>
+    <summary class="topic-header" style="border-left:4px solid var(--accent3);">
+      📚 Topics (M1) — By Lesson Order <span class="arrow">▶</span>
+    </summary>
+    <div class="topic-body">
+      <ul class="section-links">
 
-  <h2 style="margin:24px 0 12px;font-size:1.2rem;color:#55efc4;">📘 Advanced Module (M2)</h2>
-  <ul style="list-style:none;padding:0;">
-    <li style="margin:8px 0;"><a href="topics/m2-working-with-objects.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">🧰 M2 L1: Working with Objects</a></li>
-    <li style="margin:8px 0;"><a href="topics/m2-graph-builder.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">🎨 M2 L2: Graph Builder</a></li>
-    <li style="margin:8px 0;"><a href="topics/m2-analytic-objects.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">🔬 M2 L3: Analytic Objects</a></li>
-    <li style="margin:8px 0;"><a href="topics/m2-advanced-data.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">🗃️ M2 L4: Advanced Data</a></li>
-    <li style="margin:8px 0;"><a href="topics/m2-display-rules-params.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">🎯 M2 L5: Display Rules &amp; Params</a></li>
-    <li style="margin:8px 0;"><a href="topics/m2-best-practices.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">✨ M2 L6: Best Practices</a></li>
-    <li style="margin:8px 0;"><a href="topics/m2-sharing-managing.html" style="color:var(--accent3);text-decoration:none;font-size:0.95rem;">📤 M2 L7: Sharing &amp; Managing</a></li>
-    <li style="margin:8px 0;"><a href="topics/m2-analytic-troubleshooting.html" style="color:var(--accent2);text-decoration:none;font-size:0.85rem;">🚨 M2 L3: Analytic Objects — Troubleshooting Guide</a></li>
-    <li style="margin:8px 0;"><a href="topics/m2-graph-builder-troubleshooting.html" style="color:var(--accent2);text-decoration:none;font-size:0.85rem;">🎨 Graph Builder — Troubleshooting Guide</a></li>
-  </ul>
+        <li class="lesson-label">📘 Lesson 1-3: Foundations (Self-Study)</li>
+        <li><a href="topics/object-guide.html" style="color:var(--accent3);">🎯 Object Reference Guide — All Objects at a Glance</a></li>
 
-  <h2 style="margin:24px 0 12px;font-size:1.2rem;color:#fff;">Practice</h2>
-  <ul style="list-style:none;padding:0;">
-    <li style="margin:8px 0;"><a href="quizzes/index.html" style="color:var(--accent2);text-decoration:none;font-size:0.95rem;">📝 All Quizzes</a></li>
-  
+        <li class="lesson-label">📘 Lesson 4: Refining Data for Effective Reports</li>
+        <li><a href="topics/rank-filter.html" style="color:var(--accent3);">🏆 Rank vs Filter — Sort, Filter &amp; Rank</a></li>
+        <li><a href="topics/static-filters.html" style="color:var(--accent3);">🏷️ Static Filters — Data Source, Basic, Advanced, Post-Agg, Common</a></li>
+        <li><a href="topics/list-crosstab.html" style="color:var(--accent3);">📄 List Table vs Crosstab</a></li>
+
+        <li class="lesson-label">📘 Lesson 5: Working with Basic Objects</li>
+        <li><a href="topics/columns-lattice.html" style="color:var(--accent3);">📐 Columns, Rows &amp; Lattice — Roles Explained</a></li>
+        <li><a href="topics/crosstab-rows.html" style="color:var(--accent3);">📋 Crosstab Rows Role — Categories, Hierarchies &amp; Measures</a></li>
+        <li><a href="topics/measure-heading.html" style="color:var(--accent3);">📋 Measure Heading Placement — Above vs Left</a></li>
+        <li><a href="topics/time-plots.html" style="color:var(--accent3);">📈 Time Plots — Line Chart vs Time Series vs Comparative</a></li>
+
+        <li class="lesson-label">📘 Lesson 6: Creating New Calculated Items</li>
+        <li><a href="topics/calculated-items.html" style="color:var(--accent3);">🧮 Calculated Data Items &amp; Aggregated Measures</a></li>
+        <li><a href="topics/parameters-expressions.html" style="color:var(--accent3);">🎯 Parameters &amp; Expressions — The Difference</a></li>
+
+        <li class="lesson-label">📘 Lesson 7: Working with Impactful Objects</li>
+        <li><a href="topics/geo-maps.html" style="color:var(--accent3);">🗺️ Geo Maps — Types &amp; Differences</a></li>
+        <li><a href="topics/content-objects.html" style="color:var(--accent3);">📦 Content Objects — Web, Job &amp; Data-Driven</a></li>
+
+        <li class="lesson-label">📘 Lesson 8: Additional Objects (Self-Study)</li>
+        <li><a href="topics/box-plot.html" style="color:var(--accent3);">📦 Box Plot — Mean vs Median &amp; Outlier Settings</a></li>
+        <li><a href="topics/bubble-plot.html" style="color:var(--accent3);">🫧 Bubble Plot — Roles Explained</a></li>
+        <li><a href="topics/treemap.html" style="color:var(--accent3);">🟦 Treemap — Roles Explained</a></li>
+        <li><a href="topics/dual-axis.html" style="color:var(--accent3);">📊 Dual Axis Charts — Compare Two Series</a></li>
+        <li><a href="topics/time-variant.html" style="color:var(--accent3);">📈 Time Variant Charts — Step, Vector, Bubble, Waterfall, Schedule</a></li>
+
+        <li class="lesson-label">📘 Lesson 9: Designing Interactive Reports</li>
+        <li><a href="topics/prompts.html" style="color:var(--accent3);">🎛️ Prompts — Dynamic Filters</a></li>
+        <li><a href="topics/interactive-reports.html" style="color:var(--accent3);">🎮 Interactive Reports — Actions, Links &amp; Prompts</a></li>
+        <li><a href="topics/common-filters.html" style="color:var(--accent3);">🔄 Common Filters — Shared Across Objects</a></li>
+        <li><a href="topics/sharing-reports.html" style="color:var(--accent3);">📤 Sharing &amp; Embedding Reports</a></li>
+
+        <li class="lesson-label">📘 Bonus: Cross-Topic References</li>
+        <li><a href="topics/hidden-concepts.html" style="color:var(--accent3);">🙈 Hidden Concepts — Data Role vs Page vs Column</a></li>
+
+      </ul>
+    </div>
+  </details>
+
+  <details class="topic" open>
+    <summary class="topic-header" style="border-left:4px solid #55efc4;">
+      📘 Advanced Module (M2) <span class="arrow">▶</span>
+    </summary>
+    <div class="topic-body">
+      <ul class="section-links">
+        <li><a href="topics/m2-working-with-objects.html">🧰 M2 L1: Working with Objects</a></li>
+        <li><a href="topics/m2-graph-builder.html">🎨 M2 L2: Graph Builder</a></li>
+        <li><a href="topics/m2-analytic-objects.html">🔬 M2 L3: Analytic Objects</a></li>
+        <li><a href="topics/m2-advanced-data.html">🗃️ M2 L4: Advanced Data</a></li>
+        <li><a href="topics/m2-display-rules-params.html">🎯 M2 L5: Display Rules &amp; Params</a></li>
+        <li><a href="topics/m2-best-practices.html">✨ M2 L6: Best Practices</a></li>
+        <li><a href="topics/m2-sharing-managing.html">📤 M2 L7: Sharing &amp; Managing</a></li>
+        <li><a href="topics/path-analysis.html">🔀 Path Analysis — M2 L3 (Analytic Objects)</a></li>
+        <li><a href="topics/decision-tree.html">🌳 Decision Tree — M2 L3 (Analytic Objects)</a></li>
+        <li><a href="topics/auto-explanation.html">🤖 Auto Explain &amp; Prediction — M2 L1</a></li>
+        <li><a href="topics/m2-analytic-troubleshooting.html" class="troubleshoot-link">🚨 M2 L3: Analytic Objects — Troubleshooting Guide</a></li>
+        <li><a href="topics/m2-graph-builder-troubleshooting.html" class="troubleshoot-link">🎨 Graph Builder — Troubleshooting Guide</a></li>
+        <li><a href="topics/m2-l5-troubleshooting.html" class="troubleshoot-link">🎯 M2 L5: Display Rules — Troubleshooting Guide</a></li>
+        <li><a href="topics/m2-l7-troubleshooting.html" class="troubleshoot-link">📤 M2 L7: Sharing &amp; Managing — Troubleshooting Guide</a></li>
+        <li><a href="topics/final-weakness-review.html" class="troubleshoot-link" style="color:#ff7675;font-weight:bold;">🚨 FINAL WEAKNESS REVIEW — Exam Prep</a></li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="topic" open>
+    <summary class="topic-header" style="border-left:4px solid var(--accent2);">
+      📝 Practice <span class="arrow">▶</span>
+    </summary>
+    <div class="topic-body">
+      <ul class="section-links">
+        <li><a href="quizzes/index.html">📝 All Quizzes</a></li>
+        <li><a href="quizzes/history.html">📊 Quiz History</a></li>
+        <li><a href="quizzes/gallery.html">🖼️ Exam Screenshot Gallery</a></li>
+      </ul>
+    </div>
+  </details>
+
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var search = document.getElementById('topic-search');
+  if (!search) return;
+  search.addEventListener('input', function() {
+    var q = this.value.toLowerCase().trim();
+    document.querySelectorAll('.section-links li').forEach(function(li) {
+      li.style.display = (!q || li.textContent.toLowerCase().indexOf(q) !== -1) ? '' : 'none';
+    });
+  });
+});
+</script>
 
 <a href="#" class="back-top" title="Back to top">⬆</a>
 </body>

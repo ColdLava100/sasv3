@@ -14,7 +14,30 @@
 
 <div class="nav-bar">
   <select onchange="if(this.value)window.location.href=this.value;" class="nav-select">
+    <option value="">Jump to quiz →</option>
     <option value="index.html">📋 Quiz Index</option>
+    <option value="rank-filter.html">🏆 Rank/Filter</option>
+    <option value="columns-lattice.html">📐 Columns/Lattice</option>
+    <option value="crosstab-rows.html">📋 Crosstab Rows</option>
+    <option value="measure-heading.html">📋 Measure Heading</option>
+    <option value="box-plot.html">📦 Box Plot</option>
+    <option value="bubble-plot.html">🫧 Bubble</option>
+    <option value="treemap.html">🟦 Treemap</option>
+    <option value="geo-maps.html">🗺️ Geo Maps</option>
+    <option value="path-analysis.html">🔀 Path</option>
+    <option value="parameters-expressions.html">🎯 Param/Expr</option>
+    <option value="sharing-reports.html">📤 Sharing</option>
+    <option value="decision-tree.html">🌳 Decision Tree</option>
+    <option value="calculated-items.html">🧮 Calc Items</option>
+    <option value="common-filters.html">🔄 Common Filters</option>
+    <option value="auto-explanation.html">🤖 Auto Explain</option>
+    <option value="content-objects.html">📦 Content Objects</option>
+    <option value="dual-axis.html">📊 Dual Axis</option>
+    <option value="time-variant.html">📈 Time Variant</option>
+    <option value="static-filters.html">🏷️ Static Filters</option>
+    <option value="hidden-concepts.html">🙈 Hidden Concepts</option>
+    <option value="prompts.html">🎛️ Prompts</option>
+    <option value="interactive-reports.html">🎮 Interactive Reports</option>
     <option value="m2-working-with-objects.html">🧰 M2 L1</option>
     <option value="m2-graph-builder.html">🎨 M2 L2</option>
     <option value="m2-analytic-objects.html">🔬 M2 L3</option>
@@ -33,23 +56,23 @@
 </summary>
 <div class="topic-body">
 
-  <div class="quiz-card">
+  <div class="quiz-card" id="quiz-m2-analytic-objects">
     <h3 id="qz-m2-analytic-objects">🔬 M2 L3: Analytic Objects</h3>
         <div class="quiz-q"><p><strong>Q1:</strong> What is the default forecast horizon?</p>
       <div><button class="quiz-btn" data-answer="zs0" >3 periods</button><button class="quiz-btn" data-answer="zs0" data-correct>6 periods</button><button class="quiz-btn" data-answer="zs0" >12 periods</button><button class="quiz-btn" data-answer="zs0" >24 periods</button></div>
-      <div id="zs0" class="quiz-answer">✅ Answer provided in course materials.</div>
+      <div id="zs0" class="quiz-answer">✅ <strong>6 periods</strong> — Default forecast horizon is 6 periods. Default confidence interval is 95%.</div>
     </div>
     <div class="quiz-q"><p><strong>Q2:</strong> What is the default confidence interval for forecasting?</p>
       <div><button class="quiz-btn" data-answer="zs1" >90%</button><button class="quiz-btn" data-answer="zs1" data-correct>95%</button><button class="quiz-btn" data-answer="zs1" >99%</button><button class="quiz-btn" data-answer="zs1" >80%</button></div>
-      <div id="zs1" class="quiz-answer">✅ Answer provided in course materials.</div>
+      <div id="zs1" class="quiz-answer">✅ <strong>95%</strong> — Default confidence interval. The colored band around the forecast line represents this range.</div>
     </div>
     <div class="quiz-q"><p><strong>Q3:</strong> In Network Analysis, Source values must be:</p>
       <div><button class="quiz-btn" data-answer="zs2" >Larger than Target</button><button class="quiz-btn" data-answer="zs2" data-correct>A subset of Target</button><button class="quiz-btn" data-answer="zs2" >Equal to Target</button><button class="quiz-btn" data-answer="zs2" >Independent of Target</button></div>
-      <div id="zs2" class="quiz-answer">✅ Answer provided in course materials.</div>
+      <div id="zs2" class="quiz-answer">✅ <strong>A subset of Target</strong> — For network analysis, Target values must be a subset of Source values. All targets must appear as sources.</div>
     </div>
     <div class="quiz-q"><p><strong>Q4:</strong> Which What-If Analysis type modifies future values of underlying factors?</p>
       <div><button class="quiz-btn" data-answer="zs3" >Goal-Seeking</button><button class="quiz-btn" data-answer="zs3" data-correct>Scenario Analysis</button><button class="quiz-btn" data-answer="zs3" >Forecast Adjustment</button><button class="quiz-btn" data-answer="zs3" >Trend Analysis</button></div>
-      <div id="zs3" class="quiz-answer">✅ Answer provided in course materials.</div>
+      <div id="zs3" class="quiz-answer">✅ <strong>Scenario Analysis</strong> — Scenario Analysis modifies underlying factor values. Goal-Seeking sets target forecast and finds required factor values.</div>
     </div>
 
     <div style="margin-top:10px;text-align:right;"><a href="../topics/m2-analytic-objects.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>

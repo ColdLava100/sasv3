@@ -348,3 +348,42 @@ body {
   transition: opacity 0.2s;
 }
 .back-top:hover { opacity: 1; background: #3d4049; }
+
+/* ── SEARCH BAR ── */
+.search-bar {
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  background: var(--bg3);
+  color: var(--text);
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.search-bar:focus { border-color: var(--accent3); }
+.search-bar::placeholder { color: var(--text3); }
+
+/* ── SECTION LINKS (index page accordions) ── */
+.section-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.section-links li {
+  margin: 6px 0;
+  padding: 4px 0;
+}
+.section-links a {
+  color: var(--accent3);
+  text-decoration: none;
+  font-size: 0.92rem;
+  transition: color 0.2s;
+}
+.section-links a:hover { color: #fff; }
+.section-links .troubleshoot-link {
+  color: var(--accent2);
+  font-size: 0.82rem;
+}
+.section-links .troubleshoot-link:hover { color: #fff; }

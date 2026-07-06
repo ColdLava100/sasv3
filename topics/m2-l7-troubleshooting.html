@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — M2 L7: Sharing & Managing - Troubleshooting</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  .wrong { background:#2d1b1b; border-left:3px solid #ff7675; padding:10px; border-radius:6px; margin:8px 0; font-size:0.82rem; }
+  .right { background:#1b2d1b; border-left:3px solid #55efc4; padding:10px; border-radius:6px; margin:8px 0; font-size:0.82rem; }
+  .why   { background:#1b1b2d; border-left:3px solid #ffd93d; padding:10px; border-radius:6px; margin:8px 0; font-size:0.82rem; }
+  .keytable { font-size:0.7rem; border-collapse:collapse; width:100%; margin:8px 0; }
+  .keytable th { border:1px solid #444; padding:6px; background:#fd79a8; color:#fff; }
+  .keytable td { border:1px solid #444; padding:6px; }
+  .included { color:#55efc4; } 
+  .excluded { color:#ff7675; }
+</style>
+</head>
+<body>
+<div class="header"><h1>📊 SAS VA — M2 L7: Sharing & Managing Reports</h1><p class="subtitle">🚨 TROUBLESHOOTING GUIDE — PDF Export & Sharing</p></div>
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+<div class="content">
+
+<details class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #fd79a8;">
+  📤 M2 L7: Sharing & Managing — PDF Export & More
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+<!-- ===== PDF EXPORT MISTAKE ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">❌ Your Mistake: PDF Export — What's Included vs Not</p></div>
+<img src="../images/quiz-pdf-export.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="PDF export question">
+<img src="../images/quiz-pdf-appendix.png" style="max-width:100%;border-radius:6px;margin:8px 0;border:1px solid var(--border);" alt="PDF appendix question">
+
+<div class="wrong">
+<strong>Question:</strong> "Which of the following is true about exporting a report as a PDF?"<br>
+<strong>You answered:</strong> a) You cannot expand clipped content for list tables and crosstabs ❌<br>
+<strong>Correct answer:</strong> c) <strong>Filters are displayed in an appendix</strong> ✅
+</div>
+
+<div class="why">
+<strong>Why a is wrong:</strong> You CAN expand clipped content! The course actually mentions "expand clipped and non-visible content" as an important feature in PDF export that prints all returned rows within the data threshold.<br><br>
+<strong>Why c is correct:</strong> <em>"By default, an appendix is included in the PDF if the report, page, or object has descriptions, filters, warnings, errors, or display rule legends."</em><br>
+Filters, descriptions, warnings, errors, display rule legends = ALL included in the PDF appendix.
+</div>
+
+<!-- ===== COMPLETE PDF REFERENCE ===== -->
+<div class="info-box"><p class="label" style="color:#55efc4;">📋 Complete PDF Export Reference — What's IN vs OUT</p></div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0;">
+<div style="background:#1b2d1b;border-radius:8px;padding:12px;border:1px solid #55efc4;">
+<h4 style="color:#55efc4;font-size:0.75rem;">✅ INCLUDED in PDF</h4>
+<ul style="font-size:0.72rem;color:var(--text2);padding-left:16px;">
+<li>Bar charts, tables, graphs ✅</li>
+<li>Filters (in appendix) ✅</li>
+<li>Descriptions (in appendix) ✅</li>
+<li>Warnings & errors (in appendix) ✅</li>
+<li>Display rule legends (in appendix) ✅</li>
+<li>Selected object in Container objects ✅</li>
+</ul>
+</div>
+<div style="background:#2d1b1b;border-radius:8px;padding:12px;border:1px solid #ff7675;">
+<h4 style="color:#ff7675;font-size:0.75rem;">❌ NOT INCLUDED in PDF</h4>
+<ul style="font-size:0.72rem;color:var(--text2);padding-left:16px;">
+<li>Data-Driven Content ❌</li>
+<li>Web Content ❌</li>
+<li>Hidden pages ❌</li>
+<li>Report prompts ❌</li>
+<li>Page prompts ❌</li>
+<li>Prompt containers ❌</li>
+</ul>
+</div>
+</div>
+
+<div class="why">
+<strong>⚠️ Other PDF considerations:</strong><br>
+• Only selected object in Container objects is printed<br>
+• Scrollable content may not be printed<br>
+• Fonts may not match (if fonts used don't match server fonts)<br>
+• The print feature attempts to fill available space on the PDF page<br>
+• You CAN expand clipped content for list tables and crosstabs ✅<br>
+• Items NOT in PDF: <span style="color:#ff7675;">Data-Driven Content, Web Content, Hidden pages, Report prompts, Page prompts, Prompt containers</span>
+</div>
+
+<div class="right">
+<strong>🧠 Memory Trick — "The 6 Excluded from PDF":</strong><br>
+<strong>D</strong>ata-Driven Content, <strong>W</strong>eb Content, <strong>H</strong>idden pages, <strong>R</strong>eport prompts, <strong>P</strong>age prompts, <strong>P</strong>rompt containers<br>
+<em>"<strong>DW HR PP</strong> — Data Web, Hidden Report, Page Prompt — all left out of PDF!"</em><br><br>
+Everything else (filters, descriptions, warnings, legends) = in the appendix ✅
+</div>
+
+<!-- ===== ONLINE vs OFFLINE SHARING ===== -->
+<div class="info-box"><p class="label" style="color:#55efc4;">📤 Online vs Offline Sharing — Complete Reference</p></div>
+
+<table class="keytable">
+<tr><th>Method</th><th>Online/Offline</th><th>Key Details</th></tr>
+<tr><td><strong>Share Report</strong></td><td>🌐 Online</td><td>Within SAS Viya. Recipients must have SAS account. Notification sent to banner. Available in SAS Content folders.</td></tr>
+<tr><td><strong>Guest Access</strong></td><td>🌐 Online</td><td>Anonymous read-only access. Admin must enable via SAS Environment Manager. Guest is an internal user to Viya.</td></tr>
+<tr><td><strong>Copy Link</strong></td><td>🌐 Online</td><td>Interactive link at report/page/object level. Customize with guest access, banner, parameters. If not signed in → prompt for credentials or Guest button (if enabled).</td></tr>
+<tr><td><strong>Copy Embeddable Markup</strong></td><td>🌐 Online</td><td>Code snippet for SAS Viya SDK for JavaScript. Embed in custom web pages. Customize with guest access, interactive/static, banner.</td></tr>
+<tr><td><strong>Export PDF</strong></td><td>📥 Offline</td><td>Full report or selection. Appendix includes filters/descriptions/warnings/errors/legends. ❌ Not included: DW HR PP.</td></tr>
+<tr><td><strong>Export Report Package</strong></td><td>📥 Offline</td><td>Snapshot of data + query results. View offline or host on web server. No Viya needed.</td></tr>
+<tr><td><strong>Save Object Image</strong></td><td>📥 Offline</td><td>Individual object as PNG. Default size = report size. ❌ Does NOT display applied ranks or filters. Special chars → hyphen.</td></tr>
+<tr><td><strong>Export Data</strong></td><td>📥 Offline</td><td>CSV, TSV, or Excel. No totals for crosstab/list table. Analytics objects → separate worksheets per element.</td></tr>
+<tr><td><strong>Distribute Report</strong></td><td>📤 Alert</td><td>Email to recipients. Optional: Microsoft Teams, attached PDF, summary. Recurring schedule (daily, weekly, etc.)</td></tr>
+<tr><td><strong>Generate Alerts</strong></td><td>📤 Alert</td><td>Report objects must have a Display Rule defined. Alert triggered when condition met. Recipients are registered Viya users.</td></tr>
+</table>
+
+<!-- ===== PRIVATE DATA ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">🔒 Private Data — Export Restrictions</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<strong>If private data is present:</strong><br>
+• Report → PDF export and Report Package export are <strong>disabled</strong> ❌<br>
+• Page → PDF export is <strong>disabled</strong> if page contains private data ❌<br>
+• Object → Data, image, or PDF export are <strong>disabled</strong> ❌<br>
+• Detail data export → always disabled if private data in data source ❌<br>
+• Additional columns not used in object may still enable inference → disabled ⚠️<br><br>
+<strong>Viewer Capabilities:</strong><br>
+• Comprehensive edits (default) — viewers can change object types, sorting, labels, legends<br>
+• Viewer Capabilities option in Options pane at report level (introduced in VA 8)<br>
+• Cannot be assigned through CLI ❌<br>
+• Export controls: Enable / Disable if private data / Always disable ✅
+</p>
+</div>
+
+<!-- ===== VIEWER CAPABILITIES ===== -->
+<div class="info-box"><p class="label" style="color:#55efc4;">👤 Viewer Capabilities Levels</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<strong>Comprehensive edits (default):</strong> Viewers can change object types, sorting, adding labels, hiding/displaying legends ✅<br>
+Controls available: export, print, comments, share — configured in report options before publishing.<br><br>
+<strong>For accessibility:</strong> Use High Contrast theme. Avoid animation, color-dependent rules, lattices, linked selection, overview axes.
+</p>
+</div>
+
+<!-- ===== LOCALIZE & ISSUES ===== -->
+<div class="info-box"><p class="label" style="color:#ffd93d;">🌍 Localize & Identify Issues</p></div>
+<div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:8px;">
+<p style="font-size:0.82rem;color:var(--text2);">
+<strong>Localize Reports:</strong> Add translations for multiple languages. Use ISO 639 two-letter language code + country code. Can use interactive UI or CLI to export translations, edit, then import.<br><br>
+<strong>Identify Issues:</strong> Use Issues pane (Report Review pane) to find: data loading problems, missing items, broken links. Can export report review as PDF to track improvements.<br><br>
+<strong>Data Thresholds:</strong> Handle large data. Set limits. Warn when exceeded. Expand clipped content in PDF (all returned rows within threshold).
+</p>
+</div>
+
+<div class="tip red">
+<strong>🎯 Must-Know Exam Points — M2 L7:</strong><br>
+1. ❌ NOT in PDF: <strong>DW HR PP</strong> (Data-Driven, Web, Hidden pages, Report prompts, Page prompts, Prompt containers)<br>
+2. ✅ IN PDF appendix: Filters, descriptions, warnings, errors, display rule legends<br>
+3. ✅ You CAN expand clipped content in PDF — it's an important feature!<br>
+4. ❌ Object image export does NOT display ranks or filters<br>
+5. ❌ Private data → PDF export and Report Package disabled<br>
+6. ✅ Guest Access must be enabled by admin via SAS Environment Manager<br>
+7. ✅ Embeddable Markup uses SAS Viya SDK for JavaScript<br>
+8. ✅ Viewer Capabilities: Comprehensive edits (default) — introduced in VA 8
+</div>
+
+<div class="tip green">
+<strong>🧠 The "DW HR PP" Memory Trick:</strong><br>
+<em>"<strong>D</strong>ata-Driven <strong>W</strong>eb — <strong>H</strong>idden <strong>R</strong>eport — <strong>P</strong>age <strong>P</strong>rompts: <strong>D</strong>on't <strong>W</strong>orry, <strong>H</strong>e <strong>R</strong>eally <strong>P</strong>rints <strong>P</strong>erfectly without them in PDF!"</em>
+</div>
+
+</div>
+</details>
+</div>
+<a href="#" class="back-top">⬆</a>
+</body>
+</html>

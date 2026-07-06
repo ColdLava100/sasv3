@@ -60,12 +60,13 @@ function renderStats() {
       html += '</div>';
       html += '<div class="session-detail" id="detail-' + s.sessionId + '" style="display:none;">';
       html += '<table class="data-table" style="margin:4px 0;">';
-      html += '<tr><th>#</th><th>Question</th><th>Your Answer</th><th>Result</th></tr>';
+      html += '<tr><th>#</th><th>Question</th><th>Your Answer</th><th>Correct Answer</th><th>Result</th></tr>';
       s.questions.forEach(function(q, i) {
         html += '<tr>';
         html += '<td>' + (i + 1) + '</td>';
         html += '<td style="text-align:left;font-size:0.78rem;">' + q.text.substring(0, 60) + (q.text.length > 60 ? '...' : '') + '</td>';
         html += '<td>' + q.selected + '</td>';
+        html += '<td>' + (q.correctAnswer || (q.correct ? q.selected : '')) + '</td>';
         html += '<td>' + (q.correct ? '✅' : '❌') + '</td>';
         html += '</tr>';
       });

@@ -28,6 +28,24 @@
     <option value="path-analysis.html">🔀 Path</option>
     <option value="parameters-expressions.html">🎯 Param/Expr</option>
     <option value="sharing-reports.html">📤 Sharing</option>
+    <option value="decision-tree.html">🌳 Decision Tree</option>
+    <option value="calculated-items.html">🧮 Calc Items</option>
+    <option value="common-filters.html">🔄 Common Filters</option>
+    <option value="auto-explanation.html">🤖 Auto Explain</option>
+    <option value="content-objects.html">📦 Content Objects</option>
+    <option value="dual-axis.html">📊 Dual Axis</option>
+    <option value="time-variant.html">📈 Time Variant</option>
+    <option value="static-filters.html">🏷️ Static Filters</option>
+    <option value="hidden-concepts.html">🙈 Hidden Concepts</option>
+    <option value="prompts.html">🎛️ Prompts</option>
+    <option value="interactive-reports.html">🎮 Interactive Reports</option>
+    <option value="m2-working-with-objects.html">🧰 M2 L1</option>
+    <option value="m2-graph-builder.html">🎨 M2 L2</option>
+    <option value="m2-analytic-objects.html">🔬 M2 L3</option>
+    <option value="m2-advanced-data.html">🗃️ M2 L4</option>
+    <option value="m2-display-rules-params.html">🎯 M2 L5</option>
+    <option value="m2-best-practices.html">✨ M2 L6</option>
+    <option value="m2-sharing-managing.html">📤 M2 L7</option>
   </select>
   <a href="index.html" class="nav-btn">📋 Quiz Index</a>
   <a href="../index.html" class="nav-btn">🏠 Main Index</a>
@@ -796,6 +814,412 @@
       <div><button class="quiz-btn" data-correct="true" data-answer="zo7">URL / SAS Code / HTML+Data</button><button class="quiz-btn" data-answer="zo7">Chart / Table / Graph</button><button class="quiz-btn" data-answer="zo7">Filter / Rank / Action</button></div>
       <div id="zo7" class="quiz-answer">✅ <strong>URL / SAS Code / HTML+Data</strong> — Web = URL link, Job = pre-built SAS code, Data-Driven = custom code + live VA data.</div>
     </div>
+
+
+<div class="quiz-card" id="qz-dual-axis">
+    <h3 id="qz-dual-axis">📊 Dual Axis Charts</h3>
+    <div class="quiz-q"><p><strong>Q1:</strong> Which category dependency does a Dual Axis Bar Chart require?</p>
+      <div><button class="quiz-btn" data-correct="true" data-answer="zda1">Independent categories</button><button class="quiz-btn" data-answer="zda1">Dependent categories</button><button class="quiz-btn" data-answer="zda1">Time-based categories</button></div>
+      <div id="zda1" class="quiz-answer">✅ <strong>Independent categories</strong> — "Use a dual axis bar chart when the categories are independent." Values for one category don't affect another.<br>
+        ❌ Dependent: That's for Line charts.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> In a Dual Axis Bar-Line Chart, which axis starts at zero?</p>
+      <div><button class="quiz-btn" data-correct="true" data-answer="zda2">Bar axis only</button><button class="quiz-btn" data-answer="zda2">Line axis only</button><button class="quiz-btn" data-answer="zda2">Both axes</button><button class="quiz-btn" data-answer="zda2">Neither</button></div>
+      <div id="zda2" class="quiz-answer">✅ <strong>Bar axis only</strong> — "Axis for bar starts at zero. Axis for line does not start at zero."</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3 🔥:</strong> What is NOT added to the Dual Axis Time Series Plot?</p>
+      <div><button class="quiz-btn" data-answer="zda3">Data labels</button><button class="quiz-btn" data-correct="true" data-answer="zda3">Forecasts</button><button class="quiz-btn" data-answer="zda3">Markers</button><button class="quiz-btn" data-answer="zda3">Lattice rows</button></div>
+      <div id="zda3" class="quiz-answer">✅ <strong>Forecasts</strong> — "Forecasts are not added to the dual axis time series plot." This is a key exam distinction vs regular Time Series Plot.<br>
+        ❌ Lattice: Bar chart can use lattice rows.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4:</strong> Which dual axis chart type requires a date/datetime data item?</p>
+      <div><button class="quiz-btn" data-answer="zda4">Dual Axis Bar Chart</button><button class="quiz-btn" data-answer="zda4">Dual Axis Bar-Line Chart</button><button class="quiz-btn" data-answer="zda4">Dual Axis Line Chart</button><button class="quiz-btn" data-correct="true" data-answer="zda4">Dual Axis Time Series Plot</button></div>
+      <div id="zda4" class="quiz-answer">✅ <strong>Dual Axis Time Series Plot</strong> — It requires a Time axis (date/datetime). The other three use a Category axis.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q5 🔥:</strong> A report shows facility efficiency and number of employees by month. Values in February are impacted by January. Which dual axis chart?</p>
+      <div><button class="quiz-btn" data-answer="zda5">Dual Axis Bar Chart</button><button class="quiz-btn" data-answer="zda5">Dual Axis Bar-Line Chart</button><button class="quiz-btn" data-correct="true" data-answer="zda5">Dual Axis Line Chart</button><button class="quiz-btn" data-answer="zda5">Dual Axis Time Series Plot</button></div>
+      <div id="zda5" class="quiz-answer">✅ <strong>Dual Axis Line Chart</strong> — The categories are DEPENDENT (each month's value affects the next), so use Line-Line.<br>
+        ❌ Bar: Requires independent categories.<br>
+        ❌ Time Series: Requires date/datetime, but month names as categories are ordinal.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q6:</strong> Where are Dual Axis Charts located in the Objects pane?</p>
+      <div><button class="quiz-btn" data-answer="zda6">Content group</button><button class="quiz-btn" data-correct="true" data-answer="zda6">Graphs group</button><button class="quiz-btn" data-answer="zda6">Analytics group</button><button class="quiz-btn" data-answer="zda6">Controls group</button></div>
+      <div id="zda6" class="quiz-answer">✅ <strong>Graphs group</strong> — "Dual axis charts are located in the Graphs group in the Objects pane."<br>
+        ❌ Content: That's for Text, Image, Web Content, etc.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q7:</strong> Which axis represents the PRIMARY measure?</p>
+      <div><button class="quiz-btn" data-correct="true" data-answer="zda7">Left Y-axis</button><button class="quiz-btn" data-answer="zda7">Right Y-axis</button><button class="quiz-btn" data-answer="zda7">X-axis</button></div>
+      <div id="zda7" class="quiz-answer">✅ <strong>Left Y-axis</strong> — "Use the left Y axis to show the primary measure and the right Y axis for the secondary measure."</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q8 🧠:</strong> "Bar-Bar = _____. Bar-Line = _____. Line-Line = _____. Time Series = _____."</p>
+      <div><button class="quiz-btn" data-correct="true" data-answer="zda8">Indep / Volume+Rate / Dependent / Seasonal</button><button class="quiz-btn" data-answer="zda8">Dependent / Seasonal / Indep / Volume</button><button class="quiz-btn" data-answer="zda8">Seasonal / Indep / Volume+Rate / Dependent</button></div>
+      <div id="zda8" class="quiz-answer">✅ <strong>Indep / Volume+Rate / Dependent / Seasonal</strong> — Bar-Bar = Independent categories, Bar-Line = Volume bars + Rate line, Line-Line = Dependent categories, Time Series = Seasonal patterns.</div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/dual-axis.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+<div class="quiz-card" id="qz-time-variant">
+    <h3 id="qz-time-variant">📈 Time Variant Charts</h3>
+    <div class="quiz-q"><p><strong>Q1:</strong> Which Time Variant chart requires exactly 4 measures?</p>
+      <div><button class="quiz-btn" data-answer="zvc1" data-correct>Vector Plot</button><button class="quiz-btn" data-answer="zvc1">Bubble Change Plot</button><button class="quiz-btn" data-answer="zvc1">Waterfall Chart</button><button class="quiz-btn" data-answer="zvc1">Schedule Chart</button></div>
+      <div id="zvc1" class="quiz-answer">✅ <strong>Vector Plot</strong> — Requires 4 measures: X Origin, X, Y Origin, Y.<br>
+        ❌ Bubble Change: Requires 6 measures!<br>
+        ❌ Waterfall: Only needs 1 measure.<br>
+        ❌ Schedule: Needs Task + Start + Finish (no measures).</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> Which chart requires the most data items (6 measures)?</p>
+      <div><button class="quiz-btn" data-answer="zvc2">Step Plot</button><button class="quiz-btn" data-answer="zvc2">Vector Plot</button><button class="quiz-btn" data-answer="zvc2" data-correct>Bubble Change Plot</button><button class="quiz-btn" data-answer="zvc2">Waterfall Chart</button></div>
+      <div id="zvc2" class="quiz-answer">✅ <strong>Bubble Change Plot</strong> — 6 measures: X start, X end, Y start, Y end, Size start, Size end.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3:</strong> What does a Waterfall chart show?</p>
+      <div><button class="quiz-btn" data-answer="zvc3">Direction and magnitude of change</button><button class="quiz-btn" data-answer="zvc3" data-correct>How incremental changes lead to a final value</button><button class="quiz-btn" data-answer="zvc3">Irregular, discrete intervals</button><button class="quiz-btn" data-answer="zvc3">Project tasks and timelines</button></div>
+      <div id="zvc3" class="quiz-answer">✅ <strong>Incremental changes → final value</strong> — A progressive bar chart showing cumulative effects.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4:</strong> A Step Plot is sorted by what, by default?</p>
+      <div><button class="quiz-btn" data-answer="zvc4" data-correct>Ascending by X axis</button><button class="quiz-btn" data-answer="zvc4">Descending by Y axis</button><button class="quiz-btn" data-answer="zvc4">Ascending by measure value</button><button class="quiz-btn" data-answer="zvc4">Not sorted</button></div>
+      <div id="zvc4" class="quiz-answer">✅ <strong>Ascending by X axis</strong> — "By default, the step plot is sorted in ascending order by the value of the X axis."<br>
+        ❌ Descending: That's the default for Dual Axis Bar charts.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q5:</strong> What roles does a Schedule Chart require?</p>
+      <div><button class="quiz-btn" data-answer="zvc5">Category + Measure</button><button class="quiz-btn" data-answer="zvc5">X Origin + X + Y Origin + Y</button><button class="quiz-btn" data-answer="zvc5" data-correct>Task + Start + Finish</button><button class="quiz-btn" data-answer="zvc5">Time + 2 Measures</button></div>
+      <div id="zvc5" class="quiz-answer">✅ <strong>Task + Start + Finish</strong> — Schedule charts (Gantt) need task name, start date, and finish date. No measures needed!</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q6 🔥:</strong> Which chart is also called a "progressive bar chart", "Mario chart", or "bridge chart"?</p>
+      <div><button class="quiz-btn" data-answer="zvc6">Step Plot</button><button class="quiz-btn" data-answer="zvc6">Vector Plot</button><button class="quiz-btn" data-answer="zvc6" data-correct>Waterfall Chart</button><button class="quiz-btn" data-answer="zvc6">Bubble Change Plot</button></div>
+      <div id="zvc6" class="quiz-answer">✅ <strong>Waterfall Chart</strong> — "Also known as: progressive bar charts, flying bricks charts, Mario charts, and bridges (in finance)."</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q7:</strong> Where are Time Variant Charts located?</p>
+      <div><button class="quiz-btn" data-answer="zvc7" data-correct>Graphs group</button><button class="quiz-btn" data-answer="zvc7">Content group</button><button class="quiz-btn" data-answer="zvc7">Analytics group</button><button class="quiz-btn" data-answer="zvc7">Controls group</button></div>
+      <div id="zvc7" class="quiz-answer">✅ <strong>Graphs group</strong> — Same as Dual Axis Charts. Content group has Text, Image, Web Content, etc.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q8 🧠:</strong> Match: "Step = ___. Vector = ___. Bubble = ___. Waterfall = ___. Schedule = ___."</p>
+      <div><button class="quiz-btn" data-answer="zvc8" data-correct>Staircase / 4 Measures / 6 Measures / Incremental / Gantt</button><button class="quiz-btn" data-answer="zvc8">Gantt / Staircase / 4 Meas / 6 Meas / Incremental</button><button class="quiz-btn" data-answer="zvc8">Incremental / Gantt / Staircase / 4 Meas / 6 Meas</button></div>
+      <div id="zvc8" class="quiz-answer">✅ <strong>Step=Staircase, Vector=4 Measures, Bubble=6 Measures, Waterfall=Incremental, Schedule=Gantt</strong></div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/time-variant.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+<div class="quiz-card" id="qz-static-filters">
+    <h3 id="qz-static-filters">🏷️ Static Filters</h3>
+    <div class="quiz-q"><p><strong>Q1:</strong> Which filter operates at the REPORT level?</p>
+      <div><button class="quiz-btn" data-answer="zsf1" data-correct>Data Source Filter</button><button class="quiz-btn" data-answer="zsf1">Basic Filter</button><button class="quiz-btn" data-answer="zsf1">Advanced Filter</button><button class="quiz-btn" data-answer="zsf1">Common Filter</button></div>
+      <div id="zsf1" class="quiz-answer">✅ <strong>Data Source Filter</strong> — "A global filter that subsets data for the entire report." The other three are object-level filters.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> A Basic Filter uses how many data items?</p>
+      <div><button class="quiz-btn" data-answer="zsf2">None — it uses aggregated values</button><button class="quiz-btn" data-answer="zsf2" data-correct>1 — a single data item</button><button class="quiz-btn" data-answer="zsf2">2 or more data items</button><button class="quiz-btn" data-answer="zsf2">As many as needed</button></div>
+      <div id="zsf2" class="quiz-answer">✅ <strong>1 data item</strong> — "A basic filter includes only one data item."<br>
+        ❌ 2+: That's Advanced Filter.<br>
+        ❌ Aggregated: That's Post-Aggregate Filter.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3:</strong> How many Data Source Filters can you have per data source?</p>
+      <div><button class="quiz-btn" data-answer="zsf3">Unlimited</button><button class="quiz-btn" data-answer="zsf3">3</button><button class="quiz-btn" data-answer="zsf3" data-correct>1</button><button class="quiz-btn" data-answer="zsf3">10</button></div>
+      <div id="zsf3" class="quiz-answer">✅ <strong>1 per data source</strong> — "There is a limit of one data source filter per data source." Use a complex Boolean expression for multiple conditions.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4 🔥:</strong> A filter needs to show only products where TOTAL sales &gt; $10,000 (after grouping). Which filter?</p>
+      <div><button class="quiz-btn" data-answer="zsf4">Basic Filter</button><button class="quiz-btn" data-answer="zsf4">Advanced Filter</button><button class="quiz-btn" data-answer="zsf4" data-correct>Post-Aggregate Filter</button><button class="quiz-btn" data-answer="zsf4">Data Source Filter</button></div>
+      <div id="zsf4" class="quiz-answer">✅ <strong>Post-Aggregate Filter</strong> — "Subsets using aggregated values, not individual values." After SUM(Sales) is calculated, it keeps only products &gt; $10K.<br>
+        ❌ Basic/Advanced: Work on detail data (individual rows), not totals.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q5:</strong> What types of filters can be converted to a Common Filter?</p>
+      <div><button class="quiz-btn" data-answer="zsf5">Basic only</button><button class="quiz-btn" data-answer="zsf5" data-correct>Basic, Advanced, OR Post-Aggregate</button><button class="quiz-btn" data-answer="zsf5">Data Source only</button><button class="quiz-btn" data-answer="zsf5">Advanced only</button></div>
+      <div id="zsf5" class="quiz-answer">✅ <strong>Basic, Advanced, OR Post-Aggregate</strong> — "A common filter can be a basic, advanced, or post-aggregate filter that is shared between objects."</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q6:</strong> Who defines static filters?</p>
+      <div><button class="quiz-btn" data-answer="zsf6" data-correct>Report designer</button><button class="quiz-btn" data-answer="zsf6">Report viewer</button><button class="quiz-btn" data-answer="zsf6">System administrator</button><button class="quiz-btn" data-answer="zsf6">Data source owner</button></div>
+      <div id="zsf6" class="quiz-answer">✅ <strong>Report designer</strong> — "Static filters must be defined and applied by the report designer." (Dynamic filters like prompts are used by viewers.)</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q7 🔥:</strong> Which is TRUE about a Data Source Filter?</p>
+      <div><button class="quiz-btn" data-answer="zsf7" data-correct>It updates cardinalities in the Data pane</button><button class="quiz-btn" data-answer="zsf7">It is applied after object-level filters</button><button class="quiz-btn" data-answer="zsf7">It can be converted to a Common Filter</button><button class="quiz-btn" data-answer="zsf7">Multiple data source filters per source are allowed</button></div>
+      <div id="zsf7" class="quiz-answer">✅ <strong>Updates cardinalities</strong> — "Data pane cardinalities are updated" when a Data Source Filter is applied. It acts as a pre-filter.<br>
+        ❌ After object-level: It's applied BEFORE (acts as pre-filter).<br>
+        ❌ Convert to Common: Data Source cannot be converted — only Basic/Adv/Post can.<br>
+        ❌ Multiple: Only 1 per data source.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q8:</strong> The Detail data option is disabled if what exists?</p>
+      <div><button class="quiz-btn" data-answer="zsf8">A Basic Filter</button><button class="quiz-btn" data-answer="zsf8" data-correct>A Post-Aggregate Filter</button><button class="quiz-btn" data-answer="zsf8">A Data Source Filter</button><button class="quiz-btn" data-answer="zsf8">A Common Filter</button></div>
+      <div id="zsf8" class="quiz-answer">✅ <strong>A Post-Aggregate Filter</strong> — "The Detail data option is not available if the list table already includes a post-aggregate filter."</div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/static-filters.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+<div class="quiz-card" id="qz-hidden-concepts">
+    <h3 id="qz-hidden-concepts">🙈 Hidden Concepts</h3>
+    <div class="quiz-q"><p><strong>Q1:</strong> What does the Hidden Data Role do?</p>
+      <div><button class="quiz-btn" data-answer="zh1" data-correct>Includes data in the query but not displayed</button><button class="quiz-btn" data-answer="zh1">Hides an entire page from viewers</button><button class="quiz-btn" data-answer="zh1">Removes data from the query entirely</button><button class="quiz-btn" data-answer="zh1">Prevents data from being exported</button></div>
+      <div id="zh1" class="quiz-answer">✅ <strong>Includes in query, not displayed</strong> — "The hidden data role enables you to include a data item in the query results when you want to use its values but do not want the data item displayed."<br>
+        ❌ Hides page: That's Hidden Page, a different concept.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> A Hidden Page is visible to whom?</p>
+      <div><button class="quiz-btn" data-answer="zh2">No one — it's completely invisible</button><button class="quiz-btn" data-answer="zh2" data-correct>Report designers, but not viewers</button><button class="quiz-btn" data-answer="zh2">Everyone — it's just grayed out</button><button class="quiz-btn" data-answer="zh2">Only system administrators</button></div>
+      <div id="zh2" class="quiz-answer">✅ <strong>Designers, not viewers</strong> — "Hidden pages are visible to report designers as a page tab, but not to report viewers." Viewers CAN access it via a link though.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3:</strong> Can a Hidden Page be accessed by report viewers?</p>
+      <div><button class="quiz-btn" data-answer="zh3">No, never</button><button class="quiz-btn" data-answer="zh3" data-correct>Yes, if a link targets it</button><button class="quiz-btn" data-answer="zh3">Only if admin grants permission</button></div>
+      <div id="zh3" class="quiz-answer">✅ <strong>Yes, via a link</strong> — "In view mode, a linked hidden page will appear like a regular page." It's hidden from the tab bar, but accessible if navigated to.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4 🔥:</strong> What is NOT included in PDF export?</p>
+      <div><button class="quiz-btn" data-answer="zh4">Hidden Data Role items</button><button class="quiz-btn" data-answer="zh4" data-correct>Hidden Pages</button><button class="quiz-btn" data-answer="zh4">Hide Column columns</button><button class="quiz-btn" data-answer="zh4">All of the above</button></div>
+      <div id="zh4" class="quiz-answer">✅ <strong>Hidden Pages</strong> — "Hidden pages are not included in the PDF." Hidden Data Role items and hidden columns ARE included if their objects are exported.<br>
+        ❌ All: Only Hidden Pages are excluded from PDF.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q5:</strong> What is Hide Column in a list table?</p>
+      <div><button class="quiz-btn" data-answer="zh5" data-correct>A shortcut to the Hidden Data Role</button><button class="quiz-btn" data-answer="zh5">A way to create a Hidden Page</button><button class="quiz-btn" data-answer="zh5">A security feature to restrict data access</button><button class="quiz-btn" data-answer="zh5">A display-only option that removes data from query</button></div>
+      <div id="zh5" class="quiz-answer">✅ <strong>Shortcut to Hidden Data Role</strong> — "To hide a column, right-click and select Hide column or use the Roles pane to move it to the Hidden data role." Same thing!<br>
+        ❌ Security: Hidden is not for security — data is still in the query.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q6 🔥:</strong> Which statement is TRUE about the Hidden Data Role?</p>
+      <div><button class="quiz-btn" data-answer="zh6">It's available for all object types</button><button class="quiz-btn" data-answer="zh6" data-correct>It cannot be used with Data Tip Values at the same time</button><button class="quiz-btn" data-answer="zh6">It provides column-level security</button><button class="quiz-btn" data-answer="zh6">It always increases the number of rows in query</button></div>
+      <div id="zh6" class="quiz-answer">✅ <strong>Cannot use with Data Tip Values</strong> — "You cannot assign a data item to the Hidden role and the Data tip values role at the same time." They're mutually exclusive.<br>
+        ❌ All objects: "Not available for all objects."<br>
+        ❌ Security: "Not intended for column-level security."<br>
+        ❌ Always increases: It should NOT increase rows.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q7 🧠:</strong> "Role hides a ____. Page hides a ____. Column is a ____."</p>
+      <div><button class="quiz-btn" data-answer="zh7" data-correct>data item / page tab / shortcut to Role</button><button class="quiz-btn" data-answer="zh7">page tab / data item / separate concept</button><button class="quiz-btn" data-answer="zh7">chart / table / filter</button></div>
+      <div id="zh7" class="quiz-answer">✅ <strong>data item / page tab / shortcut to Role</strong> — Hidden Data Role hides a data item, Hidden Page hides a page tab, Hide Column is just a shortcut to the Role.</div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/hidden-concepts.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+<div class="quiz-card" id="qz-prompts">
+    <h3 id="qz-prompts">🎛️ Prompts</h3>
+    <div class="quiz-q"><p><strong>Q1:</strong> What type of filter are Prompts?</p>
+      <div><button class="quiz-btn" data-answer="zp1">Static filters</button><button class="quiz-btn" data-answer="zp1" data-correct>Dynamic filters</button><button class="quiz-btn" data-answer="zp1">Data source filters</button><button class="quiz-btn" data-answer="zp1">Post-aggregate filters</button></div>
+      <div id="zp1" class="quiz-answer">✅ <strong>Dynamic filters</strong> — "Dynamic filters are filters that can be modified or used by the report viewer." Prompts are dynamic; static filters are set by the designer.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2 🔥:</strong> What is the scope of a REPORT prompt?</p>
+      <div><button class="quiz-btn" data-answer="zp2">Only the current page</button><button class="quiz-btn" data-answer="zp2" data-correct>All objects in the entire report, including page prompts</button><button class="quiz-btn" data-answer="zp2">Only the object it's attached to</button><button class="quiz-btn" data-answer="zp2">All reports in the folder</button></div>
+      <div id="zp2" class="quiz-answer">✅ <strong>All objects, including page prompts</strong> — "Report prompts filter all objects in the report, including page prompts." This is a key exam point!<br>
+        ❌ Current page only: That's a PAGE prompt.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3:</strong> What happens when multiple controls are in a prompt area?</p>
+      <div><button class="quiz-btn" data-answer="zp3" data-correct>Filters are combined with AND operator</button><button class="quiz-btn" data-answer="zp3">Filters are combined with OR operator</button><button class="quiz-btn" data-answer="zp3">Only the first control works</button><button class="quiz-btn" data-answer="zp3">Each control creates a separate filter</button></div>
+      <div id="zp3" class="quiz-answer">✅ <strong>AND operator</strong> — "If multiple controls are added, the filters are combined with an AND operator." All conditions must match.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4:</strong> What is the benefit of a Prompt Container?</p>
+      <div><button class="quiz-btn" data-answer="zp4" data-correct>Groups controls and delays action until Apply</button><button class="quiz-btn" data-answer="zp4">Creates automatic cascading filters</button><button class="quiz-btn" data-answer="zp4">Allows all controls to work independently</button><button class="quiz-btn" data-answer="zp4">Increases the scope of the prompt</button></div>
+      <div id="zp4" class="quiz-answer">✅ <strong>Groups + delays Apply</strong> — "Prompt containers enable you to minimize space by grouping controls. The execution of actions is delayed until you click Apply."</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q5:</strong> Which control is best for selecting a RANGE of values?</p>
+      <div><button class="quiz-btn" data-answer="zp5">Dropdown list</button><button class="quiz-btn" data-answer="zp5" data-correct>Slider</button><button class="quiz-btn" data-answer="zp5">List control</button><button class="quiz-btn" data-answer="zp5">Text input</button></div>
+      <div id="zp5" class="quiz-answer">✅ <strong>Slider</strong> — Sliders can select a single value or range, and work with measure and date data items. Dropdown/list are for categories.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q6:</strong> When does an Auto Control choose the best control object?</p>
+      <div><button class="quiz-btn" data-answer="zp6">Always — it's automatic</button><button class="quiz-btn" data-answer="zp6" data-correct>When you drag a data item to the prompt area</button><button class="quiz-btn" data-answer="zp6">When you click "Auto" in the toolbar</button><button class="quiz-btn" data-answer="zp6">When you select a hierarchy</button></div>
+      <div id="zp6" class="quiz-answer">✅ <strong>When you drag a data item to the prompt area</strong> — "Auto controls can be created by dragging data items to the report or page prompt area." SAS chooses based on type + cardinality.<br>
+        ❌ Hierarchy: It creates cascading controls, but auto control works for any data item.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q7:</strong> What is a best practice when using controls?</p>
+      <div><button class="quiz-btn" data-answer="zp7">Always use list controls</button><button class="quiz-btn" data-answer="zp7" data-correct>Add instructions as the title of the control</button><button class="quiz-btn" data-answer="zp7">Never use prompt containers</button><button class="quiz-btn" data-answer="zp7">Always place prompts on the right side</button></div>
+      <div id="zp7" class="quiz-answer">✅ <strong>Add instructions as the title</strong> — "When using controls, it's a best practice to add instructions as the title of the control object." So viewers know what to select.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q8 🧠:</strong> "Static = _____. Prompts = _____. Report prompt = _____. Page prompt = _____."</p>
+      <div><button class="quiz-btn" data-answer="zp8" data-correct>Designer / Viewer / All pages / One page</button><button class="quiz-btn" data-answer="zp8">Viewer / Designer / One page / All pages</button><button class="quiz-btn" data-answer="zp8">Designer / Viewer / One page / All pages</button></div>
+      <div id="zp8" class="quiz-answer">✅ <strong>Static=Designer, Prompts=Viewer, Report=All pages, Page=One page</strong> — The key distinction!</div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/prompts.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+<div class="quiz-card" id="qz-interactive-reports">
+    <h3 id="qz-interactive-reports">🎮 Designing Interactive Reports</h3>
+    <div class="quiz-q"><p><strong>Q1 🔥:</strong> Can Automatic and Manual actions be combined on the same page?</p>
+      <div><button class="quiz-btn" data-answer="zn1">Yes, always</button><button class="quiz-btn" data-answer="zn1" data-correct>No, each page can only have one type</button><button class="quiz-btn" data-answer="zn1">Only with data source mapping</button><button class="quiz-btn" data-answer="zn1">Only with linked selection</button></div>
+      <div id="zn1" class="quiz-answer">✅ <strong>No</strong> — "Each page can either have manual actions or automatic actions, but not both." This is a critical exam point! ❌</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> What does Linked Selection do?</p>
+      <div><button class="quiz-btn" data-answer="zn2">Subsets data in target objects</button><button class="quiz-btn" data-answer="zn2" data-correct>Highlights related data in multiple objects</button><button class="quiz-btn" data-answer="zn2">Navigates to another page</button><button class="quiz-btn" data-answer="zn2">Creates a new prompt</button></div>
+      <div id="zn2" class="quiz-answer">✅ <strong>Highlights data</strong> — "The automatic linked selection action highlights related data in multiple objects." Other rows stay visible but grayed out.<br>
+        ❌ Subsets: That's a filter action.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3 🔥:</strong> What does the Two-Way Filter action do?</p>
+      <div><button class="quiz-btn" data-answer="zn3">Highlights data only</button><button class="quiz-btn" data-answer="zn3" data-correct>Applies filters between ALL objects, even previously selected ones</button><button class="quiz-btn" data-answer="zn3">Filters in one direction only</button><button class="quiz-btn" data-answer="zn3">Creates a page link</button></div>
+      <div id="zn3" class="quiz-answer">✅ <strong>Filters ALL objects both ways</strong> — "The automatic two-way filter action applies filters between all objects, even previously selected objects." ⚠️ Don't use with required prompts!</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4:</strong> Which objects CANNOT be the source of a filter action?</p>
+      <div><button class="quiz-btn" data-answer="zn4">Bar charts and tables</button><button class="quiz-btn" data-answer="zn4" data-correct>Images, Text, Web Content, Job Content</button><button class="quiz-btn" data-answer="zn4">Dropdown controls and sliders</button><button class="quiz-btn" data-answer="zn4">Geo maps and KPI objects</button></div>
+      <div id="zn4" class="quiz-answer">✅ <strong>Images, Text, Web Content, Job Content</strong> — "These additional objects cannot be the source of a filter action: images, job content, text, and web content."<br>
+        ❌ Dropdowns/Bar charts: They CAN be sources.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q5:</strong> Filter actions are ____________ and ____________.</p>
+      <div><button class="quiz-btn" data-answer="zn5" data-correct>Unidirectional and transitive</button><button class="quiz-btn" data-answer="zn5">Bidirectional and independent</button><button class="quiz-btn" data-answer="zn5">Automatic and manual</button></div>
+      <div id="zn5" class="quiz-answer">✅ <strong>Unidirectional and transitive</strong> — "All filter actions are unidirectional and transitive." Source→Target only (uni) and A→B→C means A→C (transitive).</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q6:</strong> Which link type navigates to another page within the same report?</p>
+      <div><button class="quiz-btn" data-answer="zn6">Report Link</button><button class="quiz-btn" data-answer="zn6" data-correct>Page Link</button><button class="quiz-btn" data-answer="zn6">URL Link</button><button class="quiz-btn" data-answer="zn6">Return Link</button></div>
+      <div id="zn6" class="quiz-answer">✅ <strong>Page Link</strong> — Page links navigate within the same report. Report links go to a different report. URL links go to a website. Return links go back.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q7:</strong> What happens when you create a page link to a Hidden Page?</p>
+      <div><button class="quiz-btn" data-answer="zn7">The page stays hidden and cannot be viewed</button><button class="quiz-btn" data-answer="zn7" data-correct>It appears like a normal page to the viewer</button><button class="quiz-btn" data-answer="zn7">An error occurs because hidden pages cannot be linked</button><button class="quiz-btn" data-answer="zn7">The link is only visible to designers</button></div>
+      <div id="zn7" class="quiz-answer">✅ <strong>Appears like a normal page</strong> — "In view mode, a linked hidden page will appear like a regular page." The tab is hidden, but the page is accessible via link.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q8 🧠:</strong> "Prompts = ____. Actions = ____. Links = ____."</p>
+      <div><button class="quiz-btn" data-answer="zn8" data-correct>TV remote / Steering wheel / GPS</button><button class="quiz-btn" data-answer="zn8">Steering wheel / GPS / TV remote</button><button class="quiz-btn" data-answer="zn8">GPS / TV remote / Steering wheel</button></div>
+      <div id="zn8" class="quiz-answer">✅ <strong>Prompts=TV remote (pick), Actions=Steering wheel (respond), Links=GPS (navigate)</strong> — Memorize this analogy!</div>
+    </div>
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/interactive-reports.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+<div class="quiz-card" id="qz-m2-working-with-objects">
+    <h3 id="qz-m2-working-with-objects">🧰 M2 L1: Working with Objects</h3>
+        <div class="quiz-q"><p><strong>Q1:</strong> Bubble plots display data how by default?</p>
+      <div><button class="quiz-btn" data-answer="zs0" >Aggregated</button><button class="quiz-btn" data-answer="zs0" data-correct>Non-aggregated (one bubble per row)</button><button class="quiz-btn" data-answer="zs0" >Summarized</button><button class="quiz-btn" data-answer="zs0" >Grouped</button></div>
+      <div id="zs0" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> What is the max number of measures for a Correlation Matrix?</p>
+      <div><button class="quiz-btn" data-answer="zs1" >30</button><button class="quiz-btn" data-answer="zs1" data-correct>60</button><button class="quiz-btn" data-answer="zs1" >100</button><button class="quiz-btn" data-answer="zs1" >No limit</button></div>
+      <div id="zs1" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3:</strong> Correlation matrix uses which coefficient?</p>
+      <div><button class="quiz-btn" data-answer="zs2" >Spearman's</button><button class="quiz-btn" data-answer="zs2" data-correct>Pearson's</button><button class="quiz-btn" data-answer="zs2" >Kendall's</button><button class="quiz-btn" data-answer="zs2" >Chi-square</button></div>
+      <div id="zs2" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4:</strong> A correlation of |r| = 0.4 is considered:</p>
+      <div><button class="quiz-btn" data-answer="zs3" >Weak</button><button class="quiz-btn" data-answer="zs3" data-correct>Moderate</button><button class="quiz-btn" data-answer="zs3" >Strong</button><button class="quiz-btn" data-answer="zs3" >Perfect</button></div>
+      <div id="zs3" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q5:</strong> What 3 components make up the Automated Explanation object?</p>
+      <div><button class="quiz-btn" data-answer="zs4" >Bar, line, pie charts</button><button class="quiz-btn" data-answer="zs4" data-correct>Natural language, importance bar, relationship plot</button><button class="quiz-btn" data-answer="zs4" >Input, process, output</button><button class="quiz-btn" data-answer="zs4" >Training, validation, test</button></div>
+      <div id="zs4" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q6:</strong> Which roles CANNOT be assigned together on a bubble plot?</p>
+      <div><button class="quiz-btn" data-answer="zs5" >X axis and Y axis</button><button class="quiz-btn" data-answer="zs5" data-correct>Group and Color</button><button class="quiz-btn" data-answer="zs5" >Size and Animation</button><button class="quiz-btn" data-answer="zs5" >Lattice and Hidden</button></div>
+      <div id="zs5" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/m2-working-with-objects.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+<div class="quiz-card" id="qz-m2-graph-builder">
+    <h3 id="qz-m2-graph-builder">🎨 M2 L2: Graph Builder</h3>
+        <div class="quiz-q"><p><strong>Q1:</strong> Where is Graph Builder accessed from?</p>
+      <div><button class="quiz-btn" data-answer="zr0" >Objects pane</button><button class="quiz-btn" data-answer="zr0" data-correct>Applications menu</button><button class="quiz-btn" data-answer="zr0" >Data pane</button><button class="quiz-btn" data-answer="zr0" >Filters pane</button></div>
+      <div id="zr0" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> What is the default cell in a Graph Builder layout?</p>
+      <div><button class="quiz-btn" data-answer="zr1" data-correct>Cell A1</button><button class="quiz-btn" data-answer="zr1" >Cell B1</button><button class="quiz-btn" data-answer="zr1" >Cell 1x1</button><button class="quiz-btn" data-answer="zr1" >The center cell</button></div>
+      <div id="zr1" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3:</strong> How many graph elements are available in Graph Builder?</p>
+      <div><button class="quiz-btn" data-answer="zr2" >5</button><button class="quiz-btn" data-answer="zr2" >10</button><button class="quiz-btn" data-answer="zr2" data-correct>Over 15</button><button class="quiz-btn" data-answer="zr2" >Exactly 20</button></div>
+      <div id="zr2" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/m2-graph-builder.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+<div class="quiz-card" id="qz-m2-analytic-objects">
+    <h3 id="qz-m2-analytic-objects">🔬 M2 L3: Analytic Objects</h3>
+        <div class="quiz-q"><p><strong>Q1:</strong> What is the default forecast horizon?</p>
+      <div><button class="quiz-btn" data-answer="zs0" >3 periods</button><button class="quiz-btn" data-answer="zs0" data-correct>6 periods</button><button class="quiz-btn" data-answer="zs0" >12 periods</button><button class="quiz-btn" data-answer="zs0" >24 periods</button></div>
+      <div id="zs0" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> What is the default confidence interval for forecasting?</p>
+      <div><button class="quiz-btn" data-answer="zs1" >90%</button><button class="quiz-btn" data-answer="zs1" data-correct>95%</button><button class="quiz-btn" data-answer="zs1" >99%</button><button class="quiz-btn" data-answer="zs1" >80%</button></div>
+      <div id="zs1" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3:</strong> In Network Analysis, Source values must be:</p>
+      <div><button class="quiz-btn" data-answer="zs2" >Larger than Target</button><button class="quiz-btn" data-answer="zs2" data-correct>A subset of Target</button><button class="quiz-btn" data-answer="zs2" >Equal to Target</button><button class="quiz-btn" data-answer="zs2" >Independent of Target</button></div>
+      <div id="zs2" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4:</strong> Which What-If Analysis type modifies future values of underlying factors?</p>
+      <div><button class="quiz-btn" data-answer="zs3" >Goal-Seeking</button><button class="quiz-btn" data-answer="zs3" data-correct>Scenario Analysis</button><button class="quiz-btn" data-answer="zs3" >Forecast Adjustment</button><button class="quiz-btn" data-answer="zs3" >Trend Analysis</button></div>
+      <div id="zs3" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/m2-analytic-objects.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+<div class="quiz-card" id="qz-m2-advanced-data">
+    <h3 id="qz-m2-advanced-data">🗃️ M2 L4: Advanced Data</h3>
+        <div class="quiz-q"><p><strong>Q1:</strong> Which operation is NOT available in Visual Analytics?</p>
+      <div><button class="quiz-btn" data-answer="za0" >Left Join</button><button class="quiz-btn" data-answer="za0" >Right Join</button><button class="quiz-btn" data-answer="za0" >Inner Join</button><button class="quiz-btn" data-answer="za0" data-correct>Append</button></div>
+      <div id="za0" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> What does a Join do?</p>
+      <div><button class="quiz-btn" data-answer="za1" >Adds rows</button><button class="quiz-btn" data-answer="za1" data-correct>Adds columns by matching rows</button><button class="quiz-btn" data-answer="za1" >Removes duplicates</button><button class="quiz-btn" data-answer="za1" >Changes data types</button></div>
+      <div id="za1" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3:</strong> Which function extracts a substring?</p>
+      <div><button class="quiz-btn" data-answer="za2" >Trim</button><button class="quiz-btn" data-answer="za2" >Upcase</button><button class="quiz-btn" data-answer="za2" data-correct>Substr</button><button class="quiz-btn" data-answer="za2" >Length</button></div>
+      <div id="za2" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4:</strong> Which function counts intervals between two dates?</p>
+      <div><button class="quiz-btn" data-answer="za3" >IntNX</button><button class="quiz-btn" data-answer="za3" data-correct>IntCK</button><button class="quiz-btn" data-answer="za3" >DatePart</button><button class="quiz-btn" data-answer="za3" >DHMS</button></div>
+      <div id="za3" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q5:</strong> Aggregated functions evaluate on:</p>
+      <div><button class="quiz-btn" data-answer="za4" >Detail data</button><button class="quiz-btn" data-answer="za4" data-correct>Aggregated data</button><button class="quiz-btn" data-answer="za4" >Both</button><button class="quiz-btn" data-answer="za4" >Neither</button></div>
+      <div id="za4" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/m2-advanced-data.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+<div class="quiz-card" id="qz-m2-display-rules-params">
+    <h3 id="qz-m2-display-rules-params">🎯 M2 L5: Display Rules & Parameters</h3>
+        <div class="quiz-q"><p><strong>Q1:</strong> Which parameter type is determined by a formula, NOT user input?</p>
+      <div><button class="quiz-btn" data-answer="zs0" >Numeric</button><button class="quiz-btn" data-answer="zs0" >Character</button><button class="quiz-btn" data-answer="zs0" >Date</button><button class="quiz-btn" data-answer="zs0" data-correct>Expression-based</button></div>
+      <div id="zs0" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> What happens to Expression-Based parameters when filters are applied?</p>
+      <div><button class="quiz-btn" data-answer="zs1" >They change with the filter</button><button class="quiz-btn" data-answer="zs1" data-correct>They are NOT affected by filters</button><button class="quiz-btn" data-answer="zs1" >They become invalid</button><button class="quiz-btn" data-answer="zs1" >They reset to default</button></div>
+      <div id="zs1" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3:</strong> Which display rule type uses Boolean expressions based on a measure?</p>
+      <div><button class="quiz-btn" data-answer="zs2" >Color-Mapped</button><button class="quiz-btn" data-answer="zs2" data-correct>Expression</button><button class="quiz-btn" data-answer="zs2" >Gauge</button><button class="quiz-btn" data-answer="zs2" >Icon</button></div>
+      <div id="zs2" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4:</strong> Parameters can be used in all EXCEPT:</p>
+      <div><button class="quiz-btn" data-answer="zs3" >Calculated items</button><button class="quiz-btn" data-answer="zs3" >Display rules</button><button class="quiz-btn" data-answer="zs3" >Data source filters</button><button class="quiz-btn" data-answer="zs3" data-correct>Report color schemes</button></div>
+      <div id="zs3" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/m2-display-rules-params.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+<div class="quiz-card" id="qz-m2-best-practices">
+    <h3 id="qz-m2-best-practices">✨ M2 L6: Best Practices</h3>
+        <div class="quiz-q"><p><strong>Q1:</strong> What is Step 1 of the 5-step report design process?</p>
+      <div><button class="quiz-btn" data-answer="zs0" >Choose the chart</button><button class="quiz-btn" data-answer="zs0" data-correct>Draft a plan</button><button class="quiz-btn" data-answer="zs0" >Test</button><button class="quiz-btn" data-answer="zs0" >Consider the layout</button></div>
+      <div id="zs0" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> What is the recommended approach to background colors?</p>
+      <div><button class="quiz-btn" data-answer="zs1" >Use bright colors</button><button class="quiz-btn" data-answer="zs1" data-correct>Use neutral background colors</button><button class="quiz-btn" data-answer="zs1" >Always use white</button><button class="quiz-btn" data-answer="zs1" >Use gradient backgrounds</button></div>
+      <div id="zs1" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3:</strong> What does Step 5 say to do?</p>
+      <div><button class="quiz-btn" data-answer="zs2" >Choose the best chart</button><button class="quiz-btn" data-answer="zs2" >Focus on important data</button><button class="quiz-btn" data-answer="zs2" data-correct>Test, Test, and Test Again</button><button class="quiz-btn" data-answer="zs2" >Consider the layout</button></div>
+      <div id="zs2" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4:</strong> Which chart is best for comparing two measures with different ranges?</p>
+      <div><button class="quiz-btn" data-answer="zs3" >Bar chart</button><button class="quiz-btn" data-answer="zs3" >Pie chart</button><button class="quiz-btn" data-answer="zs3" data-correct>Dual axis chart</button><button class="quiz-btn" data-answer="zs3" >Heat map</button></div>
+      <div id="zs3" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/m2-best-practices.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
+
+<div class="quiz-card" id="qz-m2-sharing-managing">
+    <h3 id="qz-m2-sharing-managing">📤 M2 L7: Sharing & Managing</h3>
+        <div class="quiz-q"><p><strong>Q1:</strong> Which is NOT included in PDF export?</p>
+      <div><button class="quiz-btn" data-answer="zg0" >Bar charts</button><button class="quiz-btn" data-answer="zg0" >Tables</button><button class="quiz-btn" data-answer="zg0" data-correct>Data-Driven Content</button><button class="quiz-btn" data-answer="zg0" >Key values</button></div>
+      <div id="zg0" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q2:</strong> Who must enable Guest Access?</p>
+      <div><button class="quiz-btn" data-answer="zg1" >Report designer</button><button class="quiz-btn" data-answer="zg1" >Report viewer</button><button class="quiz-btn" data-answer="zg1" data-correct>Administrator</button><button class="quiz-btn" data-answer="zg1" >Data owner</button></div>
+      <div id="zg1" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q3:</strong> What does Copy Embeddable Markup generate?</p>
+      <div><button class="quiz-btn" data-answer="zg2" >A URL link</button><button class="quiz-btn" data-answer="zg2" >An image file</button><button class="quiz-btn" data-answer="zg2" data-correct>A code snippet for SDK</button><button class="quiz-btn" data-answer="zg2" >A PDF report</button></div>
+      <div id="zg2" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+    <div class="quiz-q"><p><strong>Q4:</strong> Export Report Package creates:</p>
+      <div><button class="quiz-btn" data-answer="zg3" >A live connection to Viya</button><button class="quiz-btn" data-answer="zg3" data-correct>A static snapshot of data + queries</button><button class="quiz-btn" data-answer="zg3" >An email alert</button><button class="quiz-btn" data-answer="zg3" >A CSV file</button></div>
+      <div id="zg3" class="quiz-answer">✅ Answer provided in course materials.</div>
+    </div>
+
+    <div style="margin-top:10px;text-align:right;"><a href="../topics/m2-sharing-managing.html" class="nav-btn" style="text-decoration:none;">← Back to Topic</a></div>
+  </div>
   </div>
 
 </div>
