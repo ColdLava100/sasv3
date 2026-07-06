@@ -479,6 +479,187 @@ Instead of marking numbers evenly (1, 2, 3, 4...), a log scale marks powers of 1
 - Custom geo icons = <strong>static</strong> — do NOT respond to color changes 🖼️<br>
 - For color changes on geo maps, use <strong>built-in markers/shapes</strong>, not custom icons
 </div>
+
+<!-- ===== BATCH 11: Lesson 9 ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">🔴 LESSON 9: 2 Mistakes (Score 16/20)</p></div>
+
+<div class="why">
+<img src="../images/exam-comp-edits.png">
+<strong>❌ Comprehensive edits allow viewers to:</strong> You said "Publish reports"<br>
+<strong>✅ Correct: Change object types</strong> — Comprehensive edits = viewers can change object types, add data labels, sorting. Publishing = designer/owner only.
+</div>
+
+<div class="why">
+<img src="../images/exam-one-way-filters.png">
+<strong>❌ One-way filters are applied:</strong> You said "In selected order only"<br>
+<strong>✅ Correct: In any order</strong> — One-way filters are independent; each one simply filters the downstream objects regardless of order.
+</div>
+
+<div class="tip red">
+<strong>🧠 Viewer Capabilities Levels:</strong><br>
+1. <strong>Comprehensive edits</strong> (highest) = change object types, sorting, labels, legends<br>
+2. <strong>Data edits</strong> = change data assignments, filters, ranks<br>
+3. <strong>No edits</strong> = view only<br><br>
+- Viewers can <strong>NOT</strong> publish reports (that's for designers/owners)<br>
+- One-way filters: <strong>any order</strong> works ✅
+</div>
+
+<!-- ===== BATCH 12: Lesson 10 (Best Practices) ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">🔴 LESSON 10: 6 Mistakes (Best Practices)</p></div>
+
+<div class="why">
+<img src="../images/exam-ugly-report.png">
+<strong>❌ "Ugly report" lacks:</strong> You said "Consistent fonts and colors"<br>
+<strong>✅ Correct: Meaningful page titles + Clear data story</strong> — An ugly report lacks purpose and narrative. Not just formatting.
+</div>
+
+<div class="why">
+<img src="../images/exam-audience.png">
+<strong>❌ Knowing your audience determines:</strong> You said "Level of detail + Appropriate chart types"<br>
+<strong>✅ Correct: Level of detail + Customization level</strong> — Knowing your audience tells you how much detail and how much customization to give them.
+</div>
+
+<div class="why">
+<img src="../images/exam-part-to-whole.png">
+<strong>❌ Part-to-whole preferred chart:</strong> You said "Pie chart"<br>
+<strong>✅ Correct: Treemap</strong> — SAS recommends treemap over pie chart for part-to-whole. Treemaps handle more categories without clutter.
+</div>
+
+<div class="why">
+<img src="../images/exam-color-accessibility.png">
+<strong>❌ Color-dependent display rules affect:</strong> You said "Data sources"<br>
+<strong>✅ Correct: Accessibility</strong> — Users with color-deficient vision may not distinguish colors. Always check contrast.
+</div>
+
+<div class="why">
+<img src="../images/exam-ctrl-alt-q.png">
+<strong>❌ Ctrl + Alt + Q opens:</strong> You said "Report Review panel"<br>
+<strong>✅ Correct: Internal diagnostic tool for query run-time</strong> — This is a developer shortcut, not the Report Review panel.
+</div>
+
+<div class="why">
+<img src="../images/exam-testing-report.png">
+<strong>❌ Testing should include:</strong> You said "Increasing CAS memory + Disabling prompts"<br>
+<strong>✅ Correct: Peer review + Testing on multiple devices</strong> — Testing = human review + cross-device checking.
+</div>
+
+<div class="tip red">
+<strong>🧠 Lesson 10 (Best Practices) Memory Aid:</strong><br>
+- <strong>Ugly report</strong> lacks: story + titles (NOT just fonts)<br>
+- <strong>Audience</strong> determines: level of detail + customization (NOT chart types)<br>
+- <strong>Part-to-whole</strong> = Treemap preferred over Pie 🥧→🟦<br>
+- <strong>Color rules</strong> → Accessibility concern (not data)<br>
+- <strong>Ctrl+Alt+Q</strong> = query diagnostic tool (not Report Review)<br>
+- <strong>Testing</strong> = peer review + multiple devices (not CAS memory)
+</div>
+
+<!-- ===== BATCH 13: Advanced Lesson 1 ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">🔴 ADVANCED L1: 4 Mistakes (Score 14/18)</p></div>
+
+<div class="why">
+<img src="../images/exam-forecast-equal.png">
+<strong>❌ Time series for forecasting must be:</strong> You chose multiple wrong options<br>
+<strong>✅ Correct: Equally spaced over time</strong> — Forecasting needs regular intervals. <em>Repeat offender!</em>
+</div>
+
+<div class="why">
+<img src="../images/exam-sankey-link.png">
+<strong>❌ Path Analysis link width represents:</strong> You said "Sentiment score"<br>
+<strong>✅ Correct: Frequency or weight of the path</strong> — Wider link = more flow through that path.
+</div>
+
+<div class="why">
+<img src="../images/exam-sentiment-scoring.png">
+<strong>❌ Sentiment scoring values:</strong> You said Positive=2, Negative=-1<br>
+<strong>✅ Correct: Negative=0, Neutral=0.5</strong> — SAS sentiment scoring uses 0-1 scale: Negative=0, Neutral=0.5, Positive=1.
+</div>
+
+<div class="why">
+<img src="../images/exam-agg-measures-explain.png">
+<strong>❌ Aggregated measures in Auto Explain:</strong> You said "Automatically added as underlying factors"<br>
+<strong>✅ Correct: Not added as underlying factors</strong> — Aggregated measures are NOT used as underlying factors in Automated Explanation.
+</div>
+
+<div class="tip red">
+<strong>🧠 Advanced Module Memory:</strong><br>
+- Forecasting: <strong>equally spaced</strong> (not random/aggregated)<br>
+- Sankey link width = <strong>frequency/weight</strong> (not sentiment)<br>
+- Sentiment scoring: Negative=0, Neutral=0.5, Positive=1 (0-1 scale)<br>
+- Aggregated measures = NOT underlying factors in Auto Explain
+</div>
+
+<!-- ===== BATCH 14: Advanced Lesson 2 ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">🔴 ADVANCED L2: 3 Mistakes (Score 17/20)</p></div>
+
+<div class="why">
+<img src="../images/exam-join-caslib.png">
+<strong>❌ Data join results stored in:</strong> You said "CASLIB_TEMP"<br>
+<strong>✅ Correct: CASUSER</strong> — Join results go to the user's personal CAS library (CASUSER), not temp.
+</div>
+
+<div class="why">
+<img src="../images/exam-join-limitations.png">
+<strong>❌ Join limitations:</strong> You said "Self-joins are allowed"<br>
+<strong>✅ Correct: Only two tables at once + Only simple matching supported</strong> — Self-joins are NOT a join limitation in SAS VA.
+</div>
+
+<div class="why">
+<img src="../images/exam-agg-functions.png">
+<strong>❌ Aggregated functions do NOT accept:</strong> You said "Category data items"<br>
+<strong>✅ Correct: Aggregated measures</strong> — Aggregated functions CAN accept categories as grouping. They CANNOT accept other aggregated measures (no nesting).
+</div>
+
+<div class="tip red">
+<strong>🧠 Advanced L2 Memory:</strong><br>
+- Join results → <strong>CASUSER</strong> (not temp)<br>
+- Join limits = <strong>2 tables at once + simple matching</strong> (self-joins OK)<br>
+- Aggregated functions ❌ accept other aggregated measures (no nesting)<br>
+- Aggregated functions ✅ CAN accept categories
+</div>
+
+<!-- ===== BATCH 15: Advanced L4 ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">🔴 ADVANCED L4: 1 Mistake</p></div>
+
+<div class="why">
+<img src="../images/exam-graph-roles-modify.png">
+<strong>❌ Graph Builder roles:</strong> You said "Roles are automatically assigned permanently"<br>
+<strong>✅ Correct: Additional roles can be added or modified</strong> — In Graph Builder, each object has required roles AND you can add/modify additional optional roles.
+</div>
+
+<!-- ===== BATCH 16: Advanced L5 ===== -->
+<div class="info-box"><p class="label" style="color:#ff7675;">🔴 ADVANCED L5: 2 Mistakes (Score 6/8)</p></div>
+
+<div class="why">
+<img src="../images/exam-guest-access.png">
+<strong>❌ Guest Access enabled + not signed in:</strong> You said "Report cannot be opened"<br>
+<strong>✅ Correct: User can log in as Guest and open the report</strong> — That's the whole point of Guest Access! Anonymous read-only access.
+</div>
+
+<div class="why">
+<img src="../images/exam-distinct-count.png">
+<strong>❌ DistinctCount by default:</strong> You said "Exclude missing values"<br>
+<strong>✅ Correct: Include missing values</strong> — Counterintuitive! SAS DistinctCount counts NULL/missing as a distinct value by default.
+</div>
+
+<div class="tip red">
+<strong>🧠 Advanced L5 Memory:</strong><br>
+- <strong>Guest Access</strong> = lets anonymous users log in and view reports 🔓<br>
+- <strong>DistinctCount</strong> = includes missing values by default (surprising!)<br>
+- <strong>🧠 Trick:</strong> "DistinctCount = Counts <strong>D</strong>ifferently — includes <strong>D</strong>efault missing values too"
+</div>
+
+<!-- ===== BATCH 17: Auto Chart Types ===== -->
+<div class="info-box"><p class="label" style="color:#6c5ce7;">🎯 AUTO CHART SELECTION GUIDE</p></div>
+
+<div class="memory">
+<strong>🧠 The "1-2-3" Memory System:</strong><br>
+<strong>1 item</strong> → Measure=Histogram 📊 | Category=Bar chart<br>
+<strong>2 measures</strong> → Scatter 🔵 | <strong>3 measures</strong> → Bubble 🫧<br>
+<strong>Cat + Measure</strong> → Bar (always!)<br>
+<strong>Date + Measure</strong> → Time Series 📈<br>
+<strong>Geo + Measure</strong> → Geo Map 🗺️<br><br>
+🎵 <em>"One measure's a Histo-gram, Category needs a Bar. Two measures? Scatter plot! Three? Bubble hits the spot!"</em>
+</div>
 </div>
 </details>
 </div>

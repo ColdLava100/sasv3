@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAS VA — Auto Chart Selection Guide</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  .chart-ref { font-size:0.72rem; border-collapse:collapse; width:100%; margin:6px 0; }
+  .chart-ref th { border:1px solid #444; padding:5px; background:#6c5ce7; color:#fff; }
+  .chart-ref td { border:1px solid #444; padding:5px; }
+  .memory { background:#1b2d1b; border-left:3px solid #55efc4; padding:8px; border-radius:6px; margin:6px 0; font-size:0.82rem; }
+  .emoji-big { font-size:1.5rem; }
+</style>
+</head>
+<body>
+<div class="header"><h1>📊 SAS VA — Automatic Chart Selection Guide</h1><p class="subtitle">What chart does SAS suggest based on your data items?</p></div>
+<div style="padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center;">
+  <a href="../index.html" style="color:var(--accent3);text-decoration:none;font-size:0.85rem;">← Back to Index</a>
+</div>
+<div class="content">
+
+<details class="topic" open>
+<summary class="topic-header" style="border-left:4px solid #6c5ce7;">
+  🎯 Auto Chart: Data Items → Chart Type
+  <span class="arrow">▶</span>
+</summary>
+<div class="topic-body">
+
+<div class="info-box"><p class="label" style="color:#6c5ce7;">📋 The Core Rule: Count Your Data Items & Their Types</p></div>
+
+<table class="chart-ref">
+<tr><th>Data Items You Drag</th><th>Chart Type</th><th class="emoji-big">🎯</th></tr>
+<tr><td><strong>1 Measure</strong> (e.g., Sales)</td><td><strong>Histogram</strong></td><td>📊</td></tr>
+<tr><td><strong>1 Category</strong> (e.g., Product)</td><td><strong>Bar chart</strong></td><td>📊</td></tr>
+<tr><td><strong>1 Category + 1 Measure</strong></td><td><strong>Bar chart</strong></td><td>📊</td></tr>
+<tr><td><strong>1 Date/Datetime + Measure(s)</strong></td><td><strong>Time series plot</strong></td><td>📈</td></tr>
+<tr><td><strong>2 Measures</strong> (e.g., Sales, Profit)</td><td><strong>Scatter plot</strong></td><td>🔵</td></tr>
+<tr><td><strong>3 Measures</strong></td><td><strong>Bubble plot</strong></td><td>🫧</td></tr>
+<tr><td><strong>1 Geo + Measure</strong></td><td><strong>Geo map</strong></td><td>🗺️</td></tr>
+<tr><td><strong>Category + Category + Measure</strong></td><td><strong>Grouped/Stacked bar</strong></td><td>📊</td></tr>
+<tr><td><strong>Category + Multiple Measures</strong></td><td><strong>Bar chart</strong></td><td>📊</td></tr>
+</table>
+
+<div class="memory">
+<strong>🧠 The "1-2-3" Memory System:</strong><br><br>
+<strong>1 thing → Histogram</strong> (if measure) or <strong>Bar</strong> (if category)<br>
+<strong>2 measures → Scatter</strong> 🔵<br>
+<strong>3 measures → Bubble</strong> 🫧<br><br>
+<strong>Category + Measure → Bar</strong> 📊 (always! The default pairing)<br>
+<strong>Date + Measure → Time Series</strong> 📈 (time data = line over time)<br>
+<strong>Geo + Measure → Map</strong> 🗺️ (location data = map)<br>
+</div>
+
+<div class="info-box"><p class="label" style="color:#55efc4;">💡 The Decision Tree</p></div>
+<div class="memory">
+<pre style="font-size:0.65rem;line-height:1.6;">
+  What data items did you drag?
+  │
+  ├─ Only 1 item?
+  │   ├─ Is it a Measure?      → 📊 Histogram
+  │   └─ Is it a Category?     → 📊 Bar chart
+  │
+  ├─ 2 items?
+  │   ├─ Both Measures?        → 🔵 Scatter plot
+  │   ├─ Category + Measure?   → 📊 Bar chart
+  │   └─ Date + Measure?       → 📈 Time series
+  │
+  ├─ 3 items?
+  │   ├─ 3 Measures?           → 🫧 Bubble plot
+  │   └─ 2 Cats + 1 Measure?   → 📊 Grouped Bar
+  │
+  └─ Has Geography?            → 🗺️ Geo map
+</pre>
+</div>
+
+<div class="info-box"><p class="label" style="color:#ffd93d;">🎵 Song to Remember</p></div>
+<div class="memory" style="text-align:center;font-size:0.82rem;">
+<em>"One measure's a Histo-gram,<br>
+Category needs a Bar, my man.<br>
+Two measures? Scatter plot!<br>
+Three? Bubble hits the spot!<br>
+Add some dates, Time Series you got.<br>
+Geo data? Map it non-stop!"</em> 🎵
+</div>
+
+</div>
+</details>
+</div>
+<a href="#" class="back-top">⬆</a>
+</body>
+</html>
